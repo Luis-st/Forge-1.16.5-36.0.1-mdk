@@ -1,4 +1,4 @@
-package net.luis.cave.enchantment;
+package net.luis.cave.enchantment.curse;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentType;

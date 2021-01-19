@@ -2,8 +2,6 @@ package net.luis.cave.init;
 
 import net.luis.cave.Cave;
 import net.luis.cave.enchantment.Blasting;
-import net.luis.cave.enchantment.CurseOfBreaking;
-import net.luis.cave.enchantment.CurseOfHarming;
 import net.luis.cave.enchantment.DoubleDrops;
 import net.luis.cave.enchantment.ElytraFalling;
 import net.luis.cave.enchantment.ElytraProtection;
@@ -14,6 +12,8 @@ import net.luis.cave.enchantment.Harvesting;
 import net.luis.cave.enchantment.PoisonAspect;
 import net.luis.cave.enchantment.Smelting;
 import net.luis.cave.enchantment.VoidWalker;
+import net.luis.cave.enchantment.curse.CurseOfBreaking;
+import net.luis.cave.enchantment.curse.CurseOfHarming;
 import net.luis.cave.enchantment.vanilla.Flame;
 import net.luis.cave.enchantment.vanilla.Infinity;
 import net.luis.cave.enchantment.vanilla.Multishot;

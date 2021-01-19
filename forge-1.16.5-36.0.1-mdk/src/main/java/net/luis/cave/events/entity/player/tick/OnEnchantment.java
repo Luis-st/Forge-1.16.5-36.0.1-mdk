@@ -8,8 +8,6 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effects;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -118,7 +116,7 @@ public class OnEnchantment {
 				if (player.getMotion().getY() < 0) {
 					
 					player.setMotion(player.getMotion().getX(), 0, player.getMotion().getZ());
-					player.addPotionEffect(new EffectInstance(Effects.HASTE, 40, 1, false, false));
+					player.setOnGround(true);
 					
 				}
 				

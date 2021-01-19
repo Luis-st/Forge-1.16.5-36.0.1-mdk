@@ -3,6 +3,7 @@ package net.luis.cave.init;
 import net.luis.cave.Cave;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -10,8 +11,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class CaveBlockItems {
 	
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Cave.Mod_Id);
+	public static final DeferredRegister<Item> VANILLA_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Cave.Minecraft_Id);
 
-	
 	public static final RegistryObject<Item> RUBY_BLOCK_ITEM = ITEMS.register("ruby_block", 
 			() -> new BlockItem(CaveBlocks.RUBY_BLOCK.get(), new Item.Properties().group(Cave.BUILDING_BLOCKS)));
 	
@@ -57,5 +58,8 @@ public class CaveBlockItems {
 	
 	public static final RegistryObject<Item> BEE_TABLE_ITEM = ITEMS.register("bee_table", 
 			() -> new BlockItem(CaveBlocks.BEE_TABLE.get(), new Item.Properties().group(Cave.DECORATIONS)));
+	
+	public static final RegistryObject<Item> BARREL_ITEM = ITEMS.register("barrel", 
+			() -> new BlockItem(CaveBlocks.BARREL.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
 	
 }

@@ -1,6 +1,7 @@
 package net.luis.cave.init;
 
 import net.luis.cave.Cave;
+import net.luis.cave.blocks.Barrel;
 import net.luis.cave.blocks.BeeTable;
 import net.luis.cave.blocks.InfiniteAnvil;
 import net.luis.cave.blocks.PowderSnow;
@@ -17,6 +18,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class CaveBlocks {
 	
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Cave.Mod_Id);
+	public static final DeferredRegister<Block> VANILLA_BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Cave.Minecraft_Id);
 	
 	public static final RegistryObject<Block> RUBY_BLOCK = BLOCKS.register("ruby_block", 
 			() -> new Block(Block.Properties.create(Material.IRON, MaterialColor.RED).hardnessAndResistance(5.5f,6.5f).sound(SoundType.METAL)
@@ -69,5 +71,7 @@ public class CaveBlocks {
 	public static final RegistryObject<Block> SMELTING_FURNACE = BLOCKS.register("smelting_furnace", SmeltingFurnace::new);
 	
 	public static final RegistryObject<Block> BEE_TABLE = BLOCKS.register("bee_table", BeeTable::new);
+	
+	public static final RegistryObject<Block> BARREL = VANILLA_BLOCKS.register("barrel", Barrel::new);
 
 }
