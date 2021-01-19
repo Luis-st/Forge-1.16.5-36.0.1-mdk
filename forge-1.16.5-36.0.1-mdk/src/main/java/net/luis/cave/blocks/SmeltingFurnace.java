@@ -28,6 +28,7 @@ public class SmeltingFurnace extends Block {
 				.sound(SoundType.STONE)
 				.harvestTool(ToolType.PICKAXE)
 				.setRequiresTool());
+		
 		this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH).with(LIT, Boolean.valueOf(false)));
 		
 	}
