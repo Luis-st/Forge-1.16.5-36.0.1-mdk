@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "cave:blocks/powder_snow",
+    "particle": "cave:blocks/powder_snow"
+  }
+}

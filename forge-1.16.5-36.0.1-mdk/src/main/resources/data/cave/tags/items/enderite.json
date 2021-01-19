@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "cave:enderite_scrap",
+    "cave:enderite_ingot",
+    "cave:enderite_ore",
+    "cave:enderite_block",
+    "cave:enderite_sword",
+    "cave:enderite_pickaxe",
+    "cave:enderite_axe",
+    "cave:enderite_shovel",
+    "cave:enderite_hoe",
+    "cave:enderite_shield",
+    "cave:enderite_helmet",
+    "cave:enderite_chestplate",
+    "cave:enderite_leggings",
+    "cave:enderite_boots"
+  ]
+}

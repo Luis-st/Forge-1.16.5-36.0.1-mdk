@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "cave:iron_shield",
+    "cave:golden_shield",
+    "cave:diamond_shield",
+    "cave:netherite_shield",
+    "cave:enderite_shield"
+  ]
+}

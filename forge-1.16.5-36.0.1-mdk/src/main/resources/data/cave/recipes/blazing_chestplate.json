@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X X",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "cave:blazing_ingot"
+    }
+  },
+  "result": {
+    "item": "cave:blazing_chestplate"
+  }
+}

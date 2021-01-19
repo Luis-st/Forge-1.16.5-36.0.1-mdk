@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "cave:steel_ingot",
+    "cave:steel_axe",
+    "cave:steel_pickaxe",
+    "cave:steel_shovel",
+    "cave:steel_hoe",
+    "cave:steel_sword"
+  ]
+}

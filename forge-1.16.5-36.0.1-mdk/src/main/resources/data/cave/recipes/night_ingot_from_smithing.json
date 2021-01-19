@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "addition": {
+    "item": "cave:steel_ingot"
+  },
+  "result": {
+    "item": "cave:night_ingot"
+  }
+}

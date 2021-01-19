@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "cave:enderite_ingot"
+    }
+  },
+  "result": {
+    "item": "cave:enderite_block"
+  }
+}

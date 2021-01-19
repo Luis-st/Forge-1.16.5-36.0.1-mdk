@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "cave:saphire_ore"
+  },
+  "result": "cave:saphire_ingot",
+  "experience": 1.5,
+  "cookingtime": 100
+}

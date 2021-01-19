@@ -1,0 +1,6 @@
+{
+    "parent": "cave:item/netherite_bow",
+    "textures": {
+        "layer0": "cave:items/netherite_bow_pulling_1"
+    }
+}

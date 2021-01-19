@@ -1,0 +1,6 @@
+{
+    "parent": "cave:item/night_bow",
+    "textures": {
+        "layer0": "cave:items/night_bow_pulling_1"
+    }
+}

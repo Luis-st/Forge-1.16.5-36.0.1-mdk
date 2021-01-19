@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:blaze_powder"
+    },
+    "X": {
+      "item": "cave:gold_sheet"
+    }
+  },
+  "result": {
+    "item": "cave:blazing_ingot",
+    "count": 1
+  }
+}

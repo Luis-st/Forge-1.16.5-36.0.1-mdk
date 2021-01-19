@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "cave:blazing_ingot",
+    "cave:blazing_axe",
+    "cave:blazing_pickaxe",
+    "cave:blazing_shovel",
+    "cave:blazing_sword"
+  ]
+}

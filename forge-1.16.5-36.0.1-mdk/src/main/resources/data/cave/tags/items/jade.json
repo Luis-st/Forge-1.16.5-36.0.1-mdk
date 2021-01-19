@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "cave:jade_ingot",
+    "cave:jade_axe",
+    "cave:jade_pickaxe",
+    "cave:jade_shovel",
+    "cave:jade_hoe",
+    "cave:jade_sword"
+  ]
+}
