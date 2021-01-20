@@ -59,7 +59,4 @@ public class CaveBlockItems {
 	public static final RegistryObject<Item> BEE_TABLE_ITEM = ITEMS.register("bee_table", 
 			() -> new BlockItem(CaveBlocks.BEE_TABLE.get(), new Item.Properties().group(Cave.DECORATIONS)));
 	
-	public static final RegistryObject<Item> BARREL_ITEM = ITEMS.register("barrel", 
-			() -> new BlockItem(CaveBlocks.BARREL.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
-	
 }
