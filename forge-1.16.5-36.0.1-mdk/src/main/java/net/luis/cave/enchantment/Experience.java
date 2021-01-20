@@ -31,9 +31,7 @@ public class Experience extends Enchantment {
 	
 	@Override
 	protected boolean canApplyTogether(Enchantment ench) {
-		if (ench == Enchantments.SILK_TOUCH)
-			return false;
-		return true;
+		return !(ench == Enchantments.SILK_TOUCH);
 	}
 
 }

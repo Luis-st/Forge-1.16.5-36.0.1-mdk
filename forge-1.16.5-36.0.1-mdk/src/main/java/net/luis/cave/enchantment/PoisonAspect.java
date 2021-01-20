@@ -9,7 +9,7 @@ public class PoisonAspect extends Enchantment {
 
 	public PoisonAspect(Enchantment.Rarity rarity, EnchantmentType type, EquipmentSlotType... slots) {
 		
-		super(Enchantment.Rarity.RARE, EnchantmentType.WEAPON, slots);
+		super(rarity, type, slots);
 
 	}
 	
@@ -23,7 +23,7 @@ public class PoisonAspect extends Enchantment {
 	@Override
 	protected boolean canApplyTogether(Enchantment ench) {
 		if (ench != Enchantments.FIRE_ASPECT)
-			return true;
+			return true;;
 		return false;
 	}
 
