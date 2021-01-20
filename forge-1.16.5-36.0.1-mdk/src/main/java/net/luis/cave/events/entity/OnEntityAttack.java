@@ -36,14 +36,14 @@ public class OnEntityAttack {
 				int enchPoison = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.POISON_ASPECT.get(), player.getHeldItemMainhand());
 				int enchFrost = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.FROST_ASPECT.get(), player.getHeldItemMainhand());
 				
-				if (EnchantmentManager.hasEnchantment(CaveEnchantment.POISON_ASPECT.get(), player.getHeldItemMainhand())) {
+				if (enchPoison > 0) {
 					
 					livingTarget.addPotionEffect(new EffectInstance(Effects.POISON, 50 * (enchPoison + 2), 0 + (enchPoison + 1)));
 					
 					
 				}
 				
-				if (EnchantmentManager.hasEnchantment(CaveEnchantment.FROST_ASPECT.get(), player.getHeldItemMainhand())) {
+				if (enchFrost > 0) {
 					
 					livingTarget.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 100 * (enchFrost + 1), 2 + (enchFrost + 1)));
 					

@@ -2,7 +2,6 @@ package net.luis.cave.events.world;
 
 import net.luis.cave.Cave;
 import net.luis.cave.init.CaveEnchantment;
-import net.luis.cave.lib.EnchantmentManager;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.potion.EffectInstance;
@@ -29,7 +28,7 @@ public class OnBlasting {
 
 		if (player instanceof PlayerEntity) {
 			
-			if (EnchantmentManager.hasEnchantment(CaveEnchantment.BLASTING.get(), player.getHeldItemMainhand())) {
+			if (enchBlasting > 0) {
 				
 				player.addPotionEffect(new EffectInstance(Effects.RESISTANCE, 30, 4, false, false));
 				world.createExplosion(null, x, y, z, 2.0f * (enchBlasting + 1), Explosion.Mode.BREAK);

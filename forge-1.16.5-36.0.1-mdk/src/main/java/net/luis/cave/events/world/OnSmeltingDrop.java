@@ -61,7 +61,7 @@ public class OnSmeltingDrop {
 							
 				}
 					
-				if (EnchantmentManager.hasEnchantment(CaveEnchantment.SMELTING.get(), player.getHeldItemMainhand())) {
+				if (EnchantmentManager.hasEnchantmentWithLevel(CaveEnchantment.SMELTING.get(), player.getHeldItemMainhand(), 1, true)) {
 					
 					if (BlockManager.hasSmelting(world, pos)) { 
 						

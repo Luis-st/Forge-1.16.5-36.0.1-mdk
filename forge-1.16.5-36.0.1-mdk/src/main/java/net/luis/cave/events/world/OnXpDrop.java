@@ -27,7 +27,7 @@ public class OnXpDrop {
 				int enchFortune = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, player.getHeldItemMainhand());
 				int enchDouble = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.DOUBLE_DROPS.get(), player.getHeldItemMainhand());
 				
-				if (EnchantmentManager.hasEnchantment(CaveEnchantment.EXPERIENCE.get(), player.getHeldItemMainhand())) {
+				if (enchExperience > 0) {
 					
 					if (!EnchantmentManager.hasEnchantmentWithLevel(Enchantments.SILK_TOUCH, player.getHeldItemMainhand(), 1, false)) {
 						

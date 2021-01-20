@@ -63,20 +63,6 @@ public class EnchantmentManager {
 		}
 		
 	}
-
-	public static boolean hasEnchantment(Enchantment enchantment, ItemStack item) {
-		
-		int enchLevel = EnchantmentHelper.getEnchantmentLevel(enchantment, item);
-		
-		if (enchLevel > 0) {
-			
-			return true;
-			
-		}
-		
-		return false;
-		
-	}
 	
 	public static boolean hasEnchantmentWithLevel(Enchantment enchantment, ItemStack item, int level, boolean onlyLevel) {
 		
