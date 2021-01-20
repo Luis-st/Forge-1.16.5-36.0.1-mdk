@@ -99,6 +99,9 @@ public class CaveEnchantment {
 	public static final RegistryObject<Enchantment> FLAME = VANILLA_ENCHANTMENT.register("flame", 
 			() -> new Flame(Rarity.RARE, EnchantmentType.BREAKABLE, EquipmentSlotType.MAINHAND));
 	
+	public static final RegistryObject<Enchantment> ENDER_SLYAER = ENCHANTMENT.register("flame", 
+			() -> new Flame(Rarity.UNCOMMON, EnchantmentType.WEAPON, EquipmentSlotType.MAINHAND));
+	
 	
 
 }
