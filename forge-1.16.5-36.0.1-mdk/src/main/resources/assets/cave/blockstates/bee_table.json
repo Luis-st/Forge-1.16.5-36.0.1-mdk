@@ -1,6 +1,6 @@
 {
   "variants": {
-    "facing=east: {
+    "facing=east": {
       "y": 90,
       "model": "cave:block/bee_table"
     },

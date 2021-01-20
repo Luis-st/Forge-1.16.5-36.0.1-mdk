@@ -27,6 +27,8 @@
   "entity.minecraft.villager.cave.miner": "Miner",
   "entity.minecraft.villager.cave.enchanter": "Enchanter",
   "entity.minecraft.villager.cave.beekeeper": "Beekeeper",
+  "entity.minecraft.villager.cave.nether_trader": "Nether Trader",
+  "entity.minecraft.villager.cave.end_trader": "End Trader",
   
   "death.attack.curse": "%1$s die by his own weapon",
   

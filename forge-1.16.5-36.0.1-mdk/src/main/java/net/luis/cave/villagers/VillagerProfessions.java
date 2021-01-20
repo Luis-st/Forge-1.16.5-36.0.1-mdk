@@ -19,6 +19,8 @@ public class VillagerProfessions {
 	public static final VillagerProfession MINER = null;
 	public static final VillagerProfession ENCHANTER = null;
 	public static final VillagerProfession BEEKEEPER = null;
+	public static final VillagerProfession NETHER_TRADER = null;
+	public static final VillagerProfession END_TRADER = null;
 
 	@SubscribeEvent
 	public static void registerVillagerProfessions(Register<VillagerProfession> event) {
@@ -39,6 +41,12 @@ public class VillagerProfessions {
 		
 		registry.register(VillagerUtil.villagerProfession("beekeeper", PointOfInterestTypes.BEEKEEPER,
 				ImmutableSet.of(), ImmutableSet.of(), null).setRegistryName(Cave.Mod_Id, "beekeeper"));
+		
+		registry.register(VillagerUtil.villagerProfession("nether_trader", PointOfInterestTypes.NETHER_TRADER,
+				ImmutableSet.of(), ImmutableSet.of(), null).setRegistryName(Cave.Mod_Id, "nether_trader"));
+		
+		registry.register(VillagerUtil.villagerProfession("end_trader", PointOfInterestTypes.END_TRADER,
+				ImmutableSet.of(), ImmutableSet.of(), null).setRegistryName(Cave.Mod_Id, "end_trader"));
 		
 	}
 	

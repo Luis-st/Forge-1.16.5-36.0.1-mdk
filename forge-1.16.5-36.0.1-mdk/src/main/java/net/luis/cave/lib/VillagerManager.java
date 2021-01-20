@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
+import net.luis.cave.init.CaveEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentData;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -15,8 +16,10 @@ import net.minecraft.item.Items;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionBrewing;
 import net.minecraft.potion.PotionUtils;
+import net.minecraft.potion.Potions;
 import net.minecraft.util.registry.Registry;
 import net.minecraftforge.common.BasicTrade;
+import net.minecraftforge.fml.RegistryObject;
 
 public class VillagerManager {
 	
@@ -41,7 +44,7 @@ public class VillagerManager {
 	}
 	
 	@SuppressWarnings("deprecation")
-	public static BasicTrade creatTradeEmeraldAndArrowforTippedArrow(int emeralds, int arrowCount, int tradeLevel) {
+	public static BasicTrade creatTradeEmeraldAndArrowForTippedArrow(int emeralds, int arrowCount, int tradeLevel) {
 		
 		ItemStack tippedArrow = new ItemStack(Items.TIPPED_ARROW, arrowCount);
 		List<Potion> potions = Registry.POTION.stream().filter((potion) -> {
@@ -50,6 +53,33 @@ public class VillagerManager {
 		Potion potion = potions.get(rng.nextInt(potions.size()));
 		PotionUtils.addPotionToItemStack(tippedArrow, potion);
 		return new BasicTrade(new ItemStack(Items.EMERALD, emeralds), new ItemStack(Items.ARROW, arrowCount), tippedArrow, 16, randomXp(tradeLevel), 0.05f);
+		
+	}
+	
+	public static List<BasicTrade> creatTradeEmeraldAndWaterBottleForPotionList(int size, int emeralds, int tradeLevel) {
+		
+		List<BasicTrade> trades = new ArrayList<>();
+		for (int i = 0; i < size; i++) {
+			trades.add(potion(emeralds, tradeLevel));
+		}
+		
+		return trades;
+		
+	}
+	
+	@SuppressWarnings("deprecation")
+	private static BasicTrade potion(int emeralds, int tradeLevel) {
+		
+		ItemStack potionItem = new ItemStack(Items.POTION);
+		ItemStack waterBottle = new ItemStack(Items.POTION);
+		List<Potion> potions = Registry.POTION.stream().filter((potion) -> {
+            return !potion.getEffects().isEmpty() && PotionBrewing.isBrewablePotion(potion);
+         }).collect(Collectors.toList());
+		Potion potion = potions.get(rng.nextInt(potions.size()));
+		Potion water = Potions.WATER;
+		PotionUtils.addPotionToItemStack(potionItem, potion);
+		PotionUtils.addPotionToItemStack(waterBottle, water);
+		return new BasicTrade(new ItemStack(Items.EMERALD, emeralds), waterBottle, potionItem, 16, randomXp(tradeLevel), 0.05f);
 		
 	}
 	
@@ -87,10 +117,20 @@ public class VillagerManager {
 		List<Enchantment> enchantments = Registry.ENCHANTMENT.stream().filter((enchantment) -> {
 			return !enchantment.isCurse();
 		}).collect(Collectors.toList());
+		List<Enchantment> caveEnchantments = new ArrayList<>();
+		List<RegistryObject<Enchantment>> registryObjectEnchantments= CaveEnchantment.ENCHANTMENT.getEntries().stream().filter((enchantment) -> {
+			return !enchantment.get().isCurse();
+		}).collect(Collectors.toList());
+		registryObjectEnchantments.forEach(enchantment -> {
+			caveEnchantments.add(enchantment.get());
+		});
+		caveEnchantments.forEach(enchantment -> {
+			enchantments.add(enchantment);
+		});
 		Enchantment enchantment = enchantments.get(rng.nextInt(enchantments.size()));
 		int enchLevel = Math.min(enchantment.getMaxLevel(), rng.nextInt(5));
 		EnchantedBookItem.addEnchantment(book, new EnchantmentData(enchantment, enchLevel));
-		int count = 2 + rng.nextInt(5 + enchLevel * 10) + 3 * enchLevel;
+		int count = 2 + rng.nextInt(5 + enchLevel * 10) + 3 * enchLevel + 5;
 		
 		return new BasicTrade(new ItemStack(Items.EMERALD, count > 64 ? 64 : count), new ItemStack(Items.BOOK), book, 16, xp, 0.2f);
 		

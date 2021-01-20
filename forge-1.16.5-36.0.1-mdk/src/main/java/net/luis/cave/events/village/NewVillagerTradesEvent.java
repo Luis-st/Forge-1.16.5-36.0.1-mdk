@@ -101,9 +101,9 @@ public class NewVillagerTradesEvent {
 			trade1.add(VillagerManager.creatTradeItemForEmerald(Items.STICK, 32 - rng.nextInt(16), 1, true, 1));
 			trade1.add(VillagerManager.creatTradeItemForEmerald(Items.ARROW, 8 + rng.nextInt(8), 1, true, 1));
 			
-			trade4.add(VillagerManager.creatTradeEmeraldAndArrowforTippedArrow(4, 5, 4));
+			trade4.add(VillagerManager.creatTradeEmeraldAndArrowForTippedArrow(4, 5, 4));
 			
-			trade5.add(VillagerManager.creatTradeEmeraldAndArrowforTippedArrow(2, 5, 5));
+			trade5.add(VillagerManager.creatTradeEmeraldAndArrowForTippedArrow(2, 5, 5));
 			
 		} else if (type == VillagerProfession.WEAPONSMITH) {
 			

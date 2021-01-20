@@ -58,6 +58,7 @@ public class Cave {
 		VillagerUtil.fixPOITypeBlockStates(PointOfInterestTypes.MINER);
 		VillagerUtil.fixPOITypeBlockStates(PointOfInterestTypes.ENCHANTER);
 		VillagerUtil.fixPOITypeBlockStates(PointOfInterestTypes.BEEKEEPER);
+		VillagerUtil.fixPOITypeBlockStates(PointOfInterestTypes.NETHER_TRADER);
 		
 	}
 	

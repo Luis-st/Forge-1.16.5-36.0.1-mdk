@@ -31,7 +31,7 @@ public class PlayerManager {
 			
 			if (enableElytra) {
 				
-				if (player.getItemStackFromSlot(EquipmentSlotType.CHEST).equals(CaveArmor.NIGHT_HELMET.get().getDefaultInstance(), true) || 
+				if (player.getItemStackFromSlot(EquipmentSlotType.CHEST).equals(CaveArmor.NIGHT_CHESTPLATE.get().getDefaultInstance(), true) || 
 					player.getItemStackFromSlot(EquipmentSlotType.CHEST).equals(CaveArmor.NIGHT_ELYTRA.get().getDefaultInstance(), true)) {
 					
 					return true;

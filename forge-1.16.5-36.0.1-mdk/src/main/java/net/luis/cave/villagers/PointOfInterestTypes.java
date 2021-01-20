@@ -19,6 +19,8 @@ public class PointOfInterestTypes {
 	public static final PointOfInterestType MINER = null;
 	public static final PointOfInterestType ENCHANTER = null;
 	public static final PointOfInterestType BEEKEEPER = null;
+	public static final PointOfInterestType NETHER_TRADER = null;
+	public static final PointOfInterestType END_TRADER = null;
 	
 	@SubscribeEvent
 	public static void registerPointOfInterestTypes(Register<PointOfInterestType> event) {
@@ -39,6 +41,12 @@ public class PointOfInterestTypes {
 		
 		registry.register(VillagerUtil.pointOfInterestType("beekeeper", 
 				VillagerUtil.getAllStates(CaveBlocks.BEE_TABLE.get()), 1, 1).setRegistryName(Cave.Mod_Id, "beekeeper"));
+		
+		registry.register(VillagerUtil.pointOfInterestType("nether_trader", 
+				VillagerUtil.getAllStates(Blocks.RESPAWN_ANCHOR), 1, 1).setRegistryName(Cave.Mod_Id, "nether_trader"));
+		
+		registry.register(VillagerUtil.pointOfInterestType("end_trader", 
+				VillagerUtil.getAllStates(Blocks.ENDER_CHEST), 1, 1).setRegistryName(Cave.Mod_Id, "end_trader"));
 		
 	}
 	
