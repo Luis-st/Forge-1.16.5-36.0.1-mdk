@@ -1,8 +1,8 @@
 package net.luis.cave.events.entity;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.CaveArmor;
 import net.luis.cave.init.CaveEnchantment;
+import net.luis.cave.lib.PlayerManager;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -38,7 +38,7 @@ public class OnLivingHurtEvent {
 				
 			}
 			
-			if (hasBlazingArmor(player)) {
+			if (PlayerManager.hasBlazingArmor(player)) {
 				
 				if (source == DamageSource.IN_FIRE) {
 					
@@ -64,22 +64,5 @@ public class OnLivingHurtEvent {
 		
 	}
 	
-	private static boolean hasBlazingArmor(PlayerEntity player) {
-		
-		if (player.getItemStackFromSlot(EquipmentSlotType.HEAD).equals(CaveArmor.BLAZING_HELMET.get().getDefaultInstance(), true) &&
-			player.getItemStackFromSlot(EquipmentSlotType.CHEST).equals(CaveArmor.BLAZING_CHESTPLATE.get().getDefaultInstance(), true) &&
-			player.getItemStackFromSlot(EquipmentSlotType.LEGS).equals(CaveArmor.BLAZING_LEGGINS.get().getDefaultInstance(), true) &&
-			player.getItemStackFromSlot(EquipmentSlotType.FEET).equals(CaveArmor.BLAZING_BOOTS.get().getDefaultInstance(), true)) {
-					
-			return true;
-					
-		} else {
-					
-			return false;
-					
-		}
-		
-	}
-
 }
 

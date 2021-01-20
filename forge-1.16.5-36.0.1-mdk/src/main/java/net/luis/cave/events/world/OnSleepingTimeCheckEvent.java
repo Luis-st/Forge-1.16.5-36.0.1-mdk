@@ -4,6 +4,7 @@ import net.luis.cave.Cave;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.SleepingTimeCheckEvent;
+import net.minecraftforge.eventbus.api.Event.Result;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -18,7 +19,7 @@ public class OnSleepingTimeCheckEvent {
 		
 		if (world.isRaining()) {
 			
-			event.setResult(net.minecraftforge.eventbus.api.Event.Result.ALLOW);
+			event.setResult(Result.ALLOW);
 			
 		}
 

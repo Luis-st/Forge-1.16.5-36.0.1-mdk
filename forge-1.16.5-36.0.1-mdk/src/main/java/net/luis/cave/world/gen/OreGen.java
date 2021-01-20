@@ -61,29 +61,41 @@ public class OreGen {
 		
 		BiomeGenerationSettingsBuilder generation = event.getGeneration();
 		
-		if(event.getCategory().equals(Biome.Category.NETHER)) {
+		if (event.getCategory().equals(Biome.Category.NETHER)) {
 			
-			for(ConfiguredFeature<?, ?> ore : netherOres){
+			for (ConfiguredFeature<?, ?> ore : netherOres){
 				
-				if (ore != null) generation.withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ore);
-				
-			}
-			
-		}
-		
-		if(event.getCategory().equals(Biome.Category.THEEND)) {
-			
-			for(ConfiguredFeature<?, ?> ore : endOres){
-				
-				if (ore != null) generation.withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ore);
+				if (ore != null) {
+					
+					generation.withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ore);
+					
+				}
 				
 			}
 			
 		}
 		
-		for(ConfiguredFeature<?, ?> ore : overworldOres) {
+		if (event.getCategory().equals(Biome.Category.THEEND)) {
 			
-			if (ore != null) generation.withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ore);
+			for (ConfiguredFeature<?, ?> ore : endOres){
+				
+				if (ore != null) {
+					
+					generation.withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ore);
+					
+				}
+				
+			}
+			
+		}
+		
+		for (ConfiguredFeature<?, ?> ore : overworldOres) {
+			
+			if (ore != null) {
+				
+				generation.withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ore);
+				
+			}
 			
 		}
 		

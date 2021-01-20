@@ -4,12 +4,12 @@ import java.util.Map.Entry;
 
 import net.luis.cave.Cave;
 import net.luis.cave.init.CaveEnchantment;
+import net.luis.cave.lib.EnchantmentManager;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -30,7 +30,7 @@ public class OnEnchantment {
 											player.getItemStackFromSlot(slot[2]) , player.getItemStackFromSlot(slot[3])};
 		int enchElytraFalling = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.ELYTRA_FALLING.get(), item[1]);
 		int enchVoidWalker = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.VOID_WALKER.get(), item[3]);
-		int enchGrowth = growthLevel(item);
+		int enchGrowth = EnchantmentManager.growthLevel(item);
 		
 		if (enchElytraFalling == 1) {
 			
@@ -44,7 +44,7 @@ public class OnEnchantment {
 				
 				if (enchVoidWalker == 1) {
 					
-					voidWalker(world, player);
+					EnchantmentManager.voidWalker(world, player);
 					
 				}
 				
@@ -58,7 +58,7 @@ public class OnEnchantment {
 			
 			if (enchVoidWalker == 1) {
 				
-				voidWalker(world, player);
+				EnchantmentManager.voidWalker(world, player);
 				
 			}
 			
@@ -94,36 +94,4 @@ public class OnEnchantment {
 		
 	}
 	
-	private static int growthLevel(ItemStack[] item) {
-		
-		int enchGrowthHead = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.GROWTH.get(), item[0]);
-		int enchGrowthChest = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.GROWTH.get(), item[1]);
-		int enchGrowthLegs = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.GROWTH.get(), item[2]);
-		int enchGrowthFeet = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.GROWTH.get(), item[3]);
-		
-		return enchGrowthHead + enchGrowthChest + enchGrowthLegs + enchGrowthFeet;
-		
-	}
-	
-	private static void voidWalker(World world, PlayerEntity player) {
-		
-		player.fallDistance = 0f;
-		
-		if (!player.isSneaking()) {
-	
-			if (!world.getBlockState(new BlockPos(player.getPosX(), player.getPosY() - 1, player.getPosZ())).isSolid()) {
-				
-				if (player.getMotion().getY() < 0) {
-					
-					player.setMotion(player.getMotion().getX(), 0, player.getMotion().getZ());
-					player.setOnGround(true);
-					
-				}
-				
-			}
-			
-		}
-		
-	}
-
 }

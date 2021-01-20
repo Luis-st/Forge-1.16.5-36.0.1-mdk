@@ -1,8 +1,8 @@
 package net.luis.cave.events.entity.player.tick;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.CaveArmor;
 import net.luis.cave.init.CaveItems;
+import net.luis.cave.lib.PlayerManager;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.potion.EffectInstance;
@@ -19,14 +19,14 @@ public class OnArmor {
 
 		PlayerEntity player = event.player;
 		
-		if (hasSaphireArmor(player)) {
+		if (PlayerManager.hasSaphireArmor(player)) {
 			
 			player.fallDistance = 0f;
 			player.addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, 10, 3, true, false));
 			
 		}
 		
-		if (hasNightArmor(player)) {
+		if (PlayerManager.hasNightArmor(player, true)) {
 			
 			player.addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, 400, 0, true, false));
 			
@@ -41,40 +41,4 @@ public class OnArmor {
 		
 	}
 	
-	private static boolean hasSaphireArmor(PlayerEntity player) {
-		
-		if (player.getItemStackFromSlot(EquipmentSlotType.HEAD).equals(CaveArmor.SAPHIRE_HELMET.get().getDefaultInstance(), true) &&
-			player.getItemStackFromSlot(EquipmentSlotType.CHEST).equals(CaveArmor.SAPHIRE_CHESTPLATE.get().getDefaultInstance(), true) &&
-			player.getItemStackFromSlot(EquipmentSlotType.LEGS).equals(CaveArmor.SAPHIRE_LEGGINS.get().getDefaultInstance(), true) &&
-			player.getItemStackFromSlot(EquipmentSlotType.FEET).equals(CaveArmor.SAPHIRE_BOOTS.get().getDefaultInstance(), true)) {
-				
-			return true;
-				
-		} else {
-				
-			return false;
-				
-		}
-		
-	}
-	
-	private static boolean hasNightArmor(PlayerEntity player) {
-		
-		if (player.getItemStackFromSlot(EquipmentSlotType.HEAD).equals(CaveArmor.NIGHT_HELMET.get().getDefaultInstance(), true) &&
-			player.getItemStackFromSlot(EquipmentSlotType.CHEST).equals(CaveArmor.NIGHT_HELMET.get().getDefaultInstance(), true) || 
-			player.getItemStackFromSlot(EquipmentSlotType.CHEST).equals(CaveArmor.NIGHT_ELYTRA.get().getDefaultInstance(), true) &&
-			player.getItemStackFromSlot(EquipmentSlotType.LEGS).equals(CaveArmor.NIGHT_LEGGINS.get().getDefaultInstance(), true) &&
-			player.getItemStackFromSlot(EquipmentSlotType.FEET).equals(CaveArmor.NIGHT_BOOTS.get().getDefaultInstance(), true)) {
-			
-			return true;
-			
-		} else {
-			
-			return false;
-			
-		}
-		
-		
-	}
-
 }

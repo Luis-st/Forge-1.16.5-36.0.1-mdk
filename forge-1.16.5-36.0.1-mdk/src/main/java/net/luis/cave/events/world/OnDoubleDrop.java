@@ -4,9 +4,10 @@ import net.luis.cave.Cave;
 import net.luis.cave.init.CaveBlocks;
 import net.luis.cave.init.CaveEnchantment;
 import net.luis.cave.init.CaveTools;
+import net.luis.cave.lib.BlockManager;
+import net.luis.cave.lib.EnchantmentManager;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
@@ -36,7 +37,7 @@ public class OnDoubleDrop {
 				player.getHeldItemMainhand().getItem() == CaveTools.ENDERITE_SHOVEL.get() |
 				player.getHeldItemMainhand().getItem() == CaveTools.ENDERITE_HOE.get()) {
 				
-				if (Math.random() >= 0.98) {
+				if (Math.random() >= 0.99) {
 					
 					if (!player.abilities.isCreativeMode) {
 						
@@ -48,13 +49,13 @@ public class OnDoubleDrop {
 					
 			}
 			
-			if (EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.DOUBLE_DROPS.get(), player.getHeldItemMainhand()) == 1) {
+			if (EnchantmentManager.hasEnchantmentWithLevel(CaveEnchantment.DOUBLE_DROPS.get(), player.getHeldItemMainhand(), 1, false)) {
 					
 				if (player.abilities.isCreativeMode == false) {
 					
-					if (!blockBlackList(world, pos)) {
+					if (!BlockManager.doubleDropBlackList(world, pos)) {
 						
-						if (isOreBlock(world, pos)) {
+						if (BlockManager.isOreBlock(world, pos)) {
 							
 							ItemStack item = player.getHeldItemMainhand();
 							int maxDamage = item.getMaxDamage();
@@ -74,116 +75,6 @@ public class OnDoubleDrop {
 				}
 						
 			}
-			
-		}
-		
-	}
-	
-	private static boolean blockBlackList(World world, BlockPos pos) {
-		
-		if (world.getBlockState(pos).getBlock() == Blocks.COAL_BLOCK) {
-			
-			return true;
-			
-		} else if (world.getBlockState(pos).getBlock() == Blocks.IRON_BLOCK) {
-			
-			return true;
-			
-		} else if (world.getBlockState(pos).getBlock() == Blocks.GOLD_BLOCK) {
-			
-			return true;
-			
-		} else if (world.getBlockState(pos).getBlock() == Blocks.LAPIS_BLOCK) {
-			
-			return true;
-			
-		} else if (world.getBlockState(pos).getBlock() == Blocks.DIAMOND_BLOCK) {
-			
-			return true;
-			
-		} else if (world.getBlockState(pos).getBlock() == Blocks.REDSTONE_BLOCK) {
-			
-			return true;
-			
-		} else if (world.getBlockState(pos).getBlock() == Blocks.EMERALD_BLOCK) {
-			
-			return true;
-			
-		} else if (world.getBlockState(pos).getBlock() == Blocks.NETHERITE_BLOCK) {
-			
-			return true;
-			
-		} else if (world.getBlockState(pos).getBlock() == CaveBlocks.JADE_BLOCK.get()) {
-			
-			return true;
-			
-		} else if (world.getBlockState(pos).getBlock() == CaveBlocks.LIMONITE_BLOCK.get()) {
-			
-			return true;
-			
-		} else if (world.getBlockState(pos).getBlock() == CaveBlocks.ROSITE_BLOCK.get()) {
-			
-			return true;
-			
-		} else if (world.getBlockState(pos).getBlock() == CaveBlocks.RUBY_BLOCK.get()) {
-			
-			return true;
-			
-		} else if (world.getBlockState(pos).getBlock() == CaveBlocks.SAPHIRE_BLOCK.get()) {
-			
-			return true;
-			
-		} else if (world.getBlockState(pos).getBlock() == CaveBlocks.ENDERITE_BLOCK.get()) {
-			
-			return true;
-			
-		}
-		
-		return false;
-		
-	}
-	
-	private static boolean isOreBlock(World world, BlockPos pos) {
-		
-		if (world.getBlockState(pos).getBlock() == Blocks.COAL_ORE) {
-			
-			return true;
-			
-		} else if (world.getBlockState(pos).getBlock() == Blocks.IRON_ORE) {
-			
-			return true;
-			
-		} else if (world.getBlockState(pos).getBlock() == Blocks.GOLD_ORE) {
-			
-			return true;
-			
-		} else if (world.getBlockState(pos).getBlock() == Blocks.LAPIS_ORE) {
-			
-			return true;
-			
-		} else if (world.getBlockState(pos).getBlock() == Blocks.REDSTONE_ORE) {
-			
-			return true;
-			
-		} else if (world.getBlockState(pos).getBlock() == Blocks.DIAMOND_ORE) {
-			
-			return true;
-			
-		} else if (world.getBlockState(pos).getBlock() == Blocks.EMERALD_ORE) {
-			
-			return true;
-			
-		} else if (world.getBlockState(pos).getBlock() == Blocks.ANCIENT_DEBRIS) {
-			
-			return true;
-			
-		} else if (world.getBlockState(pos).getBlock() == CaveBlocks.ENDERITE_ORE.get()) {
-			
-			return true;
-			
-		} else {
-			
-			return false;
 			
 		}
 		
@@ -211,7 +102,15 @@ public class OnDoubleDrop {
 			
 			return 0.0025;
 			
-		} else if (world.getBlockState(pos).getBlock() == Blocks.DIAMOND_ORE) {
+		} else if (world.getBlockState(pos).getBlock() == CaveBlocks.JADE_ORE.get()) {
+			
+			return 0.003;
+			
+		} else if (world.getBlockState(pos).getBlock() == CaveBlocks.LIMONITE_ORE.get()) {
+			
+			return 0.004;
+			
+		}  else if (world.getBlockState(pos).getBlock() == Blocks.DIAMOND_ORE) {
 			
 			return 0.0065;
 			
@@ -219,9 +118,17 @@ public class OnDoubleDrop {
 			
 			return 0.004;
 			
+		} else if (world.getBlockState(pos).getBlock() == CaveBlocks.SAPHIRE_ORE.get()) {
+			
+			return 0.007;
+			
+		} else if (world.getBlockState(pos).getBlock() == CaveBlocks.ROSITE_ORE.get()) {
+			
+			return 0.008;
+			
 		} else if (world.getBlockState(pos).getBlock() == Blocks.ANCIENT_DEBRIS) {
 			
-			return 0.009;
+			return 0.01;
 			
 		} else if (world.getBlockState(pos).getBlock() == CaveBlocks.ENDERITE_ORE.get()) {
 			
@@ -238,7 +145,7 @@ public class OnDoubleDrop {
 	private static void setdamage(PlayerEntity player, ItemStack item, int maxDamage, double percent) {
 		
 		double damage = maxDamage * percent;
-		item.damageItem((int) damage, player, e -> e.sendBreakAnimation(EquipmentSlotType.MAINHAND));
+		item.damageItem(damage != 0 ? (int) damage : 1, player, e -> e.sendBreakAnimation(EquipmentSlotType.MAINHAND));
 		
 	}
 		

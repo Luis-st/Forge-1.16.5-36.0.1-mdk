@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Random;
 
 import net.luis.cave.Cave;
+import net.luis.cave.lib.EnchantmentManager;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentData;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -76,7 +77,7 @@ public class OnAnvilUpdateEvent {
 				
 			}
 			
-			if (isEnchanted(inputLeft, inputRight)) {
+			if (EnchantmentManager.isItemEnchanted(inputLeft, inputRight)) {
 				
 				Map<Enchantment, Integer> enchantmentsLeft = EnchantmentHelper.getEnchantments(inputLeft);
 				Map<Enchantment, Integer> enchantmentsRight = EnchantmentHelper.getEnchantments(inputRight);
@@ -95,26 +96,4 @@ public class OnAnvilUpdateEvent {
 		
 	}
 	
-	private static boolean isEnchanted(ItemStack inputLeft, ItemStack inputRight) {
-		
-		if (!inputLeft.isEnchanted() && !inputRight.isEnchanted()) {
-			
-			return false;
-			
-		} else if (inputLeft.isEnchanted() && !inputRight.isEnchanted()) {
-			
-			return true;
-			
-		} else if (!inputLeft.isEnchanted() && inputRight.isEnchanted()) {
-			
-			return true;
-			
-		} else {
-			
-			return true;
-			
-		}
-		
-	}
-
 }
