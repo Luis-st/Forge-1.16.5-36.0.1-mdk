@@ -5,12 +5,14 @@ import net.luis.cave.enchantment.Blasting;
 import net.luis.cave.enchantment.DoubleDrops;
 import net.luis.cave.enchantment.ElytraFalling;
 import net.luis.cave.enchantment.ElytraProtection;
+import net.luis.cave.enchantment.EnderSlayer;
 import net.luis.cave.enchantment.Experience;
 import net.luis.cave.enchantment.FrostAspect;
 import net.luis.cave.enchantment.Growth;
 import net.luis.cave.enchantment.Harvesting;
 import net.luis.cave.enchantment.PoisonAspect;
 import net.luis.cave.enchantment.Smelting;
+import net.luis.cave.enchantment.Thunderbolt;
 import net.luis.cave.enchantment.VoidWalker;
 import net.luis.cave.enchantment.curse.CurseOfBreaking;
 import net.luis.cave.enchantment.curse.CurseOfHarming;
@@ -99,8 +101,11 @@ public class CaveEnchantment {
 	public static final RegistryObject<Enchantment> FLAME = VANILLA_ENCHANTMENT.register("flame", 
 			() -> new Flame(Rarity.RARE, EnchantmentType.BREAKABLE, EquipmentSlotType.MAINHAND));
 	
-	public static final RegistryObject<Enchantment> ENDER_SLYAER = ENCHANTMENT.register("flame", 
-			() -> new Flame(Rarity.UNCOMMON, EnchantmentType.WEAPON, EquipmentSlotType.MAINHAND));
+	public static final RegistryObject<Enchantment> ENDER_SLYAER = ENCHANTMENT.register("ender_slayer", 
+			() -> new EnderSlayer(Rarity.UNCOMMON, EnchantmentType.WEAPON, EquipmentSlotType.MAINHAND));
+	
+	public static final RegistryObject<Enchantment> THUNDERBOLT = ENCHANTMENT.register("thunderbolt", 
+			() -> new Thunderbolt(Rarity.VERY_RARE, EnchantmentType.WEAPON, EquipmentSlotType.MAINHAND));
 	
 	
 
