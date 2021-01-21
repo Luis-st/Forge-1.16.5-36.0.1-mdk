@@ -51,7 +51,7 @@ public class CaveEnchantment {
 			() -> new FrostAspect(Rarity.RARE, EnchantmentType.WEAPON, EquipmentSlotType.MAINHAND));
 	
 	public static final RegistryObject<Enchantment> EXPERIENCE = ENCHANTMENT.register("experience", 
-			() -> new Experience(Rarity.UNCOMMON, EnchantmentType.DIGGER, EquipmentSlotType.MAINHAND));
+			() -> new Experience(Rarity.UNCOMMON, EnchantmentType.BREAKABLE, EquipmentSlotType.MAINHAND));
 	
 	public static final RegistryObject<Enchantment> SMELTING = ENCHANTMENT.register("smelting", 
 			() -> new Smelting(Rarity.RARE, EnchantmentType.DIGGER, EquipmentSlotType.MAINHAND));
