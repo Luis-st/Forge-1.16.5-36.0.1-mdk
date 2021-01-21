@@ -45,12 +45,10 @@ public class OnAnvilUpdateEvent {
 							
 							do {
 								
-								//Get a random Enchantment
 								List<Enchantment> enchantmenList = new ArrayList<Enchantment>(enchantments.keySet());
 								int random = new Random().nextInt(enchantmenList.size());
 								randomEnchantment = enchantmenList.get(random);
 								
-								//Get the Level of the Random Enchantment
 								List<Integer> levelList = new ArrayList<Integer>(enchantments.values());
 								randomEnchantmentLevel = levelList.get(random);
 								

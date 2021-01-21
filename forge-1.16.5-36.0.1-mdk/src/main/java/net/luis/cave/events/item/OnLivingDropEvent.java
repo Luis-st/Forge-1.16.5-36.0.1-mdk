@@ -45,60 +45,22 @@ public class OnLivingDropEvent {
 					
 				} else {
 					
-					setNoGravity(drops);
+					ItemManager.setNoGravityItem(drops);
 					
 				}
 				
 			} else {
 				
-				setNoGravity(drops);
+				ItemManager.setNoGravityItem(drops);
 				
 			}
 			
 		} else {
 			
-			setNoGravity(drops);
+			ItemManager.setNoGravityItem(drops);
 			
 		}
 		
 	}
 	
-	private static void setNoGravity(List<ItemEntity> drops) {
-		
-		drops.forEach(item -> {
-			
-			ItemEntity itemEntity = (ItemEntity) item.getItem().getAttachedEntity();
-			
-			if (ItemManager.isEnderite(itemEntity.getItem())) {
-				
-				itemEntity.setInvulnerable(true);
-				itemEntity.setNoGravity(true);
-				itemEntity.setMotion(0, 0, 0);
-				
-				if (itemEntity.getPosY() < 0) {
-					
-					itemEntity.setPositionAndUpdate(itemEntity.getPosX(), 3, itemEntity.getPosZ());
-					itemEntity.setInvulnerable(false);
-					
-				}
-				
-			} else if (ItemManager.isNight(itemEntity.getItem())) {
-				
-				itemEntity.setInvulnerable(true);
-				itemEntity.setNoGravity(true);
-				itemEntity.setMotion(0, 0, 0);
-				
-				if (itemEntity.getPosY() < 0) {
-					
-					itemEntity.setPositionAndUpdate(itemEntity.getPosX(), 3, itemEntity.getPosZ());
-					itemEntity.setInvulnerable(false);
-					
-				}
-				
-			}
-			
-		});
-		
-	}
-
 }

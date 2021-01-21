@@ -242,4 +242,57 @@ public class ItemManager {
 		
 	}
 	
+	public static void setNoGravityItem(List<ItemEntity> drops) {
+		
+		drops.forEach(item -> {
+			
+			ItemEntity itemEntity = (ItemEntity) item.getItem().getAttachedEntity();
+			
+			if (ItemManager.isEnderite(itemEntity.getItem())) {
+				
+				itemEntity.setInvulnerable(true);
+				itemEntity.setNoGravity(true);
+				itemEntity.setMotion(0, 0, 0);
+				
+				if (itemEntity.getPosY() < 0) {
+					
+					itemEntity.setPositionAndUpdate(itemEntity.getPosX(), 3, itemEntity.getPosZ());
+					itemEntity.setInvulnerable(false);
+					
+				}
+				
+			} else if (ItemManager.isNight(itemEntity.getItem())) {
+				
+				itemEntity.setInvulnerable(true);
+				itemEntity.setNoGravity(true);
+				itemEntity.setMotion(0, 0, 0);
+				
+				if (itemEntity.getPosY() < 0) {
+					
+					itemEntity.setPositionAndUpdate(itemEntity.getPosX(), 3, itemEntity.getPosZ());
+					itemEntity.setInvulnerable(false);
+					
+				}
+				
+			}
+			
+		});
+		
+	}
+	
+	public static void setNoGravityItem(ItemEntity itemEntity) {
+		
+		itemEntity.setInvulnerable(true);
+		itemEntity.setNoGravity(true);
+		itemEntity.setMotion(0, 0, 0);
+		
+		if (itemEntity.getPosY() < 0) {
+			
+			itemEntity.setPositionAndUpdate(itemEntity.getPosX(), 3, itemEntity.getPosZ());
+			itemEntity.setInvulnerable(false);
+			
+		}
+		
+	}
+	
 }

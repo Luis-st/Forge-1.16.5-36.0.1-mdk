@@ -6,6 +6,7 @@ import net.luis.cave.Cave;
 import net.luis.cave.init.CaveEnchantment;
 import net.luis.cave.lib.EnchantmentManager;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
@@ -66,11 +67,11 @@ public class OnEnchantment {
 		
 		if (enchGrowth > 0) {
 			
-			player.getAttribute(net.minecraft.entity.ai.attributes.Attributes.MAX_HEALTH).setBaseValue(20 + enchGrowth);
+			player.getAttribute(Attributes.MAX_HEALTH).setBaseValue(20 + enchGrowth);
 			
 		} else {
 			
-			player.getAttribute(net.minecraft.entity.ai.attributes.Attributes.MAX_HEALTH).setBaseValue(20);
+			player.getAttribute(Attributes.MAX_HEALTH).setBaseValue(20);
 			
 		}
 		

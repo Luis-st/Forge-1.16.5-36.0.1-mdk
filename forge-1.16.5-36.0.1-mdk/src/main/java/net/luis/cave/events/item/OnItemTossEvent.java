@@ -15,32 +15,15 @@ public class OnItemTossEvent {
 	public static void ItemToss(ItemTossEvent event) {
 		
 		ItemStack item = event.getEntityItem().getItem();
+		ItemEntity itemEntity = event.getEntityItem();
 		
 		if (ItemManager.isEnderite(item)) {
 			
-			ItemEntity itemEntity = event.getEntityItem();
-			itemEntity.setNoGravity(true);
-			itemEntity.setMotion(0, 0, 0);
-			
-			if (itemEntity.getPosY() < 0) {
-				
-				itemEntity.setPositionAndUpdate(itemEntity.getPosX(), 3, itemEntity.getPosZ());
-				itemEntity.setInvulnerable(false);
-				
-			}
+			ItemManager.setNoGravityItem(itemEntity);
 			
 		} else if (ItemManager.isNight(item)) {
 			
-			ItemEntity itemEntity = event.getEntityItem();
-			itemEntity.setNoGravity(true);
-			itemEntity.setMotion(0, 0, 0);
-			
-			if (itemEntity.getPosY() < 0) {
-				
-				itemEntity.setPositionAndUpdate(itemEntity.getPosX(), 3, itemEntity.getPosZ());
-				itemEntity.setInvulnerable(false);
-				
-			}
+			ItemManager.setNoGravityItem(itemEntity);
 			
 		}
 		

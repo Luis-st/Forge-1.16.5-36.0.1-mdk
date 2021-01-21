@@ -34,16 +34,13 @@ public class OnAnvilRepairEvent {
 		if (world.getBlockState(pos).getBlock() == CaveBlocks.INFINITE_ANVIL.get()) {
 			
 			event.setBreakChance(0f);
-			output.setRepairCost(output.getRepairCost() / 3);
 			
 		} else {
 			
 			event.setBreakChance(0.06f);
-			output.setRepairCost(output.getRepairCost() / 2);
 			
 		}
 		
-		//Run after AnvilUpdateEvent
 		if (inputLeft.isEnchanted()) {
 			
 			if (inputRight.getItem() instanceof BookItem) {
@@ -83,6 +80,8 @@ public class OnAnvilRepairEvent {
 			}
 			
 		}
+		
+		output.setRepairCost(output.getRepairCost() / 2);
 		
 	}
 
