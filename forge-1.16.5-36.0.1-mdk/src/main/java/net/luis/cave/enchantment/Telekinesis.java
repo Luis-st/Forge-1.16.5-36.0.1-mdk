@@ -35,7 +35,7 @@ public class Telekinesis extends Enchantment {
 	
 	@Override
 	protected boolean canApplyTogether(Enchantment ench) {
-		return ench != CaveEnchantment.BLASTING.get() && ench != CaveEnchantment.HARVESTING.get();
+		return ench != CaveEnchantment.BLASTING.get();
 	}
 
 }
