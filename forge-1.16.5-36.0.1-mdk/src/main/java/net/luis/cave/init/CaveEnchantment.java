@@ -107,6 +107,12 @@ public class CaveEnchantment {
 	public static final RegistryObject<Enchantment> THUNDERBOLT = ENCHANTMENT.register("thunderbolt", 
 			() -> new Thunderbolt(Rarity.VERY_RARE, EnchantmentType.WEAPON, EquipmentSlotType.MAINHAND));
 	
+	public static final RegistryObject<Enchantment> TELEKINESIS = ENCHANTMENT.register("telekinesis", 
+			() -> new Thunderbolt(Rarity.VERY_RARE, EnchantmentType.BREAKABLE, EquipmentSlotType.MAINHAND));
+	
+	public static final RegistryObject<Enchantment> REPLENISH = ENCHANTMENT.register("replenish", 
+			() -> new Thunderbolt(Rarity.VERY_RARE, EnchantmentType.DIGGER, EquipmentSlotType.MAINHAND));
+	
 	
 
 }

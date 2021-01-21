@@ -19,7 +19,7 @@ import net.minecraftforge.fml.common.Mod;
 public class OnHarvesting {
 	
 	@SubscribeEvent
-	public static void DropRuby(BlockEvent.BreakEvent event) {
+	public static void Harvesting(BlockEvent.BreakEvent event) {
 		
 		BlockPos pos = event.getPos();
 		World world = (World) event.getWorld();
@@ -29,33 +29,37 @@ public class OnHarvesting {
 		int enchHarvesting = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.HARVESTING.get(), player.getHeldItemMainhand());
 		int destroyCount = enchHarvesting != 0 ? ((enchHarvesting) * 5) - 1 : 0;
 		
-		if (!player.abilities.isCreativeMode) {
+		if (player instanceof PlayerEntity) {
 			
-			if (enchHarvesting != 0) {
+			if (!player.abilities.isCreativeMode) {
 				
-				if (BlockManager.isBrokenWood(block.getDefaultState())) {
+				if (enchHarvesting > 0) {
 					
-					int y = pos.getY() + 1;
-					
-					for (int i = 0; i < destroyCount; i++) {
+					if (BlockManager.isBrokenWood(block.getDefaultState())) {
 						
-						if (BlockManager.isBlockUpWood(world, pos.getX(), y, pos.getZ())) {
+						int y = pos.getY() + 1;
+						
+						for (int i = 0; i < destroyCount; i++) {
 							
-							world.destroyBlock(new BlockPos(pos.getX(), y, pos.getZ()), true);
-							
-							if (Math.random() >= 0.75) {
+							if (BlockManager.isBlockUpWood(world, pos.getX(), y, pos.getZ())) {
 								
-								ItemManager.unbreaking(player, item, EquipmentSlotType.MAINHAND);
+								world.destroyBlock(new BlockPos(pos.getX(), y, pos.getZ()), true);
+								
+								if (Math.random() >= 0.75) {
+									
+									ItemManager.unbreaking(player, item, EquipmentSlotType.MAINHAND);
+									
+								}
+								
+							} else {
+								
+								break;
 								
 							}
 							
-						} else {
-							
-							break;
+							y++;
 							
 						}
-						
-						y++;
 						
 					}
 					
