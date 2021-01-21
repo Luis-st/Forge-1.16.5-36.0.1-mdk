@@ -33,21 +33,18 @@ public class ElytraProtection extends Enchantment {
 	
 	@Override
 	protected boolean canApplyTogether(Enchantment ench) {
-		if (ench instanceof ProtectionEnchantment)
-			return false;
-		return true;
+		return !(ench instanceof ProtectionEnchantment);
 	}
 	
 	@Override
-	public boolean canApplyAtEnchantingTable(ItemStack stack) {	
+	public boolean canApply(ItemStack stack) {
 		if (stack.getItem() instanceof ElytraItem)
 			return true;
 		if (stack.getItem() == CaveArmor.ENDREITE_ELYTRA.get())
 			return true;
 		if (stack.getItem() == CaveArmor.NIGHT_ELYTRA.get())
 			return true;
-		return false;
-		
+		return super.canApply(stack);
 	}
 	
 }

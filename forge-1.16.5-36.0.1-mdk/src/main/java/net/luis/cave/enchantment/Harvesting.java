@@ -24,11 +24,8 @@ public class Harvesting extends Enchantment {
 	}
 	
 	@Override
-	public boolean canApplyAtEnchantingTable(ItemStack stack) {
-		if (stack.getItem() instanceof AxeItem)
-			return true;
-		return false;
-		
+	public boolean canApply(ItemStack stack) {
+		return stack.getItem() instanceof AxeItem;
 	}
 	
 	@Override

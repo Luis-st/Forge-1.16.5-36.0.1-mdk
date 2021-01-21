@@ -23,10 +23,8 @@ public class Experience extends Enchantment {
 	}
 	
 	@Override
-	public boolean canApplyAtEnchantingTable(ItemStack stack) {
-		if (stack.getItem() instanceof PickaxeItem)
-			return true;
-		return false;
+	public boolean canApply(ItemStack stack) {
+		return stack.getItem() instanceof PickaxeItem;
 	}
 	
 	@Override

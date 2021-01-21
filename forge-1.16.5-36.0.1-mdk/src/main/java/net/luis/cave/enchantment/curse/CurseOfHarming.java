@@ -60,7 +60,7 @@ public class CurseOfHarming extends Enchantment {
 	}
 	
 	@Override
-	public boolean canApplyAtEnchantingTable(ItemStack stack) {
+	public boolean canApply(ItemStack stack) {
 		if (stack.getItem() instanceof SwordItem)
 			return true;
 		if (stack.getItem() instanceof AxeItem)

@@ -22,9 +22,7 @@ public class PoisonAspect extends Enchantment {
 	
 	@Override
 	protected boolean canApplyTogether(Enchantment ench) {
-		if (ench != Enchantments.FIRE_ASPECT)
-			return true;;
-		return false;
+		return ench != Enchantments.FIRE_ASPECT;
 	}
 
 }
