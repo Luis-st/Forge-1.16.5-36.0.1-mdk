@@ -13,6 +13,7 @@ import net.minecraft.block.OreBlock;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
@@ -33,14 +34,29 @@ public class OnTelekinesis {
 		BlockState state = event.getState();
 		BlockPos pos = event.getPos();
 		IWorld world = event.getWorld();
+		int xp = event.getExpToDrop();
 		int enchTelekinesis = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.TELEKINESIS.get(), player.getHeldItemMainhand());
+		int enchExperience = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.EXPERIENCE.get(), player.getHeldItemMainhand());
 		int enchSmelting = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.SMELTING.get(), player.getHeldItemMainhand());
 		int enchDoubleDrop = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.DOUBLE_DROPS.get(), player.getHeldItemMainhand());
 		int enchFortune = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, player.getHeldItemMainhand());
+		int enchSilkTouch = EnchantmentHelper.getEnchantmentLevel(Enchantments.SILK_TOUCH, player.getHeldItemMainhand());
 
 		if (player instanceof PlayerEntity) {
 			
 			if (enchTelekinesis > 0) {
+				
+				if (enchExperience > 0) {
+					
+					if (enchSilkTouch == 0) {
+						
+						player.giveExperiencePoints((xp * ((enchExperience + 1) * ((enchExperience * 2) + enchFortune))) * (enchDoubleDrop + 1));
+						
+						event.setExpToDrop(0);
+						
+					}
+					
+				}
 				
 				event.setCanceled(true);
 				
@@ -90,6 +106,8 @@ public class OnTelekinesis {
 				}
 				
 				world.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
+				
+				ItemManager.unbreaking(player, player.getHeldItemMainhand(), EquipmentSlotType.MAINHAND);
 				
 			}
 			

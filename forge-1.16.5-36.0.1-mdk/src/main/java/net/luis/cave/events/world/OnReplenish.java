@@ -64,8 +64,6 @@ public class OnReplenish {
 							}
 							
 							ItemManager.unbreaking(player, player.getHeldItemMainhand(), EquipmentSlotType.MAINHAND);
-							ItemManager.unbreaking(player, player.getHeldItemMainhand(), EquipmentSlotType.MAINHAND);
-							ItemManager.unbreaking(player, player.getHeldItemMainhand(), EquipmentSlotType.MAINHAND);
 							
 						}
 						
