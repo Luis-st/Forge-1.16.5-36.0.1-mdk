@@ -4,6 +4,7 @@ import net.luis.cave.init.CaveBlocks;
 import net.luis.cave.init.CaveItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -13,6 +14,7 @@ import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.items.ItemHandlerHelper;
 
 public class BlockManager {
 	
@@ -78,7 +80,7 @@ public class BlockManager {
 		
 	}
 
-	public static void dropRuby(World world, BlockPos pos, PlayerEntity player, double chance) {
+	public static void addRuby(World world, BlockPos pos, PlayerEntity player, double chance) {
 		
 		double x = pos.getX();
 		double y = pos.getY();
@@ -91,6 +93,20 @@ public class BlockManager {
 				ItemEntity  item = new ItemEntity(world, x + 0.5, y + 0.5, z + 0.5, new ItemStack(CaveItems.RUBY.get()));
 				item.setPickupDelay(10);
 				world.addEntity(item);
+				
+			}
+			
+		}
+		
+	}
+	
+	public static void getRuby(PlayerEntity player, double chance) {
+		
+		if (Math.random() >= chance) {
+			
+			if (!player.abilities.isCreativeMode) {
+				
+				ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(CaveItems.RUBY.get()));
 				
 			}
 			
@@ -210,11 +226,11 @@ public class BlockManager {
 		
 	}
 	
-	public static void getSmelting(World world, BlockPos pos, PlayerEntity player) {
+	public static void addSmelting(World world, BlockPos pos, PlayerEntity player) {
 		
 		ItemEntity stack = ItemManager.creatSmeltingItem(world, pos);
 
-		if (player.abilities.isCreativeMode == false) {
+		if (!player.abilities.isCreativeMode) {
 			
 			world.addEntity(stack);
 			
@@ -222,20 +238,29 @@ public class BlockManager {
 		
 	}
 	
-	public static void getFortuneSmelting(World world, BlockPos pos, PlayerEntity player) {
+	public static ItemStack getSmelting(World world, BlockPos pos, PlayerEntity player) {
+		
+		ItemStack stack = ItemManager.creatSmeltingItemStack(world, pos);
+		
+		return stack;
+		
+	}
+	
+	public static void addFortuneSmelting(World world, BlockPos pos, PlayerEntity player) {
 		
 		ItemEntity stack0 = ItemManager.creatSmeltingItem(world, pos);
 		ItemEntity stack1 = ItemManager.creatSmeltingItem(world, pos);
 		ItemEntity stack2 = ItemManager.creatSmeltingItem(world, pos);
 		ItemEntity stack3 = ItemManager.creatSmeltingItem(world, pos);
+		int enchFortune = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, player.getHeldItemMainhand());
 		
-		if (player.abilities.isCreativeMode == false) {
+		if (!player.abilities.isCreativeMode) {
 			
-			if (EnchantmentManager.hasEnchantmentWithLevel(Enchantments.FORTUNE, player.getHeldItemMainhand(), 0, false)) {
+			if (enchFortune == 0) {
 				
 				world.addEntity(stack0);
 				
-			} else if (EnchantmentManager.hasEnchantmentWithLevel(Enchantments.FORTUNE, player.getHeldItemMainhand(), 1, false)) {
+			} else if (enchFortune == 1) {
 				
 				if (Math.random() >= 0.95) {
 						
@@ -248,7 +273,7 @@ public class BlockManager {
 					
 				}		
 				
-			} else if (EnchantmentManager.hasEnchantmentWithLevel(Enchantments.FORTUNE, player.getHeldItemMainhand(), 2, false)) {
+			} else if (enchFortune == 2) {
 				
 				if (Math.random() >= 0.95) {
 						
@@ -267,7 +292,7 @@ public class BlockManager {
 					
 				}
 				
-			} else if (EnchantmentManager.hasEnchantmentWithLevel(Enchantments.FORTUNE, player.getHeldItemMainhand(), 3, false)) {
+			} else if (enchFortune == 3) {
 				
 				if (Math.random() >= 0.95) {
 					
@@ -298,5 +323,5 @@ public class BlockManager {
 		}
 		
 	}
-
+	
 }

@@ -25,7 +25,7 @@ public class OnReplenish {
 		BlockPos pos = event.getPos();
 		World world = (World) event.getWorld();
 		PlayerEntity player = event.getPlayer();
-		BlockState state = world.getBlockState(pos);
+		BlockState state = event.getState();
 		int enchReplenish = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.REPLENISH.get(), player.getHeldItemMainhand());
 		
 		if (player instanceof PlayerEntity) {
@@ -63,11 +63,9 @@ public class OnReplenish {
 								
 							}
 							
-							for (int i = 0; i < player.getRNG().nextInt(4); i++) {
-								
-								ItemManager.unbreaking(player, player.getHeldItemMainhand(), EquipmentSlotType.MAINHAND);
-								
-							}
+							ItemManager.unbreaking(player, player.getHeldItemMainhand(), EquipmentSlotType.MAINHAND);
+							ItemManager.unbreaking(player, player.getHeldItemMainhand(), EquipmentSlotType.MAINHAND);
+							ItemManager.unbreaking(player, player.getHeldItemMainhand(), EquipmentSlotType.MAINHAND);
 							
 						}
 						

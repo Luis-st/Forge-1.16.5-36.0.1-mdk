@@ -4,10 +4,10 @@ import net.luis.cave.Cave;
 import net.luis.cave.init.CaveEnchantment;
 import net.luis.cave.init.CaveTools;
 import net.luis.cave.lib.BlockManager;
-import net.luis.cave.lib.EnchantmentManager;
 import net.luis.cave.lib.ItemManager;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.OreBlock;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
@@ -26,26 +26,56 @@ public class OnSmeltingDrop {
 		BlockPos pos = event.getPos();
 		World world = (World) event.getWorld();
 		PlayerEntity player = event.getPlayer();
+		int enchTelekinesis = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.TELEKINESIS.get(), player.getHeldItemMainhand());
+		int enchSmelting = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.SMELTING.get(), player.getHeldItemMainhand());
 
 		if(player instanceof PlayerEntity) {
 			
-			if (player.abilities.isCreativeMode == false) {
+			if (enchTelekinesis == 0) {
 				
-				if (player.getHeldItemMainhand().getItem() == CaveTools.BLAZING_AXE.get() |
-					player.getHeldItemMainhand().getItem() == CaveTools.BLAZING_PICKAXE.get() |
-					player.getHeldItemMainhand().getItem() == CaveTools.BLAZING_SHOVEL.get()) {
+				if (!player.abilities.isCreativeMode) {
+					
+					if (player.getHeldItemMainhand().getItem() == CaveTools.BLAZING_AXE.get() |
+						player.getHeldItemMainhand().getItem() == CaveTools.BLAZING_PICKAXE.get() |
+						player.getHeldItemMainhand().getItem() == CaveTools.BLAZING_SHOVEL.get()) {
+								
+						if (player.isSneaking() == false) {
 							
-					if (player.isSneaking() == false) {
+							if (BlockManager.hasSmelting(world, pos) && !BlockManager.smeltingBlackList(world, pos)) {
+								
+								if (world.getBlockState(pos).getBlock() instanceof OreBlock) {
+									
+									BlockManager.addFortuneSmelting(world, pos, player);
+									
+								} else {
+									
+									BlockManager.addSmelting(world, pos, player);
+									
+								}
+								
+								event.setCanceled(true);
+								world.setBlockState(pos, Blocks.CAVE_AIR.getDefaultState());
+								
+								ItemStack stack = player.getHeldItemMainhand();
+								ItemManager.unbreaking(player, stack, EquipmentSlotType.MAINHAND);
+									
+							}
+							
+						}
+								
+					}
 						
-						if (BlockManager.hasSmelting(world, pos) && !BlockManager.smeltingBlackList(world, pos)) {
+					if (enchSmelting > 0) {
+						
+						if (BlockManager.hasSmelting(world, pos)) { 
 							
 							if (world.getBlockState(pos).getBlock() instanceof OreBlock) {
 								
-								BlockManager.getFortuneSmelting(world, pos, player);
+								BlockManager.addFortuneSmelting(world, pos, player);
 								
 							} else {
 								
-								BlockManager.getSmelting(world, pos, player);
+								BlockManager.addSmelting(world, pos, player);
 								
 							}
 							
@@ -54,33 +84,9 @@ public class OnSmeltingDrop {
 							
 							ItemStack stack = player.getHeldItemMainhand();
 							ItemManager.unbreaking(player, stack, EquipmentSlotType.MAINHAND);
-								
+									
 						}
 						
-					}
-							
-				}
-					
-				if (EnchantmentManager.hasEnchantmentWithLevel(CaveEnchantment.SMELTING.get(), player.getHeldItemMainhand(), 1, true)) {
-					
-					if (BlockManager.hasSmelting(world, pos)) { 
-						
-						if (world.getBlockState(pos).getBlock() instanceof OreBlock) {
-							
-							BlockManager.getFortuneSmelting(world, pos, player);
-							
-						} else {
-							
-							BlockManager.getSmelting(world, pos, player);
-							
-						}
-						
-						event.setCanceled(true);
-						world.setBlockState(pos, Blocks.CAVE_AIR.getDefaultState());
-						
-						ItemStack stack = player.getHeldItemMainhand();
-						ItemManager.unbreaking(player, stack, EquipmentSlotType.MAINHAND);
-								
 					}
 					
 				}

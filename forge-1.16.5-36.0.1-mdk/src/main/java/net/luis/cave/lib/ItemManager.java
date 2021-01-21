@@ -154,4 +154,92 @@ public class ItemManager {
 		
 	}
 	
+	public static ItemStack creatSmeltingItemStack(World world, BlockPos pos) {
+		
+		ItemStack smeltingItem = world.getRecipeManager().getRecipe(IRecipeType.SMELTING,
+				new Inventory(new ItemStack((world.getBlockState(pos)).getBlock())),
+				world).get().getRecipeOutput().copy();
+		
+		return smeltingItem;
+		
+	}
+	
+	public static List<ItemStack> getFortuneSmelting(World world, BlockPos pos, PlayerEntity player) {
+		
+		ItemStack stack = ItemManager.creatSmeltingItemStack(world, pos);
+		int enchFortune = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, player.getHeldItemMainhand());
+		List<ItemStack> itemList = new ArrayList<ItemStack>();
+		
+		if (!player.abilities.isCreativeMode) {
+			
+			if (enchFortune == 0) {
+				
+				itemList.add(stack);
+				
+			} else if (enchFortune == 1) {
+				
+				if (Math.random() >= 0.95) {
+						
+					itemList.add(stack);
+					itemList.add(stack);
+		
+				} else {
+					
+					itemList.add(stack);
+					
+				}		
+				
+			} else if (enchFortune == 2) {
+				
+				if (Math.random() >= 0.95) {
+						
+					itemList.add(stack);
+					itemList.add(stack);
+					itemList.add(stack);
+		
+				} else if (Math.random() >= 0.9) {
+						
+					itemList.add(stack);
+					itemList.add(stack);
+						
+				} else {
+					
+					itemList.add(stack);
+					
+				}
+				
+			} else if (enchFortune == 3) {
+				
+				if (Math.random() >= 0.95) {
+					
+					itemList.add(stack);
+					itemList.add(stack);
+					itemList.add(stack);
+					itemList.add(stack);
+						
+				} else if (Math.random() >= 0.9) {
+						
+					itemList.add(stack);
+					itemList.add(stack);
+					itemList.add(stack);
+					
+				} else if (Math.random() >= 0.85) {
+					
+					itemList.add(stack);
+					itemList.add(stack);
+						
+				} else {
+					
+					itemList.add(stack);
+					
+				}
+				
+			}
+			
+		}
+		
+		return itemList;
+		
+	}
+	
 }

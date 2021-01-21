@@ -38,6 +38,7 @@ public class OnEntityAttack {
 				
 				int enchPoison = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.POISON_ASPECT.get(), player.getHeldItemMainhand());
 				int enchFrost = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.FROST_ASPECT.get(), player.getHeldItemMainhand());
+				int enchThunderbolt = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.THUNDERBOLT.get(), player.getHeldItemMainhand());
 				
 				if (enchPoison > 0) {
 					
@@ -65,13 +66,15 @@ public class OnEntityAttack {
 					
 				}
 				
-				if (EnchantmentManager.hasEnchantmentWithLevel(CaveEnchantment.THUNDERBOLT.get(), player.getHeldItemMainhand(), 1, false)) {
+				if (enchThunderbolt > 0) {
 					
 					MinecraftServer server = player.getEntityWorld().getServer();
 					
 					LightningBoltEntity lightning = new LightningBoltEntity(EntityType.LIGHTNING_BOLT, world);
 					lightning.setLocationAndAngles(target.getPosX(), target.getPosY(), target.getPosZ(), world.rand.nextFloat() * 360, 0);
 					world.addEntity(lightning);
+					
+//					((ServerWorld) world).func_241113_a_(0, world.rand.nextInt(1000), true, true);
 					
 					if (server != null) {
 						

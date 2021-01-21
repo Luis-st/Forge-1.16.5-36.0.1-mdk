@@ -4,7 +4,7 @@ import net.luis.cave.Cave;
 import net.luis.cave.init.CaveEnchantment;
 import net.luis.cave.lib.BlockManager;
 import net.luis.cave.lib.ItemManager;
-import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -24,7 +24,7 @@ public class OnHarvesting {
 		BlockPos pos = event.getPos();
 		World world = (World) event.getWorld();
 		PlayerEntity player = event.getPlayer();
-		Block block = world.getBlockState(pos).getBlock();
+		BlockState state = event.getState();
 		ItemStack item = player.getHeldItemMainhand();
 		int enchHarvesting = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.HARVESTING.get(), player.getHeldItemMainhand());
 		int destroyCount = enchHarvesting != 0 ? ((enchHarvesting) * 5) - 1 : 0;
@@ -35,7 +35,7 @@ public class OnHarvesting {
 				
 				if (enchHarvesting > 0) {
 					
-					if (BlockManager.isBrokenWood(block.getDefaultState())) {
+					if (BlockManager.isBrokenWood(state)) {
 						
 						int y = pos.getY() + 1;
 						
