@@ -182,9 +182,9 @@ public class Bow extends ShootableItem implements IVanishable {
 	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand) {
 		
 		ItemStack itemstack = player.getHeldItem(hand);
-		boolean flag = !player.findAmmo(itemstack).isEmpty();
+		boolean hasAmmo = !player.findAmmo(itemstack).isEmpty();
 
-		ActionResult<ItemStack> ret = net.minecraftforge.event.ForgeEventFactory.onArrowNock(itemstack, world, player, hand, flag);
+		ActionResult<ItemStack> ret = ForgeEventFactory.onArrowNock(itemstack, world, player, hand, hasAmmo);
 		
 		if (ret != null) {
 			
@@ -192,7 +192,7 @@ public class Bow extends ShootableItem implements IVanishable {
 			
 		}
 			
-		if (!player.abilities.isCreativeMode && !flag) {
+		if (!player.abilities.isCreativeMode && !hasAmmo) {
 			
 			return ActionResult.resultFail(itemstack);
 			
