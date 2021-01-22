@@ -5,7 +5,6 @@ import net.luis.cave.blocks.BeeTable;
 import net.luis.cave.blocks.InfiniteAnvil;
 import net.luis.cave.blocks.PowderSnow;
 import net.luis.cave.blocks.SmeltingFurnace;
-import net.luis.cave.blocks.TintedGlass;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -71,7 +70,5 @@ public class CaveBlocks {
 	public static final RegistryObject<Block> SMELTING_FURNACE = BLOCKS.register("smelting_furnace", SmeltingFurnace::new);
 	
 	public static final RegistryObject<Block> BEE_TABLE = BLOCKS.register("bee_table", BeeTable::new);
-	
-	public static final RegistryObject<Block> TINTED_GLASS = BLOCKS.register("tinted_glass", TintedGlass::new);
 
 }

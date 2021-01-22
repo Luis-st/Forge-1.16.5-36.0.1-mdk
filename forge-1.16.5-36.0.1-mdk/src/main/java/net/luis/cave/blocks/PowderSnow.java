@@ -4,6 +4,7 @@ import net.luis.cave.init.CaveItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.BreakableBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -25,7 +26,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
-public class PowderSnow extends Block {
+public class PowderSnow extends BreakableBlock {
 
 	public PowderSnow() {
 		
@@ -133,7 +134,12 @@ public class PowderSnow extends Block {
 		
 		if (player.getHeldItemMainhand().getItem() == Items.BUCKET) {
 			
-			player.setHeldItem(hand, item);
+			if (!player.abilities.isCreativeMode) {
+				
+				player.setHeldItem(hand, item);
+				
+			}
+			
 			world.setBlockState(pos, Blocks.AIR.getDefaultState());
 			
 			return ActionResultType.SUCCESS;

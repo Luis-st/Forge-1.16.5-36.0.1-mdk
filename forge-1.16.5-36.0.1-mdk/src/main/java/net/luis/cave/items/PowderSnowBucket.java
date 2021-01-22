@@ -37,8 +37,13 @@ public class PowderSnowBucket extends Item {
 		case UP: 	if (world.getBlockState(pos.up()).getBlock() ==  Blocks.AIR |
 						world.getBlockState(pos.up()).getBlock() ==  Blocks.CAVE_AIR) {
 			
-							world.setBlockState(pos.up(), CaveBlocks.POWDER_SNOW.get().getDefaultState());
+						world.setBlockState(pos.up(), CaveBlocks.POWDER_SNOW.get().getDefaultState());
+							
+						if (!player.abilities.isCreativeMode) {
+							
 							player.setHeldItem(Hand.MAIN_HAND, item);
+							
+						}
 						
 						return ActionResultType.SUCCESS;
 			
@@ -47,8 +52,13 @@ public class PowderSnowBucket extends Item {
 		case DOWN: 	if (world.getBlockState(pos.down()).getBlock() ==  Blocks.AIR |
 						world.getBlockState(pos.down()).getBlock() ==  Blocks.CAVE_AIR) {
 			
-							world.setBlockState(pos.down(), CaveBlocks.POWDER_SNOW.get().getDefaultState());
+						world.setBlockState(pos.down(), CaveBlocks.POWDER_SNOW.get().getDefaultState());
+							
+						if (!player.abilities.isCreativeMode) {
+								
 							player.setHeldItem(Hand.MAIN_HAND, item);
+								
+						}
 				
 						return ActionResultType.SUCCESS;
 	
@@ -57,8 +67,13 @@ public class PowderSnowBucket extends Item {
 		case NORTH:	if (world.getBlockState(pos.north()).getBlock() ==  Blocks.AIR |
 						world.getBlockState(pos.north()).getBlock() ==  Blocks.CAVE_AIR) {
 			
-							world.setBlockState(pos.north(), CaveBlocks.POWDER_SNOW.get().getDefaultState());
+						world.setBlockState(pos.north(), CaveBlocks.POWDER_SNOW.get().getDefaultState());
+							
+						if (!player.abilities.isCreativeMode) {
+								
 							player.setHeldItem(Hand.MAIN_HAND, item);
+								
+						}
 				
 						return ActionResultType.SUCCESS;
 	
@@ -67,8 +82,13 @@ public class PowderSnowBucket extends Item {
 		case EAST:	if (world.getBlockState(pos.east()).getBlock() ==  Blocks.AIR |
 						world.getBlockState(pos.east()).getBlock() ==  Blocks.CAVE_AIR) {
 			
-							world.setBlockState(pos.east(), CaveBlocks.POWDER_SNOW.get().getDefaultState());
+						world.setBlockState(pos.east(), CaveBlocks.POWDER_SNOW.get().getDefaultState());
+							
+						if (!player.abilities.isCreativeMode) {
+								
 							player.setHeldItem(Hand.MAIN_HAND, item);
+								
+						}
 				
 						return ActionResultType.SUCCESS;
 	
@@ -77,8 +97,13 @@ public class PowderSnowBucket extends Item {
 		case SOUTH: if (world.getBlockState(pos.south()).getBlock() ==  Blocks.AIR |
 						world.getBlockState(pos.south()).getBlock() ==  Blocks.CAVE_AIR) {
 			
-							world.setBlockState(pos.south(), CaveBlocks.POWDER_SNOW.get().getDefaultState());
+						world.setBlockState(pos.south(), CaveBlocks.POWDER_SNOW.get().getDefaultState());
+							
+						if (!player.abilities.isCreativeMode) {
+								
 							player.setHeldItem(Hand.MAIN_HAND, item);
+								
+						}
 				
 						return ActionResultType.SUCCESS;
 	
@@ -87,8 +112,13 @@ public class PowderSnowBucket extends Item {
 		case WEST: 	if (world.getBlockState(pos.west()).getBlock() ==  Blocks.AIR |
 						world.getBlockState(pos.west()).getBlock() ==  Blocks.CAVE_AIR) {
 			
-							world.setBlockState(pos.west(), CaveBlocks.POWDER_SNOW.get().getDefaultState());
+						world.setBlockState(pos.west(), CaveBlocks.POWDER_SNOW.get().getDefaultState());
+						
+						if (!player.abilities.isCreativeMode) {
+							
 							player.setHeldItem(Hand.MAIN_HAND, item);
+							
+						}
 				
 						return ActionResultType.SUCCESS;
 	

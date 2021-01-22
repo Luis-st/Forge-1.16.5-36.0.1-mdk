@@ -6,6 +6,7 @@ import net.luis.cave.items.FungusSoup;
 import net.luis.cave.items.MiningStar;
 import net.luis.cave.items.PowderSnowBucket;
 import net.luis.cave.items.RubyApple;
+import net.luis.cave.items.Spyglass;
 import net.luis.cave.items.vanilla.Sugar;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;
@@ -74,6 +75,8 @@ public class CaveItems {
 			() -> new Item(new Item.Properties().group(Cave.MISC).isImmuneToFire()));
 	
 	public static final RegistryObject<Item> MINING_STAR = ITEMS.register("mining_star", MiningStar::new);
+	
+	public static final RegistryObject<Item> SPYGLASS = ITEMS.register("spyglass", Spyglass::new);
 	
 }
 

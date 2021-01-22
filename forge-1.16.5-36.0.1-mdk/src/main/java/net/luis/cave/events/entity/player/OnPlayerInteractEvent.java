@@ -21,7 +21,7 @@ public class OnPlayerInteractEvent {
 	private static final Method startConverting = ObfuscationReflectionHelper.findMethod(ZombieVillagerEntity.class, "func_191991_a", UUID.class, int.class);
 	
 	@SubscribeEvent
-	public static void PlayerInteractEvent(PlayerInteractEvent.EntityInteractSpecific event) {
+	public static void PlayerInteract(PlayerInteractEvent.EntityInteractSpecific event) {
 		
 		PlayerEntity player = event.getPlayer();
 		LivingEntity target = (LivingEntity) event.getTarget();
