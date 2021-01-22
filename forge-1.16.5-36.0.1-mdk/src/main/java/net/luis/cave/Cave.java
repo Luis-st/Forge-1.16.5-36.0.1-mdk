@@ -13,6 +13,8 @@ import net.luis.cave.villagers.PointOfInterestTypes;
 import net.luis.cave.villagers.VillagerUtil;
 import net.luis.cave.world.gen.OreGen;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -64,7 +66,7 @@ public class Cave {
 	
 	private void doClientStuff(FMLClientSetupEvent event) {
 		
-		
+		RenderTypeLookup.setRenderLayer(CaveBlocks.TINTED_GLASS.get(), RenderType.getTranslucent());
 		
 	}
 	
