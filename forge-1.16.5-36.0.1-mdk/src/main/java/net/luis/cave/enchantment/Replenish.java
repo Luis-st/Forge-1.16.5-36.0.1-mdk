@@ -1,5 +1,6 @@
 package net.luis.cave.enchantment;
 
+import net.luis.cave.init.CaveEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentType;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -31,6 +32,11 @@ public class Replenish extends Enchantment {
 	@Override
 	public boolean canApply(ItemStack stack) {
 		return stack.getItem() instanceof HoeItem;
+	}
+	
+	@Override
+	protected boolean canApplyTogether(Enchantment ench) {
+		return ench != CaveEnchantment.BLASTING.get() || ench != CaveEnchantment.SMELTING.get();
 	}
 
 }

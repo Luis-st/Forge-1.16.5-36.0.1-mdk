@@ -41,6 +41,8 @@ public class Smelting extends Enchantment {
 			return true;
 		if (ench != CaveEnchantment.DOUBLE_DROPS.get())
 			return true;
+		if (ench != CaveEnchantment.BLASTING.get())
+			return true;
 		return false;
 	}
 

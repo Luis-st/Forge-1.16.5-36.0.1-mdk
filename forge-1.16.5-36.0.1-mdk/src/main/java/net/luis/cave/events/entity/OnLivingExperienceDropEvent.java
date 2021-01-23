@@ -28,7 +28,11 @@ public class OnLivingExperienceDropEvent {
 		} else if (enchExperience > 0 && enchTelekinesis > 0) {
 			
 			player.giveExperiencePoints(xp * ((enchExperience + 1) * ((enchExperience * 2) + enchLooting)));
+			event.setDroppedExperience(0);
 			
+		} else if (enchTelekinesis > 0) {
+			
+			player.giveExperiencePoints(xp);
 			event.setDroppedExperience(0);
 			
 		}
