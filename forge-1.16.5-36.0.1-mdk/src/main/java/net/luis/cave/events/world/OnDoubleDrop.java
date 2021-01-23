@@ -5,7 +5,6 @@ import net.luis.cave.init.CaveBlocks;
 import net.luis.cave.init.CaveEnchantment;
 import net.luis.cave.init.CaveTools;
 import net.luis.cave.lib.BlockManager;
-import net.luis.cave.lib.ItemManager;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
