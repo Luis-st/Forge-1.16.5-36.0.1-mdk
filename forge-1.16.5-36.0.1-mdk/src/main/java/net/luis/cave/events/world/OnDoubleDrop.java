@@ -5,6 +5,7 @@ import net.luis.cave.init.CaveBlocks;
 import net.luis.cave.init.CaveEnchantment;
 import net.luis.cave.init.CaveTools;
 import net.luis.cave.lib.BlockManager;
+import net.luis.cave.lib.ItemManager;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -37,48 +38,50 @@ public class OnDoubleDrop {
 			if (enchTelekinesis == 0) {
 				
 				if (player.getHeldItemMainhand().getItem() == CaveTools.ENDERITE_PICKAXE.get() | 
-						player.getHeldItemMainhand().getItem() == CaveTools.ENDERITE_AXE.get() | 
-						player.getHeldItemMainhand().getItem() == CaveTools.ENDERITE_SHOVEL.get() |
-						player.getHeldItemMainhand().getItem() == CaveTools.ENDERITE_HOE.get()) {
-						
-						if (Math.random() >= 0.99) {
-							
-							if (!player.abilities.isCreativeMode) {
-								
-								Block.spawnDrops(world.getBlockState(pos), world, new BlockPos(x + 0.5, y + 0.5, z + 0.5));
-								
-							}
-								
-						}
-							
-					}
+					player.getHeldItemMainhand().getItem() == CaveTools.ENDERITE_AXE.get() | 
+					player.getHeldItemMainhand().getItem() == CaveTools.ENDERITE_SHOVEL.get() |
+					player.getHeldItemMainhand().getItem() == CaveTools.ENDERITE_HOE.get()) {
 					
-					if (enchDoubleDrop > 0) {
+					if (Math.random() >= 0.99) {
+
+						if (!player.abilities.isCreativeMode) {
+
+							Block.spawnDrops(world.getBlockState(pos), world, new BlockPos(x + 0.5, y + 0.5, z + 0.5));
 							
-						if (player.abilities.isCreativeMode == false) {
-							
-							if (!BlockManager.doubleDropBlackList(world, pos)) {
-								
-								if (BlockManager.isOreBlock(world, pos)) {
-									
-									ItemStack item = player.getHeldItemMainhand();
-									int maxDamage = item.getMaxDamage();
-									double percent = setPercent(world, pos);
-									
-									Block.spawnDrops(world.getBlockState(pos), world, new BlockPos(x + 0.5, y + 0.5, z + 0.5));
-									setdamage(player, item, maxDamage, percent);
-									
-								} else {
-									
-									Block.spawnDrops(world.getBlockState(pos), world, new BlockPos(x + 0.5, y + 0.5, z + 0.5));
-									
-								}
-								
-							}
-								
 						}
-								
+
 					}
+
+				}
+
+				if (enchDoubleDrop > 0) {
+
+					if (player.abilities.isCreativeMode == false) {
+
+						if (!BlockManager.doubleDropBlackList(world, pos)) {
+
+							if (BlockManager.isOreBlock(world, pos)) {
+
+								ItemStack item = player.getHeldItemMainhand();
+								int maxDamage = item.getMaxDamage();
+								double percent = setPercent(world, pos);
+
+								Block.spawnDrops(world.getBlockState(pos), world,
+										new BlockPos(x + 0.5, y + 0.5, z + 0.5));
+								setdamage(player, item, maxDamage, percent);
+
+							} else {
+
+								Block.spawnDrops(world.getBlockState(pos), world,
+										new BlockPos(x + 0.5, y + 0.5, z + 0.5));
+
+							}
+
+						}
+
+					}
+
+				}
 				
 			}
 			

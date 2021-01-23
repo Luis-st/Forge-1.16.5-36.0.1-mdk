@@ -50,7 +50,7 @@ public class OnDropRuby {
 						
 					}
 					
-				} else if (enchSilkTouch == 0) {
+				} else if (enchSilkTouch == 0 && enchTelekinesis > 0) {
 					
 					if (enchFortune == 0) {
 						

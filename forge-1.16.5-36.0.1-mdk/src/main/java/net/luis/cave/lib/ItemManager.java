@@ -2,15 +2,16 @@ package net.luis.cave.lib;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 import net.luis.cave.init.CaveArmor;
 import net.luis.cave.init.CaveItems;
 import net.luis.cave.init.CaveTools;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -101,35 +102,54 @@ public class ItemManager {
 		
 	}
 	
-	public static void unbreaking(PlayerEntity player, ItemStack stack, EquipmentSlotType type) {
+	public static <T extends LivingEntity> void damageItem(ItemStack stack, int amount, T entity, Consumer<T> onBroken, boolean enableUnbreaking) {
 		
-		int enchUnbreaking = EnchantmentHelper.getEnchantmentLevel(Enchantments.UNBREAKING, player.getHeldItemMainhand());
-		
-		if (enchUnbreaking == 0) {
+		if (!entity.world.isRemote && (!(entity instanceof PlayerEntity) || !((PlayerEntity) entity).abilities.isCreativeMode)) {
 			
-			stack.damageItem(1, player, e -> e.sendBreakAnimation(type));
-			
-		} else if (enchUnbreaking == 1) {
-			
-			if (Math.random() >= 0.5) {
+			if (stack.isDamageable()) {
 				
-				stack.damageItem(1, player, e -> e.sendBreakAnimation(type));
+				amount = stack.getItem().damageItem(stack, amount, entity, onBroken);
 				
-			}
-			
-		} else if (enchUnbreaking == 2) {
-			
-			if (Math.random() >= 0.67) {
-				
-				stack.damageItem(1, player, e -> e.sendBreakAnimation(type));
-				
-			}
-			
-		} else if (enchUnbreaking == 3) {
-			
-			if (Math.random() >= 0.75) {
-				
-				stack.damageItem(1, player, e -> e.sendBreakAnimation(type));
+				if (!enableUnbreaking) {
+					
+					stack.setDamage(stack.getDamage() + amount);
+
+					
+				} else {
+					
+					int enchUnbreaking = EnchantmentHelper.getEnchantmentLevel(Enchantments.UNBREAKING, entity.getHeldItemMainhand());
+					
+					if (enchUnbreaking == 0) {
+						
+						stack.setDamage(stack.getDamage() + amount);
+						
+					} else if (enchUnbreaking == 1) {
+						
+						if (Math.random() >= 0.5) {
+							
+							stack.setDamage(stack.getDamage() + amount);
+							
+						}
+						
+					} else if (enchUnbreaking == 2) {
+						
+						if (Math.random() >= 0.67) {
+							
+							stack.setDamage(stack.getDamage() + amount);
+							
+						}
+						
+					} else if (enchUnbreaking == 3) {
+						
+						if (Math.random() >= 0.75) {
+							
+							stack.setDamage(stack.getDamage() + amount);
+							
+						}
+						
+					}
+					
+				}
 				
 			}
 			

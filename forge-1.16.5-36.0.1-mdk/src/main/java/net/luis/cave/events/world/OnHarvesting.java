@@ -48,9 +48,9 @@ public class OnHarvesting {
 								
 								world.destroyBlock(new BlockPos(pos.getX(), y, pos.getZ()), true);
 								
-								if (Math.random() >= 0.75) {
+								if (Math.random() >= 0.66) {
 									
-									ItemManager.unbreaking(player, player.getHeldItemMainhand(), EquipmentSlotType.MAINHAND);
+									player.getHeldItemMainhand().damageItem(1, player, e -> e.sendBreakAnimation(EquipmentSlotType.MAINHAND));
 									
 								}
 								
@@ -80,9 +80,9 @@ public class OnHarvesting {
 								
 								ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(Item.getItemFromBlock(state.getBlock())));
 								
-								if (Math.random() >= 0.75) {
+								if (Math.random() >= 0.5) {
 									
-									ItemManager.unbreaking(player, player.getHeldItemMainhand(), EquipmentSlotType.MAINHAND);
+									player.getHeldItemMainhand().damageItem(1, player, e -> e.sendBreakAnimation(EquipmentSlotType.MAINHAND));
 									
 								}
 								

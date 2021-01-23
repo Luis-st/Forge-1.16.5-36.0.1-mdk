@@ -4,7 +4,6 @@ import net.luis.cave.Cave;
 import net.luis.cave.init.CaveEnchantment;
 import net.luis.cave.init.CaveTools;
 import net.luis.cave.lib.BlockManager;
-import net.luis.cave.lib.ItemManager;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.OreBlock;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -57,7 +56,7 @@ public class OnSmeltingDrop {
 								world.setBlockState(pos, Blocks.CAVE_AIR.getDefaultState());
 								
 								ItemStack stack = player.getHeldItemMainhand();
-								ItemManager.unbreaking(player, stack, EquipmentSlotType.MAINHAND);
+								stack.damageItem(1, player, e -> e.sendBreakAnimation(EquipmentSlotType.MAINHAND));
 									
 							}
 							
@@ -83,7 +82,7 @@ public class OnSmeltingDrop {
 							world.setBlockState(pos, Blocks.CAVE_AIR.getDefaultState());
 							
 							ItemStack stack = player.getHeldItemMainhand();
-							ItemManager.unbreaking(player, stack, EquipmentSlotType.MAINHAND);
+							stack.damageItem(1, player, e -> e.sendBreakAnimation(EquipmentSlotType.MAINHAND));
 									
 						}
 						

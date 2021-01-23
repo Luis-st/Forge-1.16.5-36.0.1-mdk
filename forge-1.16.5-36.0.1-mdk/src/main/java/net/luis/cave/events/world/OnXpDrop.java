@@ -25,11 +25,12 @@ public class OnXpDrop {
 				int enchExperience = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.EXPERIENCE.get(), player.getHeldItemMainhand());
 				int enchFortune = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, player.getHeldItemMainhand());
 				int enchDoubleDrop = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.DOUBLE_DROPS.get(), player.getHeldItemMainhand());
-				int enchSilkTouch = EnchantmentHelper.getEnchantmentLevel(Enchantments.SILK_TOUCH, player.getHeldItemMainhand());	
+				int enchSilkTouch = EnchantmentHelper.getEnchantmentLevel(Enchantments.SILK_TOUCH, player.getHeldItemMainhand());
+				int enchTelekinesis = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.TELEKINESIS.get(), player.getHeldItemMainhand());
 				
 				if (enchExperience > 0) {
 					
-					if (enchSilkTouch == 0) {
+					if (enchSilkTouch == 0 && enchTelekinesis == 0) {
 						
 						event.setExpToDrop((xp * ((enchExperience + 1) * ((enchExperience * 2) + enchFortune))) * (enchDoubleDrop + 1));
 						
