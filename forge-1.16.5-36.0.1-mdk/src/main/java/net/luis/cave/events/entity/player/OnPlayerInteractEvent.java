@@ -90,11 +90,16 @@ public class OnPlayerInteractEvent {
 			
 				int newAge = MathHelper.nextInt(player.getRNG(), age + 1, cropsBlock.getMaxAge());
 				world.setBlockState(pos, state.with(cropsBlock.getAgeProperty(), newAge), 3);
-				ItemManager.damageItem(player.getHeldItemMainhand(), newAge > 5 ? 5 : newAge, player, e -> {
+				
+				if (!player.abilities.isCreativeMode) {
 					
-					e.sendBreakAnimation(EquipmentSlotType.MAINHAND);
+					ItemManager.damageItem(player.getHeldItemMainhand(), newAge > 5 ? 5 : newAge, player, e -> {
+						
+						e.sendBreakAnimation(EquipmentSlotType.MAINHAND);
+						
+					}, false);
 					
-				}, false);
+				}
 				
 			}
 			

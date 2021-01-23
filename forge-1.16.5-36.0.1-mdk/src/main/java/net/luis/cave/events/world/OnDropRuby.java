@@ -28,7 +28,7 @@ public class OnDropRuby {
 
 		if(player instanceof PlayerEntity) {
 			
-			if (world.getBlockState(pos).getBlock() == Blocks.REDSTONE_ORE) {
+			if (world.getBlockState(pos).getBlock() == Blocks.REDSTONE_ORE && !player.abilities.isCreativeMode) {
 				
 				if (enchSilkTouch == 0 && enchTelekinesis == 0) { 
 					

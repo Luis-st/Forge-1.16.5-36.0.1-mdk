@@ -19,7 +19,7 @@ public class OnXpDrop {
 
 		if (player instanceof PlayerEntity) {
 			
-			if (event.getExpToDrop() > 0) {
+			if (event.getExpToDrop() > 0 && !player.abilities.isCreativeMode) {
 				
 				int xp = event.getExpToDrop();
 				int enchExperience = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.EXPERIENCE.get(), player.getHeldItemMainhand());
