@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 
@@ -12,7 +13,7 @@ public class TintedGlass extends AbstractGlassBlock {
 
 	public TintedGlass() {
 		
-		super(Block.Properties.create(Material.GLASS)
+		super(Block.Properties.create(Material.ROCK)
 				.zeroHardnessAndResistance()
 				.sound(SoundType.GLASS)
 				.notSolid());
@@ -36,7 +37,14 @@ public class TintedGlass extends AbstractGlassBlock {
 	@Override
 	public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
 		
-		return 0;
+		return 1;
+		
+	}
+	
+	@Override
+	public boolean isSideInvisible(BlockState state, BlockState adjacentBlockState, Direction side) {
+		
+		return adjacentBlockState.isIn(this) ? true : super.isSideInvisible(state, adjacentBlockState, side);
 		
 	}
 
