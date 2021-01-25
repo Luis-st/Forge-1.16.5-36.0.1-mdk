@@ -349,11 +349,15 @@ public class Crossbow extends ShootableItem implements IVanishable {
 		arrowEntity.setHitSound(SoundEvents.ITEM_CROSSBOW_HIT);
 		arrowEntity.setShotFromCrossbow(true);
 		
-		int enchPiercing = getArrowPierce(crossbow);
-		arrowEntity.setPierceLevel((byte) enchPiercing);
-		
 		double enchPower = getArrowDamage(crossbow);
-		arrowEntity.setDamage(enchPower > 0 ? enchPower : arrowEntity.getDamage());
+		if (enchPower > 0) {
+			arrowEntity.setDamage(enchPower);	
+		}
+		
+		int enchPiercing = getArrowPierce(crossbow);
+		if (enchPiercing > 0) {
+			arrowEntity.setPierceLevel((byte) enchPiercing);
+		}
 		
 		arrowEntity.setFire(getArrowFlameTime(crossbow));
 

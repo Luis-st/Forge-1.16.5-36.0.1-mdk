@@ -13,6 +13,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
@@ -25,7 +26,7 @@ public class OnEntityAttack {
 	@SubscribeEvent
 	public static void EntityAttack(LivingAttackEvent event) {
 		
-		Entity target = event.getEntityLiving();
+		LivingEntity target = event.getEntityLiving();
 		Entity entity = event.getSource().getTrueSource();
 		World world = target.getEntityWorld();
 		
@@ -33,23 +34,22 @@ public class OnEntityAttack {
 			
 			if (target instanceof LivingEntity) {
 				
-				LivingEntity livingTarget = (LivingEntity) target;
 				PlayerEntity player = (PlayerEntity) entity;
 				
 				int enchPoison = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.POISON_ASPECT.get(), player.getHeldItemMainhand());
 				int enchFrost = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.FROST_ASPECT.get(), player.getHeldItemMainhand());
 				int enchThunderbolt = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.THUNDERBOLT.get(), player.getHeldItemMainhand());
+				int enchDoubleShot = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.DOUBLE_SHOT.get(), player.getHeldItemMainhand());
 				
 				if (enchPoison > 0) {
 					
-					livingTarget.addPotionEffect(new EffectInstance(Effects.POISON, 50 * (enchPoison + 2), 0 + (enchPoison + 1)));
-					
+					target.addPotionEffect(new EffectInstance(Effects.POISON, 50 * (enchPoison + 2), 0 + (enchPoison + 1)));
 					
 				}
 				
 				if (enchFrost > 0) {
 					
-					livingTarget.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 100 * (enchFrost + 1), 2 + (enchFrost + 1)));
+					target.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 100 * (enchFrost + 1), 2 + (enchFrost + 1)));
 					
 				}
 				
@@ -79,6 +79,13 @@ public class OnEntityAttack {
 					}
 					
 					player.addPotionEffect(new EffectInstance(Effects.RESISTANCE, 30, 4, false, false));
+					
+				}
+				
+				if (enchDoubleShot > 0) {
+					
+					player.sendMessage(new StringTextComponent("Bow with Double Shot"), player.getUniqueID());
+					target.hurtResistantTime = 0;
 					
 				}
 				
