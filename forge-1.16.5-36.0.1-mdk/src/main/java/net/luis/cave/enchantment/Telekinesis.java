@@ -14,6 +14,20 @@ public class Telekinesis extends Enchantment {
 	}
 	
 	@Override
+	public int getMinEnchantability(int enchantmentLevel) {
+		
+		return 10;
+		
+	}
+	
+	@Override
+	public int getMaxEnchantability(int enchantmentLevel) {
+		
+		return 40;
+		
+	}
+	
+	@Override
 	public int getMaxLevel() {
 
 		return 1;

@@ -13,6 +13,20 @@ public class Growth extends Enchantment {
 	}
 	
 	@Override
+	public int getMinEnchantability(int enchantmentLevel) {
+		
+		return 1 + (enchantmentLevel - 1) * 9;
+		
+	}
+	
+	@Override
+	public int getMaxEnchantability(int enchantmentLevel) {
+		
+		return this.getMinEnchantability(enchantmentLevel) + 50;
+		
+	}
+	
+	@Override
 	public int getMaxLevel() {
 
 		return 5;
