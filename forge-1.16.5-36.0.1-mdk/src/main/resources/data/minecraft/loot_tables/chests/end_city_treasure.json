@@ -351,6 +351,19 @@
 	              ]
 	            }
 	          ]
+	        },
+	        {
+	          "type": "item",
+	          "name": "minecraft:enchanted_book",
+	          "weight": 12,
+	          "functions": [
+	            {
+	              "function": "enchant_randomly",
+	              "enchantments": [
+	                "cave:throw_of_the_end"
+	              ]
+	            }
+	          ]
 	        }
 	      ]
 	    }

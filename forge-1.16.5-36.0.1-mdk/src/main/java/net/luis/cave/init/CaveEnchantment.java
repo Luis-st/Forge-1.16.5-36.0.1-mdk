@@ -3,6 +3,7 @@ package net.luis.cave.init;
 import net.luis.cave.Cave;
 import net.luis.cave.enchantment.Blasting;
 import net.luis.cave.enchantment.DoubleDrops;
+import net.luis.cave.enchantment.DoubleShot;
 import net.luis.cave.enchantment.ElytraFalling;
 import net.luis.cave.enchantment.ElytraProtection;
 import net.luis.cave.enchantment.EnderSlayer;
@@ -11,7 +12,10 @@ import net.luis.cave.enchantment.FrostAspect;
 import net.luis.cave.enchantment.Growth;
 import net.luis.cave.enchantment.Harvesting;
 import net.luis.cave.enchantment.PoisonAspect;
+import net.luis.cave.enchantment.Replenish;
 import net.luis.cave.enchantment.Smelting;
+import net.luis.cave.enchantment.Telekinesis;
+import net.luis.cave.enchantment.ThrowOfTheEnd;
 import net.luis.cave.enchantment.Thunderbolt;
 import net.luis.cave.enchantment.VoidWalker;
 import net.luis.cave.enchantment.curse.CurseOfBreaking;
@@ -84,7 +88,7 @@ public class CaveEnchantment {
 			() -> new CurseOfBreaking(Rarity.VERY_RARE, EnchantmentType.BREAKABLE, EquipmentSlotType.values()));
 	
 	public static final RegistryObject<Enchantment> CURSE_OF_HARMING = ENCHANTMENT.register("curse_of_harming", 
-			() -> new CurseOfHarming(Rarity.VERY_RARE, EnchantmentType.WEARABLE, ARMOR_SLOTS));
+			() -> new CurseOfHarming(Rarity.VERY_RARE, EnchantmentType.WEARABLE, EquipmentSlotType.MAINHAND));
 	
 	public static final RegistryObject<Enchantment> HARVESTING = ENCHANTMENT.register("harvesting", 
 			() -> new Harvesting(Rarity.COMMON, EnchantmentType.DIGGER, EquipmentSlotType.MAINHAND));
@@ -108,11 +112,15 @@ public class CaveEnchantment {
 			() -> new Thunderbolt(Rarity.VERY_RARE, EnchantmentType.WEAPON, EquipmentSlotType.MAINHAND));
 	
 	public static final RegistryObject<Enchantment> TELEKINESIS = ENCHANTMENT.register("telekinesis", 
-			() -> new Thunderbolt(Rarity.VERY_RARE, EnchantmentType.BREAKABLE, EquipmentSlotType.MAINHAND));
+			() -> new Telekinesis(Rarity.VERY_RARE, EnchantmentType.BREAKABLE, EquipmentSlotType.MAINHAND));
 	
 	public static final RegistryObject<Enchantment> REPLENISH = ENCHANTMENT.register("replenish", 
-			() -> new Thunderbolt(Rarity.VERY_RARE, EnchantmentType.DIGGER, EquipmentSlotType.MAINHAND));
+			() -> new Replenish(Rarity.VERY_RARE, EnchantmentType.DIGGER, EquipmentSlotType.MAINHAND));
 	
+	public static final RegistryObject<Enchantment> DOUBLE_SHOT = ENCHANTMENT.register("double_shot", 
+			() -> new DoubleShot(Rarity.VERY_RARE, EnchantmentType.BOW, EquipmentSlotType.MAINHAND));
 	
+	public static final RegistryObject<Enchantment> THROW_OF_THE_END = ENCHANTMENT.register("throw_of_the_end", 
+			() -> new ThrowOfTheEnd(Rarity.VERY_RARE, EnchantmentType.BOW, EquipmentSlotType.MAINHAND));
 
 }
