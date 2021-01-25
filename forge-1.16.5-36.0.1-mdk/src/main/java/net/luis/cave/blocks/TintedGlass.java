@@ -41,6 +41,7 @@ public class TintedGlass extends Block {
 	}
 	
 	@Override
+	@SuppressWarnings("deprecation")
 	public boolean isSideInvisible(BlockState state, BlockState adjacentBlockState, Direction side) {
 		
 		return adjacentBlockState.isIn(this) ? true : super.isSideInvisible(state, adjacentBlockState, side);

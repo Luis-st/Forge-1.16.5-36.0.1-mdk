@@ -1,7 +1,9 @@
 package net.luis.cave.lib;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.stream.Collectors;
 
@@ -88,6 +90,14 @@ public class VillagerManager {
 		int count = rng.nextInt(level + level) + level;		
 		ItemStack stack = new ItemStack(item);
 		EnchantmentHelper.addRandomEnchantment(rng, stack, level, allowTreasure);
+		Map<Enchantment, Integer> enchantments = EnchantmentHelper.getEnchantments(stack);
+		List<Enchantment> ench = enchantments.keySet().stream().collect(Collectors.toList());
+		Iterator<Enchantment> iterator = enchantments.keySet().iterator();
+		while (iterator.hasNext()) {
+			ench.forEach(e -> {
+				e.isCompatibleWith(iterator.next());
+			});
+		}
 		return new BasicTrade(new ItemStack(Items.EMERALD, count), ItemStack.EMPTY, stack, 16, randomXp(tradeLevel), 0.2f);
 		
 	}

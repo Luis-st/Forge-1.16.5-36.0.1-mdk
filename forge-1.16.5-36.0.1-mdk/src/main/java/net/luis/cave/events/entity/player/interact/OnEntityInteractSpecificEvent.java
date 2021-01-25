@@ -2,13 +2,22 @@ package net.luis.cave.events.entity.player.interact;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import net.luis.cave.Cave;
+import net.luis.cave.init.CaveItems;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.merchant.villager.VillagerEntity;
 import net.minecraft.entity.monster.ZombieVillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.Items;
+import net.minecraft.item.MerchantOffer;
+import net.minecraft.item.MerchantOffers;
+import net.minecraft.village.GossipManager;
+import net.minecraft.village.GossipType;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -27,7 +36,40 @@ public class OnEntityInteractSpecificEvent {
 		LivingEntity target = (LivingEntity) event.getTarget();
 		World world = event.getWorld();
 		
-		if (target instanceof ZombieVillagerEntity) {
+		if (target instanceof VillagerEntity) {
+			
+			VillagerEntity villager = (VillagerEntity) target;
+			MerchantOffers offers = villager.getOffers();
+			GossipManager gossipManager = villager.getGossip();
+			String uuid = villager.getUniqueID().toString().replace("-", "");
+			int uniqueInteger = Integer.parseInt(uniqueHex(uuid, 2), 16) / 10;
+			uniqueInteger = uniqueInteger > 10 ? 10 : uniqueInteger;
+			Item item = player.getHeldItem(event.getHand()).getItem();
+			
+			if (world.getDayTime() >= 3000 && world.getDayTime() <= 10000) {
+				
+				for (MerchantOffer merchantOffer : offers) {
+					
+					merchantOffer.resetUses();
+					
+				}
+				
+			}
+			
+			if (item == CaveItems.RUBY_APPLE.get() || item == Items.ENCHANTED_GOLDEN_APPLE) {
+				
+				if (!player.abilities.isCreativeMode) {
+					
+					player.getHeldItem(event.getHand()).shrink(1);
+					
+				}
+				
+				gossipManager.add(player.getUniqueID(), GossipType.MINOR_POSITIVE, uniqueInteger);
+				gossipManager.add(player.getUniqueID(), GossipType.MAJOR_POSITIVE, uniqueInteger / 2);
+				
+			}
+			
+		} else if (target instanceof ZombieVillagerEntity) {
 			
 			ZombieVillagerEntity zombieVillager = (ZombieVillagerEntity) target;
 			
@@ -65,6 +107,20 @@ public class OnEntityInteractSpecificEvent {
 			
 		}
 
+	}
+	
+	public static String uniqueHex(String string, int size) {
+
+		List<String> ret = new ArrayList<String>((string.length() + size - 1) / size);
+
+		for (int start = 0; start < string.length(); start += size) {
+			
+			ret.add(string.substring(start, Math.min(string.length(), start + size)));
+			
+		}
+		
+		return ret != null ? ret.get(0) : null;
+		
 	}
 
 }

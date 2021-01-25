@@ -80,6 +80,9 @@ public class Bow extends ShootableItem implements IVanishable {
 						int enchPunch = getArrowKnockback(stack);
 						arrowEntity.setKnockbackStrength(enchPunch > 0 ? enchPunch : 0);
 						
+						int enchPiercing = getArrowPierce(stack);
+						arrowEntity.setPierceLevel((byte) enchPiercing);
+						
 						arrowEntity.setFire(getArrowFlameTime(stack));
 
 						stack.damageItem(1, player, item -> {
@@ -161,6 +164,14 @@ public class Bow extends ShootableItem implements IVanishable {
 		int enchFlame = EnchantmentHelper.getEnchantmentLevel(Enchantments.FLAME, stack);
 		
 		return enchFlame * 100;
+		
+	}
+	
+	public int getArrowPierce(ItemStack stack) {
+		
+		int enchPiercing = EnchantmentHelper.getEnchantmentLevel(Enchantments.PIERCING, stack);
+		
+		return enchPiercing;
 		
 	}
 	

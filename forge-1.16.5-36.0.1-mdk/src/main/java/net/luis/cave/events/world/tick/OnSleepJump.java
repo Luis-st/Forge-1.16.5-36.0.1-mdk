@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.luis.cave.Cave;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.api.distmarker.Dist;
@@ -19,39 +20,43 @@ public class OnSleepJump {
 
 		World world = event.world;
 		List<? extends PlayerEntity> players = world.getPlayers();
-		int playerCount = world.getPlayers().size();
-		int sleepPlayers = 0;
+		MinecraftServer server = world.getServer();
 		
-		if (!world.isRemote) {
+		if (!world.isRemote && !Cave.pvpServer) {
 			
-			if (!Cave.pvpServer) {
+			int sleepPlayers = 0;
+			int playerCount = world.getPlayers().size();
+			
+			if (server != null) {
 				
-				for (PlayerEntity playerEntity : players) {
+				playerCount = server.getPlayerList().getPlayers().size();
+				
+			}
+			
+			for (PlayerEntity playerEntity : players) {
+				
+				if (playerEntity.isSleeping()) {
 					
-					if (playerEntity.isSleeping()) {
-						
-						sleepPlayers++;
-						
-					}
+					sleepPlayers++;
 					
 				}
 				
-				if (playerCount == sleepPlayers) {
+			}
+			
+			if (playerCount == sleepPlayers) {
+				
+				
+				
+			} else {
+				
+				ServerWorld serverWorld = (ServerWorld) world;
+				
+				if (playerCount / 2 <= sleepPlayers) {
 					
-					
-					
-				} else {
-					
-					ServerWorld serverWorld = (ServerWorld) world;
-					
-					if (playerCount / 2 <= sleepPlayers) {
+					if (sleepPlayers != 0) {
 						
-						if (sleepPlayers != 0) {
-							
-							serverWorld.setDayTime(0);
-							serverWorld.func_241113_a_(0, 0, false, false);
-							
-						}
+						serverWorld.setDayTime(0);
+						serverWorld.func_241113_a_(0, 0, false, false);
 						
 					}
 					
