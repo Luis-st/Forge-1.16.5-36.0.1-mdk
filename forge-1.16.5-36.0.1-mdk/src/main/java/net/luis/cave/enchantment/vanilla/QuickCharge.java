@@ -4,7 +4,6 @@ import net.luis.cave.items.weapons.Crossbow;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentType;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.CrossbowItem;
 import net.minecraft.item.ItemStack;
 
 public class QuickCharge extends Enchantment {
@@ -38,11 +37,7 @@ public class QuickCharge extends Enchantment {
 	
 	@Override
 	public boolean canApplyAtEnchantingTable(ItemStack stack) {
-		if (stack.getItem() instanceof CrossbowItem)
-			return true;
-		if (stack.getItem() instanceof Crossbow)
-			return true;
-		return false;
+		return stack.getItem() instanceof Crossbow;
 	}
 	
 }

@@ -13,6 +13,8 @@ import net.luis.cave.villagers.PointOfInterestTypes;
 import net.luis.cave.villagers.VillagerUtil;
 import net.luis.cave.world.gen.OreGen;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -41,6 +43,7 @@ public class Cave {
 		CaveItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		CaveItems.VANILLA_ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		CaveTools.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		CaveTools.VANILLA_ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		CaveArmor.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		CaveEnchantment.ENCHANTMENT.register(FMLJavaModLoadingContext.get().getModEventBus());
 		CaveEnchantment.VANILLA_ENCHANTMENT.register(FMLJavaModLoadingContext.get().getModEventBus());
@@ -63,6 +66,8 @@ public class Cave {
 	}
 	
 	private void doClientStuff(FMLClientSetupEvent event) {
+	
+		RenderTypeLookup.setRenderLayer(CaveBlocks.TINTED_GLASS.get(), RenderType.getTranslucent());
 		
 	}
 	

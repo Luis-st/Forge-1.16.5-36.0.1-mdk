@@ -7,6 +7,8 @@ import net.luis.cave.items.shields.GoldenShield;
 import net.luis.cave.items.shields.IronShield;
 import net.luis.cave.items.shields.NetheriteShield;
 import net.luis.cave.items.shields.NightShield;
+import net.luis.cave.items.weapons.Bow;
+import net.luis.cave.items.weapons.Crossbow;
 import net.luis.cave.items.weapons.EnderiteBow;
 import net.luis.cave.items.weapons.EnderiteCrossbow;
 import net.luis.cave.items.weapons.NetheriteBow;
@@ -17,6 +19,7 @@ import net.luis.cave.util.enums.CaveItemTier;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.ShovelItem;
 import net.minecraft.item.SwordItem;
@@ -27,6 +30,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class CaveTools {
 
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Cave.Mod_Id);
+	public static final DeferredRegister<Item> VANILLA_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Cave.Minecraft_Id);
 	
 	
 	public static final RegistryObject<ShovelItem> JADE_SHOVEL = ITEMS.register("jade_shovel", 
@@ -186,12 +190,18 @@ public class CaveTools {
 			() -> new SwordItem(CaveItemTier.NIGHT, -1, -2.4f, new Item.Properties().group(Cave.WEAPONS).isImmuneToFire()));
 	
 	
+	public static final RegistryObject<Item> BOW = VANILLA_ITEMS.register("bow", 
+			() -> new Bow(new Item.Properties().group(ItemGroup.COMBAT).maxStackSize(1).maxDamage(384)));
+	
 	public static final RegistryObject<Item> NETHERITE_BOW = ITEMS.register("netherite_bow", NetheriteBow::new);
 	
 	public static final RegistryObject<Item> ENDERITE_BOW = ITEMS.register("enderite_bow", EnderiteBow::new);
 	
 	public static final RegistryObject<Item> NIGHT_BOW = ITEMS.register("night_bow", NightBow::new);
 	
+	
+	public static final RegistryObject<Item> CROSSBOW = VANILLA_ITEMS.register("crossbow", 
+			() -> new Crossbow(new Item.Properties().group(ItemGroup.COMBAT).maxStackSize(1).maxDamage(326)));
 	
 	public static final RegistryObject<Item> NETHERITE_CROSSBOW = ITEMS.register("netherite_crossbow", NetheriteCrossbow::new);
 	

@@ -6,7 +6,6 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentType;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.CrossbowItem;
 import net.minecraft.item.ItemStack;
 
 public class Multishot extends Enchantment {
@@ -40,18 +39,12 @@ public class Multishot extends Enchantment {
 	
 	@Override
 	protected boolean canApplyTogether(Enchantment ench) {
-		if (ench == Enchantments.FLAME || ench == CaveEnchantment.FLAME.get())
-			return false;
-		return true;
+		return ench != Enchantments.FLAME && ench != CaveEnchantment.FLAME.get();
 	}
 	
 	@Override
-	public boolean canApplyAtEnchantingTable(ItemStack stack) {
-		if (stack.getItem() instanceof CrossbowItem)
-			return true;
-		if (stack.getItem() instanceof Crossbow)
-			return true;
-		return false;
+	public boolean canApply(ItemStack stack) {
+		return stack.getItem() instanceof Crossbow;
 	}
 	
 }
