@@ -36,4 +36,13 @@ public class CaveVerticalBlockItems {
 	public static final RegistryObject<Item> VERTICAL_END_STONE_BRICK_SLAB_ITEM = ITEMS.register("vertical_end_stone_brick_slab", 
 			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_END_STONE_BRICK_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
 	
+	public static final RegistryObject<Item> VERTICAL_PRISMARINE_BRICK_SLAB_ITEM = ITEMS.register("vertical_prismarine_brick_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_PRISMARINE_BRICK_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
+	public static final RegistryObject<Item> VERTICAL_PRISMARINE_SLAB_ITEM = ITEMS.register("vertical_prismarine_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_PRISMARINE_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
+	public static final RegistryObject<Item> VERTICAL_PURPUR_SLAB_ITEM = ITEMS.register("vertical_purpur_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_PURPUR_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
 }
