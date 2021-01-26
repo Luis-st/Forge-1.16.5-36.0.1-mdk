@@ -349,13 +349,12 @@ public class AbstractVerticalSlab extends Block implements IWaterLoggable {
 	@SuppressWarnings("deprecation")
 	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
 		
-		if (!stateIn.get(BlockStateProperties.WATERLOGGED)) {
+		if (stateIn.get(BlockStateProperties.WATERLOGGED)) {
 			
-			this.receiveFluid((IWorld) worldIn, currentPos, stateIn, Fluids.WATER.getStillFluidState(false));
+			worldIn.getPendingFluidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
 			
 		}
 		
-		worldIn.getPendingFluidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
 		return super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 		
 	}

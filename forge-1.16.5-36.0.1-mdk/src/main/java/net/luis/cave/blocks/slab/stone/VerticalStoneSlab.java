@@ -25,8 +25,8 @@ public class VerticalStoneSlab extends AbstractVerticalSlab {
 	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
 	
 		if (hit.getFace().getOpposite() == state.get(VerticalStoneSlab.FACING)
-				&& !state.get(VerticalStoneSlab.FULL)
-				&& player.getHeldItem(handIn).getItem() == CaveVerticalBlockItems.VERTICAL_STONE_SLAB_ITEM.get()) {
+				&& !state.get(VerticalStoneSlab.FULL) // VERTICAL_STONE_SLAB_ITEM
+				&& player.getHeldItem(handIn).getItem() == CaveVerticalBlockItems.POLISHED_VERTICAL_ANDESITE_SLAB_ITEM.get()) {
 
 			worldIn.setBlockState(pos, state.with(VerticalStoneSlab.FULL, true));
 

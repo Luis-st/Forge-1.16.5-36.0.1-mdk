@@ -43,7 +43,6 @@ public class Cave {
 		CaveBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		CaveBlockItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		CaveVerticalBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		CaveVerticalBlockItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		CaveItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		CaveItems.VANILLA_ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		CaveTools.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
@@ -51,6 +50,7 @@ public class Cave {
 		CaveArmor.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		CaveEnchantment.ENCHANTMENT.register(FMLJavaModLoadingContext.get().getModEventBus());
 		CaveEnchantment.VANILLA_ENCHANTMENT.register(FMLJavaModLoadingContext.get().getModEventBus());
+		CaveVerticalBlockItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		
 		MinecraftForge.EVENT_BUS.register(this);
 

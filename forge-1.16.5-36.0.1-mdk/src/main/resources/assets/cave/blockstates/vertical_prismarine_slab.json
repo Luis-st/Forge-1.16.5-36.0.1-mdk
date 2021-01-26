@@ -1,4 +1,4 @@
-cavecave
+
     {
       "variants": {
         "facing=north,full=false,shape=0": { "model": "cave:block/vertical_prismarine_slab", "uvlock": true },
