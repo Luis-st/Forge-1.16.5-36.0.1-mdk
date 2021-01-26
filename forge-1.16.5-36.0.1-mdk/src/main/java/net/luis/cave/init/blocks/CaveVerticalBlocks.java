@@ -7,6 +7,8 @@ import net.luis.cave.blocks.slab.nether.VerticalPolishedBlackstoneSlab;
 import net.luis.cave.blocks.slab.nether.VerticalQuartzSlab;
 import net.luis.cave.blocks.slab.nether.VerticalRedNetherBrickSlab;
 import net.luis.cave.blocks.slab.nether.VerticalSmoothQuartzSlab;
+import net.luis.cave.blocks.slab.other.VerticalDarkPrismarineSlab;
+import net.luis.cave.blocks.slab.other.VerticalEndStoneBrickSlab;
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -28,5 +30,9 @@ public class CaveVerticalBlocks {
 	public static final RegistryObject<Block> VERTICAL_RED_NETHER_BRICK_SLAB = BLOCKS.register("vertical_red_nether_brick_slab", VerticalRedNetherBrickSlab::new);
 	
 	public static final RegistryObject<Block> VERTICAL_SMOOTH_QUARTZ_SLAB = BLOCKS.register("vertical_smooth_quartz_slab", VerticalSmoothQuartzSlab::new);
+	
+	public static final RegistryObject<Block> VERTICAL_DARK_PRISMARINE_SLAB = BLOCKS.register("vertical_dark_prismarine_slab", VerticalDarkPrismarineSlab::new);
+	
+	public static final RegistryObject<Block> VERTICAL_END_STONE_BRICK_SLAB = BLOCKS.register("vertical_end_stone_brick_slab", VerticalEndStoneBrickSlab::new);
 	
 }
