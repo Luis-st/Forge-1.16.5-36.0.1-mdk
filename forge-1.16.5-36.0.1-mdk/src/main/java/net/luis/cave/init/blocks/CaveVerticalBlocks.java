@@ -31,6 +31,14 @@ import net.luis.cave.blocks.slab.stone.VerticalPolishedGraniteSlab;
 import net.luis.cave.blocks.slab.stone.VerticalSmoothStoneSlab;
 import net.luis.cave.blocks.slab.stone.VerticalStoneBrickSlab;
 import net.luis.cave.blocks.slab.stone.VerticalStoneSlab;
+import net.luis.cave.blocks.slab.wood.VerticalAcaciaSlab;
+import net.luis.cave.blocks.slab.wood.VerticalBirchSlab;
+import net.luis.cave.blocks.slab.wood.VerticalCrimsonSlab;
+import net.luis.cave.blocks.slab.wood.VerticalDarkOakSlab;
+import net.luis.cave.blocks.slab.wood.VerticalJungleSlab;
+import net.luis.cave.blocks.slab.wood.VerticalOakSlab;
+import net.luis.cave.blocks.slab.wood.VerticalSpruceSlab;
+import net.luis.cave.blocks.slab.wood.VerticalWarpedSlab;
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -77,7 +85,6 @@ public class CaveVerticalBlocks {
 	
 	public static final RegistryObject<Block> VERTICAL_SMOOTH_SANDSTONE_SLAB = BLOCKS.register("vertical_smooth_sandstone_slab", VerticalSmoothSandstoneSlab::new);
 	
-	
 	public static final RegistryObject<Block> VERTICAL_ANDESITE_SLAB = BLOCKS.register("vertical_andesite_slab", VerticalAndesiteSlab::new);
 	
 	public static final RegistryObject<Block> VERTICAL_BRICK_SLAB = BLOCKS.register("vertical_brick_slab", VerticalBrickSlab::new);
@@ -103,5 +110,21 @@ public class CaveVerticalBlocks {
 	public static final RegistryObject<Block> VERTICAL_STONE_BRICK_SLAB = BLOCKS.register("vertical_stone_brick_slab", VerticalStoneBrickSlab::new);
 	
 	public static final RegistryObject<Block> VERTICAL_STONE_SLAB = BLOCKS.register("vertical_stone_slab", VerticalStoneSlab::new);
+	
+	public static final RegistryObject<Block> VERTICAL_ACACIA_SLAB = BLOCKS.register("vertical_acacia_slab", VerticalAcaciaSlab::new);
+	
+	public static final RegistryObject<Block> VERTICAL_BIRCH_SLAB = BLOCKS.register("vertical_birch_slab", VerticalBirchSlab::new);
+	
+	public static final RegistryObject<Block> VERTICAL_CRIMSON_SLAB = BLOCKS.register("vertical_crimson_slab", VerticalCrimsonSlab::new);
+	
+	public static final RegistryObject<Block> VERTICAL_DARK_OAK_SLAB = BLOCKS.register("vertical_dark_oak_slab", VerticalDarkOakSlab::new);
+	
+	public static final RegistryObject<Block> VERTICAL_JUNGLE_SLAB = BLOCKS.register("vertical_jungle_slab", VerticalJungleSlab::new);
+	
+	public static final RegistryObject<Block> VERTICAL_OAK_SLAB = BLOCKS.register("vertical_oak_slab", VerticalOakSlab::new);
+	
+	public static final RegistryObject<Block> VERTICAL_SPRUCE_SLAB = BLOCKS.register("vertical_spruce_slab", VerticalSpruceSlab::new);
+	
+	public static final RegistryObject<Block> VERTICAL_WARPED_SLAB = BLOCKS.register("vertical_warped_slab", VerticalWarpedSlab::new);
 	
 }
