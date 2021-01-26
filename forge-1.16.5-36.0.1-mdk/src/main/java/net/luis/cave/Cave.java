@@ -4,11 +4,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import net.luis.cave.init.CaveArmor;
-import net.luis.cave.init.CaveBlockItems;
-import net.luis.cave.init.CaveBlocks;
 import net.luis.cave.init.CaveEnchantment;
 import net.luis.cave.init.CaveItems;
 import net.luis.cave.init.CaveTools;
+import net.luis.cave.init.blocks.CaveBlockItems;
+import net.luis.cave.init.blocks.CaveBlocks;
+import net.luis.cave.init.blocks.CaveVerticalBlockItems;
+import net.luis.cave.init.blocks.CaveVerticalBlocks;
 import net.luis.cave.villagers.PointOfInterestTypes;
 import net.luis.cave.villagers.VillagerUtil;
 import net.luis.cave.world.gen.OreGen;
@@ -40,6 +42,8 @@ public class Cave {
 		
 		CaveBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		CaveBlockItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		CaveVerticalBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		CaveVerticalBlockItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		CaveItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		CaveItems.VANILLA_ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		CaveTools.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
@@ -77,6 +81,17 @@ public class Cave {
 		public ItemStack createIcon() {
 			
 			return new ItemStack(Blocks.BRICKS);
+			
+		}
+		
+	};
+	
+	public static final ItemGroup VERTICAL_SLABS = new ItemGroup("vertical_slabs") {
+
+		@Override
+		public ItemStack createIcon() {
+			
+			return new ItemStack(Blocks.BRICK_SLAB);
 			
 		}
 		

@@ -79,7 +79,7 @@ public class NewVillagerTradesEvent {
 			
 			trade4.add(VillagerManager.creatTradeEmeraldForEnchantedItem(CaveTools.LIMONITE_AXE.get(), 15, false, 4));
 			trade4.add(VillagerManager.creatTradeEmeraldForEnchantedItem(CaveTools.LIMONITE_SHOVEL.get(), 15, false, 4));
-			trade4.add(VillagerManager.creatTradeEmeraldForEnchantedItem(CaveTools.LIMONITE_HOE.get(), 15, false, 4));
+			trade4.add(VillagerManager.creatTradeEmeraldForEnchantedItem(CaveTools.LIMONITE_HOE.get(), 15, true, 4));
 			
 			trade5.add(VillagerManager.creatTradeEmeraldForEnchantedItem(CaveTools.LIMONITE_PICKAXE.get(), 15, false, 5));
 			

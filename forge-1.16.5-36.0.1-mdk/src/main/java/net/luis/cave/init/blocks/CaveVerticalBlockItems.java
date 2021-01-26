@@ -1,0 +1,33 @@
+package net.luis.cave.init.blocks;
+
+import net.luis.cave.Cave;
+import net.luis.cave.blocks.slab.AbstractVerticalSlabItem;
+import net.minecraft.item.Item;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+
+public class CaveVerticalBlockItems {
+
+	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Cave.Mod_Id);
+	
+	
+	public static final RegistryObject<Item> VERTICAL_BLACKSTONE_SLAB_ITEM = ITEMS.register("vertical_stone_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_BLACKSTONE_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
+	public static final RegistryObject<Item> VERTICAL_NETHER_BRICK_SLAB_ITEM = ITEMS.register("vertical_nether_brick_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_NETHER_BRICK_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
+	public static final RegistryObject<Item> POLISHED_VERTICAL_BLACKSTONE_SLAB_ITEM = ITEMS.register("polished_vertical_blackstone_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.POLISHED_VERTICAL_BLACKSTONE_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
+	public static final RegistryObject<Item> VERTICAL_QUARTZ_SLAB_ITEM = ITEMS.register("vertical_quartz_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_QUARTZ_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
+	public static final RegistryObject<Item> VERTICAL_RED_NETHER_BRICK_SLAB_ITEM = ITEMS.register("vertical_red_nether_brick_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_RED_NETHER_BRICK_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
+	public static final RegistryObject<Item> VERTICAL_SMOOTH_QUARTZ_SLAB_ITEM = ITEMS.register("vertical_smooth_quartz_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_SMOOTH_QUARTZ_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
+}

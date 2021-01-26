@@ -1,4 +1,4 @@
-package net.luis.cave.init;
+package net.luis.cave.init.blocks;
 
 import net.luis.cave.Cave;
 import net.luis.cave.blocks.BeeTable;
@@ -6,6 +6,7 @@ import net.luis.cave.blocks.InfiniteAnvil;
 import net.luis.cave.blocks.PowderSnow;
 import net.luis.cave.blocks.SmeltingFurnace;
 import net.luis.cave.blocks.TintedGlass;
+import net.luis.cave.blocks.VerticalSlab;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -73,5 +74,8 @@ public class CaveBlocks {
 	public static final RegistryObject<Block> BEE_TABLE = BLOCKS.register("bee_table", BeeTable::new);
 	
 	public static final RegistryObject<Block> TINTED_GLASS = BLOCKS.register("tinted_glass", TintedGlass::new);
+	
+	public static final RegistryObject<Block> VERTICAL_STONE_SLAB = BLOCKS.register("vertical_stone_slab", 
+			() -> new VerticalSlab(Block.Properties.create(Material.ROCK, MaterialColor.STONE).setRequiresTool().hardnessAndResistance(1.5F, 6.0F)));
 
 }

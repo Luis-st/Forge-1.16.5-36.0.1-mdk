@@ -1,4 +1,4 @@
-package net.luis.cave.init;
+package net.luis.cave.init.blocks;
 
 import net.luis.cave.Cave;
 import net.minecraft.item.BlockItem;
@@ -12,6 +12,7 @@ public class CaveBlockItems {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Cave.Mod_Id);
 	public static final DeferredRegister<Item> VANILLA_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Cave.Minecraft_Id);
 
+	
 	public static final RegistryObject<Item> RUBY_BLOCK_ITEM = ITEMS.register("ruby_block", 
 			() -> new BlockItem(CaveBlocks.RUBY_BLOCK.get(), new Item.Properties().group(Cave.BUILDING_BLOCKS)));
 	
@@ -20,7 +21,6 @@ public class CaveBlockItems {
 	
 	public static final RegistryObject<Item> ENDERITE_BLOCK_ITEM = ITEMS.register("enderite_block", 
 			() -> new BlockItem(CaveBlocks.ENDERITE_BLOCK.get(), new Item.Properties().group(Cave.BUILDING_BLOCKS).isImmuneToFire()));
-	
 	
 	public static final RegistryObject<Item> JADE_ORE_ITEM = ITEMS.register("jade_ore", 
 			() -> new BlockItem(CaveBlocks.JADE_ORE.get(), new Item.Properties().group(Cave.BUILDING_BLOCKS)));
@@ -60,5 +60,8 @@ public class CaveBlockItems {
 	
 	public static final RegistryObject<Item> TINTED_GLASS_ITEM = ITEMS.register("tinted_glass", 
 			() -> new BlockItem(CaveBlocks.TINTED_GLASS.get(), new Item.Properties().group(Cave.DECORATIONS)));
+	
+	public static final RegistryObject<Item> VERTICAL_STONE_SLAB_ITEM = ITEMS.register("vertical_stone_slab", 
+			() -> new BlockItem(CaveBlocks.VERTICAL_STONE_SLAB.get(), new Item.Properties().group(Cave.DECORATIONS)));
 	
 }

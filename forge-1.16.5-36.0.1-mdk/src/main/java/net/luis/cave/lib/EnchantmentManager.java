@@ -1,7 +1,6 @@
 package net.luis.cave.lib;
 
 import net.luis.cave.init.CaveEnchantment;
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -64,29 +63,9 @@ public class EnchantmentManager {
 		
 	}
 	
-	public static boolean hasEnchantmentWithLevel(Enchantment enchantment, ItemStack item, int level, boolean onlyLevel) {
+	public static void addRandomEnchantments() {
 		
-		int enchLevel = EnchantmentHelper.getEnchantmentLevel(enchantment, item);
 		
-		if (onlyLevel) {
-			
-			if (enchLevel == level) {
-				
-				return true;
-				
-			}
-			
-		} else {
-			
-			if (enchLevel >= level) {
-				
-				return true;
-				
-			}
-			
-		}
-		
-		return false;
 		
 	}
 	

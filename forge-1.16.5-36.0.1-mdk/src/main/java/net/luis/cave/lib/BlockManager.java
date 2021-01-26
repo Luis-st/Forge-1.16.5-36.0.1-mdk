@@ -1,7 +1,7 @@
 package net.luis.cave.lib;
 
-import net.luis.cave.init.CaveBlocks;
 import net.luis.cave.init.CaveItems;
+import net.luis.cave.init.blocks.CaveBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
