@@ -18,6 +18,9 @@ public class CaveVerticalBlockItems {
 	public static final RegistryObject<Item> VERTICAL_NETHER_BRICK_SLAB_ITEM = ITEMS.register("vertical_nether_brick_slab", 
 			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_NETHER_BRICK_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
 	
+	public static final RegistryObject<Item> POLISHED_VERTICAL_BLACKSTONE_BRICK_SLAB_ITEM = ITEMS.register("polished_vertical_blackstone_brick_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.POLISHED_VERTICAL_BLACKSTONE_BRICK_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
 	public static final RegistryObject<Item> POLISHED_VERTICAL_BLACKSTONE_SLAB_ITEM = ITEMS.register("polished_vertical_blackstone_slab", 
 			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.POLISHED_VERTICAL_BLACKSTONE_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
 	
@@ -45,7 +48,6 @@ public class CaveVerticalBlockItems {
 	public static final RegistryObject<Item> VERTICAL_PURPUR_SLAB_ITEM = ITEMS.register("vertical_purpur_slab", 
 			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_PURPUR_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
 	
-	
 	public static final RegistryObject<Item> VERTICAL_CUT_RED_SANDSTONE_SLAB_ITEM = ITEMS.register("vertical_cut_red_sandstone_slab", 
 			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_CUT_RED_SANDSTONE_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
 	
@@ -63,5 +65,45 @@ public class CaveVerticalBlockItems {
 	
 	public static final RegistryObject<Item> VERTICAL_SMOOTH_SANDSTONE_SLAB_ITEM = ITEMS.register("vertical_smooth_sandstone_slab", 
 			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_SMOOTH_SANDSTONE_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
+	
+	public static final RegistryObject<Item> VERTICAL_ANDESITE_SLAB_ITEM = ITEMS.register("vertical_andesite_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_ANDESITE_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
+	public static final RegistryObject<Item> VERTICAL_BRICK_SLAB_ITEM = ITEMS.register("vertical_brick_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_BRICK_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
+	public static final RegistryObject<Item> VERTICAL_COBBLESTONE_SLAB_ITEM = ITEMS.register("vertical_cobblestone_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_COBBLESTONE_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
+	public static final RegistryObject<Item> VERTICAL_DIORITE_SLAB_ITEM = ITEMS.register("vertical_diorite_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_DIORITE_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
+	public static final RegistryObject<Item> VERTICAL_GRANITE_SLAB_ITEM = ITEMS.register("vertical_granite_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_GRANITE_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
+	public static final RegistryObject<Item> VERTICAL_MOSSY_COBBLESTONE_SLAB_ITEM = ITEMS.register("vertical_mossy_cobblestone_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_MOSSY_COBBLESTONE_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
+	public static final RegistryObject<Item> VERTICAL_MOSSY_STONE_BRICK_SLAB_ITEM = ITEMS.register("vertical_mossy_stone_brick_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_MOSSY_STONE_BRICK_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
+	public static final RegistryObject<Item> POLISHED_VERTICAL_ANDESITE_SLAB_ITEM = ITEMS.register("polished_vertical_andesite_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.POLISHED_VERTICAL_ANDESITE_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
+	public static final RegistryObject<Item> POLISHED_VERTICAL_DIORITE_SLAB_ITEM = ITEMS.register("polished_vertical_diorite_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.POLISHED_VERTICAL_DIORITE_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
+	public static final RegistryObject<Item> POLISHED_VERTICAL_GRANITE_SLAB_ITEM = ITEMS.register("polished_vertical_granite_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.POLISHED_VERTICAL_GRANITE_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
+	public static final RegistryObject<Item> VERTICAL_SMOOTH_STONE_SLAB_ITEM = ITEMS.register("vertical_smooth_stone_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_SMOOTH_STONE_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
+	public static final RegistryObject<Item> VERTICAL_STONE_BRICK_SLAB_ITEM = ITEMS.register("vertical_stone_brick_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_STONE_BRICK_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
+	public static final RegistryObject<Item> VERTICAL_STONE_SLAB_ITEM = ITEMS.register("vertical_stone_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_STONE_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
 	
 }
