@@ -3,7 +3,6 @@ package net.luis.cave.events.entity;
 import net.luis.cave.Cave;
 import net.luis.cave.init.CaveEnchantment;
 import net.luis.cave.init.CaveTools;
-import net.luis.cave.lib.EnchantmentManager;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -40,6 +39,7 @@ public class OnEntityAttack {
 				int enchFrost = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.FROST_ASPECT.get(), player.getHeldItemMainhand());
 				int enchThunderbolt = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.THUNDERBOLT.get(), player.getHeldItemMainhand());
 				int enchDoubleShot = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.DOUBLE_SHOT.get(), player.getHeldItemMainhand());
+				int enchCuresHarming = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.CURSE_OF_HARMING.get(), player.getHeldItemMainhand());
 				
 				if (enchPoison > 0) {
 					
@@ -59,7 +59,7 @@ public class OnEntityAttack {
 					
 				}
 				
-				if (EnchantmentManager.hasEnchantmentWithLevel(CaveEnchantment.CURSE_OF_HARMING.get(), player.getHeldItemMainhand(), 1, false)) {
+				if (enchCuresHarming > 0) {
 					
 					float backAmount = event.getAmount() / 2;
 					player.attackEntityFrom(new DamageSource("curse"), backAmount);

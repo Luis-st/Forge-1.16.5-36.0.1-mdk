@@ -1,6 +1,6 @@
 package net.luis.cave.blocks.container;
 
-import net.luis.cave.init.CaveBlocks;
+import net.luis.cave.init.blocks.CaveBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.RepairContainer;

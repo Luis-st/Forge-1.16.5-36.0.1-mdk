@@ -1,9 +1,9 @@
 package net.luis.cave.events.world;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.CaveBlocks;
 import net.luis.cave.init.CaveEnchantment;
 import net.luis.cave.init.CaveTools;
+import net.luis.cave.init.blocks.CaveBlocks;
 import net.luis.cave.lib.BlockManager;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;

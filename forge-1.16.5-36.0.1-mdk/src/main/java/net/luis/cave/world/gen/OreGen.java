@@ -3,7 +3,7 @@ package net.luis.cave.world.gen;
 import java.util.ArrayList;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.CaveBlocks;
+import net.luis.cave.init.blocks.CaveBlocks;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.WorldGenRegistries;

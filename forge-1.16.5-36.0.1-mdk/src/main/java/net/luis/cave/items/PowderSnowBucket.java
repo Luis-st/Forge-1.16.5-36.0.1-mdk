@@ -1,7 +1,7 @@
 package net.luis.cave.items;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.CaveBlocks;
+import net.luis.cave.init.blocks.CaveBlocks;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;

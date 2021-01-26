@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.CaveBlocks;
+import net.luis.cave.init.blocks.CaveBlocks;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
