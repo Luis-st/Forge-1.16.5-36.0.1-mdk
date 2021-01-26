@@ -11,6 +11,11 @@ import net.luis.cave.blocks.slab.other.VerticalDarkPrismarineSlab;
 import net.luis.cave.blocks.slab.other.VerticalEndStoneBrickSlab;
 import net.luis.cave.blocks.slab.other.VerticalPrismarineBrickSlab;
 import net.luis.cave.blocks.slab.other.VerticalPrismarineSlab;
+import net.luis.cave.blocks.slab.sandstone.VerticalCutRedSandstoneSlab;
+import net.luis.cave.blocks.slab.sandstone.VerticalCutSandstoneSlab;
+import net.luis.cave.blocks.slab.sandstone.VerticalRedSandstoneSlab;
+import net.luis.cave.blocks.slab.sandstone.VerticalSandstoneSlab;
+import net.luis.cave.blocks.slab.sandstone.VerticalSmoothRedSandstoneSlab;
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -42,5 +47,18 @@ public class CaveVerticalBlocks {
 	public static final RegistryObject<Block> VERTICAL_PRISMARINE_SLAB = BLOCKS.register("vertical_prismarine_slab", VerticalPrismarineSlab::new);
 	
 	public static final RegistryObject<Block> VERTICAL_PURPUR_SLAB = BLOCKS.register("vertical_purpur_slab", VerticalPrismarineSlab::new);
+	
+	
+	public static final RegistryObject<Block> VERTICAL_CUT_RED_SANDSTONE_SLAB = BLOCKS.register("vertical_cut_red_sandstone_slab", VerticalCutRedSandstoneSlab::new);
+	
+	public static final RegistryObject<Block> VERTICAL_CUT_SANDSTONE_SLAB = BLOCKS.register("vertical_cut_sandstone_slab", VerticalCutSandstoneSlab::new);
+	
+	public static final RegistryObject<Block> VERTICAL_RED_SANDSTONE_SLAB = BLOCKS.register("vertical_red_sandstone_slab", VerticalRedSandstoneSlab::new);
+	
+	public static final RegistryObject<Block> VERTICAL_SANDSTONE_SLAB = BLOCKS.register("vertical_sandstone_slab", VerticalSandstoneSlab::new);
+	
+	public static final RegistryObject<Block> VERTICAL_SMOOTH_RED_SANDSTONE_SLAB = BLOCKS.register("vertical_smooth_red_sandstone_slab", VerticalSmoothRedSandstoneSlab::new);
+	
+	public static final RegistryObject<Block> VERTICAL_SMOOTH_SANDSTONE_SLAB = BLOCKS.register("vertical_smooth_sandstone_slab", VerticalPrismarineSlab::new);
 	
 }
