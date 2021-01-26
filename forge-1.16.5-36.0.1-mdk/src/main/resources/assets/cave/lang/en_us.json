@@ -88,7 +88,7 @@
   "item.cave.enderite_bow": "Enderite Bow",
   "item.cave.enderite_crossbow": "Enderite Crossbow",
   "item.cave.end_star": "End Star",
-	  
+    
   "item.cave.rose_quartz": "Rose Quartz",
   "item.cave.polished_rose_quartz": "Polished Rose Quartz",
   "item.cave.rose_quartz_sword": "Rose Quartz Sword",
@@ -130,7 +130,7 @@
   "item.cave.jade_chestplate": "Jade Chestplate",
   "item.cave.jade_leggings": "Jade Leggings",
   "item.cave.jade_boots": "Jade Boots",
-	 
+   
   "block.cave.limonite_block": "Limonite Block" ,
   "item.cave.limonite_ingot": "Limonite Ingot",
   "block.cave.limonite_ore": "Limonite Ore", 
@@ -143,7 +143,7 @@
   "item.cave.limonite_chestplate": "Limonite Chestplate",
   "item.cave.limonite_leggings": "Limonite Leggings",
   "item.cave.limonite_boots": "Limonite Boots",
-	
+  
   "block.cave.rosite_block": "Rosite Block" ,
   "item.cave.rosite_ingot": "Rosite Ingot",
   "block.cave.rosite_ore": "Rosite Ore", 
@@ -152,7 +152,7 @@
   "item.cave.rosite_axe": "Rosite Axe", 
   "item.cave.rosite_shovel": "Rosite Shovel",
   "item.cave.rosite_hoe": "Rosite Hoe",
-	
+  
   "block.cave.saphire_block": "Saphire Block" ,
   "item.cave.saphire_ingot": "Saphire Ingot",
   "block.cave.saphire_ore": "Saphire Ore",
@@ -184,5 +184,45 @@
   "item.cave.night_boots": "Night Boots",
   "item.cave.night_shield": "Night Shield",
   "item.cave.night_bow": "Night Bow",
-  "item.cave.night_crossbow": "Night Crossbow"
+  "item.cave.night_crossbow": "Night Crossbow",
+  
+  "block.cave.vertical_oak_slab": "Vertical Oak Slab",
+  "block.cave.vertical_spruce_slab": "Vertical Spruce Slab",
+  "block.cave.vertical_birch_slab": "Vertical Birch Slab",
+  "block.cave.vertical_jungle_slab": "Vertical Jungle Slab",
+  "block.cave.vertical_acacia_slab": "Vertical Acacia Slab",
+  "block.cave.vertical_dark_oak_slab": "Vertical Dark Oak Slab",
+  "block.cave.vertical_crimson_slab": "Vertical Crimson Slab",
+  "block.cave.vertical_warped_slab": "Vertical Warped Slab",
+  "block.cave.vertical_stone_slab": "Vertical Stone Slab",
+  "block.cave.vertical_smooth_stone_slab": "Vertical Smooth Stone Slab",
+  "block.cave.vertical_cobblestone_slab": "Vertical Cobblestone Slab",
+  "block.cave.vertical_mossy_cobblestone_slab": "Vertical Mossy Cobblestone Slab",
+  "block.cave.vertical_stone_brick_slab": "Vertical Stone Brick Slab",
+  "block.cave.vertical_mossy_stone_brick_slab": "Vertical Mossy Stone Brick Slab",
+  "block.cave.vertical_andesite_slab": "Vertical Andesite Slab",
+  "block.cave.polished_vertical_andesite_slab": "Polished Vertical Andesite Slab",
+  "block.cave.vertical_diorite_slab": "Vertical Diorite Slab",
+  "block.cave.polished_vertical_diorite_slab": "Polished Vertical Diorite Slab",
+  "block.cave.vertical_granite_slab": "Vertical Granite Slab",
+  "block.cave.polished_vertical_granite_slab": "Polished Vertical Granite Slab",
+  "block.cave.vertical_sandstone_slab": "Vertical Sandstone Slab",
+  "block.cave.vertical_cut_sandstone_slab": "Vertical Cut Sandstone Slab",
+  "block.cave.vertical_smooth_sandstone_slab": "Vertical Smooth Sandstone Slab",
+  "block.cave.vertical_red_sandstone_slab": "Vertical Red Sandstone Slab",
+  "block.cave.vertical_cut_red_sandstone_slab": "Vertical Cut Red Sandstone Slab",
+  "block.cave.vertical_smooth_red_sandstone_slab": "Vertical Smooth Red Sandstone Slab",
+  "block.cave.vertical_brick_slab": "Vertical Brick Slab",
+  "block.cave.vertical_prismarine_slab": "Vertical Prismarine Slab",
+  "block.cave.vertical_prismarine_brick_slab": "Vertical Prismarine Brick Slab",
+  "block.cave.vertical_dark_prismarine_slab": "Vertical Dark Prismarine Slab",
+  "block.cave.vertical_nether_brick_slab": "Vertical Nether Brick Slab",
+  "block.cave.vertical_red_nether_brick_slab": "Vertical Red Nether Brick Slab",
+  "block.cave.vertical_quartz_slab": "Vertical Quartz Slab",
+  "block.cave.vertical_smooth_quartz_slab": "Vertical Smooth Quartz Slab",
+  "block.cave.vertical_purpur_slab": "Vertical Purpur Slab",
+  "block.cave.vertical_end_stone_brick_slab": "Vertical End Stone Brick Slab",
+  "block.cave.vertical_blackstone_slab": "Vertical Blackstone Slab",
+  "block.cave.polished_vertical_blackstone_slab": "Polished Vertical Blackstone Slab",
+  "block.cave.polished_vertical_blackstone_brick_slab": "Polished Vertical Blackstone Brick Slab"
 }
