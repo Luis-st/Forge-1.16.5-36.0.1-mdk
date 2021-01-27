@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#",
+        "#",
+        "#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:prismarine_bricks"
+        }
+    },
+    "result": {
+        "item": "cave:vertical_prismarine_brick_slab",
+        "count": 6
+    }
+}
+        
