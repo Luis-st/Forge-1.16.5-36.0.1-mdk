@@ -13,6 +13,7 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 
@@ -72,19 +73,15 @@ public class EnchantmentManager {
 		
 	}
 	
-	public static void addRandomEnchantment(ItemStack item, int enchantingLevel, boolean allowTreasure) {
+	public static Map<Enchantment, Integer> addRandomEnchantment(ItemStack item, int enchantingLevel, boolean allowTreasure) {
 		
 		Random rng = new Random();
-		int echantability = item.getItemEnchantability();
 		Map<Enchantment, Integer> returnEnchantment = new HashMap<Enchantment, Integer>();
 		List<Enchantment> enchantments = getAllowedEnchantmens(item, allowTreasure);
-		List<Integer> levels = getEnchantmentsLevel(enchantments);
+		List<Integer> levels = getEnchantmentsLevel(enchantments, enchantingLevel);
 		
-		if (echantability < 50) {
-			
-			echantability *= 2;
-			
-		}
+		List<Enchantment> retEnchantment = new ArrayList<Enchantment>();
+		List<Integer> retLevel = new ArrayList<Integer>();
 		
 		if (item.isEnchantable() && !enchantments.isEmpty() && !levels.isEmpty()) {
 			
@@ -92,42 +89,114 @@ public class EnchantmentManager {
 				
 				returnEnchantment.put(enchantments.get(0), levels.get(0));
 				
-			} else {
+			} else if (enchantments.size() == 2) {
 				
-				if (enchantingLevel <= 8) {
+				if (enchantingLevel >= 15) {
+					
+					returnEnchantment.put(enchantments.get(0), levels.get(0));
+					returnEnchantment.put(enchantments.get(1), levels.get(1));
+					
+				} else {
 					
 					int rngEnch = rng.nextInt(enchantments.size());
 					returnEnchantment.put(enchantments.get(rngEnch), levels.get(rngEnch));
 					
+				}
+				
+			} else if (enchantments.size() == 3) {
+				
+				if (enchantingLevel >= 20) {
+					
+					returnEnchantment.put(enchantments.get(0), levels.get(0));
+					returnEnchantment.put(enchantments.get(1), levels.get(1));
+					returnEnchantment.put(enchantments.get(2), levels.get(2));
+					
+				} else if (enchantingLevel >= 10) {
+					
+					int rngEnch0 = 0;
+					int rngEnch1 = 0;
+					
+					do {
+						
+						rngEnch0 = rng.nextInt(enchantments.size());
+						rngEnch1 = rng.nextInt(enchantments.size());
+
+					} while (rngEnch0 == rngEnch1);
+					
+					returnEnchantment.put(enchantments.get(rngEnch0), levels.get(rngEnch0));
+					returnEnchantment.put(enchantments.get(rngEnch1), levels.get(rngEnch1));
+					
 				} else {
 					
-					if (enchantingLevel <= 18) {
+					int rngEnch = rng.nextInt(enchantments.size());
+					returnEnchantment.put(enchantments.get(rngEnch), levels.get(rngEnch));
+					
+				}
+				
+			} else {
+				
+				int rngEnch0 = 0;
+				int rngEnch1 = 0;
+				int rngEnch2 = 0;
+				int rngEnch3 = 0;
+				
+				if (enchantingLevel <= 10) {
+					
+					rngEnch0 = rng.nextInt(enchantments.size());
+					returnEnchantment.put(enchantments.get(rngEnch0), levels.get(rngEnch0));
+					
+				} else if (enchantingLevel <= 20) {
+					
+					do {
 						
-						int rngEnch0 = rng.nextInt(enchantments.size());
-						Enchantment ench0 = enchantments.get(rngEnch0);
-						returnEnchantment.put(enchantments.get(rngEnch0), levels.get(rngEnch0));
+						rngEnch0 = rng.nextInt(enchantments.size());
+						rngEnch1 = rng.nextInt(enchantments.size());
+
+					} while (rngEnch0 == rngEnch1);
+					
+					returnEnchantment.put(enchantments.get(rngEnch0), levels.get(rngEnch0));
+					returnEnchantment.put(enchantments.get(rngEnch1), levels.get(rngEnch1));
+					
+				} else if (enchantingLevel <= 30) {
+					
+					do {
 						
-						do {
-							
-						} while (allowTreasure);
+						rngEnch0 = rng.nextInt(enchantments.size());
+						rngEnch1 = rng.nextInt(enchantments.size());
+						rngEnch2 = rng.nextInt(enchantments.size());
+
+					} while (rngEnch0 == rngEnch1 || rngEnch0 == rngEnch2 || rngEnch1 == rngEnch2);
+					
+					returnEnchantment.put(enchantments.get(rngEnch0), levels.get(rngEnch0));
+					returnEnchantment.put(enchantments.get(rngEnch1), levels.get(rngEnch1));
+					returnEnchantment.put(enchantments.get(rngEnch2), levels.get(rngEnch2));
+					
+				} else {
+					
+					do {
 						
-						
-						int rngEnch1 = rng.nextInt(enchantments.size());
-						Enchantment ench1 = enchantments.get(rngEnch1);
-						
-					} else {
-						
-						int rngEnch = rng.nextInt(enchantments.size());
-						
-					}
+						rngEnch0 = rng.nextInt(enchantments.size());
+						rngEnch1 = rng.nextInt(enchantments.size());
+						rngEnch2 = rng.nextInt(enchantments.size());
+						rngEnch3 = rng.nextInt(enchantments.size());
+
+					} while (rngEnch0 == rngEnch1 || rngEnch0 == rngEnch2 || rngEnch0 == rngEnch3
+							|| rngEnch1 == rngEnch2 || rngEnch1 == rngEnch3 || rngEnch2 == rngEnch3);
+					
+					returnEnchantment.put(enchantments.get(rngEnch0), levels.get(rngEnch0));
+					returnEnchantment.put(enchantments.get(rngEnch1), levels.get(rngEnch1));
+					returnEnchantment.put(enchantments.get(rngEnch2), levels.get(rngEnch2));
+					returnEnchantment.put(enchantments.get(rngEnch3), levels.get(rngEnch3));
 					
 				}
 				
 			}
 			
+			return returnEnchantment;
+			
 		} else {
 			
-			
+			return null;
 			
 		}
 		
@@ -171,14 +240,41 @@ public class EnchantmentManager {
 		
 	}
 	
-	private static List<Integer> getEnchantmentsLevel(List<Enchantment> enchantments) {
+	private static List<Integer> getEnchantmentsLevel(List<Enchantment> enchantments, int enchantingLevel) {
 		
 		List<Integer> levels = new ArrayList<Integer>();
 		Random rng = new Random();
 		
 		for (Enchantment enchantment : enchantments) {
 			
-			int enchLevel = Math.min(enchantment.getMinLevel(), rng.nextInt(5) + 1);
+			int enchLevel = MathHelper.nextInt(rng, enchantment.getMinLevel(), enchantment.getMaxLevel());
+			
+			if (enchantingLevel > 30) {
+				
+				if (enchLevel != enchantment.getMaxLevel()) {
+					
+					enchLevel++;
+					
+				}
+				
+			} else if (enchantingLevel > 20) {
+				
+				if (enchLevel != enchantment.getMaxLevel() && rng.nextInt(1) == 0) {
+					
+					enchLevel++;
+					
+				}
+				
+			} else if (enchantingLevel > 10) {
+				
+				if (enchLevel != enchantment.getMaxLevel() && rng.nextInt(2) == 0) {
+					
+					enchLevel++;
+					
+				}
+				
+			}
+			
 			levels.add(enchLevel);
 			
 		}

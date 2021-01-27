@@ -84,7 +84,6 @@ public class OnEntityAttack {
 				
 				if (enchDoubleShot > 0) {
 					
-					player.sendMessage(new StringTextComponent("Bow with Double Shot"), player.getUniqueID());
 					target.hurtResistantTime = 0;
 					
 				}
