@@ -1,13 +1,10 @@
 package net.luis.cave.lib;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-import net.luis.cave.init.CaveEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentData;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -21,7 +18,6 @@ import net.minecraft.potion.PotionUtils;
 import net.minecraft.potion.Potions;
 import net.minecraft.util.registry.Registry;
 import net.minecraftforge.common.BasicTrade;
-import net.minecraftforge.fml.RegistryObject;
 
 public class VillagerManager {
 	
@@ -90,14 +86,6 @@ public class VillagerManager {
 		int count = rng.nextInt(level + level) + level;		
 		ItemStack stack = new ItemStack(item);
 		EnchantmentHelper.addRandomEnchantment(rng, stack, level, allowTreasure);
-		Map<Enchantment, Integer> enchantments = EnchantmentHelper.getEnchantments(stack);
-		List<Enchantment> ench = enchantments.keySet().stream().collect(Collectors.toList());
-		Iterator<Enchantment> iterator = enchantments.keySet().iterator();
-		while (iterator.hasNext()) {
-			ench.forEach(e -> {
-				e.isCompatibleWith(iterator.next());
-			});
-		}
 		return new BasicTrade(new ItemStack(Items.EMERALD, count), ItemStack.EMPTY, stack, 16, randomXp(tradeLevel), 0.2f);
 		
 	}
@@ -127,18 +115,8 @@ public class VillagerManager {
 		List<Enchantment> enchantments = Registry.ENCHANTMENT.stream().filter((enchantment) -> {
 			return !enchantment.isCurse();
 		}).collect(Collectors.toList());
-		List<Enchantment> caveEnchantments = new ArrayList<>();
-		List<RegistryObject<Enchantment>> registryObjectEnchantments= CaveEnchantment.ENCHANTMENT.getEntries().stream().filter((enchantment) -> {
-			return !enchantment.get().isCurse();
-		}).collect(Collectors.toList());
-		registryObjectEnchantments.forEach(enchantment -> {
-			caveEnchantments.add(enchantment.get());
-		});
-		caveEnchantments.forEach(enchantment -> {
-			enchantments.add(enchantment);
-		});
 		Enchantment enchantment = enchantments.get(rng.nextInt(enchantments.size()));
-		int enchLevel = Math.min(enchantment.getMaxLevel(), rng.nextInt(5));
+		int enchLevel = Math.min(enchantment.getMaxLevel(), rng.nextInt(5) + 1);
 		EnchantedBookItem.addEnchantment(book, new EnchantmentData(enchantment, enchLevel));
 		int count = 2 + rng.nextInt(5 + enchLevel * 10) + 3 * enchLevel + 5;
 		
