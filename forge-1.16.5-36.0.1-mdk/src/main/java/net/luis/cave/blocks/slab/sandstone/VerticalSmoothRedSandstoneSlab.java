@@ -26,7 +26,7 @@ public class VerticalSmoothRedSandstoneSlab extends AbstractVerticalSlab {
 	
 		if (hit.getFace().getOpposite() == state.get(VerticalSmoothRedSandstoneSlab.FACING)
 				&& !state.get(VerticalSmoothRedSandstoneSlab.FULL)
-				&& player.getHeldItem(handIn).getItem() == CaveVerticalBlockItems.VERTICAL_CUT_RED_SANDSTONE_SLAB_ITEM.get()) {
+				&& player.getHeldItem(handIn).getItem() == CaveVerticalBlockItems.VERTICAL_SMOOTH_RED_SANDSTONE_SLAB_ITEM.get()) {
 
 			worldIn.setBlockState(pos, state.with(VerticalSmoothRedSandstoneSlab.FULL, true));
 

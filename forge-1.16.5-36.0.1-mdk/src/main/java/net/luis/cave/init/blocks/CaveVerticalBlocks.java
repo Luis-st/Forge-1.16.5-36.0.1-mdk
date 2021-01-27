@@ -12,6 +12,7 @@ import net.luis.cave.blocks.slab.other.VerticalDarkPrismarineSlab;
 import net.luis.cave.blocks.slab.other.VerticalEndStoneBrickSlab;
 import net.luis.cave.blocks.slab.other.VerticalPrismarineBrickSlab;
 import net.luis.cave.blocks.slab.other.VerticalPrismarineSlab;
+import net.luis.cave.blocks.slab.other.VerticalPurpurSlab;
 import net.luis.cave.blocks.slab.sandstone.VerticalCutRedSandstoneSlab;
 import net.luis.cave.blocks.slab.sandstone.VerticalCutSandstoneSlab;
 import net.luis.cave.blocks.slab.sandstone.VerticalRedSandstoneSlab;
@@ -71,7 +72,7 @@ public class CaveVerticalBlocks {
 	
 	public static final RegistryObject<Block> VERTICAL_PRISMARINE_SLAB = BLOCKS.register("vertical_prismarine_slab", VerticalPrismarineSlab::new);
 	
-	public static final RegistryObject<Block> VERTICAL_PURPUR_SLAB = BLOCKS.register("vertical_purpur_slab", VerticalPrismarineSlab::new);
+	public static final RegistryObject<Block> VERTICAL_PURPUR_SLAB = BLOCKS.register("vertical_purpur_slab", VerticalPurpurSlab::new);
 	
 	public static final RegistryObject<Block> VERTICAL_CUT_RED_SANDSTONE_SLAB = BLOCKS.register("vertical_cut_red_sandstone_slab", VerticalCutRedSandstoneSlab::new);
 	

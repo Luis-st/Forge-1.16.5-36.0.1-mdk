@@ -17,26 +17,31 @@ public class OnLivingExperienceDropEvent {
 		
 		PlayerEntity player = event.getAttackingPlayer();
 		int xp = event.getOriginalExperience();
-		int enchExperience = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.EXPERIENCE.get(), player.getHeldItemMainhand());
-		int enchLooting = EnchantmentHelper.getEnchantmentLevel(Enchantments.LOOTING, player.getHeldItemMainhand());
-		int enchTelekinesis = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.TELEKINESIS.get(), player.getHeldItemMainhand());
 		
-		if (enchExperience > 0 && enchTelekinesis == 0) {
+		if (player != null) {
 			
-			event.setDroppedExperience(xp * ((enchExperience + 1) * ((enchExperience * 2) + enchLooting)));
+			int enchExperience = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.EXPERIENCE.get(), player.getHeldItemMainhand());
+			int enchLooting = EnchantmentHelper.getEnchantmentLevel(Enchantments.LOOTING, player.getHeldItemMainhand());
+			int enchTelekinesis = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.TELEKINESIS.get(), player.getHeldItemMainhand());
 			
-		} else if (enchExperience > 0 && enchTelekinesis > 0) {
-			
-			player.giveExperiencePoints(xp * ((enchExperience + 1) * ((enchExperience * 2) + enchLooting)));
-			event.setDroppedExperience(0);
-			
-		} else if (enchTelekinesis > 0) {
-			
-			player.giveExperiencePoints(xp);
-			event.setDroppedExperience(0);
+			if (enchExperience > 0 && enchTelekinesis == 0) {
+				
+				event.setDroppedExperience(xp * ((enchExperience + 1) * ((enchExperience * 2) + enchLooting)));
+				
+			} else if (enchExperience > 0 && enchTelekinesis > 0) {
+				
+				player.giveExperiencePoints(xp * ((enchExperience + 1) * ((enchExperience * 2) + enchLooting)));
+				event.setDroppedExperience(0);
+				
+			} else if (enchTelekinesis > 0) {
+				
+				player.giveExperiencePoints(xp);
+				event.setDroppedExperience(0);
+				
+			}
 			
 		}
-
+		
 	}
 
 }

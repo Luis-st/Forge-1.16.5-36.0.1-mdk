@@ -22,7 +22,7 @@ public class TintedGlass extends Block {
 	@Override
 	public float getAmbientOcclusionLightValue(BlockState state, IBlockReader worldIn, BlockPos pos) {
 		
-		return 0.0f;
+		return 0.2f;
 		
 	}
 	
@@ -34,9 +34,9 @@ public class TintedGlass extends Block {
 	}
 	
 	@Override
-	public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
+	public int getOpacity(BlockState state, IBlockReader world, BlockPos pos) {
 		
-		return 0;
+		return world.getMaxLightLevel();
 		
 	}
 	

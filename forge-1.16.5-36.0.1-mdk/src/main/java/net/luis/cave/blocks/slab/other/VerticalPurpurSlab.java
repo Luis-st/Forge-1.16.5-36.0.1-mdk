@@ -23,7 +23,7 @@ public class VerticalPurpurSlab extends AbstractVerticalSlab {
 	@Override
 	@SuppressWarnings("deprecation")
 	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-	
+		
 		if (hit.getFace().getOpposite() == state.get(VerticalPurpurSlab.FACING)
 				&& !state.get(VerticalPurpurSlab.FULL)
 				&& player.getHeldItem(handIn).getItem() == CaveVerticalBlockItems.VERTICAL_PURPUR_SLAB_ITEM.get()) {
