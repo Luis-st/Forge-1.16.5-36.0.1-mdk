@@ -4,6 +4,7 @@ import net.luis.cave.Cave;
 import net.luis.cave.lib.WorldManager;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.ServerChatEvent;
@@ -18,7 +19,7 @@ public class OnServerChatEvent {
 		
 		String msg = event.getMessage();
 		ServerPlayerEntity player = event.getPlayer();
-		ServerWorld world = (ServerWorld) player.getEntityWorld();
+		World world = player.getEntityWorld();
 		
 		if (msg.equalsIgnoreCase("?slime")) {
 			
@@ -27,6 +28,20 @@ public class OnServerChatEvent {
 			if (WorldManager.isSlimeChunk(world, player)) {
 				
 				player.sendMessage(new StringTextComponent("§e§l[DEBUG]: §fThe current chunk is a slime chunk!"), player.getUniqueID());
+				
+			}
+			
+		}
+		
+		if (msg.equalsIgnoreCase("?seed")) {
+			
+			event.setCanceled(true);
+			
+			if (!world.isRemote) {
+				
+				ServerWorld serverWorld = (ServerWorld) world;
+				
+				player.sendMessage(new StringTextComponent("§e§l[DEBUG]: §fThe seed of the world is: " + serverWorld.getSeed()), player.getUniqueID());
 				
 			}
 			

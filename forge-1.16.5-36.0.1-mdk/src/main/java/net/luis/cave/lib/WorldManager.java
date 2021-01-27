@@ -11,17 +11,23 @@ import net.minecraft.world.server.ServerWorld;
 
 public class WorldManager {
 	
-	public static boolean isSlimeChunk(ServerWorld world, ServerPlayerEntity player) {
+	public static boolean isSlimeChunk(World world, ServerPlayerEntity player) {
 		
-		Chunk chunk = ((World) world).getChunkAt(new BlockPos(player.getPosX(), player.getPosY(), player.getPosZ()));
-		ChunkPos chunkPos = new ChunkPos(chunk.getPos().asLong());
-		int chunkPosX = chunkPos.x;
-		int chunkPosZ = chunkPos.z;
-		long seed = world.getSeed();
+		if (!world.isRemote) {
+			
+			Chunk chunk = world.getChunkAt(new BlockPos(player.getPosX(), player.getPosY(), player.getPosZ()));
+			ChunkPos chunkPos = new ChunkPos(chunk.getPos().asLong());
+			int chunkPosX = chunkPos.x;
+			int chunkPosZ = chunkPos.z;
+			long seed = ((ServerWorld) world).getSeed();
+			
+			Random rnd = new Random(seed + (chunkPosX * chunkPosX * 0x4c1906) +  (chunkPosX * 0x5ac0db) + (chunkPosZ * chunkPosZ) * 0x4307a7L + (chunkPosZ * 0x5f24f) ^ 0x3ad8025fL);
+			
+			return rnd.nextInt(10) == 0;
+			
+		}
 		
-		Random rnd = new Random(seed + (chunkPosX * chunkPosX * 0x4c1906) + (chunkPosX * 0x5ac0db) + (chunkPosZ * chunkPosZ) * 0x4307a7L + (chunkPosZ * 0x5f24f) ^ 0x3ad8025fL);
-
-		return rnd.nextInt(10) == 0;
+		return false;
 		
 	}
 
