@@ -53,7 +53,7 @@ public class Cave {
 		CaveVerticalBlockItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		
 		MinecraftForge.EVENT_BUS.register(this);
-
+		
 	}
 	
 	private void setup(final FMLCommonSetupEvent event) {

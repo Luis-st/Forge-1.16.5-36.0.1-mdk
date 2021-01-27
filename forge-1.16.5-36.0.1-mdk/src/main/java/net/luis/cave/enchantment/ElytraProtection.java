@@ -58,7 +58,7 @@ public class ElytraProtection extends Enchantment {
 			return true;
 		if (stack.getItem() == CaveArmor.NIGHT_ELYTRA.get())
 			return true;
-		return super.canApply(stack);
+		return false;
 	}
 	
 }

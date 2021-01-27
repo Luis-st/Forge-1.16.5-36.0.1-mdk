@@ -5,6 +5,8 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentType;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.HoeItem;
+import net.minecraft.item.ItemStack;
 
 public class Smelting extends Enchantment {
 
@@ -58,6 +60,13 @@ public class Smelting extends Enchantment {
 		if (ench != CaveEnchantment.BLASTING.get())
 			return true;
 		return false;
+	}
+	
+	@Override
+	public boolean canApply(ItemStack stack) {
+		if (stack.getItem() instanceof HoeItem)
+			return false;
+		return super.canApply(stack);
 	}
 
 }

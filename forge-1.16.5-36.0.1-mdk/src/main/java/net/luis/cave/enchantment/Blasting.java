@@ -43,15 +43,15 @@ public class Blasting extends Enchantment {
 	
 	@Override
 	public boolean canApply(ItemStack stack) {
-		if (stack.getItem() != CaveTools.BLAZING_AXE.get())
-			return true;
-		if (stack.getItem() != CaveTools.BLAZING_PICKAXE.get())
-			return true;
-		if (stack.getItem() != CaveTools.BLAZING_SHOVEL.get())
-			return true;
-		if (stack.getItem() != CaveTools.BLAZING_SWORD.get())
-			return true;
-		return false;
+		if (stack.getItem() == CaveTools.BLAZING_AXE.get())
+			return false;
+		if (stack.getItem() == CaveTools.BLAZING_PICKAXE.get())
+			return false;
+		if (stack.getItem() == CaveTools.BLAZING_SHOVEL.get())
+			return false;
+		if (stack.getItem() == CaveTools.BLAZING_SWORD.get())
+			return false;
+		return super.canApply(stack);
 	}
 	
 }
