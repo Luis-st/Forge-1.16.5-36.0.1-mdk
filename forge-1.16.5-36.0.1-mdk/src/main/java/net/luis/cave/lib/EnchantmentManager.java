@@ -75,169 +75,115 @@ public class EnchantmentManager {
 	
 	public static Map<Enchantment, Integer> addRandomEnchantment(ItemStack item, int enchantingLevel, boolean allowTreasure) {
 		
-		Random rng = new Random();
+		int enchCount = MathHelper.floor(enchantingLevel / 10);
 		Map<Enchantment, Integer> returnEnchantment = new HashMap<Enchantment, Integer>();
 		List<Enchantment> enchantments = getAllowedEnchantmens(item, allowTreasure);
 		List<Integer> levels = getEnchantmentsLevel(enchantments, enchantingLevel);
 		
-		List<Enchantment> retEnchantment = new ArrayList<Enchantment>();
-		List<Integer> retLevel = new ArrayList<Integer>();
-		
 		if (item.isEnchantable() && !enchantments.isEmpty() && !levels.isEmpty()) {
 			
-			if (enchantments.size() == 1) {
+			if (enchantingLevel > 0) {
 				
-				retEnchantment.add(enchantments.get(0));
-				retLevel.add(levels.get(0));
-				
-			} else if (enchantments.size() == 2) {
-				
-				if (enchantingLevel >= 15) {
+				if (enchCount > enchantments.size()) {
 					
-					retEnchantment.add(enchantments.get(0));
-					retLevel.add(levels.get(0));
-					
-					retEnchantment.add(enchantments.get(1));
-					retLevel.add(levels.get(1));
-					
-				} else {
-					
-					int rngEnch = rng.nextInt(enchantments.size());
-					
-					retEnchantment.add(enchantments.get(rngEnch));
-					retLevel.add(levels.get(rngEnch));
-					
-				}
-				
-			} else if (enchantments.size() == 3) {
-				
-				if (enchantingLevel >= 20) {
-					
-					retEnchantment.add(enchantments.get(0));
-					retLevel.add(levels.get(0));
-					
-					retEnchantment.add(enchantments.get(1));
-					retLevel.add(levels.get(1));
-					
-					retEnchantment.add(enchantments.get(2));
-					retLevel.add(levels.get(2));
-					
-				} else if (enchantingLevel >= 10) {
-					
-					int rngEnch0 = 0;
-					int rngEnch1 = 0;
-					
-					do {
+					for (int i = 0; i < enchantments.size(); i++) {
 						
-						rngEnch0 = rng.nextInt(enchantments.size());
-						rngEnch1 = rng.nextInt(enchantments.size());
-
-					} while (rngEnch0 == rngEnch1);
+						returnEnchantment.put(enchantments.get(i), levels.get(i));
+						
+					}
 					
-					retEnchantment.add(enchantments.get(rngEnch0));
-					retLevel.add(levels.get(rngEnch0));
+				} else if (enchCount == enchantments.size()) {
 					
-					retEnchantment.add(enchantments.get(rngEnch1));
-					retLevel.add(levels.get(rngEnch1));
+					for (int i = 0; i < enchCount; i++) {
+						
+						returnEnchantment.put(enchantments.get(i), levels.get(i));
+						
+					}
 					
 				} else {
 					
-					int rngEnch = rng.nextInt(enchantments.size());
+					List<Integer> rngEnch = getRandomEnchantmentPos(enchCount, enchantments.size());
 					
-					retEnchantment.add(enchantments.get(rngEnch));
-					retLevel.add(levels.get(rngEnch));
+					for (int i = 0; i <rngEnch.size(); i++) {
+						
+						returnEnchantment.put(enchantments.get(rngEnch.get(i)), levels.get(rngEnch.get(i)));
+						
+					}
 					
 				}
+				
+				returnEnchantment = removeIncompatible(returnEnchantment);
+				
+				return !returnEnchantment.isEmpty() ? returnEnchantment : null;
 				
 			} else {
 				
-				int rngEnch0 = 0;
-				int rngEnch1 = 0;
-				int rngEnch2 = 0;
-				int rngEnch3 = 0;
-				
-				if (enchantingLevel <= 10) {
-					
-					rngEnch0 = rng.nextInt(enchantments.size());
-					
-					retEnchantment.add(enchantments.get(rngEnch0));
-					retLevel.add(levels.get(rngEnch0));
-					
-				} else if (enchantingLevel <= 20) {
-					
-					do {
-						
-						rngEnch0 = rng.nextInt(enchantments.size());
-						rngEnch1 = rng.nextInt(enchantments.size());
-
-					} while (rngEnch0 == rngEnch1);
-					
-					retEnchantment.add(enchantments.get(rngEnch0));
-					retLevel.add(levels.get(rngEnch0));
-					
-					retEnchantment.add(enchantments.get(rngEnch1));
-					retLevel.add(levels.get(rngEnch1));
-					
-				} else if (enchantingLevel <= 30) {
-					
-					do {
-						
-						rngEnch0 = rng.nextInt(enchantments.size());
-						rngEnch1 = rng.nextInt(enchantments.size());
-						rngEnch2 = rng.nextInt(enchantments.size());
-
-					} while (rngEnch0 == rngEnch1 || rngEnch0 == rngEnch2 || rngEnch1 == rngEnch2);
-					
-					retEnchantment.add(enchantments.get(rngEnch0));
-					retLevel.add(levels.get(rngEnch0));
-					
-					retEnchantment.add(enchantments.get(rngEnch1));
-					retLevel.add(levels.get(rngEnch1));
-					
-					retEnchantment.add(enchantments.get(rngEnch2));
-					retLevel.add(levels.get(rngEnch2));
-					
-				} else {
-					
-					do {
-						
-						rngEnch0 = rng.nextInt(enchantments.size());
-						rngEnch1 = rng.nextInt(enchantments.size());
-						rngEnch2 = rng.nextInt(enchantments.size());
-						rngEnch3 = rng.nextInt(enchantments.size());
-
-					} while (rngEnch0 == rngEnch1 || rngEnch0 == rngEnch2 || rngEnch0 == rngEnch3
-							|| rngEnch1 == rngEnch2 || rngEnch1 == rngEnch3 || rngEnch2 == rngEnch3);
-					
-					retEnchantment.add(enchantments.get(rngEnch0));
-					retLevel.add(levels.get(rngEnch0));
-					
-					retEnchantment.add(enchantments.get(rngEnch1));
-					retLevel.add(levels.get(rngEnch1));
-					
-					retEnchantment.add(enchantments.get(rngEnch2));
-					retLevel.add(levels.get(rngEnch2));
-					
-					retEnchantment.add(enchantments.get(rngEnch3));
-					retLevel.add(levels.get(rngEnch3));
-					
-				}
+				return null;
 				
 			}
-			
-			for (int i = 0; i < retEnchantment.size(); i++) {
-				
-				returnEnchantment.put(retEnchantment.get(i), retLevel.get(i));
-				
-			}
-			
-			return !returnEnchantment.isEmpty() ? returnEnchantment : null;
 			
 		} else {
 			
 			return null;
 			
 		}
+		
+	}
+	
+	/**
+	 * null exception at line 144/139
+	 */
+	private static Map<Enchantment, Integer> removeIncompatible(Map<Enchantment, Integer> enchantments) {
+		
+		Map<Enchantment, Integer> returnMap = new HashMap<Enchantment, Integer>();
+		List<Enchantment> enchantmentList = enchantments.keySet().stream().collect(Collectors.toList());
+		List<Integer> levelList = enchantments.values().stream().collect(Collectors.toList());
+		
+		for (int i = 0; i < enchantmentList.size(); i++) {
+			
+			for (Enchantment enchantment : enchantmentList) {
+				
+				if (!enchantment.isCompatibleWith(enchantmentList.get(i))) {
+					
+					enchantmentList.remove(i);
+					levelList.remove(i);
+					
+				}
+				
+			}
+			
+		}
+		
+		for (int i = 0; i < enchantmentList.size(); i++) {
+			
+			returnMap.put(enchantmentList.get(i), levelList.get(i));
+			
+		}
+		
+		return returnMap;
+		
+	}
+	
+	private static List<Integer> getRandomEnchantmentPos(int enchCount, int size) {
+		
+		Random rng = new Random();
+		List<Integer> rngEnch = new ArrayList<Integer>();
+		
+		for (int i = 0; i < enchCount; i++) {
+			
+			int rngInt = 0;
+			
+			do {
+				
+				rngInt = rng.nextInt(size);
+						
+			} while (rngEnch.contains(rngInt));
+			
+			rngEnch.add(rngInt);
+			
+		}
+		
+		return rngEnch;
 		
 	}
 	
