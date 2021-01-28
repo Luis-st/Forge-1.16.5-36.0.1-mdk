@@ -1,14 +1,9 @@
 package net.luis.cave.events.entity.player.interact;
 
-import java.util.Map;
-
 import net.luis.cave.Cave;
-import net.luis.cave.lib.EnchantmentManager;
 import net.luis.cave.lib.ItemManager;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CropsBlock;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.math.BlockPos;
@@ -28,18 +23,6 @@ public class OnRightClickBlockEvent {
 		BlockPos pos = event.getPos();
 		World world = event.getWorld();
 		BlockState state = world.getBlockState(pos);
-		
-		if (!player.getHeldItemMainhand().isEmpty() && player.getHeldItemMainhand().isEnchantable()) {
-			
-			Map<Enchantment, Integer> rngEnch = EnchantmentManager.addRandomEnchantment(player.getHeldItemMainhand(), 30, true);
-			
-			if (!rngEnch.isEmpty()) {
-				
-				EnchantmentHelper.setEnchantments(rngEnch, player.getHeldItemMainhand());
-				
-			}
-			
-		}
 		
 		if (state.getBlock() instanceof CropsBlock) {
 			

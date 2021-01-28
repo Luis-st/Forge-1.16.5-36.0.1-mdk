@@ -2,6 +2,7 @@ package net.luis.cave.lib;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -9,6 +10,7 @@ import java.util.stream.Collectors;
 
 import net.luis.cave.init.CaveEnchantment;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentData;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -114,7 +116,7 @@ public class EnchantmentManager {
 				
 				returnEnchantment = removeIncompatible(returnEnchantment);
 				
-				return !returnEnchantment.isEmpty() ? returnEnchantment : null;
+				return !returnEnchantment.isEmpty() && returnEnchantment != null ? returnEnchantment : null;
 				
 			} else {
 				
@@ -130,33 +132,46 @@ public class EnchantmentManager {
 		
 	}
 	
-	/**
-	 * null exception at line 144/139
-	 */
 	private static Map<Enchantment, Integer> removeIncompatible(Map<Enchantment, Integer> enchantments) {
 		
 		Map<Enchantment, Integer> returnMap = new HashMap<Enchantment, Integer>();
 		List<Enchantment> enchantmentList = enchantments.keySet().stream().collect(Collectors.toList());
 		List<Integer> levelList = enchantments.values().stream().collect(Collectors.toList());
+		List<EnchantmentData> data = new ArrayList<EnchantmentData>();
 		
-		for (int i = 0; i < enchantmentList.size(); i++) {
+		for (int i = 0; i < enchantments.size(); i++) {
 			
-			for (Enchantment enchantment : enchantmentList) {
+			data.add(new EnchantmentData(enchantmentList.get(i), levelList.get(i)));
+			
+		}
+		
+		Iterator<EnchantmentData> iterator = data.iterator();
+
+		while (iterator.hasNext()) {
+			
+			if (!data.get(0).enchantment.isCompatibleWith(iterator.next().enchantment)) {
 				
-				if (!enchantment.isCompatibleWith(enchantmentList.get(i))) {
-					
-					enchantmentList.remove(i);
-					levelList.remove(i);
-					
-				}
+				iterator.remove();
+				break;
 				
 			}
 			
 		}
 		
-		for (int i = 0; i < enchantmentList.size(); i++) {
+		while (iterator.hasNext()) {
 			
-			returnMap.put(enchantmentList.get(i), levelList.get(i));
+			if (!data.get(0).enchantment.isCompatibleWith(iterator.next().enchantment)) {
+				
+				iterator.remove();
+				break;
+				
+			}
+			
+		}
+		
+		for (int i = 0; i < data.size(); i++) {
+			
+			returnMap.put(data.get(i).enchantment, data.get(i).enchantmentLevel);
 			
 		}
 		
