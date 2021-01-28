@@ -117,37 +117,7 @@ public class ItemManager {
 					
 				} else {
 					
-					int enchUnbreaking = EnchantmentHelper.getEnchantmentLevel(Enchantments.UNBREAKING, entity.getHeldItemMainhand());
-					
-					if (enchUnbreaking == 0) {
-						
-						stack.setDamage(stack.getDamage() + amount);
-						
-					} else if (enchUnbreaking == 1) {
-						
-						if (Math.random() >= 0.5) {
-							
-							stack.setDamage(stack.getDamage() + amount);
-							
-						}
-						
-					} else if (enchUnbreaking == 2) {
-						
-						if (Math.random() >= 0.67) {
-							
-							stack.setDamage(stack.getDamage() + amount);
-							
-						}
-						
-					} else if (enchUnbreaking == 3) {
-						
-						if (Math.random() >= 0.75) {
-							
-							stack.setDamage(stack.getDamage() + amount);
-							
-						}
-						
-					}
+					stack.damageItem(amount, entity, onBroken);
 					
 				}
 				
