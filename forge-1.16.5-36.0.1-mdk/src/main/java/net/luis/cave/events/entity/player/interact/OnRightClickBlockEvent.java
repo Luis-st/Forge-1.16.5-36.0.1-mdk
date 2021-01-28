@@ -1,9 +1,12 @@
 package net.luis.cave.events.entity.player.interact;
 
 import net.luis.cave.Cave;
+import net.luis.cave.init.CaveEnchantment;
+import net.luis.cave.init.CaveItems;
 import net.luis.cave.lib.ItemManager;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CropsBlock;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.math.BlockPos;
@@ -23,6 +26,7 @@ public class OnRightClickBlockEvent {
 		BlockPos pos = event.getPos();
 		World world = event.getWorld();
 		BlockState state = world.getBlockState(pos);
+		int enchReplenish = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.REPLENISH.get(), player.getHeldItemMainhand());
 		
 		if (state.getBlock() instanceof CropsBlock) {
 			
@@ -30,20 +34,38 @@ public class OnRightClickBlockEvent {
 			int age = state.get(cropsBlock.getAgeProperty());
 			
 			if (!cropsBlock.isMaxAge(state)) {
-			
-				int newAge = MathHelper.nextInt(player.getRNG(), age + 1, cropsBlock.getMaxAge());
-				world.setBlockState(pos, state.with(cropsBlock.getAgeProperty(), newAge), 3);
 				
-				if (!player.abilities.isCreativeMode) {
+				if (enchReplenish > 0) {
 					
-					ItemManager.damageItem(player.getHeldItemMainhand(), newAge > 5 ? 5 : newAge, player, e -> {
+					int newAge = MathHelper.nextInt(player.getRNG(), age + 1, cropsBlock.getMaxAge());
+					world.setBlockState(pos, state.with(cropsBlock.getAgeProperty(), newAge), 3);
+					
+					if (!player.abilities.isCreativeMode) {
 						
-						e.sendBreakAnimation(EquipmentSlotType.MAINHAND);
+						ItemManager.damageItem(player.getHeldItemMainhand(), newAge > 5 ? 5 : newAge, player, e -> {
+							
+							e.sendBreakAnimation(EquipmentSlotType.MAINHAND);
+							
+						}, false);
 						
-					}, false);
+					}
+					
+				} else if (player.getHeldItemMainhand().getItem() == CaveItems.FERTILIZER.get()) {
+					
+					if (player.getRNG().nextInt(2) == 0) {
+						
+						world.setBlockState(pos, state.with(cropsBlock.getAgeProperty(), age + 1), 3);
+						
+					}
+					
+					if (!player.abilities.isCreativeMode) {
+						
+						player.getHeldItemMainhand().shrink(1);
+						
+					}
 					
 				}
-				
+			
 			}
 			
 		}

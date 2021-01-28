@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cave:tuff"
+    },
+    {
+      "item": "cave:calcite"
+    }
+  ],
+  "result": {
+    "item": "cave:fertilizer",
+    "count": 4
+  }
+}
