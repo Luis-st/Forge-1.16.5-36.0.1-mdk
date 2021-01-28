@@ -3,7 +3,13 @@ package net.luis.cave.events.entity.player;
 import net.luis.cave.Cave;
 import net.luis.cave.lib.WorldManager;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextComponentUtils;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.util.text.event.ClickEvent;
+import net.minecraft.util.text.event.HoverEvent;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.api.distmarker.Dist;
@@ -40,8 +46,18 @@ public class OnServerChatEvent {
 			if (!world.isRemote) {
 				
 				ServerWorld serverWorld = (ServerWorld) world;
+				long seed = serverWorld.getSeed();
 				
-				player.sendMessage(new StringTextComponent("§e§l[DEBUG]: §fThe seed of the world is: " + serverWorld.getSeed()), player.getUniqueID());
+				ITextComponent iTextComponent = TextComponentUtils.wrapWithSquareBrackets(
+						(new StringTextComponent(String.valueOf(seed))).modifyStyle((p_211752_2_) -> {
+							return p_211752_2_.setFormatting(TextFormatting.GREEN)
+									.setClickEvent(new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, String.valueOf(seed)))
+									.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,new TranslationTextComponent("chat.copy.click")))
+									.setInsertion(String.valueOf(seed));
+							}));
+				
+				player.sendMessage(new StringTextComponent("§e§l[DEBUG]: §fThe seed of the world is: " + iTextComponent), player.getUniqueID());
+				player.sendMessage(new TranslationTextComponent("commands.seed.success", iTextComponent), player.getUniqueID());
 				
 			}
 			
