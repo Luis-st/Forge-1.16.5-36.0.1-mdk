@@ -57,6 +57,8 @@
   "block.cave.smelting_furnace": "Smelting Furnace",
   "block.cave.bee_table": "Bee Table",
   "block.cave.tinted_glass": "Tinted Glass",
+  "block.cave.calcite": "Calcite",
+  "block.cave.tuff": "Tuff",
   
   "block.cave.ruby_block": "Ruby Block",
   "item.cave.ruby": "Ruby", 

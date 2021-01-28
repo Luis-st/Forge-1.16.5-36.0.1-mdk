@@ -77,5 +77,13 @@ public class CaveBlocks {
 	public static final RegistryObject<Block> AMETHYST_ORE = BLOCKS.register("amethyst_ore", 
 			() -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(2.5f,4.0f).sound(SoundType.STONE)
 			.harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()));
+	
+	public static final RegistryObject<Block> CALCITE = BLOCKS.register("calcite", 
+			() -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(7.0f,7.0f).sound(SoundType.STONE)
+			.harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()));
+	
+	public static final RegistryObject<Block> TUFF = BLOCKS.register("tuff", 
+			() -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.5f,2.0f).sound(SoundType.STONE)
+			.harvestLevel(1).harvestTool(ToolType.PICKAXE).setRequiresTool()));
 
 }

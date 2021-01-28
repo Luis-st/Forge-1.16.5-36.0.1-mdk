@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "cave:blocks/tuff",
+    "particle": "cave:blocks/tuff"
+  }
+}

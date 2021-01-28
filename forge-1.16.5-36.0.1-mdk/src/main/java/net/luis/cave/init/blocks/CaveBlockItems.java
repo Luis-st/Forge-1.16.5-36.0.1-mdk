@@ -64,4 +64,10 @@ public class CaveBlockItems {
 	public static final RegistryObject<Item> AMETHYST_ORE_ITEM = ITEMS.register("amethyst_ore", 
 			() -> new BlockItem(CaveBlocks.AMETHYST_ORE.get(), new Item.Properties().group(Cave.BUILDING_BLOCKS)));
 	
+	public static final RegistryObject<Item> CALCITE_ITEM = ITEMS.register("calcite", 
+			() -> new BlockItem(CaveBlocks.CALCITE.get(), new Item.Properties().group(Cave.BUILDING_BLOCKS)));
+	
+	public static final RegistryObject<Item> TUFF_ITEM = ITEMS.register("tuff", 
+			() -> new BlockItem(CaveBlocks.TUFF.get(), new Item.Properties().group(Cave.BUILDING_BLOCKS)));
+	
 }
