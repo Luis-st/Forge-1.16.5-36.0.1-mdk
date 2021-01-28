@@ -87,19 +87,25 @@ public class EnchantmentManager {
 			
 			if (enchantments.size() == 1) {
 				
-				returnEnchantment.put(enchantments.get(0), levels.get(0));
+				retEnchantment.add(enchantments.get(0));
+				retLevel.add(levels.get(0));
 				
 			} else if (enchantments.size() == 2) {
 				
 				if (enchantingLevel >= 15) {
 					
-					returnEnchantment.put(enchantments.get(0), levels.get(0));
-					returnEnchantment.put(enchantments.get(1), levels.get(1));
+					retEnchantment.add(enchantments.get(0));
+					retLevel.add(levels.get(0));
+					
+					retEnchantment.add(enchantments.get(1));
+					retLevel.add(levels.get(1));
 					
 				} else {
 					
 					int rngEnch = rng.nextInt(enchantments.size());
-					returnEnchantment.put(enchantments.get(rngEnch), levels.get(rngEnch));
+					
+					retEnchantment.add(enchantments.get(rngEnch));
+					retLevel.add(levels.get(rngEnch));
 					
 				}
 				
@@ -107,9 +113,14 @@ public class EnchantmentManager {
 				
 				if (enchantingLevel >= 20) {
 					
-					returnEnchantment.put(enchantments.get(0), levels.get(0));
-					returnEnchantment.put(enchantments.get(1), levels.get(1));
-					returnEnchantment.put(enchantments.get(2), levels.get(2));
+					retEnchantment.add(enchantments.get(0));
+					retLevel.add(levels.get(0));
+					
+					retEnchantment.add(enchantments.get(1));
+					retLevel.add(levels.get(1));
+					
+					retEnchantment.add(enchantments.get(2));
+					retLevel.add(levels.get(2));
 					
 				} else if (enchantingLevel >= 10) {
 					
@@ -123,13 +134,18 @@ public class EnchantmentManager {
 
 					} while (rngEnch0 == rngEnch1);
 					
-					returnEnchantment.put(enchantments.get(rngEnch0), levels.get(rngEnch0));
-					returnEnchantment.put(enchantments.get(rngEnch1), levels.get(rngEnch1));
+					retEnchantment.add(enchantments.get(rngEnch0));
+					retLevel.add(levels.get(rngEnch0));
+					
+					retEnchantment.add(enchantments.get(rngEnch1));
+					retLevel.add(levels.get(rngEnch1));
 					
 				} else {
 					
 					int rngEnch = rng.nextInt(enchantments.size());
-					returnEnchantment.put(enchantments.get(rngEnch), levels.get(rngEnch));
+					
+					retEnchantment.add(enchantments.get(rngEnch));
+					retLevel.add(levels.get(rngEnch));
 					
 				}
 				
@@ -143,7 +159,9 @@ public class EnchantmentManager {
 				if (enchantingLevel <= 10) {
 					
 					rngEnch0 = rng.nextInt(enchantments.size());
-					returnEnchantment.put(enchantments.get(rngEnch0), levels.get(rngEnch0));
+					
+					retEnchantment.add(enchantments.get(rngEnch0));
+					retLevel.add(levels.get(rngEnch0));
 					
 				} else if (enchantingLevel <= 20) {
 					
@@ -154,8 +172,11 @@ public class EnchantmentManager {
 
 					} while (rngEnch0 == rngEnch1);
 					
-					returnEnchantment.put(enchantments.get(rngEnch0), levels.get(rngEnch0));
-					returnEnchantment.put(enchantments.get(rngEnch1), levels.get(rngEnch1));
+					retEnchantment.add(enchantments.get(rngEnch0));
+					retLevel.add(levels.get(rngEnch0));
+					
+					retEnchantment.add(enchantments.get(rngEnch1));
+					retLevel.add(levels.get(rngEnch1));
 					
 				} else if (enchantingLevel <= 30) {
 					
@@ -167,9 +188,14 @@ public class EnchantmentManager {
 
 					} while (rngEnch0 == rngEnch1 || rngEnch0 == rngEnch2 || rngEnch1 == rngEnch2);
 					
-					returnEnchantment.put(enchantments.get(rngEnch0), levels.get(rngEnch0));
-					returnEnchantment.put(enchantments.get(rngEnch1), levels.get(rngEnch1));
-					returnEnchantment.put(enchantments.get(rngEnch2), levels.get(rngEnch2));
+					retEnchantment.add(enchantments.get(rngEnch0));
+					retLevel.add(levels.get(rngEnch0));
+					
+					retEnchantment.add(enchantments.get(rngEnch1));
+					retLevel.add(levels.get(rngEnch1));
+					
+					retEnchantment.add(enchantments.get(rngEnch2));
+					retLevel.add(levels.get(rngEnch2));
 					
 				} else {
 					
@@ -183,16 +209,29 @@ public class EnchantmentManager {
 					} while (rngEnch0 == rngEnch1 || rngEnch0 == rngEnch2 || rngEnch0 == rngEnch3
 							|| rngEnch1 == rngEnch2 || rngEnch1 == rngEnch3 || rngEnch2 == rngEnch3);
 					
-					returnEnchantment.put(enchantments.get(rngEnch0), levels.get(rngEnch0));
-					returnEnchantment.put(enchantments.get(rngEnch1), levels.get(rngEnch1));
-					returnEnchantment.put(enchantments.get(rngEnch2), levels.get(rngEnch2));
-					returnEnchantment.put(enchantments.get(rngEnch3), levels.get(rngEnch3));
+					retEnchantment.add(enchantments.get(rngEnch0));
+					retLevel.add(levels.get(rngEnch0));
+					
+					retEnchantment.add(enchantments.get(rngEnch1));
+					retLevel.add(levels.get(rngEnch1));
+					
+					retEnchantment.add(enchantments.get(rngEnch2));
+					retLevel.add(levels.get(rngEnch2));
+					
+					retEnchantment.add(enchantments.get(rngEnch3));
+					retLevel.add(levels.get(rngEnch3));
 					
 				}
 				
 			}
 			
-			return returnEnchantment;
+			for (int i = 0; i < retEnchantment.size(); i++) {
+				
+				returnEnchantment.put(retEnchantment.get(i), retLevel.get(i));
+				
+			}
+			
+			return !returnEnchantment.isEmpty() ? returnEnchantment : null;
 			
 		} else {
 			
