@@ -71,6 +71,9 @@
   "item.cave.ruby_boots": "Ruby Boots",
   "item.cave.ruby_apple": "Ruby Apple",
   
+  "block.cave.amethyst_ore": "Amethyst Ore",
+  "item.cave.amethyst_shard": "Amethyst Shard",
+  
   "block.cave.enderite_block": "Enderite Block" , 
   "block.cave.enderite_ore": "Enderite Ore", 
   "item.cave.enderite_scrap": "Enderite Scrap",

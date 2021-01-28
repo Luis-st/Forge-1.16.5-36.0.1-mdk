@@ -13,7 +13,7 @@ public class Spyglass extends Item {
 	public Spyglass() {
 		
 		super(new Item.Properties()
-					.group(Cave.MISC)
+					.group(Cave.TOOLS)
 					.maxStackSize(1));
 		
 	}

@@ -73,5 +73,9 @@ public class CaveBlocks {
 	public static final RegistryObject<Block> BEE_TABLE = BLOCKS.register("bee_table", BeeTable::new);
 	
 	public static final RegistryObject<Block> TINTED_GLASS = BLOCKS.register("tinted_glass", TintedGlass::new);
+	
+	public static final RegistryObject<Block> AMETHYST_ORE = BLOCKS.register("amethyst_ore", 
+			() -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(2.5f,4.0f).sound(SoundType.STONE)
+			.harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()));
 
 }

@@ -61,4 +61,7 @@ public class CaveBlockItems {
 	public static final RegistryObject<Item> TINTED_GLASS_ITEM = ITEMS.register("tinted_glass", 
 			() -> new BlockItem(CaveBlocks.TINTED_GLASS.get(), new Item.Properties().group(Cave.DECORATIONS)));
 	
+	public static final RegistryObject<Item> AMETHYST_ORE_ITEM = ITEMS.register("amethyst_ore", 
+			() -> new BlockItem(CaveBlocks.AMETHYST_ORE.get(), new Item.Properties().group(Cave.BUILDING_BLOCKS)));
+	
 }

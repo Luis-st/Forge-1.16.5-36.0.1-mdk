@@ -78,5 +78,8 @@ public class CaveItems {
 	
 	public static final RegistryObject<Item> SPYGLASS = ITEMS.register("spyglass", Spyglass::new);
 	
+	public static final RegistryObject<Item> AMETHYST_SHARD = ITEMS.register("amethyst_shard", 
+			() -> new Item(new Item.Properties().group(Cave.MISC)));
+	
 }
 
