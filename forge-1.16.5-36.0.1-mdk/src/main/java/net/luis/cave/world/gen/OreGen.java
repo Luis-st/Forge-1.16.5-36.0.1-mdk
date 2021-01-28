@@ -35,7 +35,7 @@ public class OreGen {
 				.func_242731_b(20))); //count per chunk
 		
 		overworldOres.add(register("limonite_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
-				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, CaveBlocks.LIMONITE_ORE.get().getDefaultState(), 16)) //vein Size
+				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, CaveBlocks.LIMONITE_ORE.get().getDefaultState(), 14)) //vein Size
 				.range(16).square() //maximum height
 				.func_242731_b(7))); //count per chunk
 		
@@ -48,6 +48,11 @@ public class OreGen {
 				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, CaveBlocks.SAPHIRE_ORE.get().getDefaultState(), 4)) //vein Size
 				.range(64).square() //maximum height
 				.func_242731_b(6))); //count per chunk
+		
+		overworldOres.add(register("amethyst_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
+				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, CaveBlocks.AMETHYST_ORE.get().getDefaultState(), 7)) //vein Size
+				.range(32).square() //maximum height
+				.func_242731_b(10))); //count per chunk
 		
 		endOres.add(register("enderite_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
 				new BlockMatchRuleTest(Blocks.END_STONE), CaveBlocks.ENDERITE_ORE.get().getDefaultState(), 3)) //vein Size
