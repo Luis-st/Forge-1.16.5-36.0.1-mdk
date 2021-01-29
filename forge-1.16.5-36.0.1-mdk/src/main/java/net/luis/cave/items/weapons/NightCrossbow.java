@@ -1,6 +1,8 @@
 package net.luis.cave.items.weapons;
 
 import net.luis.cave.Cave;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -26,14 +28,18 @@ public class NightCrossbow extends Crossbow {
 	@Override
 	public double getArrowDamage(ItemStack stack) {
 		
-		return super.getArrowDamage(stack) * 2;
+		int enchPower = EnchantmentHelper.getEnchantmentLevel(Enchantments.POWER, stack);
+		
+		return enchPower * 2D + 2D;
 		
 	}
 	
 	@Override
 	public int getArrowPierce(ItemStack stack) {
 		
-		return (int) (super.getArrowPierce(stack) * 1.5);
+		int enchPiercing = EnchantmentHelper.getEnchantmentLevel(Enchantments.PIERCING, stack);
+		
+		return enchPiercing + 3;
 		
 	}
 	

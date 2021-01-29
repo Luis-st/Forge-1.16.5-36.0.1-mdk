@@ -1,6 +1,8 @@
 package net.luis.cave.items.weapons;
 
 import net.luis.cave.Cave;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -19,7 +21,9 @@ public class EnderiteBow extends Bow {
 	@Override
 	public double getArrowDamage(ItemStack stack) {
 		
-		return super.getArrowDamage(stack) * 1.75;
+		int enchPower = EnchantmentHelper.getEnchantmentLevel(Enchantments.POWER, stack);
+		
+		return enchPower * 1.75D + 1.25D;
 		
 	}
 

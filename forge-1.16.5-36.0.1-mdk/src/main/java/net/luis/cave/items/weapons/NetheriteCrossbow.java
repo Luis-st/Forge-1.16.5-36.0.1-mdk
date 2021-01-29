@@ -1,6 +1,8 @@
 package net.luis.cave.items.weapons;
 
 import net.luis.cave.Cave;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -26,7 +28,18 @@ public class NetheriteCrossbow extends Crossbow {
 	@Override
 	public double getArrowDamage(ItemStack stack) {
 		
-		return super.getArrowDamage(stack) * 1.5;
+		int enchPower = EnchantmentHelper.getEnchantmentLevel(Enchantments.POWER, stack);
+		
+		return enchPower * 1.5D + 1.5D;
+		
+	}
+	
+	@Override
+	public int getArrowPierce(ItemStack stack) {
+		
+		int enchPiercing = EnchantmentHelper.getEnchantmentLevel(Enchantments.PIERCING, stack);
+		
+		return enchPiercing + 1;
 		
 	}
 	

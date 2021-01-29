@@ -59,7 +59,7 @@ public class CaveBlockItems {
 			() -> new BlockItem(CaveBlocks.BEE_TABLE.get(), new Item.Properties().group(Cave.DECORATIONS)));
 	
 	public static final RegistryObject<Item> TINTED_GLASS_ITEM = ITEMS.register("tinted_glass", 
-			() -> new BlockItem(CaveBlocks.TINTED_GLASS.get(), new Item.Properties().group(Cave.DECORATIONS)));
+			() -> new BlockItem(CaveBlocks.TINTED_GLASS.get(), new Item.Properties().group(Cave.BUILDING_BLOCKS)));
 	
 	public static final RegistryObject<Item> AMETHYST_ORE_ITEM = ITEMS.register("amethyst_ore", 
 			() -> new BlockItem(CaveBlocks.AMETHYST_ORE.get(), new Item.Properties().group(Cave.BUILDING_BLOCKS)));
@@ -69,5 +69,20 @@ public class CaveBlockItems {
 	
 	public static final RegistryObject<Item> TUFF_ITEM = ITEMS.register("tuff", 
 			() -> new BlockItem(CaveBlocks.TUFF.get(), new Item.Properties().group(Cave.BUILDING_BLOCKS)));
+	
+	public static final RegistryObject<Item> COPPER_ORE_ITEM = ITEMS.register("copper_ore", 
+			() -> new BlockItem(CaveBlocks.COPPER_ORE.get(), new Item.Properties().group(Cave.BUILDING_BLOCKS)));
+	
+	public static final RegistryObject<Item> COPPER_BLOCK_ITEM = ITEMS.register("copper_block", 
+			() -> new BlockItem(CaveBlocks.COPPER_BLOCK.get(), new Item.Properties().group(Cave.BUILDING_BLOCKS)));
+	
+	public static final RegistryObject<Item> CUT_COPPER_ITEM = ITEMS.register("cut_copper", 
+			() -> new BlockItem(CaveBlocks.CUT_COPPER.get(), new Item.Properties().group(Cave.BUILDING_BLOCKS)));
+	
+	public static final RegistryObject<Item> CUT_COPPER_SLAB_ITEM = ITEMS.register("cut_copper_slab", 
+			() -> new BlockItem(CaveBlocks.CUT_COPPER_SLAB.get(), new Item.Properties().group(Cave.BUILDING_BLOCKS)));
+	
+	public static final RegistryObject<Item> CUT_COPPER_STAIRS_ITEM = ITEMS.register("cut_copper_stairs", 
+			() -> new BlockItem(CaveBlocks.CUT_COPPER_STAIRS.get(), new Item.Properties().group(Cave.BUILDING_BLOCKS)));
 	
 }

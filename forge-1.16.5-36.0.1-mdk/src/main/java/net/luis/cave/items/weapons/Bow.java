@@ -170,9 +170,7 @@ public class Bow extends ShootableItem implements IVanishable {
 		}
 		
 		double enchPower = getArrowDamage(stack);
-		if (enchPower > 0) {
-			arrowEntity.setDamage(enchPower);	
-		}
+		arrowEntity.setDamage(2 + enchPower);
 		
 		int enchPunch = getArrowKnockback(stack);
 		if (enchPunch > 0) {
@@ -180,9 +178,7 @@ public class Bow extends ShootableItem implements IVanishable {
 		}
 		
 		int enchPiercing = getArrowPierce(stack);
-		if (enchPiercing > 0) {
-			arrowEntity.setPierceLevel((byte) enchPiercing);
-		}
+		arrowEntity.setPierceLevel((byte) enchPiercing);
 
 		arrowEntity.setFire(getArrowFlameTime(stack));
 		

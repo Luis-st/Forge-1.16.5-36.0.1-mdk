@@ -1,6 +1,8 @@
 package net.luis.cave.items.weapons;
 
 import net.luis.cave.Cave;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -19,7 +21,9 @@ public class NightBow extends Bow {
 	@Override
 	public double getArrowDamage(ItemStack stack) {
 		
-		return super.getArrowDamage(stack) * 2;
+		int enchPower = EnchantmentHelper.getEnchantmentLevel(Enchantments.POWER, stack);
+		
+		return enchPower * 2D + 1.5D;
 		
 	}
 	

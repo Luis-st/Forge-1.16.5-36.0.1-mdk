@@ -61,6 +61,13 @@
   "block.cave.calcite": "Calcite",
   "block.cave.tuff": "Tuff",
   
+  "item.cave.copper_ingot": "Copper Ingot",
+  "block.cave.copper_ore": "Copper Ore",
+  "block.cave.copper_block": "Copper Block",
+  "block.cave.cut_copper": "Cut Copper",
+  "block.cave.cut_copper_slab": "Cut Copper Slab",
+  "block.cave.cut_copper_stairs": "Cut Copper Stairs",
+  
   "block.cave.ruby_block": "Ruby Block",
   "item.cave.ruby": "Ruby", 
   "item.cave.ruby_sword": "Ruby Sword",
