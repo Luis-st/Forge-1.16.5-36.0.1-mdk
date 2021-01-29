@@ -85,4 +85,7 @@ public class CaveBlockItems {
 	public static final RegistryObject<Item> CUT_COPPER_STAIRS_ITEM = ITEMS.register("cut_copper_stairs", 
 			() -> new BlockItem(CaveBlocks.CUT_COPPER_STAIRS.get(), new Item.Properties().group(Cave.BUILDING_BLOCKS)));
 	
+	public static final RegistryObject<Item> LIGHTNING_ROD_ITEM = ITEMS.register("lightning_rod", 
+			() -> new BlockItem(CaveBlocks.LIGHTNING_ROD.get(), new Item.Properties().group(Cave.DECORATIONS)));
+	
 }

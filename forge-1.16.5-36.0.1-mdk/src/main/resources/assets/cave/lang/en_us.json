@@ -68,6 +68,7 @@
   "block.cave.cut_copper_slab": "Cut Copper Slab",
   "block.cave.cut_copper_stairs": "Cut Copper Stairs",
   "block.cave.vertical_cut_copper_slab": "Vertical Cut Copper Slab",
+  "block.cave.lightning_rod": "Lightning Rod",
   
   "block.cave.ruby_block": "Ruby Block",
   "item.cave.ruby": "Ruby", 

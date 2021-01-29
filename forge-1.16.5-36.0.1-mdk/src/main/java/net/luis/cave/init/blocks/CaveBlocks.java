@@ -3,6 +3,7 @@ package net.luis.cave.init.blocks;
 import net.luis.cave.Cave;
 import net.luis.cave.blocks.BeeTable;
 import net.luis.cave.blocks.InfiniteAnvil;
+import net.luis.cave.blocks.LightningRod;
 import net.luis.cave.blocks.PowderSnow;
 import net.luis.cave.blocks.SmeltingFurnace;
 import net.luis.cave.blocks.TintedGlass;
@@ -94,16 +95,19 @@ public class CaveBlocks {
 			.harvestLevel(1).harvestTool(ToolType.PICKAXE).setRequiresTool()));
 	
 	public static final RegistryObject<Block> COPPER_BLOCK = BLOCKS.register("copper_block", 
-			() -> new Block(AbstractBlock.Properties.from(CaveBlocks.COPPER_ORE.get())));
+			() -> new Block(Block.Properties.create(Material.IRON, MaterialColor.ADOBE).hardnessAndResistance(3.0f,3.0f).sound(SoundType.METAL)
+					.harvestLevel(1).harvestTool(ToolType.PICKAXE).setRequiresTool()));
 	
 	public static final RegistryObject<Block> CUT_COPPER = BLOCKS.register("cut_copper", 
-			() -> new Block(AbstractBlock.Properties.from(CaveBlocks.COPPER_ORE.get())));
+			() -> new Block(AbstractBlock.Properties.from(CaveBlocks.COPPER_BLOCK.get())));
 	
 	public static final RegistryObject<Block> CUT_COPPER_SLAB = BLOCKS.register("cut_copper_slab", 
-			() -> new SlabBlock(AbstractBlock.Properties.from(CaveBlocks.COPPER_ORE.get())));
+			() -> new SlabBlock(AbstractBlock.Properties.from(CaveBlocks.COPPER_BLOCK.get())));
 	
 	@SuppressWarnings("deprecation")
 	public static final RegistryObject<Block> CUT_COPPER_STAIRS = BLOCKS.register("cut_copper_stairs", 
-			() -> new StairsBlock(CaveBlocks.CUT_COPPER.get().getDefaultState(), AbstractBlock.Properties.from(CaveBlocks.COPPER_ORE.get())));
+			() -> new StairsBlock(CaveBlocks.CUT_COPPER.get().getDefaultState(), AbstractBlock.Properties.from(CaveBlocks.COPPER_BLOCK.get())));
+	
+	public static final RegistryObject<Block> LIGHTNING_ROD = BLOCKS.register("lightning_rod", LightningRod::new);
 
 }
