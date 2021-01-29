@@ -3,7 +3,6 @@ package net.luis.cave.events.entity;
 import net.luis.cave.Cave;
 import net.luis.cave.init.blocks.CaveBlocks;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.effect.LightningBoltEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -22,6 +21,7 @@ public class OnEntityJoinWorldEvent {
 		
 		if (entity instanceof LightningBoltEntity) {
 			
+			LightningBoltEntity lightning = (LightningBoltEntity) entity;
 			double x = entity.getPosX();
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
@@ -34,10 +34,7 @@ public class OnEntityJoinWorldEvent {
 						
 						if (world.getBlockState(new BlockPos(x + cx, y + cy, z + cz)).getBlock() == CaveBlocks.LIGHTNING_ROD.get()) {
 							
-							event.setCanceled(true);
-							LightningBoltEntity lightning = new LightningBoltEntity(EntityType.LIGHTNING_BOLT, world);
-							lightning.setLocationAndAngles(x + cx, y + cy, z + cz, world.rand.nextFloat() * 360, 0);
-							world.addEntity(lightning);
+							lightning.setPositionAndUpdate(x + cx, y + cy, z + cz);
 							
 						}
 						
@@ -46,13 +43,6 @@ public class OnEntityJoinWorldEvent {
 				}
 				
 			}
-			
-			
-			Cave.LOGGER.debug("LightningBoltEntity");
-			
-			Cave.LOGGER.debug("X: " + x);
-			Cave.LOGGER.debug("Y: " + y);
-			Cave.LOGGER.debug("Z: " + z);
 			
 		}
 

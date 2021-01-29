@@ -1,11 +1,18 @@
 package net.luis.cave.blocks;
 
+import net.luis.cave.blocks.tileentity.LightningRodTileEntity;
+import net.luis.cave.init.CaveEnchantment;
 import net.luis.cave.init.blocks.CaveBlocks;
+import net.luis.cave.lib.ItemManager;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.DirectionalBlock;
 import net.minecraft.block.IWaterLoggable;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.effect.LightningBoltEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.BlockItemUseContext;
@@ -13,14 +20,19 @@ import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.StateContainer.Builder;
 import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
+import net.minecraft.world.World;
 
 public class LightningRod extends DirectionalBlock implements IWaterLoggable {
 	
@@ -34,7 +46,7 @@ public class LightningRod extends DirectionalBlock implements IWaterLoggable {
 
 	public LightningRod() {
 		
-		super(AbstractBlock.Properties.from(CaveBlocks.COPPER_BLOCK.get()).notSolid());
+		super(AbstractBlock.Properties.from(CaveBlocks.COPPER_BLOCK.get()).notSolid().tickRandomly());
 		this.setDefaultState(this.stateContainer.getBaseState().with(WATERLOGGED, Boolean.valueOf(false)));
 		
 	}
@@ -59,6 +71,46 @@ public class LightningRod extends DirectionalBlock implements IWaterLoggable {
 		}
 		
 		return super.getShape(state, worldIn, pos, context);
+		
+	}
+	
+	@Override
+	public boolean hasTileEntity(BlockState state) {
+		
+		return true;
+		
+	}
+	
+	@Override
+	public TileEntity createTileEntity(BlockState state, IBlockReader world) {
+		
+		return new LightningRodTileEntity();
+		
+	}
+	
+	@Override
+	@SuppressWarnings("deprecation")
+	public ActionResultType onBlockActivated(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult hit) {
+		
+		int enchThunderbolt = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.THUNDERBOLT.get(), player.getHeldItem(hand));
+		
+		if (enchThunderbolt > 0) {
+			
+			LightningBoltEntity lightning = new LightningBoltEntity(EntityType.LIGHTNING_BOLT, world);
+			lightning.setLocationAndAngles(pos.getX(), pos.getY(), pos.getZ(), world.rand.nextFloat() * 360, 0);
+			world.addEntity(lightning);
+			
+			ItemManager.damageItem(player.getHeldItem(hand), enchThunderbolt, player, e -> {
+				
+				e.sendBreakAnimation(hand);
+				
+			}, false);
+			
+			return ActionResultType.SUCCESS;
+			
+		}
+		
+		return super.onBlockActivated(state, world, pos, player, hand, hit);
 		
 	}
 	

@@ -4,7 +4,6 @@ import java.util.List;
 
 import net.luis.cave.Cave;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.api.distmarker.Dist;
@@ -20,18 +19,11 @@ public class OnSleepJump {
 
 		World world = event.world;
 		List<? extends PlayerEntity> players = world.getPlayers();
-		MinecraftServer server = world.getServer();
 		
 		if (!world.isRemote && !Cave.pvpServer) {
 			
 			int sleepPlayers = 0;
 			int playerCount = world.getPlayers().size();
-			
-			if (server != null) {
-				
-				playerCount = server.getPlayerList().getPlayers().size();
-				
-			}
 			
 			for (PlayerEntity playerEntity : players) {
 				
