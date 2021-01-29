@@ -131,4 +131,7 @@ public class CaveVerticalBlockItems {
 	public static final RegistryObject<Item> POLISHED_VERTICAL_BLACKSTONE_BRICK_SLAB_ITEM = ITEMS.register("polished_vertical_blackstone_brick_slab", 
 			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.POLISHED_VERTICAL_BLACKSTONE_BRICK_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
 	
+	public static final RegistryObject<Item> VERTICAL_CUT_COPPER_SLAB_ITEM = ITEMS.register("vertical_cut_copper_slab", 
+			() -> new AbstractVerticalSlabItem(CaveVerticalBlocks.VERTICAL_CUT_COPPER_SLAB.get(), new Item.Properties().group(Cave.VERTICAL_SLABS)));
+	
 }

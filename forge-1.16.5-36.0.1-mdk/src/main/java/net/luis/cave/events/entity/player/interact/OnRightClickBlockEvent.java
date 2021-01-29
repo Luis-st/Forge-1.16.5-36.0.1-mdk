@@ -52,11 +52,7 @@ public class OnRightClickBlockEvent {
 					
 				} else if (player.getHeldItemMainhand().getItem() == CaveItems.FERTILIZER.get()) {
 					
-					if (player.getRNG().nextInt(2) == 0) {
-						
-						world.setBlockState(pos, state.with(cropsBlock.getAgeProperty(), age + 1), 3);
-						
-					}
+					world.setBlockState(pos, state.with(cropsBlock.getAgeProperty(), age + 1), 3);
 					
 					if (!player.abilities.isCreativeMode) {
 						

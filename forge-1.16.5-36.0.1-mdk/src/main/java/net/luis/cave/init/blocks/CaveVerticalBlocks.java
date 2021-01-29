@@ -8,6 +8,7 @@ import net.luis.cave.blocks.slab.nether.VerticalPolishedBlackstoneSlab;
 import net.luis.cave.blocks.slab.nether.VerticalQuartzSlab;
 import net.luis.cave.blocks.slab.nether.VerticalRedNetherBrickSlab;
 import net.luis.cave.blocks.slab.nether.VerticalSmoothQuartzSlab;
+import net.luis.cave.blocks.slab.other.VerticalCutCopperSlab;
 import net.luis.cave.blocks.slab.other.VerticalDarkPrismarineSlab;
 import net.luis.cave.blocks.slab.other.VerticalEndStoneBrickSlab;
 import net.luis.cave.blocks.slab.other.VerticalPrismarineBrickSlab;
@@ -127,5 +128,7 @@ public class CaveVerticalBlocks {
 	public static final RegistryObject<Block> VERTICAL_SPRUCE_SLAB = BLOCKS.register("vertical_spruce_slab", VerticalSpruceSlab::new);
 	
 	public static final RegistryObject<Block> VERTICAL_WARPED_SLAB = BLOCKS.register("vertical_warped_slab", VerticalWarpedSlab::new);
+	
+	public static final RegistryObject<Block> VERTICAL_CUT_COPPER_SLAB = BLOCKS.register("vertical_cut_copper_slab", VerticalCutCopperSlab::new);
 	
 }
