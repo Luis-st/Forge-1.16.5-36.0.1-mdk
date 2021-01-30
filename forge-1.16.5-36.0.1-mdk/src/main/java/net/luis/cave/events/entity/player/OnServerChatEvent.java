@@ -35,6 +35,10 @@ public class OnServerChatEvent {
 				
 				player.sendMessage(new StringTextComponent("§e§l[DEBUG]: §fThe current chunk is a slime chunk!"), player.getUniqueID());
 				
+			} else {
+				
+				player.sendMessage(new StringTextComponent("§e§l[DEBUG]: §fThe current chunk is not a slime chunk!"), player.getUniqueID());
+				
 			}
 			
 		}

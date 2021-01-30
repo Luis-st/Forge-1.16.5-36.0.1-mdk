@@ -29,19 +29,20 @@ public class CreatGameRules {
 			creatInteger.setAccessible(true);
 			
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DISABLE_ENDERMAN_TELEPORT));
-			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DO_ENDERMAN_ATTACK_TELEPORT));
+			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DISABLE_ENDERMAN_ATTACK_TELEPORT));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DISABLE_SHULKER_TELEPORT));
+			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DISABLE_SHULKER_ATTACK_TELEPORT));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DO_BAT_SPAWNING));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DO_MONSTER_SPAWNING));
-			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DO_FARMLAND_TRAMPLE));
+			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DISABLE_FARMLAND_TRAMPLE));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DO_CROP_GROW));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DO_SAPLING_GROW));
-			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.ENABLE_VILLAGER_FAST_CONVERT));
+			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.ENABLE_ZOMBIEVILLAGER_FAST_CONVERT));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DO_WORKTIME_TRADE_RESETING));
-			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DO_BLASTING_RESISTANCE));
+			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.ENABLE_BLASTING_DAMAGE));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DISABLE_ITEM_DESPAWN));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DISABLE_ENDSTAR_DROP));
-			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DISABLE_ITEM_NO_GRAVITY));
+			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DISABLE_ITEM_GRAVITY));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.ENABLE_INFINITE_HARVESTING));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.ENABLE_PROTECTION_TIME));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.ENABLE_TRADE_REDUCTION));
