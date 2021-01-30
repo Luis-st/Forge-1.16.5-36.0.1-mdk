@@ -42,7 +42,7 @@ public class OnEntityAttack {
 				
 				if (enchPoison > 0) {
 					
-					target.addPotionEffect(new EffectInstance(Effects.POISON, 50 * (enchPoison + 2), 0 + (enchPoison + 1)));
+					target.addPotionEffect(new EffectInstance(Effects.POISON, 50 * (enchPoison + 2), (enchPoison + 1)));
 					
 				}
 				
@@ -60,7 +60,7 @@ public class OnEntityAttack {
 				
 				if (enchCuresHarming > 0) {
 					
-					float backAmount = event.getAmount() / 2;
+					float backAmount = event.getAmount() / 2 + enchCuresHarming;
 					player.attackEntityFrom(new DamageSource("curse"), backAmount);
 					
 				}
@@ -71,7 +71,7 @@ public class OnEntityAttack {
 					lightning.setLocationAndAngles(target.getPosX(), target.getPosY(), target.getPosZ(), world.rand.nextFloat() * 360, 0);
 					world.addEntity(lightning);
 					
-					if (!world.isRemote) {
+					if (!world.isRemote && world.rand.nextInt(10) == 0) {
 						
 						((ServerWorld) world).func_241113_a_(0, world.rand.nextInt(1000), true, true);
 						

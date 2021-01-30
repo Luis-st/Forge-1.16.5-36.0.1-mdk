@@ -13,7 +13,7 @@ import net.minecraftforge.fml.common.Mod;
 public class OnLivingSpawnEvent {
 
 	@SubscribeEvent
-	public static void LivingSpawn(LivingSpawnEvent.CheckSpawn event) {
+	public static void LivingSpawn(LivingSpawnEvent.SpecialSpawn event) {
 		
 		LivingEntity entity = event.getEntityLiving();
 		

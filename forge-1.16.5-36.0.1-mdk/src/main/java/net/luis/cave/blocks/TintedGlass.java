@@ -22,7 +22,7 @@ public class TintedGlass extends Block {
 	@Override
 	public float getAmbientOcclusionLightValue(BlockState state, IBlockReader worldIn, BlockPos pos) {
 		
-		return 0.2f;
+		return 0.0f;
 		
 	}
 	

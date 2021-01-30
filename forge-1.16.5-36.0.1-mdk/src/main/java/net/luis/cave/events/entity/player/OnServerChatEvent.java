@@ -56,7 +56,6 @@ public class OnServerChatEvent {
 									.setInsertion(String.valueOf(seed));
 							}));
 				
-				player.sendMessage(new StringTextComponent("§e§l[DEBUG]: §fThe seed of the world is: " + iTextComponent), player.getUniqueID());
 				player.sendMessage(new TranslationTextComponent("commands.seed.success", iTextComponent), player.getUniqueID());
 				
 			}
