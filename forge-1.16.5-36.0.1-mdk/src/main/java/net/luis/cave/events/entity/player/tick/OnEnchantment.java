@@ -73,6 +73,12 @@ public class OnEnchantment {
 			
 			player.getAttribute(Attributes.MAX_HEALTH).setBaseValue(20);
 			
+			if (player.getHealth() > 20) {
+				
+				player.setHealth(20);
+				
+			}
+			
 		}
 		
 		if (world.getGameTime() % 60 == 0) {

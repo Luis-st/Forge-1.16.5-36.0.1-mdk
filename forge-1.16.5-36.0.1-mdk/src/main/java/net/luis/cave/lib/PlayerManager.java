@@ -8,43 +8,37 @@ public class PlayerManager {
 	
 	public static boolean hasSaphireArmor(PlayerEntity player) {
 		
-		if (player.getItemStackFromSlot(EquipmentSlotType.HEAD).equals(CaveArmor.SAPHIRE_HELMET.get().getDefaultInstance(), true) &&
-			player.getItemStackFromSlot(EquipmentSlotType.CHEST).equals(CaveArmor.SAPHIRE_CHESTPLATE.get().getDefaultInstance(), true) &&
-			player.getItemStackFromSlot(EquipmentSlotType.LEGS).equals(CaveArmor.SAPHIRE_LEGGINS.get().getDefaultInstance(), true) &&
-			player.getItemStackFromSlot(EquipmentSlotType.FEET).equals(CaveArmor.SAPHIRE_BOOTS.get().getDefaultInstance(), true)) {
-				
+		if (player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem() == CaveArmor.SAPHIRE_HELMET.get() &&
+			player.getItemStackFromSlot(EquipmentSlotType.CHEST).getItem() == CaveArmor.SAPHIRE_CHESTPLATE.get()&&
+			player.getItemStackFromSlot(EquipmentSlotType.LEGS).getItem() == CaveArmor.SAPHIRE_LEGGINS.get() &&
+			player.getItemStackFromSlot(EquipmentSlotType.FEET).getItem() == CaveArmor.SAPHIRE_BOOTS.get()) {
+			
 			return true;
-				
-		} else {
-				
-			return false;
-				
+			
 		}
+		
+		return false;
 		
 	}
 	
 	public static boolean hasNightArmor(PlayerEntity player, boolean enableElytra) {
 		
-		if (player.getItemStackFromSlot(EquipmentSlotType.HEAD).equals(CaveArmor.NIGHT_HELMET.get().getDefaultInstance(), true) &&
-			player.getItemStackFromSlot(EquipmentSlotType.LEGS).equals(CaveArmor.NIGHT_LEGGINS.get().getDefaultInstance(), true) &&
-			player.getItemStackFromSlot(EquipmentSlotType.FEET).equals(CaveArmor.NIGHT_BOOTS.get().getDefaultInstance(), true)) {
+		if (player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem() == CaveArmor.NIGHT_HELMET.get() &&
+			player.getItemStackFromSlot(EquipmentSlotType.LEGS).getItem() == CaveArmor.NIGHT_LEGGINS.get() &&
+			player.getItemStackFromSlot(EquipmentSlotType.FEET).getItem() == CaveArmor.NIGHT_BOOTS.get()) {
 			
 			if (enableElytra) {
 				
-				if (player.getItemStackFromSlot(EquipmentSlotType.CHEST).equals(CaveArmor.NIGHT_CHESTPLATE.get().getDefaultInstance(), true) || 
-					player.getItemStackFromSlot(EquipmentSlotType.CHEST).equals(CaveArmor.NIGHT_ELYTRA.get().getDefaultInstance(), true)) {
+				if (player.getItemStackFromSlot(EquipmentSlotType.CHEST).getItem() == CaveArmor.NIGHT_CHESTPLATE.get() ||
+					player.getItemStackFromSlot(EquipmentSlotType.CHEST).getItem() == CaveArmor.NIGHT_ELYTRA.get()) {
 					
 					return true;
 					
 				}
 				
-			} else {
+			} else if (player.getItemStackFromSlot(EquipmentSlotType.CHEST).getItem() == CaveArmor.NIGHT_CHESTPLATE.get()) {
 				
-				if (player.getItemStackFromSlot(EquipmentSlotType.CHEST).equals(CaveArmor.NIGHT_HELMET.get().getDefaultInstance(), true)) {
-						
-					return true;
-						
-				}
+				return true;
 				
 			}
 			
@@ -56,18 +50,16 @@ public class PlayerManager {
 
 	public static boolean hasBlazingArmor(PlayerEntity player) {
 		
-		if (player.getItemStackFromSlot(EquipmentSlotType.HEAD).equals(CaveArmor.BLAZING_HELMET.get().getDefaultInstance(), true) &&
-			player.getItemStackFromSlot(EquipmentSlotType.CHEST).equals(CaveArmor.BLAZING_CHESTPLATE.get().getDefaultInstance(), true) &&
-			player.getItemStackFromSlot(EquipmentSlotType.LEGS).equals(CaveArmor.BLAZING_LEGGINS.get().getDefaultInstance(), true) &&
-			player.getItemStackFromSlot(EquipmentSlotType.FEET).equals(CaveArmor.BLAZING_BOOTS.get().getDefaultInstance(), true)) {
-					
+		if (player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem() == CaveArmor.BLAZING_HELMET.get() &&
+			player.getItemStackFromSlot(EquipmentSlotType.CHEST).getItem() == CaveArmor.BLAZING_CHESTPLATE.get()&&
+			player.getItemStackFromSlot(EquipmentSlotType.LEGS).getItem() == CaveArmor.BLAZING_LEGGINS.get() &&
+			player.getItemStackFromSlot(EquipmentSlotType.FEET).getItem() == CaveArmor.BLAZING_BOOTS.get()) {
+				
 			return true;
-					
-		} else {
-					
-			return false;
-					
+				
 		}
+			
+		return false;
 		
 	}
 

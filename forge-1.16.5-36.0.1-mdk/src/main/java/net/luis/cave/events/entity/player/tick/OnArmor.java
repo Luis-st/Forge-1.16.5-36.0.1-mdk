@@ -22,7 +22,13 @@ public class OnArmor {
 		if (PlayerManager.hasSaphireArmor(player)) {
 			
 			player.fallDistance = 0f;
-			player.addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, 10, 3, true, false));
+			player.addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, 10, 4, true, false));
+			
+			if (player.getMotion().y < 0) {
+				
+				player.setMotion(player.getMotion().x, player.getMotion().y - (player.getMotion().y / 20), player.getMotion().z);
+				
+			}
 			
 		}
 		

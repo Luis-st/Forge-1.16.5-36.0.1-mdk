@@ -208,27 +208,43 @@ public class EnchantmentManager {
 		List<Enchantment> registryEnchantments = Registry.ENCHANTMENT.stream().filter(Enchantment::canVillagerTrade).collect(Collectors.toList());
 		List<Enchantment> usefulEnchantments = new ArrayList<Enchantment>();
 		
-		if (!allowTreasure) {
-			
-			for (Enchantment enchantment : registryEnchantments) {
-				
-				if (enchantment.isTreasureEnchantment()) {
-					
-					registryEnchantments.remove(enchantment);
-					
-				}
-				
-			}
-			
-		}
+//		if (!allowTreasure) {
+//			
+//			for (Enchantment enchantment : registryEnchantments) {
+//				
+//				if (enchantment.isTreasureEnchantment()) {
+//					
+//					registryEnchantments.remove(enchantment);
+//					
+//				}
+//				
+//			}
+//			
+//		}
 		
 		for (Enchantment enchantment : registryEnchantments) {
 			
 			if (!enchantment.isCurse()) {
 				
-				if (enchantment.canApply(item)) {
+				if (allowTreasure) {
 					
-					usefulEnchantments.add(enchantment);
+					if (enchantment.canApply(item)) {
+						
+						usefulEnchantments.add(enchantment);
+						
+					}
+					
+				} else {
+					
+					if (!enchantment.isTreasureEnchantment()) {
+						
+						if (enchantment.canApply(item)) {
+							
+							usefulEnchantments.add(enchantment);
+							
+						}
+						
+					}
 					
 				}
 				
