@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Random;
 
 import net.luis.cave.Cave;
-import net.luis.cave.lib.EnchantmentManager;
+import net.luis.cave.util.lib.EnchantmentManager;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentData;
 import net.minecraft.enchantment.EnchantmentHelper;

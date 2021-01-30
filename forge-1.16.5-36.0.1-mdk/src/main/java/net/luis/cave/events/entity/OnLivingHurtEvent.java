@@ -2,7 +2,7 @@ package net.luis.cave.events.entity;
 
 import net.luis.cave.Cave;
 import net.luis.cave.init.CaveEnchantment;
-import net.luis.cave.lib.PlayerManager;
+import net.luis.cave.util.lib.PlayerManager;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;

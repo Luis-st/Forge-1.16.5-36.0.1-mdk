@@ -3,7 +3,7 @@ package net.luis.cave.items.weapons;
 import java.util.function.Predicate;
 
 import net.luis.cave.init.CaveEnchantment;
-import net.luis.cave.lib.ItemManager;
+import net.luis.cave.util.lib.ItemManager;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.enchantment.IVanishable;

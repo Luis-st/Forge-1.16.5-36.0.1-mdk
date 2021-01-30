@@ -3,7 +3,7 @@ package net.luis.cave.blocks;
 import net.luis.cave.blocks.tileentity.LightningRodTileEntity;
 import net.luis.cave.init.CaveEnchantment;
 import net.luis.cave.init.blocks.CaveBlocks;
-import net.luis.cave.lib.ItemManager;
+import net.luis.cave.util.lib.ItemManager;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

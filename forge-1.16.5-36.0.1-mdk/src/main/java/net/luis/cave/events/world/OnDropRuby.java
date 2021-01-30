@@ -2,7 +2,7 @@ package net.luis.cave.events.world;
 
 import net.luis.cave.Cave;
 import net.luis.cave.init.CaveEnchantment;
-import net.luis.cave.lib.BlockManager;
+import net.luis.cave.util.lib.BlockManager;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;

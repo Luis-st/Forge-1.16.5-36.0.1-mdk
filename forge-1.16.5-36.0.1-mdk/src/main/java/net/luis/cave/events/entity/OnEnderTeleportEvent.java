@@ -1,7 +1,7 @@
 package net.luis.cave.events.entity;
 
 import net.luis.cave.Cave;
-import net.luis.cave.lib.EntityManager;
+import net.luis.cave.util.lib.EntityManager;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.EndermanEntity;
 import net.minecraft.entity.monster.ShulkerEntity;

@@ -1,4 +1,4 @@
-package net.luis.cave.lib;
+package net.luis.cave.util.lib;
 
 import java.util.ArrayList;
 import java.util.HashMap;

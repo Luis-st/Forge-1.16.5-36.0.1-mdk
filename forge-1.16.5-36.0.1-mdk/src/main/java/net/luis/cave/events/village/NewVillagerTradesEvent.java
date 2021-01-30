@@ -6,7 +6,7 @@ import java.util.Random;
 import net.luis.cave.Cave;
 import net.luis.cave.init.CaveArmor;
 import net.luis.cave.init.CaveTools;
-import net.luis.cave.lib.VillagerManager;
+import net.luis.cave.util.lib.VillagerManager;
 import net.minecraft.entity.merchant.villager.VillagerProfession;
 import net.minecraft.entity.merchant.villager.VillagerTrades.ITrade;
 import net.minecraft.item.Items;

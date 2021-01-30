@@ -2,7 +2,7 @@ package net.luis.cave.events.entity.player.tick;
 
 import net.luis.cave.Cave;
 import net.luis.cave.init.CaveItems;
-import net.luis.cave.lib.PlayerManager;
+import net.luis.cave.util.lib.PlayerManager;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.potion.EffectInstance;

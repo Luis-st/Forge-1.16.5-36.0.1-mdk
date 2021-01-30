@@ -1,7 +1,7 @@
 package net.luis.cave.events.item;
 
 import net.luis.cave.Cave;
-import net.luis.cave.lib.ItemManager;
+import net.luis.cave.util.lib.ItemManager;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.item.ItemTossEvent;

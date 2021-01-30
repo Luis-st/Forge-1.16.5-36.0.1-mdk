@@ -1,4 +1,4 @@
-package net.luis.cave.lib;
+package net.luis.cave.util.lib;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.attributes.Attributes;

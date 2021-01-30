@@ -1,4 +1,4 @@
-package net.luis.cave.lib;
+package net.luis.cave.util.lib;
 
 import net.luis.cave.init.CaveArmor;
 import net.minecraft.entity.player.PlayerEntity;

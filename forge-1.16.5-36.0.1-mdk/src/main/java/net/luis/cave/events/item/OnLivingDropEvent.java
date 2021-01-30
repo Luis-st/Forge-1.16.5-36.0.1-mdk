@@ -4,7 +4,7 @@ import java.util.List;
 
 import net.luis.cave.Cave;
 import net.luis.cave.init.CaveEnchantment;
-import net.luis.cave.lib.ItemManager;
+import net.luis.cave.util.lib.ItemManager;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;

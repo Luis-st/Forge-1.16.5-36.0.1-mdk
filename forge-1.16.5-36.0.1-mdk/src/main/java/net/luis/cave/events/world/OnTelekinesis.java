@@ -4,8 +4,8 @@ import java.util.List;
 
 import net.luis.cave.Cave;
 import net.luis.cave.init.CaveEnchantment;
-import net.luis.cave.lib.BlockManager;
-import net.luis.cave.lib.ItemManager;
+import net.luis.cave.util.lib.BlockManager;
+import net.luis.cave.util.lib.ItemManager;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;

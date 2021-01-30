@@ -1,4 +1,4 @@
-package net.luis.cave.lib;
+package net.luis.cave.util.lib;
 
 import java.util.Random;
 
