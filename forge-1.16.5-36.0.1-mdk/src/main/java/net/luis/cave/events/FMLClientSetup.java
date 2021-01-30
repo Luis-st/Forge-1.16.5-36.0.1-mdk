@@ -20,7 +20,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 public class FMLClientSetup {
 	
 	@SubscribeEvent
-	public static void doClientStuff(FMLClientSetupEvent event) {
+	public static void DoClientSetup(FMLClientSetupEvent event) {
 		
 		//Elytra
 		for (PlayerRenderer playerRenderer : Minecraft.getInstance().getRenderManager().getSkinMap().values()) {
