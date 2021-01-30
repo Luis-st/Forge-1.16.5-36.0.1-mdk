@@ -2,9 +2,11 @@ package net.luis.cave.events.entity;
 
 import net.luis.cave.Cave;
 import net.luis.cave.util.lib.EntityManager;
+import net.luis.cave.world.CaveGameRules;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.EndermanEntity;
 import net.minecraft.entity.monster.ShulkerEntity;
+import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.EnderTeleportEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -16,16 +18,37 @@ public class OnEnderTeleportEvent {
 	public static void EnderTeleport(EnderTeleportEvent event) {
 		
 		LivingEntity entity = event.getEntityLiving();
+		World world = entity.getEntityWorld();
 		
 		if (entity instanceof EndermanEntity) {
 			
-			event.setCanceled(EntityManager.hasMaxHealth(entity));
+			if (world.getGameRules().getBoolean(CaveGameRules.DISABLE_ENDERMAN_TELEPORT.getRule())) {
+				
+				event.setCanceled(true);
+				
+			}
+
+			if (world.getGameRules().getBoolean(CaveGameRules.DISABLE_ENDERMAN_ATTACK_TELEPORT.getRule())) {
+				
+				event.setCanceled(EntityManager.hasMaxHealth(entity));
+				
+			}
 			
 		}
 		
 		if (entity instanceof ShulkerEntity) {
 			
-			event.setCanceled(EntityManager.hasMaxHealth(entity));
+			if (world.getGameRules().getBoolean(CaveGameRules.DISABLE_SHULKER_TELEPORT.getRule())) {
+				
+				event.setCanceled(true);
+				
+			}
+
+			if (world.getGameRules().getBoolean(CaveGameRules.DISABLE_SHULKER_ATTACK_TELEPORT.getRule())) {
+				
+				event.setCanceled(EntityManager.hasMaxHealth(entity));
+				
+			}
 			
 		}
 

@@ -11,6 +11,7 @@ public class CaveGameRules {
 	public static GameRule.BooleanGameRule DISABLE_SHULKER_ATTACK_TELEPORT = new GameRule.BooleanGameRule("disableShulkerAttackTeleport", GameRules.Category.MOBS, false);
 	public static GameRule.BooleanGameRule DO_BAT_SPAWNING = new GameRule.BooleanGameRule("doBatSpawning", GameRules.Category.MOBS, true);
 	public static GameRule.BooleanGameRule DO_MONSTER_SPAWNING = new GameRule.BooleanGameRule("doMonsterSpawning", GameRules.Category.MOBS, true);
+	
 	public static GameRule.BooleanGameRule DISABLE_FARMLAND_TRAMPLE = new GameRule.BooleanGameRule("disableFarmlandTrample", GameRules.Category.UPDATES, false);
 	public static GameRule.BooleanGameRule DO_CROP_GROW = new GameRule.BooleanGameRule("doCropGrow", GameRules.Category.UPDATES, true);
 	public static GameRule.BooleanGameRule DO_SAPLING_GROW = new GameRule.BooleanGameRule("doSaplingGrow", GameRules.Category.UPDATES, true);
