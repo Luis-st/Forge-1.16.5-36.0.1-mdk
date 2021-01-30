@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import net.luis.cave.init.CaveArmor;
 import net.luis.cave.init.CaveEnchantment;
 import net.luis.cave.init.CaveItems;
+import net.luis.cave.init.CaveTileEntityType;
 import net.luis.cave.init.CaveTools;
 import net.luis.cave.init.blocks.CaveBlockItems;
 import net.luis.cave.init.blocks.CaveBlocks;
@@ -51,6 +52,7 @@ public class Cave {
 		CaveEnchantment.ENCHANTMENT.register(FMLJavaModLoadingContext.get().getModEventBus());
 		CaveEnchantment.VANILLA_ENCHANTMENT.register(FMLJavaModLoadingContext.get().getModEventBus());
 		CaveVerticalBlockItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		CaveTileEntityType.TILE_ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
 		
 		MinecraftForge.EVENT_BUS.register(this);
 		

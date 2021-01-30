@@ -23,7 +23,6 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
 
@@ -76,7 +75,6 @@ public class Bow extends ShootableItem implements IVanishable {
 							
 							float velocityEnderPearl = getEnderPearlVelocity(duration);
 							
-							player.sendMessage(new StringTextComponent("" + velocityEnderPearl), player.getUniqueID());
 							EnderPearlEntity enderPearlEntity = creatEnderPearlEntity(world, player, velocityEnderPearl);
 							world.addEntity(enderPearlEntity);
 							world.playSound((PlayerEntity)null, player.getPosX(), 
