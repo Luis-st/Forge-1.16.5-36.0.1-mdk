@@ -14,7 +14,7 @@ public class SmeltingFurnaceTileEntity extends AbstractFurnaceTileEntity {
 
 	public SmeltingFurnaceTileEntity() {
 		
-		super(CaveTileEntityType.SMELTING_FURNACE, IRecipeType.SMELTING);
+		super(CaveTileEntityType.SMELTING_FURNACE.get(), IRecipeType.SMELTING);
 		
 	}
 

@@ -12,7 +12,7 @@ public class LightningRodTileEntity extends TileEntity implements ITickableTileE
 	
 	public LightningRodTileEntity() {
 		
-		super(CaveTileEntityType.LIGHTNING_ROD);
+		super(CaveTileEntityType.LIGHTNING_ROD.get());
 		
 	}
 	
