@@ -86,8 +86,8 @@
   "gamerule.disableBan": "Disable ban",
   "gamerule.disableBan.description": "Players can not bannes form the Server",
   
-  "gamerule.maxHealth": "Max health",
-  "gamerule.maxHealth.description": "Max health of players",
+  "gamerule.growthEnchantmentMultiplier": "Growth enchantment multiplier",
+  "gamerule.growthEnchantmentMultiplier.description": "The multiplier of the growth enchantment which calculates the additional health per level",
   "gamerule.protectionTimeMultiplier": "Protection time multiplier",
   
   "entity.minecraft.villager.cave.lumberjack": "Lumberjack",

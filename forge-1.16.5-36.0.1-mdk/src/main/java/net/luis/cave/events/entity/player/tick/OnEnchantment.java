@@ -31,7 +31,7 @@ public class OnEnchantment {
 											player.getItemStackFromSlot(slot[2]) , player.getItemStackFromSlot(slot[3])};
 		int enchElytraFalling = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.ELYTRA_FALLING.get(), item[1]);
 		int enchVoidWalker = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.VOID_WALKER.get(), item[3]);
-		int enchGrowth = EnchantmentManager.growthLevel(item);
+		int enchGrowth = EnchantmentManager.growthLevel(world, item);
 		
 		if (enchElytraFalling == 1) {
 			

@@ -35,8 +35,7 @@ public class CaveGameRules {
 	public static GameRule.BooleanGameRule ENABLE_ENCHANTMENT_TRANSFER = new GameRule.BooleanGameRule("enableEnchantmentTransfer", GameRules.Category.MISC, false);
 	public static GameRule.BooleanGameRule DISABLE_BAN = new GameRule.BooleanGameRule("disableBan", GameRules.Category.MISC, false);
 	
-	public static GameRule.IntegerGameRule MAX_HEALTH = new GameRule.IntegerGameRule("maxHealth", GameRules.Category.PLAYER, 20);
-	
-	public static GameRule.IntegerGameRule PROTECTION_TIME_MULTIPLIER = new GameRule.IntegerGameRule("protectionTimeMultiplier", GameRules.Category.PLAYER, 1);
+	public static GameRule.IntegerGameRule GROWTH_ENCHANTMENT_MULTIPLIER  = new GameRule.IntegerGameRule("growthEnchantmentMultiplier", GameRules.Category.PLAYER, 1);
+	public static GameRule.IntegerGameRule PROTECTION_TIME_MULTIPLIER = new GameRule.IntegerGameRule("protectionTimeMultiplier", GameRules.Category.PLAYER, 10);
 	
 }

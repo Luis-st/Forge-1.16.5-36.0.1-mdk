@@ -23,7 +23,9 @@ public class OnPlayerLoggedIn {
 			
 			if (world.getGameRules().getBoolean(CaveGameRules.ENABLE_PROTECTION_TIME.getRule())) {
 				
-				player.addPotionEffect(new EffectInstance(Effects.RESISTANCE, 200, 4, true , true));
+				int multiplier = world.getGameRules().getInt(CaveGameRules.PROTECTION_TIME_MULTIPLIER.getRule());
+				
+				player.addPotionEffect(new EffectInstance(Effects.RESISTANCE, 20 * multiplier, 4, true , true));
 				
 			}
 			
