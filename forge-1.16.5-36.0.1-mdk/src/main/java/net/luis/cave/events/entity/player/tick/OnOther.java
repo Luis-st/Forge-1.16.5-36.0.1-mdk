@@ -40,12 +40,6 @@ public class OnOther {
 			
 		}
 		
-		if (player.getHealth() != player.getAttribute(Attributes.MAX_HEALTH).getBaseValue()) {
-			
-			player.setHealth((float) player.getAttribute(Attributes.MAX_HEALTH).getBaseValue());
-			
-		}
-		
 		if (player.getItemStackFromSlot(EquipmentSlotType.OFFHAND).getItem() == CaveItems.MINING_STAR.get()) {
 			
 			player.addPotionEffect(new EffectInstance(new EffectInstance(Effects.SATURATION, 10, 0, false, false)));
