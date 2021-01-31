@@ -1,4 +1,4 @@
-package net.luis.cave.events.item;
+package net.luis.cave.events.entity;
 
 import java.util.List;
 

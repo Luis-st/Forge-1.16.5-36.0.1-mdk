@@ -1,6 +1,7 @@
 package net.luis.cave.events.entity.player;
 
 import net.luis.cave.Cave;
+import net.luis.cave.world.CaveGameRules;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
@@ -20,7 +21,11 @@ public class OnPlayerLoggedIn {
 		
 		if (!world.isRemote) {
 			
-			player.addPotionEffect(new EffectInstance(Effects.RESISTANCE, 200, 4, true , true));
+			if (world.getGameRules().getBoolean(CaveGameRules.ENABLE_PROTECTION_TIME.getRule())) {
+				
+				player.addPotionEffect(new EffectInstance(Effects.RESISTANCE, 200, 4, true , true));
+				
+			}
 			
 		}
 		

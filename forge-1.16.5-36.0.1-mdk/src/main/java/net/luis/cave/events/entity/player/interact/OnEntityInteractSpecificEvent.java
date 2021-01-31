@@ -8,6 +8,7 @@ import java.util.UUID;
 
 import net.luis.cave.Cave;
 import net.luis.cave.init.CaveItems;
+import net.luis.cave.world.CaveGameRules;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.merchant.villager.VillagerEntity;
 import net.minecraft.entity.monster.ZombieVillagerEntity;
@@ -48,9 +49,13 @@ public class OnEntityInteractSpecificEvent {
 			
 			if (world.getDayTime() >= 3000 && world.getDayTime() <= 10000) {
 				
-				for (MerchantOffer merchantOffer : offers) {
+				if (world.getGameRules().getBoolean(CaveGameRules.DO_WORKTIME_TRADE_RESETING.getRule())) {
 					
-					merchantOffer.resetUses();
+					for (MerchantOffer merchantOffer : offers) {
+						
+						merchantOffer.resetUses();
+						
+					}
 					
 				}
 				
@@ -71,33 +76,37 @@ public class OnEntityInteractSpecificEvent {
 			
 		} else if (target instanceof ZombieVillagerEntity) {
 			
-			ZombieVillagerEntity zombieVillager = (ZombieVillagerEntity) target;
-			
-			if (player.getHeldItem(event.getHand()).getItem() == Items.GOLDEN_APPLE) {
+			if (world.getGameRules().getBoolean(CaveGameRules.ENABLE_ZOMBIEVILLAGER_FAST_CONVERT.getRule())) {
 				
-				if (!player.abilities.isCreativeMode) {
-					
-					player.getHeldItem(event.getHand()).shrink(1);
-					
-				}
+				ZombieVillagerEntity zombieVillager = (ZombieVillagerEntity) target;
 				
-				if (!world.isRemote) {
+				if (player.getHeldItem(event.getHand()).getItem() == Items.GOLDEN_APPLE) {
 					
-					try {
+					if (!player.abilities.isCreativeMode) {
 						
-						startConverting.invoke(zombieVillager, player.getUniqueID(), 60);
+						player.getHeldItem(event.getHand()).shrink(1);
 						
-					} catch (IllegalAccessException e) {
+					}
+					
+					if (!world.isRemote) {
 						
-						e.printStackTrace();
-						
-					} catch (IllegalArgumentException e) {
-						
-						e.printStackTrace();
-						
-					} catch (InvocationTargetException e) {
-						
-						e.printStackTrace();
+						try {
+							
+							startConverting.invoke(zombieVillager, player.getUniqueID(), 60);
+							
+						} catch (IllegalAccessException e) {
+							
+							e.printStackTrace();
+							
+						} catch (IllegalArgumentException e) {
+							
+							e.printStackTrace();
+							
+						} catch (InvocationTargetException e) {
+							
+							e.printStackTrace();
+							
+						}
 						
 					}
 					

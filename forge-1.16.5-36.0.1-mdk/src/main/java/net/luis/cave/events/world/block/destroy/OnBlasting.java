@@ -2,6 +2,7 @@ package net.luis.cave.events.world.block.destroy;
 
 import net.luis.cave.Cave;
 import net.luis.cave.init.CaveEnchantment;
+import net.luis.cave.world.CaveGameRules;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.potion.EffectInstance;
@@ -30,7 +31,12 @@ public class OnBlasting {
 			
 			if (enchBlasting > 0) {
 				
-				player.addPotionEffect(new EffectInstance(Effects.RESISTANCE, 30, 4, false, false));
+				if (!world.getGameRules().getBoolean(CaveGameRules.ENABLE_BLASTING_DAMAGE.getRule())) {
+					
+					player.addPotionEffect(new EffectInstance(Effects.RESISTANCE, 30, 4, false, false));
+					
+				}
+				
 				world.createExplosion(player, x, y, z, 2.0f * (enchBlasting + 1), enchTelekinesis == 0 ? Explosion.Mode.BREAK : Explosion.Mode.NONE);
 				
 			}
