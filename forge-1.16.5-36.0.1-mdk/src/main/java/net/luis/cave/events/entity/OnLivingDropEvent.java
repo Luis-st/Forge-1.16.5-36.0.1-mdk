@@ -5,12 +5,14 @@ import java.util.List;
 import net.luis.cave.Cave;
 import net.luis.cave.init.CaveEnchantment;
 import net.luis.cave.util.lib.ItemManager;
+import net.luis.cave.world.CaveGameRules;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -25,6 +27,7 @@ public class OnLivingDropEvent {
 		List<ItemEntity> drops = (List<ItemEntity>) event.getDrops();
 		LivingEntity target = event.getEntityLiving();
 		Entity attacker = event.getSource().getTrueSource();
+		World world = target.getEntityWorld();
 		
 		if (attacker != null && attacker instanceof PlayerEntity) {
 			
@@ -45,19 +48,31 @@ public class OnLivingDropEvent {
 					
 				} else {
 					
-					ItemManager.setNoGravityItem(drops);
+					if (world.getGameRules().getBoolean(CaveGameRules.DISABLE_ITEM_GRAVITY.getRule())) {
+						
+						ItemManager.setNoGravityItem(drops);
+						
+					}
 					
 				}
 				
 			} else {
 				
-				ItemManager.setNoGravityItem(drops);
+				if (world.getGameRules().getBoolean(CaveGameRules.DISABLE_ITEM_GRAVITY.getRule())) {
+					
+					ItemManager.setNoGravityItem(drops);
+					
+				}
 				
 			}
 			
 		} else {
 			
-			ItemManager.setNoGravityItem(drops);
+			if (world.getGameRules().getBoolean(CaveGameRules.DISABLE_ITEM_GRAVITY.getRule())) {
+				
+				ItemManager.setNoGravityItem(drops);
+				
+			}
 			
 		}
 		

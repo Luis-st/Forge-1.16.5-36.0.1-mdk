@@ -63,14 +63,18 @@ public class OnEntityInteractSpecificEvent {
 			
 			if (item == CaveItems.RUBY_APPLE.get() || item == Items.ENCHANTED_GOLDEN_APPLE) {
 				
-				if (!player.abilities.isCreativeMode) {
+				if (world.getGameRules().getBoolean(CaveGameRules.ENABLE_TRADE_REDUCTION.getRule())) {
 					
-					player.getHeldItem(event.getHand()).shrink(1);
+					if (!player.abilities.isCreativeMode) {
+						
+						player.getHeldItem(event.getHand()).shrink(1);
+						
+					}
+					
+					gossipManager.add(player.getUniqueID(), GossipType.MINOR_POSITIVE, uniqueInteger);
+					gossipManager.add(player.getUniqueID(), GossipType.MAJOR_POSITIVE, uniqueInteger / 2);
 					
 				}
-				
-				gossipManager.add(player.getUniqueID(), GossipType.MINOR_POSITIVE, uniqueInteger);
-				gossipManager.add(player.getUniqueID(), GossipType.MAJOR_POSITIVE, uniqueInteger / 2);
 				
 			}
 			

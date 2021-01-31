@@ -2,6 +2,7 @@ package net.luis.cave.events.entity;
 
 import net.luis.cave.Cave;
 import net.luis.cave.init.CaveItems;
+import net.luis.cave.world.CaveGameRules;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;
 import net.minecraft.entity.item.ItemEntity;
@@ -22,9 +23,13 @@ public class OnEntityDeath {
 		
 		if (entity instanceof EnderDragonEntity) {
 			
-			ItemEntity  item = new ItemEntity(world, entity.getPosX(), entity.getPosY(), entity.getPosZ(), new ItemStack(CaveItems.END_STAR.get()));
-			item.setPickupDelay(10);
-			world.addEntity(item);
+			if (world.getGameRules().getBoolean(CaveGameRules.DISABLE_ENDSTAR_DROP.getRule())) {
+				
+				ItemEntity  item = new ItemEntity(world, entity.getPosX(), entity.getPosY(), entity.getPosZ(), new ItemStack(CaveItems.END_STAR.get()));
+				item.setPickupDelay(10);
+				world.addEntity(item);
+				
+			}
 			
 		}
 

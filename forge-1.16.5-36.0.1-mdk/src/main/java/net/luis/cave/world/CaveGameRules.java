@@ -21,11 +21,8 @@ public class CaveGameRules {
 	public static GameRule.BooleanGameRule DISABLE_ITEM_DESPAWN = new GameRule.BooleanGameRule("disableItemDespawn", GameRules.Category.MISC, false);
 	
 	public static GameRule.BooleanGameRule DISABLE_ENDSTAR_DROP = new GameRule.BooleanGameRule("disableEndstarDrop", GameRules.Category.DROPS, false);
-	
 	public static GameRule.BooleanGameRule DISABLE_ITEM_GRAVITY = new GameRule.BooleanGameRule("disableItemGravity", GameRules.Category.DROPS, true);
-	
 	public static GameRule.BooleanGameRule ENABLE_INFINITE_HARVESTING = new GameRule.BooleanGameRule("enableInfiniteHarvesting", GameRules.Category.MISC, false);
-	
 	public static GameRule.BooleanGameRule ENABLE_TRADE_REDUCTION = new GameRule.BooleanGameRule("enableTradeReduction", GameRules.Category.MOBS, false);
 	
 	public static GameRule.BooleanGameRule ENABLE_SLIMECHUNK_INFO = new GameRule.BooleanGameRule("enableSlimechunkInfo", GameRules.Category.CHAT, false);

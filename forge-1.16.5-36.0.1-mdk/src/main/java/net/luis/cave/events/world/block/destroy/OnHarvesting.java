@@ -3,6 +3,7 @@ package net.luis.cave.events.world.block.destroy;
 import net.luis.cave.Cave;
 import net.luis.cave.init.CaveEnchantment;
 import net.luis.cave.util.lib.BlockManager;
+import net.luis.cave.world.CaveGameRules;
 import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
@@ -32,6 +33,16 @@ public class OnHarvesting {
 		int destroyCount = enchHarvesting != 0 ? ((enchHarvesting) * 5) - 1 : 0;
 		
 		if (player instanceof PlayerEntity) {
+			
+			if (world.getGameRules().getBoolean(CaveGameRules.ENABLE_INFINITE_HARVESTING.getRule())) {
+				
+				if (enchHarvesting >= 5) {
+					
+					destroyCount = 255;
+					
+				}
+				
+			}
 			
 			if (!player.abilities.isCreativeMode) {
 				
