@@ -7,6 +7,7 @@ import java.util.Random;
 
 import net.luis.cave.Cave;
 import net.luis.cave.util.lib.EnchantmentManager;
+import net.luis.cave.world.CaveGameRules;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentData;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -14,6 +15,7 @@ import net.minecraft.item.BookItem;
 import net.minecraft.item.EnchantedBookItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.world.World;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -25,6 +27,7 @@ public class OnAnvilUpdateEvent {
 		
 		ItemStack inputLeft = event.getLeft();
 		ItemStack inputRight = event.getRight();
+		World world = event.getPlayer().getEntityWorld();
 		
 		if (inputLeft != null && inputRight != null) {
 			
@@ -37,36 +40,40 @@ public class OnAnvilUpdateEvent {
 					
 					if (!inputRight.isEnchanted()) {
 						
-						if (inputRight.getCount() == 1) {
+						if (world.getGameRules().getBoolean(CaveGameRules.ENABLE_ENCHANTMENT_TRANSFER.getRule())) {
 							
-							ItemStack output = new ItemStack(Items.ENCHANTED_BOOK);
-							Enchantment randomEnchantment = null;
-							int randomEnchantmentLevel = 0;
-							
-							do {
+							if (inputRight.getCount() == 1) {
 								
-								List<Enchantment> enchantmenList = new ArrayList<Enchantment>(enchantments.keySet());
-								int random = new Random().nextInt(enchantmenList.size());
-								randomEnchantment = enchantmenList.get(random);
+								ItemStack output = new ItemStack(Items.ENCHANTED_BOOK);
+								Enchantment randomEnchantment = null;
+								int randomEnchantmentLevel = 0;
 								
-								List<Integer> levelList = new ArrayList<Integer>(enchantments.values());
-								randomEnchantmentLevel = levelList.get(random);
+								do {
+									
+									List<Enchantment> enchantmenList = new ArrayList<Enchantment>(enchantments.keySet());
+									int random = new Random().nextInt(enchantmenList.size());
+									randomEnchantment = enchantmenList.get(random);
+									
+									List<Integer> levelList = new ArrayList<Integer>(enchantments.values());
+									randomEnchantmentLevel = levelList.get(random);
+									
+								} while (randomEnchantment.isCurse() && mapSize > 1);
 								
-							} while (randomEnchantment.isCurse() && mapSize > 1);
-							
-							if (!randomEnchantment.isCurse()) {
-								
-								EnchantedBookItem.addEnchantment(output, new EnchantmentData(randomEnchantment, randomEnchantmentLevel));
-								
-								event.setCost(1 + (mapSize / 2));
-								event.setOutput(output);
-								
-							} else {
-								
-								event.setCanceled(true);
-								
+								if (!randomEnchantment.isCurse()) {
+									
+									EnchantedBookItem.addEnchantment(output, new EnchantmentData(randomEnchantment, randomEnchantmentLevel));
+									
+									event.setCost(1 + (mapSize / 2));
+									event.setOutput(output);
+									
+								} else {
+									
+									event.setCanceled(true);
+									
+								}
+									
 							}
-								
+							
 						}
 						
 					}

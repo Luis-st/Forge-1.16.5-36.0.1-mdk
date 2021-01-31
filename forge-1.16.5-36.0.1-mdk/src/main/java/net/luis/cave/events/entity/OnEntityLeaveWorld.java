@@ -3,6 +3,7 @@ package net.luis.cave.events.entity;
 import com.mojang.authlib.GameProfile;
 
 import net.luis.cave.Cave;
+import net.luis.cave.world.CaveGameRules;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.management.BanList;
@@ -24,16 +25,16 @@ public class OnEntityLeaveWorld {
 		
 		if (!world.isRemote) {
 			
-			PlayerList playerList = world.getServer().getPlayerList();
-			BanList banList = playerList.getBannedPlayers(); 
-			
-			if (player instanceof PlayerEntity) {
+			if (world.getGameRules().getBoolean(CaveGameRules.DISABLE_BAN.getRule())) {
 				
-				GameProfile gameprofile = ((PlayerEntity) player).getGameProfile();
+				PlayerList playerList = world.getServer().getPlayerList();
+				BanList banList = playerList.getBannedPlayers(); 
 				
-				if (banList.isBanned(gameprofile)) {
+				if (player instanceof PlayerEntity) {
 					
-					if (!banList.getEntry(gameprofile).getBanReason().equalsIgnoreCase("RIP You have been banned")) {
+					GameProfile gameprofile = ((PlayerEntity) player).getGameProfile();
+					
+					if (banList.isBanned(gameprofile)) {
 						
 						banList.removeEntry(gameprofile);
 						

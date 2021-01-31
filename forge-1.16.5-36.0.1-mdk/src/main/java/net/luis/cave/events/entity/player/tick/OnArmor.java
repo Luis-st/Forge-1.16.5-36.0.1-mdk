@@ -1,11 +1,9 @@
 package net.luis.cave.events.entity.player.tick;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.CaveItems;
 import net.luis.cave.util.lib.PlayerManager;
 import net.luis.cave.world.CaveGameRules;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.world.World;
@@ -43,13 +41,6 @@ public class OnArmor {
 				player.addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, 400, 0, true, false));
 				
 			}
-			
-		}
-		
-		if (player.getItemStackFromSlot(EquipmentSlotType.OFFHAND).getItem() == CaveItems.MINING_STAR.get()) {
-			
-			player.addPotionEffect(new EffectInstance(new EffectInstance(Effects.SATURATION, 10, 0, false, false)));
-			player.addPotionEffect(new EffectInstance(new EffectInstance(Effects.HASTE, 10, 2, true, false)));
 			
 		}
 		

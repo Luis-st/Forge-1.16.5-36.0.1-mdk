@@ -6,6 +6,7 @@ import java.util.Map;
 
 import net.luis.cave.Cave;
 import net.luis.cave.init.blocks.CaveBlocks;
+import net.luis.cave.world.CaveGameRules;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
@@ -41,37 +42,41 @@ public class OnAnvilRepairEvent {
 			
 		}
 		
-		if (inputLeft.isEnchanted()) {
+		if (world.getGameRules().getBoolean(CaveGameRules.ENABLE_ENCHANTMENT_TRANSFER.getRule())) {
 			
-			if (inputRight.getItem() instanceof BookItem) {
+			if (inputLeft.isEnchanted()) {
 				
-				if (!inputRight.isEnchanted()) {
+				if (inputRight.getItem() instanceof BookItem) {
 					
-					Map<Enchantment, Integer> enchantmentsInput = EnchantmentHelper.getEnchantments(inputLeft);
-					Map<Enchantment, Integer> enchantmentsOutput = EnchantmentHelper.getEnchantments(output);
-					
-					List<Enchantment> enchantmenList = new ArrayList<Enchantment>(enchantmentsOutput.keySet());
-					
-					if (!enchantmenList.isEmpty()) {
+					if (!inputRight.isEnchanted()) {
 						
-						Enchantment Ench = enchantmenList.get(0);
+						Map<Enchantment, Integer> enchantmentsInput = EnchantmentHelper.getEnchantments(inputLeft);
+						Map<Enchantment, Integer> enchantmentsOutput = EnchantmentHelper.getEnchantments(output);
 						
-						if (enchantmentsOutput.size() >= 1) {
+						List<Enchantment> enchantmenList = new ArrayList<Enchantment>(enchantmentsOutput.keySet());
+						
+						if (!enchantmenList.isEmpty()) {
 							
-							enchantmentsInput.remove(Ench);
-							EnchantmentHelper.setEnchantments(enchantmentsInput, inputBack);
-							inputBack.setRepairCost(0);
-							ItemHandlerHelper.giveItemToPlayer(player, inputBack);
+							Enchantment Ench = enchantmenList.get(0);
+							
+							if (enchantmentsOutput.size() >= 1) {
+								
+								enchantmentsInput.remove(Ench);
+								EnchantmentHelper.setEnchantments(enchantmentsInput, inputBack);
+								inputBack.setRepairCost(0);
+								ItemHandlerHelper.giveItemToPlayer(player, inputBack);
+								
+							} else {
+								
+								ItemHandlerHelper.giveItemToPlayer(player, inputBack);
+								
+							}
 							
 						} else {
 							
 							ItemHandlerHelper.giveItemToPlayer(player, inputBack);
 							
 						}
-						
-					} else {
-						
-						ItemHandlerHelper.giveItemToPlayer(player, inputBack);
 						
 					}
 					
