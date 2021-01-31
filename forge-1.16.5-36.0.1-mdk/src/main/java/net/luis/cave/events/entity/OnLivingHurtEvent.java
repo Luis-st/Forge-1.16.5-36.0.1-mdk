@@ -22,12 +22,12 @@ public class OnLivingHurtEvent {
 	public static void LivingHurt(LivingHurtEvent event) {
 		
 		LivingEntity entity = event.getEntityLiving();
+		World world = entity.getEntityWorld();
 		DamageSource source = event.getSource();
 		
 		if (entity instanceof PlayerEntity) {
 			
 			PlayerEntity player = (PlayerEntity) entity;
-			World world = player.getEntityWorld();
 			ItemStack item = player.getItemStackFromSlot(EquipmentSlotType.CHEST);
 			int EnchElytraFalling = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.ELYTRA_FALLING.get(), item);
 			

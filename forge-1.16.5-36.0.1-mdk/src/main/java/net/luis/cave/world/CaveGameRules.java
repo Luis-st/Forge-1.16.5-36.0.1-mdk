@@ -31,7 +31,6 @@ public class CaveGameRules {
 	public static GameRule.BooleanGameRule DISABLE_ENDERMAN_GRIEFING = new GameRule.BooleanGameRule("disableEndermanGriefing", GameRules.Category.MOBS, false);
 	public static GameRule.BooleanGameRule DISABLE_CREEPER_GRIEFING = new GameRule.BooleanGameRule("disableCreeperGriefing", GameRules.Category.MOBS, false);
 	public static GameRule.BooleanGameRule DISABLE_GHAST_GRIEFING = new GameRule.BooleanGameRule("disableGhastGriefing", GameRules.Category.MOBS, false);
-	//Error
 	public static GameRule.BooleanGameRule ENABLE_LAVA_FLUID_SOURCE = new GameRule.BooleanGameRule("enableLavaFluidSource", GameRules.Category.MISC, false);	
 	public static GameRule.BooleanGameRule DISABLE_HUNGER = new GameRule.BooleanGameRule("disableHunger", GameRules.Category.PLAYER, false);
 	public static GameRule.BooleanGameRule ENABLE_ENCHANTMENT_TRANSFER = new GameRule.BooleanGameRule("enableEnchantmentTransfer", GameRules.Category.MISC, false);
