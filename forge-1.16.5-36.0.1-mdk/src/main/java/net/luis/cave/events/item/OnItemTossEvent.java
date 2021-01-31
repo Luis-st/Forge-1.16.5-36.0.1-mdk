@@ -2,8 +2,10 @@ package net.luis.cave.events.item;
 
 import net.luis.cave.Cave;
 import net.luis.cave.util.lib.ItemManager;
+import net.luis.cave.world.CaveGameRules;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 import net.minecraftforge.event.entity.item.ItemTossEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -16,14 +18,23 @@ public class OnItemTossEvent {
 		
 		ItemStack item = event.getEntityItem().getItem();
 		ItemEntity itemEntity = event.getEntityItem();
+		World world = itemEntity.getEntityWorld();
 		
 		if (ItemManager.isEnderite(item)) {
 			
-			ItemManager.setNoGravityItem(itemEntity);
+			if (!world.getGameRules().getBoolean(CaveGameRules.DISABLE_ITEM_GRAVITY.getRule())) {
+				
+				ItemManager.setNoGravityItem(itemEntity);
+				
+			}
 			
 		} else if (ItemManager.isNight(item)) {
 			
-			ItemManager.setNoGravityItem(itemEntity);
+			if (!world.getGameRules().getBoolean(CaveGameRules.DISABLE_ITEM_GRAVITY.getRule())) {
+				
+				ItemManager.setNoGravityItem(itemEntity);
+				
+			}
 			
 		}
 		

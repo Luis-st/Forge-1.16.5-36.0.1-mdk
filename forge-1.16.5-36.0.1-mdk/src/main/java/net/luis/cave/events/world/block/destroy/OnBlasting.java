@@ -5,8 +5,7 @@ import net.luis.cave.init.CaveEnchantment;
 import net.luis.cave.world.CaveGameRules;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effects;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 import net.minecraftforge.event.world.BlockEvent;
@@ -31,13 +30,13 @@ public class OnBlasting {
 			
 			if (enchBlasting > 0) {
 				
-				if (!world.getGameRules().getBoolean(CaveGameRules.ENABLE_BLASTING_DAMAGE.getRule())) {
-					
-					player.addPotionEffect(new EffectInstance(Effects.RESISTANCE, 30, 4, false, false));
-					
-				}
-				
 				world.createExplosion(player, x, y, z, 2.0f * (enchBlasting + 1), enchTelekinesis == 0 ? Explosion.Mode.BREAK : Explosion.Mode.NONE);
+				
+				if (world.getGameRules().getBoolean(CaveGameRules.ENABLE_BLASTING_DAMAGE.getRule())) {
+					
+					player.attackEntityFrom(DamageSource.causeExplosionDamage(player), enchBlasting + 2);
+				
+				}
 				
 			}
 			

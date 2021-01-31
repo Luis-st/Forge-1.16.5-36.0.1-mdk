@@ -1,4 +1,4 @@
-package net.luis.cave.items;
+package net.luis.cave.items.armor;
 
 import net.luis.cave.Cave;
 import net.luis.cave.util.enums.CaveArmorMaterial;
@@ -10,11 +10,11 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class EnderiteHelmet extends ArmorItem {
+public class NightHelmet extends NightArmor {
 	
-	public EnderiteHelmet() {
+	public NightHelmet() {
 		
-		super(CaveArmorMaterial.ENDERITE, EquipmentSlotType.HEAD, new Item.Properties().group(Cave.Armor).isImmuneToFire());
+		super(CaveArmorMaterial.NIGHT, EquipmentSlotType.HEAD, new Item.Properties().group(Cave.Armor).isImmuneToFire());
 		
 		DispenserBlock.registerDispenseBehavior(this, ArmorItem.DISPENSER_BEHAVIOR);
 

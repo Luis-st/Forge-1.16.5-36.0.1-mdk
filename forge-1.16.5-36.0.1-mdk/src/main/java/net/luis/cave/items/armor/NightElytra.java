@@ -1,4 +1,4 @@
-package net.luis.cave.items;
+package net.luis.cave.items.armor;
 
 import net.luis.cave.Cave;
 import net.luis.cave.util.enums.CaveArmorMaterial;
@@ -13,7 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Rarity;
 import net.minecraft.world.World;
 
-public class NightElytra extends ArmorItem {
+public class NightElytra extends NightArmor {
 
 	public NightElytra() {
 		

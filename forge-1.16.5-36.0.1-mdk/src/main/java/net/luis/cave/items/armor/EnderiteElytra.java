@@ -1,4 +1,4 @@
-package net.luis.cave.items;
+package net.luis.cave.items.armor;
 
 import net.luis.cave.Cave;
 import net.luis.cave.util.enums.CaveArmorMaterial;

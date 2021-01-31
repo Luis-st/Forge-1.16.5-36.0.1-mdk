@@ -9,7 +9,7 @@ import java.util.UUID;
 import net.luis.cave.Cave;
 import net.luis.cave.init.CaveItems;
 import net.luis.cave.world.CaveGameRules;
-import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.merchant.villager.VillagerEntity;
 import net.minecraft.entity.monster.ZombieVillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -34,7 +34,7 @@ public class OnEntityInteractSpecificEvent {
 	public static void EntityInteractSpecific(PlayerInteractEvent.EntityInteractSpecific event) {
 		
 		PlayerEntity player = event.getPlayer();
-		LivingEntity target = (LivingEntity) event.getTarget();
+		Entity target = event.getTarget();
 		World world = event.getWorld();
 		
 		if (target instanceof VillagerEntity) {
@@ -47,7 +47,7 @@ public class OnEntityInteractSpecificEvent {
 			uniqueInteger = uniqueInteger > 10 ? 10 : uniqueInteger;
 			Item item = player.getHeldItem(event.getHand()).getItem();
 			
-			if (world.getDayTime() >= 3000 && world.getDayTime() <= 10000) {
+			if (world.getDayTime() >= 2000 && world.getDayTime() <= 11000) {
 				
 				if (world.getGameRules().getBoolean(CaveGameRules.DO_WORKTIME_TRADE_RESETING.getRule())) {
 					

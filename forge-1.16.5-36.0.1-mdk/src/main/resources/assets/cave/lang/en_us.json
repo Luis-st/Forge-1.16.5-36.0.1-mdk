@@ -82,7 +82,7 @@
   "gamerule.enableLavaFluidSource.description": "Lava can create sources",
   "gamerule.disableHunger": "Disable hunger",
   "gamerule.enableEnchantmentTransfer": "Enable enchantment transfer",
-  "gamerule.enableEnchantmentTransfer.description": "Enchantments can be removed in the anvil (book + enchanted item -> enchanted book)",
+  "gamerule.enableEnchantmentTransfer.description": "Enchantments can be removed in the anvil (enchanted item + book -> enchanted book)",
   "gamerule.disableBan": "Disable ban",
   "gamerule.disableBan.description": "Players can not bannes form the Server",
   

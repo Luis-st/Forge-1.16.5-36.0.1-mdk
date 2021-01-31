@@ -3,6 +3,7 @@ package net.luis.cave.events.entity.player.tick;
 import net.luis.cave.Cave;
 import net.luis.cave.init.CaveItems;
 import net.luis.cave.world.CaveGameRules;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.potion.EffectInstance;
@@ -36,6 +37,12 @@ public class OnOther {
 				}
 				
 			}
+			
+		}
+		
+		if (player.getHealth() != player.getAttribute(Attributes.MAX_HEALTH).getBaseValue()) {
+			
+			player.setHealth((float) player.getAttribute(Attributes.MAX_HEALTH).getBaseValue());
 			
 		}
 		

@@ -58,7 +58,7 @@ public class CreatGameRules {
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.ENABLE_ENCHANTMENT_TRANSFER));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DISABLE_BAN));
 			
-			DeferredWorkQueue.runLater(() -> addIntegerGameRule(CaveGameRules.MAX_HEALTH));
+			DeferredWorkQueue.runLater(() -> addIntegerGameRule(CaveGameRules.GROWTH_ENCHANTMENT_MULTIPLIER));
 			DeferredWorkQueue.runLater(() -> addIntegerGameRule(CaveGameRules.PROTECTION_TIME_MULTIPLIER));
 			
 		} catch (Exception e) {

@@ -23,7 +23,7 @@ public class OnEntityDeath {
 		
 		if (entity instanceof EnderDragonEntity) {
 			
-			if (world.getGameRules().getBoolean(CaveGameRules.DISABLE_ENDSTAR_DROP.getRule())) {
+			if (!world.getGameRules().getBoolean(CaveGameRules.DISABLE_ENDSTAR_DROP.getRule())) {
 				
 				ItemEntity  item = new ItemEntity(world, entity.getPosX(), entity.getPosY(), entity.getPosZ(), new ItemStack(CaveItems.END_STAR.get()));
 				item.setPickupDelay(10);

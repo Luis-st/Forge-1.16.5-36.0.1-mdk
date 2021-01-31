@@ -48,7 +48,7 @@ public class OnLivingDropEvent {
 					
 				} else {
 					
-					if (world.getGameRules().getBoolean(CaveGameRules.DISABLE_ITEM_GRAVITY.getRule())) {
+					if (!world.getGameRules().getBoolean(CaveGameRules.DISABLE_ITEM_GRAVITY.getRule())) {
 						
 						ItemManager.setNoGravityItem(drops);
 						
@@ -58,7 +58,7 @@ public class OnLivingDropEvent {
 				
 			} else {
 				
-				if (world.getGameRules().getBoolean(CaveGameRules.DISABLE_ITEM_GRAVITY.getRule())) {
+				if (!world.getGameRules().getBoolean(CaveGameRules.DISABLE_ITEM_GRAVITY.getRule())) {
 					
 					ItemManager.setNoGravityItem(drops);
 					
@@ -68,7 +68,7 @@ public class OnLivingDropEvent {
 			
 		} else {
 			
-			if (world.getGameRules().getBoolean(CaveGameRules.DISABLE_ITEM_GRAVITY.getRule())) {
+			if (!world.getGameRules().getBoolean(CaveGameRules.DISABLE_ITEM_GRAVITY.getRule())) {
 				
 				ItemManager.setNoGravityItem(drops);
 				

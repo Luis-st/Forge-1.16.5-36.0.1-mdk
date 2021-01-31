@@ -20,29 +20,28 @@ public class OnArmor {
 		PlayerEntity player = event.player;
 		World world = player.getEntityWorld();
 		
-		if (world.getGameRules().getBoolean(CaveGameRules.ENABLE_ARMOR_EFFECTS.getRule())) {
-			
-			if (PlayerManager.hasSaphireArmor(player)) {
-				
-				player.fallDistance = 0f;
-				player.addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, 10, 4, true, false));
-				
-				if (player.getMotion().y < 0) {
-					
-					player.setMotion(player.getMotion().x, player.getMotion().y - (player.getMotion().y / 20), player.getMotion().z);
-					
-				}
-				
-			}
-			
-			if (PlayerManager.hasNightArmor(player, true)) {
-				
-				
-				player.addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, 400, 0, true, false));
-				
-			}
-			
-		}
+//		if (world.getGameRules().getBoolean(CaveGameRules.ENABLE_ARMOR_EFFECTS.getRule())) {
+//			
+//			if (PlayerManager.hasSaphireArmor(player)) {
+//				
+//				player.fallDistance = 0f;
+//				player.addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, 10, 4, true, false));
+//				
+//				if (player.getMotion().y < 0) {
+//					
+//					player.setMotion(player.getMotion().x, player.getMotion().y - (player.getMotion().y / 20), player.getMotion().z);
+//					
+//				}
+//				
+//			}
+//			
+//			if (PlayerManager.hasNightArmor(player, true)) {
+//				
+//				player.addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, 400, 0, true, false));
+//				
+//			}
+//			
+//		}
 		
 	}
 	
