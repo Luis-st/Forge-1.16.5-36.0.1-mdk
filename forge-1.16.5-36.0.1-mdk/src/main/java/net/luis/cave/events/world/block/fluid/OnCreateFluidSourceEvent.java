@@ -1,4 +1,4 @@
-package net.luis.cave.events.world;
+package net.luis.cave.events.world.block.fluid;
 
 import net.luis.cave.Cave;
 import net.minecraft.block.BlockState;

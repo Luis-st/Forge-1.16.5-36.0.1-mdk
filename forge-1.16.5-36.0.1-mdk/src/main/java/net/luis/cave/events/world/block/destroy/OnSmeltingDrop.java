@@ -1,4 +1,4 @@
-package net.luis.cave.events.world;
+package net.luis.cave.events.world.block.destroy;
 
 import net.luis.cave.Cave;
 import net.luis.cave.init.CaveEnchantment;
