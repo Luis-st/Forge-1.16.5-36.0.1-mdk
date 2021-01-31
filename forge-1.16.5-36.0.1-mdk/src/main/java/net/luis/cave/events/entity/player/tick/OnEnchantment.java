@@ -65,6 +65,7 @@ public class OnEnchantment {
 			
 		}
 		
+		// Growth Enchantment
 		if (enchGrowth > 0) {
 			
 			player.getAttribute(Attributes.MAX_HEALTH).setBaseValue(20 + enchGrowth);
@@ -78,6 +79,12 @@ public class OnEnchantment {
 				player.setHealth(20);
 				
 			}
+			
+		}
+		
+		if (player.getHealth() != player.getAttribute(Attributes.MAX_HEALTH).getBaseValue()) {
+			
+			player.setHealth((float) player.getAttribute(Attributes.MAX_HEALTH).getBaseValue());
 			
 		}
 		
