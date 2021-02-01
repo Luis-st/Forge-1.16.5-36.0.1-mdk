@@ -2,6 +2,7 @@ package net.luis.cave.events.entity;
 
 import net.luis.cave.Cave;
 import net.luis.cave.init.CaveEnchantment;
+import net.luis.cave.util.enums.CaveArmorMaterial;
 import net.luis.cave.util.lib.PlayerManager;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
@@ -38,7 +39,7 @@ public class OnLivingHurtEvent {
 				
 			}
 			
-			if (PlayerManager.hasBlazingArmor(player)) {
+			if (PlayerManager.hasArmor(player, CaveArmorMaterial.BLAZING)) {
 				
 				if (source == DamageSource.IN_FIRE) {
 					

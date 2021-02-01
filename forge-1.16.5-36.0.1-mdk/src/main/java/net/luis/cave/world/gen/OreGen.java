@@ -55,13 +55,13 @@ public class OreGen {
 				.func_242731_b(10))); //count per chunk
 		
 		overworldOres.add(register("calcite", Feature.ORE.withConfiguration(new OreFeatureConfig(
-				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, CaveBlocks.CALCITE.get().getDefaultState(), 8)) //vein Size
-				.range(32).square() //maximum height
+				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, CaveBlocks.CALCITE.get().getDefaultState(), 20)) //vein Size
+				.range(64).square() //maximum height
 				.func_242731_b(15))); //count per chunk
 		
 		overworldOres.add(register("tuff", Feature.ORE.withConfiguration(new OreFeatureConfig(
-				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, CaveBlocks.TUFF.get().getDefaultState(), 8)) //vein Size
-				.range(32).square() //maximum height
+				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, CaveBlocks.TUFF.get().getDefaultState(), 25)) //vein Size
+				.range(64).square() //maximum height
 				.func_242731_b(20))); //count per chunk
 		
 		

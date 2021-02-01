@@ -21,7 +21,7 @@ public class NightArmor extends ArmorItem {
 	@Override
 	public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
 		
-		if (PlayerManager.hasNightArmor(player, true)) {
+		if (PlayerManager.hasArmor(player, material)) {
 			
 			player.addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, 400, 0, true, false));
 			
