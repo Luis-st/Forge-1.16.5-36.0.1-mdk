@@ -48,7 +48,6 @@ public class CreatGameRules {
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.ENABLE_TRADE_REDUCTION));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.ENABLE_SLIMECHUNK_INFO));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.ENABLE_SEED_INFO));
-			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.ENABLE_ARMOR_EFFECTS));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.ENABLE_RAIN_SLEEP));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DISABLE_ENDERMAN_GRIEFING));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DISABLE_CREEPER_GRIEFING));
@@ -58,7 +57,6 @@ public class CreatGameRules {
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.ENABLE_ENCHANTMENT_TRANSFER));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DISABLE_BAN));
 			
-			DeferredWorkQueue.runLater(() -> addIntegerGameRule(CaveGameRules.GROWTH_ENCHANTMENT_MULTIPLIER));
 			DeferredWorkQueue.runLater(() -> addIntegerGameRule(CaveGameRules.PROTECTION_TIME_MULTIPLIER));
 			
 		} catch (Exception e) {

@@ -1,7 +1,6 @@
 package net.luis.cave.items.armor;
 
 import net.luis.cave.util.lib.PlayerManager;
-import net.luis.cave.world.CaveGameRules;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
@@ -22,18 +21,14 @@ public class SaphireArmor extends ArmorItem {
 	@Override
 	public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
 		
-		if (world.getGameRules().getBoolean(CaveGameRules.ENABLE_ARMOR_EFFECTS.getRule())) {
+		if (PlayerManager.hasSaphireArmor(player)) {
 			
-			if (PlayerManager.hasSaphireArmor(player)) {
+			player.fallDistance = 0f;
+			player.addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, 10, 4, true, false));
+			
+			if (player.getMotion().y < 0) {
 				
-				player.fallDistance = 0f;
-				player.addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, 10, 4, true, false));
-				
-				if (player.getMotion().y < 0) {
-					
-					player.setMotion(player.getMotion().x, player.getMotion().y - (player.getMotion().y / 20), player.getMotion().z);
-					
-				}
+				player.setMotion(player.getMotion().x, player.getMotion().y - (player.getMotion().y / 20), player.getMotion().z);
 				
 			}
 			

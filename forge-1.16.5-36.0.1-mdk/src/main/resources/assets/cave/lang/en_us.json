@@ -68,8 +68,6 @@
   "gamerule.enableSlimechunkInfo.description": "Activates the command ?slime",
   "gamerule.enableSeedInfo": "Enable seed info",
   "gamerule.enableSeedInfo.description": "Activates the command ?seed",
-  "gamerule.enableArmorEffects": "Enable armor effects",
-  "gamerule.enableArmorEffects.description": "Activates the armor effects",
   "gamerule.enableRainSleep": "Enable rain sleep",
   "gamerule.enableRainSleep.description": "The player can sleep when it rains",
   "gamerule.disableEndermanGriefing": "Disable enderman griefing",
@@ -86,8 +84,6 @@
   "gamerule.disableBan": "Disable ban",
   "gamerule.disableBan.description": "Players can not bannes form the Server",
   
-  "gamerule.growthEnchantmentMultiplier": "Growth enchantment multiplier",
-  "gamerule.growthEnchantmentMultiplier.description": "The multiplier of the growth enchantment which calculates the additional health per level",
   "gamerule.protectionTimeMultiplier": "Protection time multiplier",
   
   "entity.minecraft.villager.cave.lumberjack": "Lumberjack",

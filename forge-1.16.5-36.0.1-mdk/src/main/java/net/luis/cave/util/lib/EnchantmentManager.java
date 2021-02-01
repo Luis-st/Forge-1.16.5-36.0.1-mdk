@@ -9,7 +9,6 @@ import java.util.Random;
 import java.util.stream.Collectors;
 
 import net.luis.cave.init.CaveEnchantment;
-import net.luis.cave.world.CaveGameRules;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentData;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -22,18 +21,14 @@ import net.minecraft.world.World;
 
 public class EnchantmentManager {
 	
-	public static int growthLevel(World world, ItemStack[] item) {
-		
-		int multiplier = world.getGameRules().getInt(CaveGameRules.GROWTH_ENCHANTMENT_MULTIPLIER.getRule());
+	public static int growthLevel(ItemStack[] item) {
 		
 		int enchGrowthHead = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.GROWTH.get(), item[0]);
 		int enchGrowthChest = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.GROWTH.get(), item[1]);
 		int enchGrowthLegs = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.GROWTH.get(), item[2]);
 		int enchGrowthFeet = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.GROWTH.get(), item[3]);
 		
-		int enchGowth = enchGrowthHead + enchGrowthChest + enchGrowthLegs + enchGrowthFeet;
-		
-		return enchGowth * multiplier;
+		return enchGrowthHead + enchGrowthChest + enchGrowthLegs + enchGrowthFeet;
 		
 	}
 	

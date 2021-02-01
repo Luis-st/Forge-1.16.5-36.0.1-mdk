@@ -25,8 +25,6 @@ public class CaveGameRules {
 	public static GameRule.BooleanGameRule ENABLE_TRADE_REDUCTION = new GameRule.BooleanGameRule("enableTradeReduction", GameRules.Category.MOBS, false);
 	public static GameRule.BooleanGameRule ENABLE_SLIMECHUNK_INFO = new GameRule.BooleanGameRule("enableSlimechunkInfo", GameRules.Category.CHAT, false);
 	public static GameRule.BooleanGameRule ENABLE_SEED_INFO = new GameRule.BooleanGameRule("enableSeedInfo", GameRules.Category.CHAT, false);
-	//Error
-	public static GameRule.BooleanGameRule ENABLE_ARMOR_EFFECTS = new GameRule.BooleanGameRule("enableArmorEffects", GameRules.Category.PLAYER, true);
 	public static GameRule.BooleanGameRule ENABLE_RAIN_SLEEP = new GameRule.BooleanGameRule("enableRainSleep", GameRules.Category.PLAYER, true);
 	public static GameRule.BooleanGameRule DISABLE_ENDERMAN_GRIEFING = new GameRule.BooleanGameRule("disableEndermanGriefing", GameRules.Category.MOBS, false);
 	public static GameRule.BooleanGameRule DISABLE_CREEPER_GRIEFING = new GameRule.BooleanGameRule("disableCreeperGriefing", GameRules.Category.MOBS, false);
@@ -36,8 +34,6 @@ public class CaveGameRules {
 	public static GameRule.BooleanGameRule ENABLE_ENCHANTMENT_TRANSFER = new GameRule.BooleanGameRule("enableEnchantmentTransfer", GameRules.Category.MISC, false);
 	public static GameRule.BooleanGameRule DISABLE_BAN = new GameRule.BooleanGameRule("disableBan", GameRules.Category.MISC, false);
 	
-	//Error
-	public static GameRule.IntegerGameRule GROWTH_ENCHANTMENT_MULTIPLIER  = new GameRule.IntegerGameRule("growthEnchantmentMultiplier", GameRules.Category.PLAYER, 1);
 	public static GameRule.IntegerGameRule PROTECTION_TIME_MULTIPLIER = new GameRule.IntegerGameRule("protectionTimeMultiplier", GameRules.Category.PLAYER, 10);
 	
 }
