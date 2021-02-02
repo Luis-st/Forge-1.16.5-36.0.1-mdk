@@ -41,7 +41,7 @@ public class CreatGameRules {
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DO_WORKTIME_TRADE_RESETING));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.ENABLE_BLASTING_DAMAGE));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DISABLE_ITEM_DESPAWN));
-			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DISABLE_ENDSTAR_DROP));
+			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DISABLE_END_STAR_DROP));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DISABLE_ITEM_GRAVITY));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.ENABLE_INFINITE_HARVESTING));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.ENABLE_PROTECTION_TIME));
@@ -56,6 +56,7 @@ public class CreatGameRules {
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DISABLE_HUNGER));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.ENABLE_ENCHANTMENT_TRANSFER));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DISABLE_BAN));
+			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DISABLE_WATER_STAR_DROP));
 			
 			DeferredWorkQueue.runLater(() -> addIntegerGameRule(CaveGameRules.PROTECTION_TIME_MULTIPLIER));
 			

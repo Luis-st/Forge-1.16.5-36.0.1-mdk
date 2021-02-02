@@ -1,12 +1,14 @@
 package net.luis.cave.init;
 
 import net.luis.cave.Cave;
-import net.luis.cave.items.EndStar;
 import net.luis.cave.items.FungusSoup;
-import net.luis.cave.items.MiningStar;
 import net.luis.cave.items.PowderSnowBucket;
 import net.luis.cave.items.RubyApple;
 import net.luis.cave.items.Spyglass;
+import net.luis.cave.items.star.EndStar;
+import net.luis.cave.items.star.MiningStar;
+import net.luis.cave.items.star.NetherStar;
+import net.luis.cave.items.star.WaterStar;
 import net.luis.cave.items.vanilla.Sugar;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;
@@ -86,6 +88,10 @@ public class CaveItems {
 	
 	public static final RegistryObject<Item> COPPER_INGOT = ITEMS.register("copper_ingot", 
 			() -> new Item(new Item.Properties().group(Cave.MISC)));
+	
+	public static final RegistryObject<Item> NETHER_STAR = VANILLA_ITEMS.register("nether_star", NetherStar::new);
+	
+	public static final RegistryObject<Item> WATER_STAR = ITEMS.register("water_star", WaterStar::new);
 	
 }
 

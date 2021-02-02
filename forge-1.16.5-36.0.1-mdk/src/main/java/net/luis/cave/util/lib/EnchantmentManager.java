@@ -9,17 +9,27 @@ import java.util.Random;
 import java.util.stream.Collectors;
 
 import net.luis.cave.init.CaveEnchantment;
+import net.luis.cave.init.blocks.CaveBlocks;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.FlowingFluidBlock;
+import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentData;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
+import net.minecraftforge.common.util.BlockSnapshot;
+import net.minecraftforge.event.ForgeEventFactory;
 
-public class EnchantmentManager {
+public class EnchantmentManager extends EnchantmentHelper {
 	
 	public static int growthLevel(ItemStack[] item) {
 		
@@ -71,6 +81,47 @@ public class EnchantmentManager {
 			
 			return true;
 			
+		}
+		
+	}
+	
+	@SuppressWarnings("deprecation")
+	public static void lavaWalker(LivingEntity living, World world, BlockPos pos) {
+		
+		if (living.isOnGround()) {
+			
+			BlockState crackedLava = CaveBlocks.CRACKED_LAVA.get().getDefaultState();
+			float size = 3;
+			BlockPos.Mutable mutablePos = new BlockPos.Mutable();
+
+			for (BlockPos blockPos : BlockPos.getAllInBoxMutable(pos.add(-size, -1.0D, -size), pos.add(size, -1.0D, size))) {
+				
+				if (blockPos.withinDistance(living.getPositionVec(), size)) {
+					
+					mutablePos.setPos(blockPos.getX(), blockPos.getY() + 1, blockPos.getZ());
+					BlockState checkState = world.getBlockState(mutablePos);
+					
+					if (checkState.isAir(world, mutablePos)) {
+						
+						BlockState airState = world.getBlockState(blockPos);
+						boolean isFull = airState.getBlock() == Blocks.LAVA && airState.get(FlowingFluidBlock.LEVEL) == 0;
+						
+						if (airState.getMaterial() == Material.LAVA && isFull && 
+							crackedLava.isValidPosition(world, blockPos) && 
+							world.placedBlockCollides(crackedLava, blockPos, ISelectionContext.dummy()) && 
+							!ForgeEventFactory.onBlockPlace(living, BlockSnapshot.create(world.getDimensionKey(), world, blockPos), Direction.UP)) {
+							
+							world.setBlockState(blockPos, crackedLava);
+							world.getPendingBlockTicks().scheduleTick(blockPos, CaveBlocks.CRACKED_LAVA.get(), MathHelper.nextInt(living.getRNG(), 60, 120));
+							
+						}
+						
+					}
+					
+				}
+				
+			}
+
 		}
 		
 	}

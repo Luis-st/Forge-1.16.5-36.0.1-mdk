@@ -28,6 +28,7 @@
   "enchantment.cave.replenish": "Replenish",
   "enchantment.cave.double_shot": "Double Shot",
   "enchantment.cave.throw_of_the_end": "Throw of the End",
+  "enchantment.cave.lava_walker": "Lava Walker",
   
   "gamerule.disableEndermanTeleport": "Disable enderman teleport",
   "gamerule.disableEndermanTeleport.description": "Disable the teleporting of enderman, overwrites the Gamerule: doEndermanAttackTeleport",
@@ -56,8 +57,8 @@
   "gamerule.enableBlastingDamage.description": "Activates the damage caused by the enchantment blasting",
   "gamerule.disableItemDespawn": "Disable item despawn",
   "gamerule.disableItemDespawn.description": "Items can not despawn",
-  "gamerule.disableEndstarDrop": "Disable endstar drop",
-  "gamerule.disableEndstarDrop.description": "The enderdragon no longer drops an endstar",
+  "gamerule.disableEndStarDrop": "Disable end star drop",
+  "gamerule.disableEndStarDrop.description": "The enderdragon no longer drops an end star",
   "gamerule.disableItemGravity": "Disable item gravity",
   "gamerule.disableItemGravity.description": "Disables the gravity of enderite and night items",
   "gamerule.enableInfiniteHarvesting": "Enable infinite harvesting",
@@ -83,6 +84,8 @@
   "gamerule.enableEnchantmentTransfer.description": "Enchantments can be removed in the anvil (enchanted item + book -> enchanted book)",
   "gamerule.disableBan": "Disable ban",
   "gamerule.disableBan.description": "Players can not bannes form the Server",
+  "gamerule.disableWaterStarDrop": "Disable water star drop",
+  "gamerule.disableWaterStarDrop.description": "The elder guardian no longer drops an water star",
   
   "gamerule.protectionTimeMultiplier": "Protection time multiplier",
   
@@ -98,10 +101,12 @@
   "container.smelting_furnace": "Smelting Furnace",
   
   "item.cave.fungus_soup": "Fungus Soup",
+  "item.cave.end_star": "End Star",
   "item.cave.andesite_alloy": "Andesite Alloy",
   "item.cave.mining_star": "Mining Star",
   "item.cave.spyglass": "Spyglass",
   "item.cave.fertilizer": "Fertilizer",
+  "item.cave.water_star": "Water Star",
   
   "item.cave.iron_shield": "Iron Shield",
   "item.cave.golden_shield": "Golden Shield",
@@ -118,6 +123,7 @@
   "block.cave.tinted_glass": "Tinted Glass",
   "block.cave.calcite": "Calcite",
   "block.cave.tuff": "Tuff",
+  "block.cave.cracked_lava": "Cracked Lava",
   
   "item.cave.copper_ingot": "Copper Ingot",
   "block.cave.copper_ore": "Copper Ore",
@@ -161,7 +167,6 @@
   "item.cave.enderite_shield": "Enderite Shield",
   "item.cave.enderite_bow": "Enderite Bow",
   "item.cave.enderite_crossbow": "Enderite Crossbow",
-  "item.cave.end_star": "End Star",
     
   "item.cave.rose_quartz": "Rose Quartz",
   "item.cave.polished_rose_quartz": "Polished Rose Quartz",

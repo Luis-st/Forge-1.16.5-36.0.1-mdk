@@ -19,7 +19,7 @@ public class CaveGameRules {
 	public static GameRule.BooleanGameRule ENABLE_PROTECTION_TIME = new GameRule.BooleanGameRule("enableProtectionTime", GameRules.Category.PLAYER, true);
 	public static GameRule.BooleanGameRule ENABLE_BLASTING_DAMAGE = new GameRule.BooleanGameRule("enableBlastingDamage", GameRules.Category.PLAYER, false);
 	public static GameRule.BooleanGameRule DISABLE_ITEM_DESPAWN = new GameRule.BooleanGameRule("disableItemDespawn", GameRules.Category.MISC, false);
-	public static GameRule.BooleanGameRule DISABLE_ENDSTAR_DROP = new GameRule.BooleanGameRule("disableEndstarDrop", GameRules.Category.DROPS, false);
+	public static GameRule.BooleanGameRule DISABLE_END_STAR_DROP = new GameRule.BooleanGameRule("disableEndStarDrop", GameRules.Category.DROPS, false);
 	public static GameRule.BooleanGameRule DISABLE_ITEM_GRAVITY = new GameRule.BooleanGameRule("disableItemGravity", GameRules.Category.DROPS, true);
 	public static GameRule.BooleanGameRule ENABLE_INFINITE_HARVESTING = new GameRule.BooleanGameRule("enableInfiniteHarvesting", GameRules.Category.MISC, false);
 	public static GameRule.BooleanGameRule ENABLE_TRADE_REDUCTION = new GameRule.BooleanGameRule("enableTradeReduction", GameRules.Category.MOBS, false);
@@ -33,6 +33,7 @@ public class CaveGameRules {
 	public static GameRule.BooleanGameRule DISABLE_HUNGER = new GameRule.BooleanGameRule("disableHunger", GameRules.Category.PLAYER, false);
 	public static GameRule.BooleanGameRule ENABLE_ENCHANTMENT_TRANSFER = new GameRule.BooleanGameRule("enableEnchantmentTransfer", GameRules.Category.MISC, false);
 	public static GameRule.BooleanGameRule DISABLE_BAN = new GameRule.BooleanGameRule("disableBan", GameRules.Category.MISC, false);
+	public static GameRule.BooleanGameRule DISABLE_WATER_STAR_DROP = new GameRule.BooleanGameRule("disableWaterStarDrop", GameRules.Category.DROPS, false);
 	
 	public static GameRule.IntegerGameRule PROTECTION_TIME_MULTIPLIER = new GameRule.IntegerGameRule("protectionTimeMultiplier", GameRules.Category.PLAYER, 10);
 	

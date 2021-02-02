@@ -11,6 +11,7 @@ import net.luis.cave.enchantment.Experience;
 import net.luis.cave.enchantment.FrostAspect;
 import net.luis.cave.enchantment.Growth;
 import net.luis.cave.enchantment.Harvesting;
+import net.luis.cave.enchantment.LavaWalker;
 import net.luis.cave.enchantment.PoisonAspect;
 import net.luis.cave.enchantment.Replenish;
 import net.luis.cave.enchantment.Smelting;
@@ -122,5 +123,8 @@ public class CaveEnchantment {
 	
 	public static final RegistryObject<Enchantment> THROW_OF_THE_END = ENCHANTMENT.register("throw_of_the_end", 
 			() -> new ThrowOfTheEnd(Rarity.VERY_RARE, EnchantmentType.BOW, EquipmentSlotType.MAINHAND));
+	
+	public static final RegistryObject<Enchantment> LAVA_WALKER = ENCHANTMENT.register("lava_walker", 
+			() -> new LavaWalker(Rarity.VERY_RARE, EnchantmentType.ARMOR_FEET, EquipmentSlotType.FEET));
 
 }

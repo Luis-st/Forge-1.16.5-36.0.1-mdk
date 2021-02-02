@@ -2,6 +2,7 @@ package net.luis.cave.init.blocks;
 
 import net.luis.cave.Cave;
 import net.luis.cave.blocks.BeeTable;
+import net.luis.cave.blocks.CrackedLava;
 import net.luis.cave.blocks.InfiniteAnvil;
 import net.luis.cave.blocks.LightningRod;
 import net.luis.cave.blocks.PowderSnow;
@@ -22,7 +23,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class CaveBlocks {
 	
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Cave.Mod_Id);
-	public static final DeferredRegister<Block> VANILLA_BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Cave.Minecraft_Id);
+	
 	
 	public static final RegistryObject<Block> RUBY_BLOCK = BLOCKS.register("ruby_block", 
 			() -> new Block(Block.Properties.create(Material.IRON, MaterialColor.RED).hardnessAndResistance(5.5f,6.5f).sound(SoundType.METAL)
@@ -109,5 +110,7 @@ public class CaveBlocks {
 			() -> new StairsBlock(CaveBlocks.CUT_COPPER.get().getDefaultState(), AbstractBlock.Properties.from(CaveBlocks.COPPER_BLOCK.get())));
 	
 	public static final RegistryObject<Block> LIGHTNING_ROD = BLOCKS.register("lightning_rod", LightningRod::new);
+	
+	public static final RegistryObject<Block> CRACKED_LAVA = BLOCKS.register("cracked_lava", CrackedLava::new);
 
 }

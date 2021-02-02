@@ -32,6 +32,7 @@ public class OnEnchantment {
 		int enchElytraFalling = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.ELYTRA_FALLING.get(), item[1]);
 		int enchVoidWalker = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.VOID_WALKER.get(), item[3]);
 		int enchGrowth = EnchantmentManager.growthLevel(item);
+		int enchLavaWalker = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.LAVA_WALKER.get(), item[3]);
 		
 		if (enchElytraFalling == 1) {
 			
@@ -78,6 +79,12 @@ public class OnEnchantment {
 				player.setHealth(20);
 				
 			}
+			
+		}
+		
+		if (enchLavaWalker > 0) {
+			
+			EnchantmentManager.lavaWalker(player, world, player.getPosition());
 			
 		}
 		

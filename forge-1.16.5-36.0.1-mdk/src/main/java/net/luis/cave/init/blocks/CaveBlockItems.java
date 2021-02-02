@@ -10,7 +10,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class CaveBlockItems {
 	
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Cave.Mod_Id);
-	public static final DeferredRegister<Item> VANILLA_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Cave.Minecraft_Id);
 
 	
 	public static final RegistryObject<Item> RUBY_BLOCK_ITEM = ITEMS.register("ruby_block", 
