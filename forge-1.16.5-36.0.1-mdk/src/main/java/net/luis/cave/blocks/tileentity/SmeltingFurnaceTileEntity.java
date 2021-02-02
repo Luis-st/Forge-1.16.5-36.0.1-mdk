@@ -1,9 +1,9 @@
 package net.luis.cave.blocks.tileentity;
 
+import net.luis.cave.blocks.container.SmeltingContainer;
 import net.luis.cave.init.CaveTileEntityType;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
-import net.minecraft.inventory.container.FurnaceContainer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.tileentity.AbstractFurnaceTileEntity;
@@ -35,7 +35,7 @@ public class SmeltingFurnaceTileEntity extends AbstractFurnaceTileEntity {
 	@Override
 	protected Container createMenu(int id, PlayerInventory player) {
 		
-		return new FurnaceContainer(id, player, this, this.furnaceData);
+		return new SmeltingContainer(id, player, this, this.furnaceData);
 		
 	}
 
