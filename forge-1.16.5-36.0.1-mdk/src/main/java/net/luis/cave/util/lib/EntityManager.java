@@ -6,8 +6,8 @@ import net.minecraft.entity.monster.EndermanEntity;
 import net.minecraft.entity.monster.EndermiteEntity;
 import net.minecraft.entity.monster.ShulkerEntity;
 
-public class EntityManager {
-	
+public abstract class EntityManager {
+
 	public static boolean hasMaxHealth(LivingEntity enity) {
 		
 		if (enity.getHealth() != enity.getAttribute(Attributes.MAX_HEALTH).getBaseValue()) {

@@ -6,6 +6,7 @@ import net.luis.cave.world.CaveGameRules;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;
 import net.minecraft.entity.item.ItemEntity;
+import net.minecraft.entity.monster.ElderGuardianEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
@@ -23,9 +24,21 @@ public class OnEntityDeath {
 		
 		if (entity instanceof EnderDragonEntity) {
 			
-			if (!world.getGameRules().getBoolean(CaveGameRules.DISABLE_ENDSTAR_DROP.getRule())) {
+			if (!world.getGameRules().getBoolean(CaveGameRules.DISABLE_END_STAR_DROP.getRule())) {
 				
 				ItemEntity  item = new ItemEntity(world, entity.getPosX(), entity.getPosY(), entity.getPosZ(), new ItemStack(CaveItems.END_STAR.get()));
+				item.setPickupDelay(10);
+				world.addEntity(item);
+				
+			}
+			
+		}
+		
+		if (entity instanceof ElderGuardianEntity) {
+			
+			if (!world.getGameRules().getBoolean(CaveGameRules.DISABLE_WATER_STAR_DROP.getRule())) {
+				
+				ItemEntity  item = new ItemEntity(world, entity.getPosX(), entity.getPosY(), entity.getPosZ(), new ItemStack(CaveItems.WATER_STAR.get()));
 				item.setPickupDelay(10);
 				world.addEntity(item);
 				

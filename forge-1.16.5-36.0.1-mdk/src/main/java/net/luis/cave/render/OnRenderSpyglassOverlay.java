@@ -35,12 +35,13 @@ public class OnRenderSpyglassOverlay {
 				RenderSystem.depthMask(false);
 				RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 				RenderSystem.disableAlphaTest();
-				RenderSystem.enableBlend();
+				RenderSystem.disableBlend();
 				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("cave:textures/misc/spyglass_scope.png"));
 				Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), 0, 0, 0, 0, posX * 2, posY * 2, 480, 270);
 				RenderSystem.depthMask(true);
 				RenderSystem.enableDepthTest();
 				RenderSystem.enableAlphaTest();
+				RenderSystem.enableBlend();
 				RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 				
 			}
