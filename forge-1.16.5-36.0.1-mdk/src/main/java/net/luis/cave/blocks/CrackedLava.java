@@ -6,7 +6,6 @@ import net.luis.cave.init.CaveEnchantment;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.BreakableBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -29,7 +28,7 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
-public class CrackedLava extends BreakableBlock {
+public class CrackedLava extends Block {
 	
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_0_3;
 
@@ -62,6 +61,12 @@ public class CrackedLava extends BreakableBlock {
 			}
 			
 		}
+		
+	}
+	
+	public static IntegerProperty getAge() {
+		
+		return AGE;
 		
 	}
 	
