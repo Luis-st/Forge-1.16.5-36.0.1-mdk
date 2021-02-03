@@ -23,7 +23,7 @@ public class OnEnderTeleportEvent {
 		
 		if (entity instanceof PlayerEntity) {
 			
-			if (world.getGameRules().getBoolean(CaveGameRules.DO_ENDERPEARL_DAMAGE.getRule())) {
+			if (!world.getGameRules().getBoolean(CaveGameRules.DO_ENDERPEARL_DAMAGE.getRule())) {
 				
 				event.setAttackDamage(0.0f);
 				

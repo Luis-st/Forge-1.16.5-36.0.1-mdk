@@ -86,6 +86,8 @@
   "gamerule.disableBan.description": "Players can not bannes form the Server",
   "gamerule.disableWaterStarDrop": "Disable water star drop",
   "gamerule.disableWaterStarDrop.description": "The elder guardian no longer drops an water star",
+  "gamerule.doEnderpearlDamage": "Do enderpearl damage",
+  "gamerule.doEnderpearlDamage.description": "Do the damage after a player throw an ender pearl",
   
   "gamerule.protectionTimeMultiplier": "Protection time multiplier",
   

@@ -34,6 +34,7 @@ public class CaveGameRules {
 	public static GameRule.BooleanGameRule ENABLE_ENCHANTMENT_TRANSFER = new GameRule.BooleanGameRule("enableEnchantmentTransfer", GameRules.Category.MISC, false);
 	public static GameRule.BooleanGameRule DISABLE_BAN = new GameRule.BooleanGameRule("disableBan", GameRules.Category.MISC, false);
 	public static GameRule.BooleanGameRule DISABLE_WATER_STAR_DROP = new GameRule.BooleanGameRule("disableWaterStarDrop", GameRules.Category.DROPS, false);
+	public static GameRule.BooleanGameRule DO_ENDERPEARL_DAMAGE = new GameRule.BooleanGameRule("doEnderpearlDamage", GameRules.Category.PLAYER, true);
 	
 	public static GameRule.IntegerGameRule PROTECTION_TIME_MULTIPLIER = new GameRule.IntegerGameRule("protectionTimeMultiplier", GameRules.Category.PLAYER, 10);
 	

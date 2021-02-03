@@ -57,6 +57,7 @@ public class CreatGameRules {
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.ENABLE_ENCHANTMENT_TRANSFER));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DISABLE_BAN));
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DISABLE_WATER_STAR_DROP));
+			DeferredWorkQueue.runLater(() -> addBooleanGameRule(CaveGameRules.DO_ENDERPEARL_DAMAGE));
 			
 			DeferredWorkQueue.runLater(() -> addIntegerGameRule(CaveGameRules.PROTECTION_TIME_MULTIPLIER));
 			
