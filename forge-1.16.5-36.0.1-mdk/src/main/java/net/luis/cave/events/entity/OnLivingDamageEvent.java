@@ -5,7 +5,6 @@ import net.luis.cave.init.CaveEnchantment;
 import net.luis.cave.util.lib.EntityManager;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -17,7 +16,7 @@ public class OnLivingDamageEvent {
 	@SubscribeEvent
 	public static void LivingDamage(LivingDamageEvent event) {
 		
-		LivingEntity target = event.getEntityLiving();
+		Entity target = event.getEntity();
 		Entity entity = event.getSource().getTrueSource();
 		float amount = event.getAmount();
 		float newAmount;

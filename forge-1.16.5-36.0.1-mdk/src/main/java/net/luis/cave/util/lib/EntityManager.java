@@ -1,7 +1,9 @@
 package net.luis.cave.util.lib;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.boss.dragon.EnderDragonEntity;
 import net.minecraft.entity.monster.EndermanEntity;
 import net.minecraft.entity.monster.EndermiteEntity;
 import net.minecraft.entity.monster.ShulkerEntity;
@@ -20,7 +22,7 @@ public abstract class EntityManager {
 		
 	}
 	
-	public static boolean isEndertype(LivingEntity entity) {
+	public static boolean isEndertype(Entity entity) {
 		
 		if (entity instanceof EndermanEntity) {
 			
@@ -31,6 +33,10 @@ public abstract class EntityManager {
 			return true;
 			
 		} else if (entity instanceof ShulkerEntity) {
+			
+			return true;
+			
+		} else if (entity instanceof EnderDragonEntity) { 
 			
 			return true;
 			
