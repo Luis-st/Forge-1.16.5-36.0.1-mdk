@@ -6,6 +6,7 @@ import net.luis.cave.world.CaveGameRules;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.EndermanEntity;
 import net.minecraft.entity.monster.ShulkerEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.EnderTeleportEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -19,6 +20,16 @@ public class OnEnderTeleportEvent {
 		
 		LivingEntity entity = event.getEntityLiving();
 		World world = entity.getEntityWorld();
+		
+		if (entity instanceof PlayerEntity) {
+			
+			if (world.getGameRules().getBoolean(CaveGameRules.DO_ENDERPEARL_DAMAGE.getRule())) {
+				
+				event.setAttackDamage(0.0f);
+				
+			}
+			
+		}
 		
 		if (entity instanceof EndermanEntity) {
 			
