@@ -1,7 +1,7 @@
 package net.luis.cave.events.world.block.destroy;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.CaveEnchantment;
+import net.luis.cave.init.ModEnchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.player.PlayerEntity;
@@ -22,11 +22,11 @@ public class OnXpDrop {
 			if (event.getExpToDrop() > 0 && !player.abilities.isCreativeMode) {
 				
 				int xp = event.getExpToDrop();
-				int enchExperience = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.EXPERIENCE.get(), player.getHeldItemMainhand());
+				int enchExperience = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.EXPERIENCE.get(), player.getHeldItemMainhand());
 				int enchFortune = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, player.getHeldItemMainhand());
-				int enchDoubleDrop = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.DOUBLE_DROPS.get(), player.getHeldItemMainhand());
+				int enchDoubleDrop = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.DOUBLE_DROPS.get(), player.getHeldItemMainhand());
 				int enchSilkTouch = EnchantmentHelper.getEnchantmentLevel(Enchantments.SILK_TOUCH, player.getHeldItemMainhand());
-				int enchTelekinesis = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.TELEKINESIS.get(), player.getHeldItemMainhand());
+				int enchTelekinesis = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.TELEKINESIS.get(), player.getHeldItemMainhand());
 				
 				if (enchExperience > 0) {
 					

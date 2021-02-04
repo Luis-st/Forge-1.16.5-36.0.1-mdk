@@ -1,7 +1,7 @@
 package net.luis.cave.events.entity;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.blocks.CaveBlocks;
+import net.luis.cave.init.blocks.ModBlocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.LightningBoltEntity;
 import net.minecraft.util.math.BlockPos;
@@ -32,7 +32,7 @@ public class OnEntityJoinWorldEvent {
 					
 					for (int cz = -32; cz < 32; cz++) {
 						
-						if (world.getBlockState(new BlockPos(x + cx, y + cy, z + cz)).getBlock() == CaveBlocks.LIGHTNING_ROD.get()) {
+						if (world.getBlockState(new BlockPos(x + cx, y + cy, z + cz)).getBlock() == ModBlocks.LIGHTNING_ROD.get()) {
 							
 							lightning.setPositionAndUpdate(x + cx, y + cy, z + cz);
 							

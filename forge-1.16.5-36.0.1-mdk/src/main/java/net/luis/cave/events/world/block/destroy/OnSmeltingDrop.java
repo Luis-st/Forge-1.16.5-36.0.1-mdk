@@ -1,9 +1,9 @@
 package net.luis.cave.events.world.block.destroy;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.CaveEnchantment;
-import net.luis.cave.init.CaveTools;
-import net.luis.cave.util.lib.BlockManager;
+import net.luis.cave.api.lib.BlockManager;
+import net.luis.cave.init.ModEnchantment;
+import net.luis.cave.init.items.ModTools;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.OreBlock;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -25,8 +25,8 @@ public class OnSmeltingDrop {
 		BlockPos pos = event.getPos();
 		World world = (World) event.getWorld();
 		PlayerEntity player = event.getPlayer();
-		int enchTelekinesis = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.TELEKINESIS.get(), player.getHeldItemMainhand());
-		int enchSmelting = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.SMELTING.get(), player.getHeldItemMainhand());
+		int enchTelekinesis = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.TELEKINESIS.get(), player.getHeldItemMainhand());
+		int enchSmelting = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.SMELTING.get(), player.getHeldItemMainhand());
 
 		if(player instanceof PlayerEntity) {
 			
@@ -34,9 +34,9 @@ public class OnSmeltingDrop {
 				
 				if (!player.abilities.isCreativeMode) {
 					
-					if (player.getHeldItemMainhand().getItem() == CaveTools.BLAZING_AXE.get() |
-						player.getHeldItemMainhand().getItem() == CaveTools.BLAZING_PICKAXE.get() |
-						player.getHeldItemMainhand().getItem() == CaveTools.BLAZING_SHOVEL.get()) {
+					if (player.getHeldItemMainhand().getItem() == ModTools.BLAZING_AXE.get() |
+						player.getHeldItemMainhand().getItem() == ModTools.BLAZING_PICKAXE.get() |
+						player.getHeldItemMainhand().getItem() == ModTools.BLAZING_SHOVEL.get()) {
 								
 						if (player.isSneaking() == false) {
 							

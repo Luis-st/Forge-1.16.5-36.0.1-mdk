@@ -3,7 +3,7 @@ package net.luis.cave.events.world;
 import java.util.List;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.CaveEnchantment;
+import net.luis.cave.init.ModEnchantment;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -33,9 +33,9 @@ public class OnExposionEvent {
 		if (entity instanceof PlayerEntity) {
 			
 			PlayerEntity player = (PlayerEntity) entity;
-			int enchTelekinesis = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.TELEKINESIS.get(), player.getHeldItemMainhand());
-			int enchBlasting = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.BLASTING.get(), player.getHeldItemMainhand());
-			int enchDoubleDrop = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.DOUBLE_DROPS.get(), player.getHeldItemMainhand());
+			int enchTelekinesis = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.TELEKINESIS.get(), player.getHeldItemMainhand());
+			int enchBlasting = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.BLASTING.get(), player.getHeldItemMainhand());
+			int enchDoubleDrop = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.DOUBLE_DROPS.get(), player.getHeldItemMainhand());
 			
 			if (enchTelekinesis > 0 && enchBlasting > 0) {
 				

@@ -1,7 +1,7 @@
 package net.luis.cave.events.entity.player;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.CaveItems;
+import net.luis.cave.init.items.ModItems;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.PointOfView;
@@ -20,7 +20,7 @@ public class OnFOVUpdateEvent {
 		PlayerEntity player = event.getEntity();
 		GameSettings settings = Minecraft.getInstance().gameSettings;
 		
-		if (player.getActiveItemStack().getItem() == CaveItems.SPYGLASS.get()) {
+		if (player.getActiveItemStack().getItem() == ModItems.SPYGLASS.get()) {
 			
 			if (settings.getPointOfView()== PointOfView.FIRST_PERSON) {
 				

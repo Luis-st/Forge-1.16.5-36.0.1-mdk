@@ -1,7 +1,7 @@
 package net.luis.cave.events.item;
 
 import net.luis.cave.Cave;
-import net.luis.cave.world.CaveGameRules;
+import net.luis.cave.init.util.ModGameRules;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.item.ItemExpireEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -15,7 +15,7 @@ public class OnItemExpireEvent {
 		
 		World world = event.getEntityItem().getEntityWorld();
 		
-		if (world.getGameRules().getBoolean(CaveGameRules.DISABLE_ITEM_DESPAWN.getRule())) {
+		if (world.getGameRules().getBoolean(ModGameRules.DISABLE_ITEM_DESPAWN.getRule())) {
 			
 			event.setCanceled(true);
 			

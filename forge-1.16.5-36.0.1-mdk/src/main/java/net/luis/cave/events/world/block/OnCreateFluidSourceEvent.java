@@ -1,7 +1,7 @@
 package net.luis.cave.events.world.block;
 
 import net.luis.cave.Cave;
-import net.luis.cave.world.CaveGameRules;
+import net.luis.cave.init.util.ModGameRules;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.World;
@@ -21,7 +21,7 @@ public class OnCreateFluidSourceEvent {
 		
 		if (state.getBlock() == Blocks.LAVA) {
 			
-			if (world.getGameRules().getBoolean(CaveGameRules.ENABLE_LAVA_FLUID_SOURCE.getRule())) {
+			if (world.getGameRules().getBoolean(ModGameRules.ENABLE_LAVA_FLUID_SOURCE.getRule())) {
 				
 				event.setResult(Result.ALLOW);
 				

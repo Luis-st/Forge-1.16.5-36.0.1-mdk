@@ -1,9 +1,9 @@
 package net.luis.cave.events.world.block.destroy;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.CaveEnchantment;
-import net.luis.cave.util.lib.BlockManager;
-import net.luis.cave.world.CaveGameRules;
+import net.luis.cave.api.lib.BlockManager;
+import net.luis.cave.init.ModEnchantment;
+import net.luis.cave.init.util.ModGameRules;
 import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
@@ -28,13 +28,13 @@ public class OnHarvesting {
 		World world = (World) event.getWorld();
 		PlayerEntity player = event.getPlayer();
 		BlockState state = event.getState();
-		int enchHarvesting = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.HARVESTING.get(), player.getHeldItemMainhand());
-		int enchTelekinesis = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.TELEKINESIS.get(), player.getHeldItemMainhand());
+		int enchHarvesting = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.HARVESTING.get(), player.getHeldItemMainhand());
+		int enchTelekinesis = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.TELEKINESIS.get(), player.getHeldItemMainhand());
 		int destroyCount = enchHarvesting != 0 ? ((enchHarvesting) * 5) - 1 : 0;
 		
 		if (player instanceof PlayerEntity) {
 			
-			if (world.getGameRules().getBoolean(CaveGameRules.ENABLE_INFINITE_HARVESTING.getRule())) {
+			if (world.getGameRules().getBoolean(ModGameRules.ENABLE_INFINITE_HARVESTING.getRule())) {
 				
 				if (enchHarvesting >= 5) {
 					

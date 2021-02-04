@@ -3,9 +3,9 @@ package net.luis.cave.events.world.block.destroy;
 import java.util.List;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.CaveEnchantment;
-import net.luis.cave.util.lib.BlockManager;
-import net.luis.cave.util.lib.ItemManager;
+import net.luis.cave.api.lib.BlockManager;
+import net.luis.cave.api.lib.ItemManager;
+import net.luis.cave.init.ModEnchantment;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -35,14 +35,14 @@ public class OnTelekinesis {
 		BlockPos pos = event.getPos();
 		IWorld world = event.getWorld();
 		int xp = event.getExpToDrop();
-		int enchTelekinesis = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.TELEKINESIS.get(), player.getHeldItemMainhand());
-		int enchBlasting = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.BLASTING.get(), player.getHeldItemMainhand());
-		int enchExperience = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.EXPERIENCE.get(), player.getHeldItemMainhand());
-		int enchSmelting = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.SMELTING.get(), player.getHeldItemMainhand());
-		int enchDoubleDrop = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.DOUBLE_DROPS.get(), player.getHeldItemMainhand());
+		int enchTelekinesis = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.TELEKINESIS.get(), player.getHeldItemMainhand());
+		int enchBlasting = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.BLASTING.get(), player.getHeldItemMainhand());
+		int enchExperience = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.EXPERIENCE.get(), player.getHeldItemMainhand());
+		int enchSmelting = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.SMELTING.get(), player.getHeldItemMainhand());
+		int enchDoubleDrop = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.DOUBLE_DROPS.get(), player.getHeldItemMainhand());
 		int enchFortune = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, player.getHeldItemMainhand());
 		int enchSilkTouch = EnchantmentHelper.getEnchantmentLevel(Enchantments.SILK_TOUCH, player.getHeldItemMainhand());
-		int enchReplenish = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.REPLENISH.get(), player.getHeldItemMainhand());
+		int enchReplenish = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.REPLENISH.get(), player.getHeldItemMainhand());
 
 		if (player instanceof PlayerEntity) {
 			

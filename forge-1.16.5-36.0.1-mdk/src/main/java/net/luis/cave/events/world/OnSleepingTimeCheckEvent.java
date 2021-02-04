@@ -1,7 +1,7 @@
 package net.luis.cave.events.world;
 
 import net.luis.cave.Cave;
-import net.luis.cave.world.CaveGameRules;
+import net.luis.cave.init.util.ModGameRules;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.SleepingTimeCheckEvent;
@@ -20,7 +20,7 @@ public class OnSleepingTimeCheckEvent {
 		
 		if (world.isRaining()) {
 			
-			if (world.getGameRules().getBoolean(CaveGameRules.ENABLE_RAIN_SLEEP.getRule())) {
+			if (world.getGameRules().getBoolean(ModGameRules.ENABLE_RAIN_SLEEP.getRule())) {
 				
 				event.setResult(Result.ALLOW);
 				

@@ -3,8 +3,8 @@ package net.luis.cave.events.entity.player.tick;
 import java.util.Map.Entry;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.CaveEnchantment;
-import net.luis.cave.util.lib.EnchantmentManager;
+import net.luis.cave.api.lib.EnchantmentManager;
+import net.luis.cave.init.ModEnchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.player.PlayerEntity;
@@ -25,14 +25,14 @@ public class OnEnchantment {
 		PlayerEntity player = event.player;
 		World world = player.getEntityWorld();
 		MinecraftServer server = world.getServer();
-		Entry<EquipmentSlotType, ItemStack> enchCurseBreaking = EnchantmentHelper.getRandomItemWithEnchantment(CaveEnchantment.CURSE_OF_BREAKING.get(), player);
+		Entry<EquipmentSlotType, ItemStack> enchCurseBreaking = EnchantmentHelper.getRandomItemWithEnchantment(ModEnchantment.CURSE_OF_BREAKING.get(), player);
 		EquipmentSlotType[] slot = new EquipmentSlotType[] {EquipmentSlotType.HEAD, EquipmentSlotType.CHEST, EquipmentSlotType.LEGS, EquipmentSlotType.FEET};
 		ItemStack[] item = new ItemStack[] {player.getItemStackFromSlot(slot[0]), player.getItemStackFromSlot(slot[1]), 
 											player.getItemStackFromSlot(slot[2]) , player.getItemStackFromSlot(slot[3])};
-		int enchElytraFalling = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.ELYTRA_FALLING.get(), item[1]);
-		int enchVoidWalker = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.VOID_WALKER.get(), item[3]);
+		int enchElytraFalling = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.ELYTRA_FALLING.get(), item[1]);
+		int enchVoidWalker = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.VOID_WALKER.get(), item[3]);
 		int enchGrowth = EnchantmentManager.growthLevel(item);
-		int enchLavaWalker = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.LAVA_WALKER.get(), item[3]);
+		int enchLavaWalker = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.LAVA_WALKER.get(), item[3]);
 		
 		if (enchElytraFalling == 1) {
 			

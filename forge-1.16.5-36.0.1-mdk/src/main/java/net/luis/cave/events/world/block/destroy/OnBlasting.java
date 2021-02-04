@@ -1,8 +1,8 @@
 package net.luis.cave.events.world.block.destroy;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.CaveEnchantment;
-import net.luis.cave.world.CaveGameRules;
+import net.luis.cave.init.ModEnchantment;
+import net.luis.cave.init.util.ModGameRules;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.DamageSource;
@@ -23,8 +23,8 @@ public class OnBlasting {
 		double x = event.getPos().getX();
 		double y = event.getPos().getY();
 		double z = event.getPos().getZ();
-		int enchBlasting = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.BLASTING.get(), player.getHeldItemMainhand());
-		int enchTelekinesis = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.TELEKINESIS.get(), player.getHeldItemMainhand());
+		int enchBlasting = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.BLASTING.get(), player.getHeldItemMainhand());
+		int enchTelekinesis = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.TELEKINESIS.get(), player.getHeldItemMainhand());
 
 		if (player instanceof PlayerEntity) {
 			
@@ -32,7 +32,7 @@ public class OnBlasting {
 				
 				world.createExplosion(player, x, y, z, 2.0f * (enchBlasting + 1), enchTelekinesis == 0 ? Explosion.Mode.BREAK : Explosion.Mode.NONE);
 				
-				if (world.getGameRules().getBoolean(CaveGameRules.ENABLE_BLASTING_DAMAGE.getRule())) {
+				if (world.getGameRules().getBoolean(ModGameRules.ENABLE_BLASTING_DAMAGE.getRule())) {
 					
 					player.attackEntityFrom(DamageSource.causeExplosionDamage(player), enchBlasting + 2);
 				

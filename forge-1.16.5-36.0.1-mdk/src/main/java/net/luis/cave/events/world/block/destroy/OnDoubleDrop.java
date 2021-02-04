@@ -1,10 +1,10 @@
 package net.luis.cave.events.world.block.destroy;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.CaveEnchantment;
-import net.luis.cave.init.CaveTools;
-import net.luis.cave.init.blocks.CaveBlocks;
-import net.luis.cave.util.lib.BlockManager;
+import net.luis.cave.api.lib.BlockManager;
+import net.luis.cave.init.ModEnchantment;
+import net.luis.cave.init.blocks.ModBlocks;
+import net.luis.cave.init.items.ModTools;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -29,17 +29,17 @@ public class OnDoubleDrop {
 		BlockPos pos = event.getPos();
 		World world = (World) event.getWorld();
 		PlayerEntity player = event.getPlayer();
-		int enchDoubleDrop = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.DOUBLE_DROPS.get(), player.getHeldItemMainhand());
-		int enchTelekinesis = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.TELEKINESIS.get(), player.getHeldItemMainhand());
+		int enchDoubleDrop = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.DOUBLE_DROPS.get(), player.getHeldItemMainhand());
+		int enchTelekinesis = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.TELEKINESIS.get(), player.getHeldItemMainhand());
 
 		if(player instanceof PlayerEntity) {
 			
 			if (enchTelekinesis == 0) {
 				
-				if (player.getHeldItemMainhand().getItem() == CaveTools.ENDERITE_PICKAXE.get() | 
-					player.getHeldItemMainhand().getItem() == CaveTools.ENDERITE_AXE.get() | 
-					player.getHeldItemMainhand().getItem() == CaveTools.ENDERITE_SHOVEL.get() |
-					player.getHeldItemMainhand().getItem() == CaveTools.ENDERITE_HOE.get()) {
+				if (player.getHeldItemMainhand().getItem() == ModTools.ENDERITE_PICKAXE.get() | 
+					player.getHeldItemMainhand().getItem() == ModTools.ENDERITE_AXE.get() | 
+					player.getHeldItemMainhand().getItem() == ModTools.ENDERITE_SHOVEL.get() |
+					player.getHeldItemMainhand().getItem() == ModTools.ENDERITE_HOE.get()) {
 					
 					if (Math.random() >= 0.99) {
 
@@ -110,11 +110,11 @@ public class OnDoubleDrop {
 			
 			return 0.0025;
 			
-		} else if (world.getBlockState(pos).getBlock() == CaveBlocks.JADE_ORE.get()) {
+		} else if (world.getBlockState(pos).getBlock() == ModBlocks.JADE_ORE.get()) {
 			
 			return 0.003;
 			
-		} else if (world.getBlockState(pos).getBlock() == CaveBlocks.LIMONITE_ORE.get()) {
+		} else if (world.getBlockState(pos).getBlock() == ModBlocks.LIMONITE_ORE.get()) {
 			
 			return 0.004;
 			
@@ -126,11 +126,11 @@ public class OnDoubleDrop {
 			
 			return 0.004;
 			
-		} else if (world.getBlockState(pos).getBlock() == CaveBlocks.SAPHIRE_ORE.get()) {
+		} else if (world.getBlockState(pos).getBlock() == ModBlocks.SAPHIRE_ORE.get()) {
 			
 			return 0.007;
 			
-		} else if (world.getBlockState(pos).getBlock() == CaveBlocks.ROSITE_ORE.get()) {
+		} else if (world.getBlockState(pos).getBlock() == ModBlocks.ROSITE_ORE.get()) {
 			
 			return 0.008;
 			
@@ -138,7 +138,7 @@ public class OnDoubleDrop {
 			
 			return 0.01;
 			
-		} else if (world.getBlockState(pos).getBlock() == CaveBlocks.ENDERITE_ORE.get()) {
+		} else if (world.getBlockState(pos).getBlock() == ModBlocks.ENDERITE_ORE.get()) {
 			
 			return 0.015;
 			

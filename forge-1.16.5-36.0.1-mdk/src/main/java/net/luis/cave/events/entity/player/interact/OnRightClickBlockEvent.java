@@ -1,9 +1,9 @@
 package net.luis.cave.events.entity.player.interact;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.CaveEnchantment;
-import net.luis.cave.init.CaveItems;
-import net.luis.cave.util.lib.ItemManager;
+import net.luis.cave.api.lib.ItemManager;
+import net.luis.cave.init.ModEnchantment;
+import net.luis.cave.init.items.ModItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CropsBlock;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -26,7 +26,7 @@ public class OnRightClickBlockEvent {
 		BlockPos pos = event.getPos();
 		World world = event.getWorld();
 		BlockState state = world.getBlockState(pos);
-		int enchReplenish = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.REPLENISH.get(), player.getHeldItemMainhand());
+		int enchReplenish = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.REPLENISH.get(), player.getHeldItemMainhand());
 		
 		if (state.getBlock() instanceof CropsBlock) {
 			
@@ -50,7 +50,7 @@ public class OnRightClickBlockEvent {
 						
 					}
 					
-				} else if (player.getHeldItemMainhand().getItem() == CaveItems.FERTILIZER.get()) {
+				} else if (player.getHeldItemMainhand().getItem() == ModItems.FERTILIZER.get()) {
 					
 					world.setBlockState(pos, state.with(cropsBlock.getAgeProperty(), age + 1), 3);
 					

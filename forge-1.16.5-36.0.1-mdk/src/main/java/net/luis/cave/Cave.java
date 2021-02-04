@@ -3,19 +3,19 @@ package net.luis.cave;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import net.luis.cave.init.CaveArmor;
-import net.luis.cave.init.CaveContainer;
-import net.luis.cave.init.CaveEnchantment;
-import net.luis.cave.init.CaveItems;
-import net.luis.cave.init.CaveTileEntityType;
-import net.luis.cave.init.CaveTools;
-import net.luis.cave.init.blocks.CaveBlockItems;
-import net.luis.cave.init.blocks.CaveBlocks;
-import net.luis.cave.init.blocks.CaveVerticalBlockItems;
-import net.luis.cave.init.blocks.CaveVerticalBlocks;
-import net.luis.cave.villagers.PointOfInterestTypes;
-import net.luis.cave.villagers.VillagerUtil;
-import net.luis.cave.world.generation.OreGeneration;
+import net.luis.cave.api.villager.VillagerUtil;
+import net.luis.cave.events.generation.OreGeneration;
+import net.luis.cave.init.ModEnchantment;
+import net.luis.cave.init.blocks.ModBlockItems;
+import net.luis.cave.init.blocks.ModBlocks;
+import net.luis.cave.init.blocks.ModVerticalBlockItems;
+import net.luis.cave.init.blocks.ModVerticalBlocks;
+import net.luis.cave.init.items.ModArmor;
+import net.luis.cave.init.items.ModItems;
+import net.luis.cave.init.items.ModTools;
+import net.luis.cave.init.util.ModContainer;
+import net.luis.cave.init.util.ModTileEntityType;
+import net.luis.cave.init.villager.ModPointOfInterestTypes;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
@@ -42,19 +42,19 @@ public class Cave {
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 		
-		CaveBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		CaveBlockItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		CaveVerticalBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		CaveItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		CaveItems.VANILLA_ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		CaveTools.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		CaveTools.VANILLA_ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		CaveArmor.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		CaveEnchantment.ENCHANTMENT.register(FMLJavaModLoadingContext.get().getModEventBus());
-		CaveEnchantment.VANILLA_ENCHANTMENT.register(FMLJavaModLoadingContext.get().getModEventBus());
-		CaveVerticalBlockItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		CaveTileEntityType.TILE_ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
-		CaveContainer.CONTAINERS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		ModBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		ModBlockItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		ModVerticalBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		ModItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		ModItems.VANILLA_ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		ModTools.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		ModTools.VANILLA_ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		ModArmor.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		ModEnchantment.ENCHANTMENT.register(FMLJavaModLoadingContext.get().getModEventBus());
+		ModEnchantment.VANILLA_ENCHANTMENT.register(FMLJavaModLoadingContext.get().getModEventBus());
+		ModVerticalBlockItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		ModTileEntityType.TILE_ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
+		ModContainer.CONTAINERS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		
 		MinecraftForge.EVENT_BUS.register(this);
 		
@@ -64,18 +64,18 @@ public class Cave {
 		
 		OreGeneration.registerOres();
 		
-		VillagerUtil.fixPOITypeBlockStates(PointOfInterestTypes.LUMBERJACK);
-		VillagerUtil.fixPOITypeBlockStates(PointOfInterestTypes.MOB_HUNTER);
-		VillagerUtil.fixPOITypeBlockStates(PointOfInterestTypes.MINER);
-		VillagerUtil.fixPOITypeBlockStates(PointOfInterestTypes.ENCHANTER);
-		VillagerUtil.fixPOITypeBlockStates(PointOfInterestTypes.BEEKEEPER);
-		VillagerUtil.fixPOITypeBlockStates(PointOfInterestTypes.NETHER_TRADER);
+		VillagerUtil.fixPOITypeBlockStates(ModPointOfInterestTypes.LUMBERJACK);
+		VillagerUtil.fixPOITypeBlockStates(ModPointOfInterestTypes.MOB_HUNTER);
+		VillagerUtil.fixPOITypeBlockStates(ModPointOfInterestTypes.MINER);
+		VillagerUtil.fixPOITypeBlockStates(ModPointOfInterestTypes.ENCHANTER);
+		VillagerUtil.fixPOITypeBlockStates(ModPointOfInterestTypes.BEEKEEPER);
+		VillagerUtil.fixPOITypeBlockStates(ModPointOfInterestTypes.NETHER_TRADER);
 		
 	}
 	
 	private void doClientStuff(FMLClientSetupEvent event) {
 	
-		RenderTypeLookup.setRenderLayer(CaveBlocks.TINTED_GLASS.get(), RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(ModBlocks.TINTED_GLASS.get(), RenderType.getTranslucent());
 		
 	}
 	

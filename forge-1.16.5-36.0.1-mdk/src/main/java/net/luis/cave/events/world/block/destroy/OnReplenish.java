@@ -3,7 +3,7 @@ package net.luis.cave.events.world.block.destroy;
 import java.util.List;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.CaveEnchantment;
+import net.luis.cave.init.ModEnchantment;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -32,8 +32,8 @@ public class OnReplenish {
 		World world = (World) event.getWorld();
 		PlayerEntity player = event.getPlayer();
 		BlockState state = event.getState();
-		int enchReplenish = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.REPLENISH.get(), player.getHeldItemMainhand());
-		int enchTelekinesis = EnchantmentHelper.getEnchantmentLevel(CaveEnchantment.TELEKINESIS.get(), player.getHeldItemMainhand());
+		int enchReplenish = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.REPLENISH.get(), player.getHeldItemMainhand());
+		int enchTelekinesis = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.TELEKINESIS.get(), player.getHeldItemMainhand());
 		int enchFortune = EnchantmentHelper.getEnchantmentLevel(Enchantments.FORTUNE, player.getHeldItemMainhand());
 		
 		if (player instanceof PlayerEntity) {
