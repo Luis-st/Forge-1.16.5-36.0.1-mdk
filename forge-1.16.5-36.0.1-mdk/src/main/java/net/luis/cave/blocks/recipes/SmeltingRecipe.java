@@ -4,7 +4,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 
-import net.luis.cave.init.CaveRecipe;
+import net.luis.cave.init.CaveRecipeSerializer;
 import net.luis.cave.init.blocks.CaveBlocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.AbstractCookingRecipe;
@@ -39,7 +39,7 @@ public class SmeltingRecipe extends AbstractCookingRecipe {
 	@Override
 	public IRecipeSerializer<?> getSerializer() {
 
-		return CaveRecipe.SMELTING_RECIPE.get();
+		return CaveRecipeSerializer.SMELTING_RECIPE.get();
 
 	}
 
