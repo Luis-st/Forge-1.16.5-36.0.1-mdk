@@ -31,7 +31,7 @@ public class SmeltingFurnaceTileEntity extends AbstractFurnaceTileEntity {
 		return super.getBurnTime(fuel) / 2;
 		
 	}
-
+	
 	@Override
 	protected Container createMenu(int id, PlayerInventory player) {
 		
