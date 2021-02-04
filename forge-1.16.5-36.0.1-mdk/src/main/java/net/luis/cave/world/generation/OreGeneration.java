@@ -1,4 +1,4 @@
-package net.luis.cave.world.gen;
+package net.luis.cave.world.generation;
 
 import java.util.ArrayList;
 
@@ -21,7 +21,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
  
 @Mod.EventBusSubscriber(modid = Cave.Mod_Id, bus = Mod.EventBusSubscriber.Bus.FORGE)
-public class OreGen {
+public class OreGeneration {
 	
 	private static final ArrayList<ConfiguredFeature<?, ?>> overworldOres = new ArrayList<ConfiguredFeature<?, ?>>();
 	private static final ArrayList<ConfiguredFeature<?, ?>> netherOres = new ArrayList<ConfiguredFeature<?, ?>>();
