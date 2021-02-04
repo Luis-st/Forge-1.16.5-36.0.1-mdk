@@ -15,7 +15,7 @@ import net.luis.cave.init.blocks.CaveVerticalBlockItems;
 import net.luis.cave.init.blocks.CaveVerticalBlocks;
 import net.luis.cave.villagers.PointOfInterestTypes;
 import net.luis.cave.villagers.VillagerUtil;
-import net.luis.cave.world.gen.OreGen;
+import net.luis.cave.world.generation.OreGeneration;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
@@ -62,7 +62,7 @@ public class Cave {
 	
 	private void setup(final FMLCommonSetupEvent event) {
 		
-		OreGen.registerOres();
+		OreGeneration.registerOres();
 		
 		VillagerUtil.fixPOITypeBlockStates(PointOfInterestTypes.LUMBERJACK);
 		VillagerUtil.fixPOITypeBlockStates(PointOfInterestTypes.MOB_HUNTER);

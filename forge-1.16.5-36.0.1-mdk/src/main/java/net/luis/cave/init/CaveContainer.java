@@ -13,7 +13,7 @@ public class CaveContainer {
 	public static final DeferredRegister<ContainerType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries.CONTAINERS, Cave.Mod_Id);
 	
 	
-	public static final RegistryObject<ContainerType<?>> SMELTING_CONTAINER = CONTAINERS.register("smelting_container", 
+	public static final RegistryObject<ContainerType<SmeltingContainer>> SMELTING_CONTAINER = CONTAINERS.register("smelting_container", 
 			() -> IForgeContainerType.create(SmeltingContainer::new));
 	
 }
