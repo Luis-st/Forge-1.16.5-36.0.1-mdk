@@ -1,6 +1,7 @@
 package net.luis.cave.init.items;
 
 import net.luis.cave.Cave;
+import net.luis.cave.api.item.tool.Shovel;
 import net.luis.cave.api.item.weapon.Bow;
 import net.luis.cave.api.item.weapon.Crossbow;
 import net.luis.cave.common.enums.ModItemTier;
@@ -21,7 +22,6 @@ import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.PickaxeItem;
-import net.minecraft.item.ShovelItem;
 import net.minecraft.item.SwordItem;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -33,8 +33,8 @@ public class ModTools {
 	public static final DeferredRegister<Item> VANILLA_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Cave.Minecraft_Id);
 	
 	
-	public static final RegistryObject<ShovelItem> JADE_SHOVEL = ITEMS.register("jade_shovel", 
-			() -> new ShovelItem(ModItemTier.JADE, (float) -1.5, -3.0f, new Item.Properties().group(Cave.TOOLS)));
+	public static final RegistryObject<Shovel> JADE_SHOVEL = ITEMS.register("jade_shovel", 
+			() -> new Shovel(ModItemTier.JADE, (float) -1.5, -3.0f, new Item.Properties().group(Cave.TOOLS)));
 	
 	public static final RegistryObject<PickaxeItem> JADE_PICKAXE = ITEMS.register("jade_pickaxe", 
 			() -> new PickaxeItem(ModItemTier.JADE, -2, -2.8f, new Item.Properties().group(Cave.TOOLS)));
@@ -49,8 +49,8 @@ public class ModTools {
 			() -> new SwordItem(ModItemTier.JADE, 0, -2.4f, new Item.Properties().group(Cave.WEAPONS)));
 	
 	
-	public static final RegistryObject<ShovelItem> LIMONITE_SHOVEL = ITEMS.register("limonite_shovel", 
-			() -> new ShovelItem(ModItemTier.LIMONITE, (float) -0.5, -3.0f, new Item.Properties().group(Cave.TOOLS)));
+	public static final RegistryObject<Shovel> LIMONITE_SHOVEL = ITEMS.register("limonite_shovel", 
+			() -> new Shovel(ModItemTier.LIMONITE, (float) -0.5, -3.0f, new Item.Properties().group(Cave.TOOLS)));
 	
 	public static final RegistryObject<PickaxeItem> LIMONITE_PICKAXE = ITEMS.register("limonite_pickaxe", 
 			() -> new PickaxeItem(ModItemTier.LIMONITE, -1, -2.8f, new Item.Properties().group(Cave.TOOLS)));
@@ -65,8 +65,8 @@ public class ModTools {
 			() -> new SwordItem(ModItemTier.LIMONITE, 1, -2.4f, new Item.Properties().group(Cave.WEAPONS)));
 	
 	
-	public static final RegistryObject<ShovelItem> BLAZING_SHOVEL = ITEMS.register("blazing_shovel", 
-			() -> new ShovelItem(ModItemTier.BLAZING, (float) -0.5, -3.0f, new Item.Properties().group(Cave.TOOLS)));
+	public static final RegistryObject<Shovel> BLAZING_SHOVEL = ITEMS.register("blazing_shovel", 
+			() -> new Shovel(ModItemTier.BLAZING, (float) -0.5, -3.0f, new Item.Properties().group(Cave.TOOLS)));
 	
 	public static final RegistryObject<PickaxeItem> BLAZING_PICKAXE = ITEMS.register("blazing_pickaxe", 
 			() -> new PickaxeItem(ModItemTier.BLAZING, -1, -2.8f, new Item.Properties().group(Cave.TOOLS)));
@@ -78,8 +78,8 @@ public class ModTools {
 			() -> new SwordItem(ModItemTier.BLAZING, 1, -2.4f, new Item.Properties().group(Cave.WEAPONS)));
 	
 	
-	public static final RegistryObject<ShovelItem> RUBY_SHOVEL = ITEMS.register("ruby_shovel", 
-			() -> new ShovelItem(ModItemTier.RUBY, (float) -0.5, -3.0f, new Item.Properties().group(Cave.TOOLS)));
+	public static final RegistryObject<Shovel> RUBY_SHOVEL = ITEMS.register("ruby_shovel", 
+			() -> new Shovel(ModItemTier.RUBY, (float) -0.5, -3.0f, new Item.Properties().group(Cave.TOOLS)));
 		
 	public static final RegistryObject<SwordItem> RUBY_SWORD = ITEMS.register("ruby_sword", 
 			() -> new SwordItem(ModItemTier.RUBY, 1, -2.4f, new Item.Properties().group(Cave.WEAPONS)));
@@ -94,8 +94,8 @@ public class ModTools {
 			() -> new HoeItem(ModItemTier.RUBY, -7, -0f, new Item.Properties().group(Cave.TOOLS)));
 	
 	
-	public static final RegistryObject<ShovelItem> SAPHIRE_SHOVEL = ITEMS.register("saphire_shovel", 
-			() -> new ShovelItem(ModItemTier.SAPHIRE, (float) -0.5, -3.0f, new Item.Properties().group(Cave.TOOLS)));
+	public static final RegistryObject<Shovel> SAPHIRE_SHOVEL = ITEMS.register("saphire_shovel", 
+			() -> new Shovel(ModItemTier.SAPHIRE, (float) -0.5, -3.0f, new Item.Properties().group(Cave.TOOLS)));
 	
 	public static final RegistryObject<PickaxeItem> SAPHIRE_PICKAXE = ITEMS.register("saphire_pickaxe", 
 			() -> new PickaxeItem(ModItemTier.SAPHIRE, -1, -2.8f, new Item.Properties().group(Cave.TOOLS)));
@@ -110,8 +110,8 @@ public class ModTools {
 			() -> new SwordItem(ModItemTier.SAPHIRE, 1, -2.4f, new Item.Properties().group(Cave.WEAPONS)));
 	
 	
-	public static final RegistryObject<ShovelItem> ROSITE_SHOVEL = ITEMS.register("rosite_shovel", 
-			() -> new ShovelItem(ModItemTier.ROSITE, (float) 2.5, -3.0f, new Item.Properties().group(Cave.TOOLS)));
+	public static final RegistryObject<Shovel> ROSITE_SHOVEL = ITEMS.register("rosite_shovel", 
+			() -> new Shovel(ModItemTier.ROSITE, (float) 2.5, -3.0f, new Item.Properties().group(Cave.TOOLS)));
 	
 	public static final RegistryObject<PickaxeItem> ROSITE_PICKAXE = ITEMS.register("rosite_pickaxe", 
 			() -> new PickaxeItem(ModItemTier.ROSITE, 2, -2.8f, new Item.Properties().group(Cave.TOOLS)));
@@ -126,8 +126,8 @@ public class ModTools {
 			() -> new SwordItem(ModItemTier.ROSITE, 4, -2.4f, new Item.Properties().group(Cave.WEAPONS)));
 	
 	
-	public static final RegistryObject<ShovelItem> ROSE_QUARTZ_SHOVEL = ITEMS.register("rose_quartz_shovel", 
-			() -> new ShovelItem(ModItemTier.ROSE_QUARTZ, (float) 2.5, -3.0f, new Item.Properties().group(Cave.TOOLS)));
+	public static final RegistryObject<Shovel> ROSE_QUARTZ_SHOVEL = ITEMS.register("rose_quartz_shovel", 
+			() -> new Shovel(ModItemTier.ROSE_QUARTZ, (float) 2.5, -3.0f, new Item.Properties().group(Cave.TOOLS)));
 	
 	public static final RegistryObject<PickaxeItem> ROSE_QUARTZ_PICKAXE = ITEMS.register("rose_quartz_pickaxe", 
 			() -> new PickaxeItem(ModItemTier.ROSE_QUARTZ, 2, -2.8f, new Item.Properties().group(Cave.TOOLS)));
@@ -142,8 +142,8 @@ public class ModTools {
 			() -> new SwordItem(ModItemTier.ROSE_QUARTZ, 4, -2.4f, new Item.Properties().group(Cave.WEAPONS)));
 	
 	
-	public static final RegistryObject<ShovelItem> STEEL_SHOVEL = ITEMS.register("steel_shovel", 
-			() -> new ShovelItem(ModItemTier.STEEL, (float) -0.5, -3.0f, new Item.Properties().group(Cave.TOOLS)));
+	public static final RegistryObject<Shovel> STEEL_SHOVEL = ITEMS.register("steel_shovel", 
+			() -> new Shovel(ModItemTier.STEEL, (float) -0.5, -3.0f, new Item.Properties().group(Cave.TOOLS)));
 	
 	public static final RegistryObject<PickaxeItem> STEEL_PICKAXE = ITEMS.register("steel_pickaxe", 
 			() -> new PickaxeItem(ModItemTier.STEEL, -1, -2.8f, new Item.Properties().group(Cave.TOOLS)));
@@ -158,8 +158,8 @@ public class ModTools {
 			() -> new SwordItem(ModItemTier.STEEL, 1, -2.4f, new Item.Properties().group(Cave.WEAPONS)));
 	
 	
-	public static final RegistryObject<ShovelItem> ENDERITE_SHOVEL = ITEMS.register("enderite_shovel", 
-			() -> new ShovelItem(ModItemTier.ENDERITE, (float) -2.5, -3.0f, new Item.Properties().group(Cave.TOOLS).isImmuneToFire()));
+	public static final RegistryObject<Shovel> ENDERITE_SHOVEL = ITEMS.register("enderite_shovel", 
+			() -> new Shovel(ModItemTier.ENDERITE, (float) -2.5, -3.0f, new Item.Properties().group(Cave.TOOLS).isImmuneToFire()));
 	
 	public static final RegistryObject<PickaxeItem> ENDERITE_PICKAXE = ITEMS.register("enderite_pickaxe", 
 			() -> new PickaxeItem(ModItemTier.ENDERITE, -3, -2.8f, new Item.Properties().group(Cave.TOOLS).isImmuneToFire()));
@@ -174,8 +174,8 @@ public class ModTools {
 			() -> new SwordItem(ModItemTier.ENDERITE, -1, -2.4f, new Item.Properties().group(Cave.WEAPONS).isImmuneToFire()));
 	
 	
-	public static final RegistryObject<ShovelItem> NIGHT_SHOVEL = ITEMS.register("night_shovel", 
-			() -> new ShovelItem(ModItemTier.NIGHT, (float) -2.5, -3.0f, new Item.Properties().group(Cave.TOOLS).isImmuneToFire()));
+	public static final RegistryObject<Shovel> NIGHT_SHOVEL = ITEMS.register("night_shovel", 
+			() -> new Shovel(ModItemTier.NIGHT, (float) -2.5, -3.0f, new Item.Properties().group(Cave.TOOLS).isImmuneToFire()));
 	
 	public static final RegistryObject<PickaxeItem> NIGHT_PICKAXE = ITEMS.register("night_pickaxe", 
 			() -> new PickaxeItem(ModItemTier.NIGHT, -3, -2.8f, new Item.Properties().group(Cave.TOOLS).isImmuneToFire()));
