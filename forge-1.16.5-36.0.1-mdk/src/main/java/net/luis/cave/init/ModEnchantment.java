@@ -16,6 +16,7 @@ import net.luis.cave.common.enchantment.tool.Replenish;
 import net.luis.cave.common.enchantment.tool.Smelting;
 import net.luis.cave.common.enchantment.tool.Telekinesis;
 import net.luis.cave.common.enchantment.vanilla.Flame;
+import net.luis.cave.common.enchantment.vanilla.Impaling;
 import net.luis.cave.common.enchantment.vanilla.Infinity;
 import net.luis.cave.common.enchantment.vanilla.Multishot;
 import net.luis.cave.common.enchantment.vanilla.Piercing;
@@ -126,5 +127,8 @@ public class ModEnchantment {
 	
 	public static final RegistryObject<Enchantment> LAVA_WALKER = ENCHANTMENT.register("lava_walker", 
 			() -> new LavaWalker(Rarity.VERY_RARE, EnchantmentType.ARMOR_FEET, EquipmentSlotType.FEET));
+	
+	public static final RegistryObject<Enchantment> IMPALING = VANILLA_ENCHANTMENT.register("impaling", 
+			() -> new Impaling(Rarity.RARE, EnchantmentType.TRIDENT, EquipmentSlotType.MAINHAND));
 
 }

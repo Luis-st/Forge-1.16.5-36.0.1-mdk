@@ -1,11 +1,11 @@
 package net.luis.cave.common.enchantment.curse;
 
+import net.luis.cave.api.item.weapon.Bow;
+import net.luis.cave.api.item.weapon.Crossbow;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentType;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.AxeItem;
-import net.minecraft.item.BowItem;
-import net.minecraft.item.CrossbowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 
@@ -65,9 +65,9 @@ public class CurseOfHarming extends Enchantment {
 			return true;
 		if (stack.getItem() instanceof AxeItem)
 			return true;
-		if (stack.getItem() instanceof BowItem)
+		if (stack.getItem() instanceof Bow)
 			return true;
-		if (stack.getItem() instanceof CrossbowItem)
+		if (stack.getItem() instanceof Crossbow)
 			return true;
 		return false;
 	}

@@ -25,6 +25,7 @@ public class OnLivingDamageEvent {
 			
 			PlayerEntity player = (PlayerEntity) entity;
 			int enchEnderSlayer = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.ENDER_SLYAER.get(), player.getHeldItemMainhand());
+			int enchImpaling= EnchantmentHelper.getEnchantmentLevel(ModEnchantment.IMPALING.get(), player.getHeldItemMainhand());
 			
 			if (EntityManager.isEndertype(target)) {
 				
@@ -35,7 +36,18 @@ public class OnLivingDamageEvent {
 					
 				}
 				
-			}
+			} 
+			
+			if (EntityManager.isLavatype(target)) {
+				
+				if (enchImpaling > 0) {
+					
+					newAmount = amount + (enchImpaling * 2.5f) + (enchImpaling - 1);
+					event.setAmount(newAmount);
+					
+				}
+				
+			} 
 			
 		}
 		

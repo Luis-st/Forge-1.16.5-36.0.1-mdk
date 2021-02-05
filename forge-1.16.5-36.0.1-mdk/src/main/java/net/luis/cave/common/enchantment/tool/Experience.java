@@ -7,8 +7,6 @@ import net.minecraft.enchantment.EnchantmentType;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.AxeItem;
-import net.minecraft.item.BowItem;
-import net.minecraft.item.CrossbowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.SwordItem;
@@ -50,9 +48,9 @@ public class Experience extends Enchantment {
 			return true;
 		if (stack.getItem() instanceof SwordItem)
 			return true;
-		if (stack.getItem() instanceof BowItem || stack.getItem() instanceof Bow)
+		if (stack.getItem() instanceof Bow)
 			return true;
-		if (stack.getItem() instanceof CrossbowItem || stack.getItem() instanceof Crossbow)
+		if (stack.getItem() instanceof Crossbow)
 			return true;
 		return false;
 	}
