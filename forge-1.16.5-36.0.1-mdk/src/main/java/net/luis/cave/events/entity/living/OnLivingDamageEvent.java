@@ -6,6 +6,7 @@ import net.luis.cave.init.ModEnchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -19,7 +20,7 @@ public class OnLivingDamageEvent {
 		Entity target = event.getEntity();
 		Entity entity = event.getSource().getTrueSource();
 		float amount = event.getAmount();
-		float newAmount;
+		float newAmount = 0.0f;
 		
 		if (entity instanceof PlayerEntity) {
 			
@@ -27,7 +28,9 @@ public class OnLivingDamageEvent {
 			int enchEnderSlayer = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.ENDER_SLYAER.get(), player.getHeldItemMainhand());
 			int enchImpaling= EnchantmentHelper.getEnchantmentLevel(ModEnchantment.IMPALING.get(), player.getHeldItemMainhand());
 			
-			if (EntityManager.isEndertype(target)) {
+			player.sendMessage(new StringTextComponent("Damage: " + amount), player.getUniqueID());
+			
+			if (EntityManager.isEnderType(target)) {
 				
 				if (enchEnderSlayer > 0) {
 					
@@ -36,18 +39,18 @@ public class OnLivingDamageEvent {
 					
 				}
 				
-			} 
+			}
 			
-			if (EntityManager.isLavatype(target)) {
+			if (EntityManager.isLavaType(target) || EntityManager.isWaterType(target)) {
 				
 				if (enchImpaling > 0) {
 					
-					newAmount = amount + (enchImpaling * 2.5f) + (enchImpaling - 1);
+					newAmount = amount + (enchImpaling * 2.5f) + enchImpaling;
 					event.setAmount(newAmount);
 					
 				}
 				
-			} 
+			}
 			
 		}
 		

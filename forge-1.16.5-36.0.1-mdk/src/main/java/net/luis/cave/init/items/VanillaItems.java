@@ -61,26 +61,26 @@ public class VanillaItems {
 	public static final RegistryObject<LeatherArmor> LEATHER_HELMET = VANILLA_ITEMS.register("leather_helmet", 
 			() -> new LeatherArmor(VanillaArmorMaterial.LEATHER, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)));
 	
-	public static final RegistryObject<LeatherArmor> SLIME_CHESTPLATE = VANILLA_ITEMS.register("leather_chestplate", 
+	public static final RegistryObject<LeatherArmor> LEATHER_CHESTPLATE = VANILLA_ITEMS.register("leather_chestplate", 
 			() -> new LeatherArmor(VanillaArmorMaterial.LEATHER, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)));
 	
-	public static final RegistryObject<LeatherArmor> SLIME_LEGGINS = VANILLA_ITEMS.register("leather_leggings", 
+	public static final RegistryObject<LeatherArmor> LEATHER_LEGGINS = VANILLA_ITEMS.register("leather_leggings", 
 			() -> new LeatherArmor(VanillaArmorMaterial.LEATHER, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)));
 	
-	public static final RegistryObject<LeatherArmor> SLIME_BOOTS = VANILLA_ITEMS.register("leather_boots", 
+	public static final RegistryObject<LeatherArmor> LEATHER_BOOTS = VANILLA_ITEMS.register("leather_boots", 
 			() -> new LeatherArmor(VanillaArmorMaterial.LEATHER, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)));
 	
 	
-	public static final RegistryObject<ChainArmor> CHAIN_HELMET = VANILLA_ITEMS.register("chain_helmet", 
+	public static final RegistryObject<ChainArmor> CHAIN_HELMET = VANILLA_ITEMS.register("chainmail_helmet", 
 			() -> new ChainArmor(VanillaArmorMaterial.CHAIN, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)));
 	
-	public static final RegistryObject<ChainArmor> CHAIN_CHESTPLATE = VANILLA_ITEMS.register("chain_chestplate", 
+	public static final RegistryObject<ChainArmor> CHAIN_CHESTPLATE = VANILLA_ITEMS.register("chainmail_chestplate", 
 			() -> new ChainArmor(VanillaArmorMaterial.CHAIN, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)));
 	
-	public static final RegistryObject<ChainArmor> CHAIN_LEGGINS = VANILLA_ITEMS.register("chain_leggings", 
+	public static final RegistryObject<ChainArmor> CHAIN_LEGGINS = VANILLA_ITEMS.register("chainmail_leggings", 
 			() -> new ChainArmor(VanillaArmorMaterial.CHAIN, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)));
 	
-	public static final RegistryObject<ChainArmor> CHAIN_BOOTS = VANILLA_ITEMS.register("chain_boots", 
+	public static final RegistryObject<ChainArmor> CHAIN_BOOTS = VANILLA_ITEMS.register("chainmail_boots", 
 			() -> new ChainArmor(VanillaArmorMaterial.CHAIN, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)));
 	
 	

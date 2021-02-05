@@ -129,6 +129,6 @@ public class ModEnchantment {
 			() -> new LavaWalker(Rarity.VERY_RARE, EnchantmentType.ARMOR_FEET, EquipmentSlotType.FEET));
 	
 	public static final RegistryObject<Enchantment> IMPALING = VANILLA_ENCHANTMENT.register("impaling", 
-			() -> new Impaling(Rarity.RARE, EnchantmentType.TRIDENT, EquipmentSlotType.MAINHAND));
+			() -> new Impaling(Rarity.RARE, EnchantmentType.WEAPON, EquipmentSlotType.MAINHAND));
 
 }

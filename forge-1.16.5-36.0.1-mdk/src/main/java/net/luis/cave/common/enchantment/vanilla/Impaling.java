@@ -3,7 +3,6 @@ package net.luis.cave.common.enchantment.vanilla;
 import net.minecraft.enchantment.DamageEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentType;
-import net.minecraft.entity.CreatureAttribute;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
@@ -42,13 +41,6 @@ public class Impaling extends Enchantment {
 	protected boolean canApplyTogether(Enchantment ench) {
 		
 		return !(ench instanceof DamageEnchantment);
-		
-	}
-	
-	@Override
-	public float calcDamageByCreature(int level, CreatureAttribute creatureType) {
-		
-		return creatureType == CreatureAttribute.WATER ? (float)level * 2.5F : 0.0F;
 		
 	}
 	
