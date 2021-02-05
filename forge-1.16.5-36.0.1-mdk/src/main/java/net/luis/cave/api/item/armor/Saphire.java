@@ -1,4 +1,4 @@
-package net.luis.cave.api.item;
+package net.luis.cave.api.item.armor;
 
 import net.luis.cave.api.lib.PlayerManager;
 import net.minecraft.entity.player.PlayerEntity;
@@ -10,9 +10,9 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.world.World;
 
-public class NightArmor extends ArmorItem {
+public class Saphire extends ArmorItem {
 
-	public NightArmor(IArmorMaterial material, EquipmentSlotType slot, Properties builder) {
+	public Saphire(IArmorMaterial material, EquipmentSlotType slot, Properties builder) {
 		
 		super(material, slot, builder);
 		
@@ -21,9 +21,16 @@ public class NightArmor extends ArmorItem {
 	@Override
 	public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
 		
-		if (PlayerManager.hasArmor(player, material)) {
+		if (PlayerManager.hasArmor(player, this.getArmorMaterial())) {
 			
-			player.addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, 400, 0, true, false));
+			player.fallDistance = 0f;
+			player.addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, 10, 4, true, false));
+			
+			if (player.getMotion().y < 0) {
+				
+				player.setMotion(player.getMotion().x, player.getMotion().y - (player.getMotion().y / 24), player.getMotion().z);
+				
+			}
 			
 		}
 		

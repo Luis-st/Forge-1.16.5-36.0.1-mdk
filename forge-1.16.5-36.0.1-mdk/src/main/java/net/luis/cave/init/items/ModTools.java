@@ -1,8 +1,8 @@
 package net.luis.cave.init.items;
 
 import net.luis.cave.Cave;
-import net.luis.cave.api.item.Bow;
-import net.luis.cave.api.item.Crossbow;
+import net.luis.cave.api.item.weapon.Bow;
+import net.luis.cave.api.item.weapon.Crossbow;
 import net.luis.cave.common.enums.ModItemTier;
 import net.luis.cave.common.item.shields.DiamondShield;
 import net.luis.cave.common.item.shields.EnderiteShield;

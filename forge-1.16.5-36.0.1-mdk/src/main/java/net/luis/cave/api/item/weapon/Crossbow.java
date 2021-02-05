@@ -1,4 +1,4 @@
-package net.luis.cave.api.item;
+package net.luis.cave.api.item.weapon;
 
 import java.util.List;
 import java.util.Random;

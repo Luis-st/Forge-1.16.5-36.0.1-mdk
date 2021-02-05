@@ -1,8 +1,8 @@
 package net.luis.cave.init.items;
 
 import net.luis.cave.Cave;
-import net.luis.cave.api.item.NightArmor;
-import net.luis.cave.api.item.SaphireArmor;
+import net.luis.cave.api.item.armor.Night;
+import net.luis.cave.api.item.armor.Saphire;
 import net.luis.cave.common.enums.ModArmorMaterial;
 import net.luis.cave.common.item.armor.EnderiteElytra;
 import net.luis.cave.common.item.armor.EnderiteHelmet;
@@ -86,16 +86,16 @@ public class ModArmor {
 	
 	
 	public static final RegistryObject<ArmorItem> SAPHIRE_HELMET = ITEMS.register("saphire_helmet", 
-			() -> new SaphireArmor(ModArmorMaterial.SAPHIRE, EquipmentSlotType.HEAD, new Item.Properties().group(Cave.Armor)));
+			() -> new Saphire(ModArmorMaterial.SAPHIRE, EquipmentSlotType.HEAD, new Item.Properties().group(Cave.Armor)));
 	
 	public static final RegistryObject<ArmorItem> SAPHIRE_CHESTPLATE = ITEMS.register("saphire_chestplate", 
-			() -> new SaphireArmor(ModArmorMaterial.SAPHIRE, EquipmentSlotType.CHEST, new Item.Properties().group(Cave.Armor)));
+			() -> new Saphire(ModArmorMaterial.SAPHIRE, EquipmentSlotType.CHEST, new Item.Properties().group(Cave.Armor)));
 	
 	public static final RegistryObject<ArmorItem> SAPHIRE_LEGGINS = ITEMS.register("saphire_leggings", 
-			() -> new SaphireArmor(ModArmorMaterial.SAPHIRE, EquipmentSlotType.LEGS, new Item.Properties().group(Cave.Armor)));
+			() -> new Saphire(ModArmorMaterial.SAPHIRE, EquipmentSlotType.LEGS, new Item.Properties().group(Cave.Armor)));
 	
 	public static final RegistryObject<ArmorItem> SAPHIRE_BOOTS = ITEMS.register("saphire_boots", 
-			() -> new SaphireArmor(ModArmorMaterial.SAPHIRE, EquipmentSlotType.FEET, new Item.Properties().group(Cave.Armor)));
+			() -> new Saphire(ModArmorMaterial.SAPHIRE, EquipmentSlotType.FEET, new Item.Properties().group(Cave.Armor)));
 	
 	
 	public static final RegistryObject<ArmorItem> ENDREITE_HELMET = ITEMS.register("enderite_helmet", EnderiteHelmet::new);
@@ -115,14 +115,14 @@ public class ModArmor {
 	public static final RegistryObject<ArmorItem> NIGHT_HELMET = ITEMS.register("night_helmet", NightHelmet::new);
 	
 	public static final RegistryObject<ArmorItem> NIGHT_CHESTPLATE = ITEMS.register("night_chestplate", 
-			() -> new NightArmor(ModArmorMaterial.NIGHT, EquipmentSlotType.CHEST, new Item.Properties().group(Cave.Armor).isImmuneToFire()));
+			() -> new Night(ModArmorMaterial.NIGHT, EquipmentSlotType.CHEST, new Item.Properties().group(Cave.Armor).isImmuneToFire()));
 	
 	public static final RegistryObject<ArmorItem> NIGHT_ELYTRA = ITEMS.register("night_elytra", NightElytra::new);
 	
 	public static final RegistryObject<ArmorItem> NIGHT_LEGGINS = ITEMS.register("night_leggings", 
-			() -> new NightArmor(ModArmorMaterial.NIGHT, EquipmentSlotType.LEGS, new Item.Properties().group(Cave.Armor).isImmuneToFire()));
+			() -> new Night(ModArmorMaterial.NIGHT, EquipmentSlotType.LEGS, new Item.Properties().group(Cave.Armor).isImmuneToFire()));
 	
 	public static final RegistryObject<ArmorItem> NIGHT_BOOTS = ITEMS.register("night_boots", 
-			() -> new NightArmor(ModArmorMaterial.NIGHT, EquipmentSlotType.FEET, new Item.Properties().group(Cave.Armor).isImmuneToFire()));
+			() -> new Night(ModArmorMaterial.NIGHT, EquipmentSlotType.FEET, new Item.Properties().group(Cave.Armor).isImmuneToFire()));
 	
 }

@@ -1,7 +1,7 @@
 package net.luis.cave.common.item.weapons;
 
 import net.luis.cave.Cave;
-import net.luis.cave.api.item.Bow;
+import net.luis.cave.api.item.weapon.Bow;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;

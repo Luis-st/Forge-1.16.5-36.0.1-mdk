@@ -1,0 +1,9 @@
+{
+  "type": "cave:cave_smelting",
+  "ingredient": {
+    "item": "minecraft:cobblestone"
+  },
+  "result": "minecraft:stone",
+  "experience": 1.5,
+  "cookingtime": 100
+}

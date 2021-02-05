@@ -1,6 +1,6 @@
 package net.luis.cave.common.enchantment.vanilla;
 
-import net.luis.cave.api.item.Bow;
+import net.luis.cave.api.item.weapon.Bow;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentType;
 import net.minecraft.inventory.EquipmentSlotType;
