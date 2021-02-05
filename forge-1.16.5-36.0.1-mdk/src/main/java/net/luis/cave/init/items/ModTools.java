@@ -2,8 +2,6 @@ package net.luis.cave.init.items;
 
 import net.luis.cave.Cave;
 import net.luis.cave.api.item.tool.Shovel;
-import net.luis.cave.api.item.weapon.Bow;
-import net.luis.cave.api.item.weapon.Crossbow;
 import net.luis.cave.common.enums.ModItemTier;
 import net.luis.cave.common.item.shields.DiamondShield;
 import net.luis.cave.common.item.shields.EnderiteShield;
@@ -20,7 +18,6 @@ import net.luis.cave.common.item.weapons.NightCrossbow;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.SwordItem;
 import net.minecraftforge.fml.RegistryObject;
@@ -30,7 +27,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class ModTools {
 
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Cave.Mod_Id);
-	public static final DeferredRegister<Item> VANILLA_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Cave.Minecraft_Id);
 	
 	
 	public static final RegistryObject<Shovel> JADE_SHOVEL = ITEMS.register("jade_shovel", 
@@ -190,18 +186,12 @@ public class ModTools {
 			() -> new SwordItem(ModItemTier.NIGHT, -1, -2.4f, new Item.Properties().group(Cave.WEAPONS).isImmuneToFire()));
 	
 	
-	public static final RegistryObject<Item> BOW = VANILLA_ITEMS.register("bow", 
-			() -> new Bow(new Item.Properties().group(ItemGroup.COMBAT).maxStackSize(1).maxDamage(384)));
-	
 	public static final RegistryObject<Item> NETHERITE_BOW = ITEMS.register("netherite_bow", NetheriteBow::new);
 	
 	public static final RegistryObject<Item> ENDERITE_BOW = ITEMS.register("enderite_bow", EnderiteBow::new);
 	
 	public static final RegistryObject<Item> NIGHT_BOW = ITEMS.register("night_bow", NightBow::new);
 	
-	
-	public static final RegistryObject<Item> CROSSBOW = VANILLA_ITEMS.register("crossbow", 
-			() -> new Crossbow(new Item.Properties().group(ItemGroup.COMBAT).maxStackSize(1).maxDamage(326)));
 	
 	public static final RegistryObject<Item> NETHERITE_CROSSBOW = ITEMS.register("netherite_crossbow", NetheriteCrossbow::new);
 	

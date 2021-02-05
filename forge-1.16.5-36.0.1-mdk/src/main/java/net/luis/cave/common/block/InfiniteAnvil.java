@@ -23,6 +23,7 @@ import net.minecraft.stats.Stats;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
+import net.minecraft.util.IWorldPosCallable;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -69,7 +70,7 @@ public class InfiniteAnvil extends FallingBlock {
 		
 		return new SimpleNamedContainerProvider((id, inventory, player) -> {
 			
-			return new CaveRepairContainer(id, inventory);
+			return new CaveRepairContainer(id, inventory, IWorldPosCallable.of(world, pos));
 			
 		}, containerName);
 		

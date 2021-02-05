@@ -50,7 +50,6 @@ public class Cave {
 		ModItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		VanillaItems.VANILLA_ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		ModTools.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		ModTools.VANILLA_ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		ModArmor.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		ModEnchantment.ENCHANTMENT.register(FMLJavaModLoadingContext.get().getModEventBus());
 		ModEnchantment.VANILLA_ENCHANTMENT.register(FMLJavaModLoadingContext.get().getModEventBus());

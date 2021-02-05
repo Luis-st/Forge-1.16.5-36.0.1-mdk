@@ -35,7 +35,7 @@ public class SmeltingFurnaceTileEntity extends AbstractFurnaceTileEntity {
 	@Override
 	protected Container createMenu(int id, PlayerInventory player) {
 		
-		return new SmeltingContainer(id, player, null);
+		return new SmeltingContainer(id, player, this, this.furnaceData);
 		
 	}
 

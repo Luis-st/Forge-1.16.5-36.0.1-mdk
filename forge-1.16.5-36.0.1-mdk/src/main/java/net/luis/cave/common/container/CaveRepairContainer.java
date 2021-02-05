@@ -4,11 +4,13 @@ import net.luis.cave.init.blocks.ModBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.RepairContainer;
+import net.minecraft.util.IWorldPosCallable;
 
 public class CaveRepairContainer extends RepairContainer {
-
-	public CaveRepairContainer(int id, PlayerInventory playerInventory) {
-		super(id, playerInventory);
+	
+	public CaveRepairContainer(int id, PlayerInventory playerInventory, IWorldPosCallable worldPosCallable) {
+		
+		super(id, playerInventory, worldPosCallable);
 		
 	}
 	
