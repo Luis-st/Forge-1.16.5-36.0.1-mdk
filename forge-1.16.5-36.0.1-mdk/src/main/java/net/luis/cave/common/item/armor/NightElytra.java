@@ -2,7 +2,7 @@ package net.luis.cave.common.item.armor;
 
 import net.luis.cave.Cave;
 import net.luis.cave.api.item.NightArmor;
-import net.luis.cave.common.enums.CaveArmorMaterial;
+import net.luis.cave.common.enums.ModArmorMaterial;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -18,7 +18,7 @@ public class NightElytra extends NightArmor {
 
 	public NightElytra() {
 		
-		super(CaveArmorMaterial.NIGHT, EquipmentSlotType.CHEST, new Item.Properties().group(Cave.Armor).rarity(Rarity.RARE).isImmuneToFire());
+		super(ModArmorMaterial.NIGHT, EquipmentSlotType.CHEST, new Item.Properties().group(Cave.Armor).rarity(Rarity.RARE).isImmuneToFire());
 		
 		DispenserBlock.registerDispenseBehavior(this, ArmorItem.DISPENSER_BEHAVIOR);
 

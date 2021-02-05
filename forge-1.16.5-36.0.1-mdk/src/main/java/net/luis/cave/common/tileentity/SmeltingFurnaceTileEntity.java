@@ -1,6 +1,7 @@
 package net.luis.cave.common.tileentity;
 
 import net.luis.cave.common.container.SmeltingContainer;
+import net.luis.cave.init.util.ModRecipeType;
 import net.luis.cave.init.util.ModTileEntityType;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
@@ -13,7 +14,7 @@ public class SmeltingFurnaceTileEntity extends AbstractFurnaceTileEntity {
 
 	public SmeltingFurnaceTileEntity() {
 		
-		super(ModTileEntityType.SMELTING_FURNACE.get(), null);
+		super(ModTileEntityType.SMELTING_FURNACE.get(), ModRecipeType.SMELTING_RECIPE);
 		
 	}
 

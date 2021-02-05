@@ -2,7 +2,7 @@ package net.luis.cave.common.item.armor;
 
 import net.luis.cave.Cave;
 import net.luis.cave.api.item.NightArmor;
-import net.luis.cave.common.enums.CaveArmorMaterial;
+import net.luis.cave.common.enums.ModArmorMaterial;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.entity.monster.EndermanEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -15,7 +15,7 @@ public class NightHelmet extends NightArmor {
 	
 	public NightHelmet() {
 		
-		super(CaveArmorMaterial.NIGHT, EquipmentSlotType.HEAD, new Item.Properties().group(Cave.Armor).isImmuneToFire());
+		super(ModArmorMaterial.NIGHT, EquipmentSlotType.HEAD, new Item.Properties().group(Cave.Armor).isImmuneToFire());
 		
 		DispenserBlock.registerDispenseBehavior(this, ArmorItem.DISPENSER_BEHAVIOR);
 

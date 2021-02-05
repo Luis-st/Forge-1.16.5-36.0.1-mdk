@@ -14,6 +14,7 @@ import net.luis.cave.init.items.ModArmor;
 import net.luis.cave.init.items.ModItems;
 import net.luis.cave.init.items.ModTools;
 import net.luis.cave.init.util.ModContainer;
+import net.luis.cave.init.util.ModRecipeSerializer;
 import net.luis.cave.init.util.ModTileEntityType;
 import net.luis.cave.init.villager.ModPointOfInterestTypes;
 import net.minecraft.block.Blocks;
@@ -55,6 +56,7 @@ public class Cave {
 		ModVerticalBlockItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		ModTileEntityType.TILE_ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
 		ModContainer.CONTAINERS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		ModRecipeSerializer.RECIPE_SERIALIZERS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		
 		MinecraftForge.EVENT_BUS.register(this);
 		

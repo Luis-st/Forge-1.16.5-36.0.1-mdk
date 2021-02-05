@@ -1,6 +1,7 @@
 package net.luis.cave.client.screen;
 
 import net.luis.cave.common.container.SmeltingContainer;
+import net.minecraft.client.gui.recipebook.FurnaceRecipeGui;
 import net.minecraft.client.gui.screen.inventory.AbstractFurnaceScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
@@ -12,7 +13,7 @@ public class SmeltingScreen extends AbstractFurnaceScreen<SmeltingContainer> {
 
 	public SmeltingScreen(SmeltingContainer screenContainer, PlayerInventory inv, ITextComponent titleIn) {
 		
-		super(screenContainer, null, inv, titleIn, FURNACE_GUI_TEXTURES);
+		super(screenContainer, new FurnaceRecipeGui(), inv, titleIn, FURNACE_GUI_TEXTURES);
 		
 	}
 

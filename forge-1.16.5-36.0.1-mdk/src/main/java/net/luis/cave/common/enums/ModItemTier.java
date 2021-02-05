@@ -6,7 +6,7 @@ import net.luis.cave.init.items.ModItems;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
 
-public enum CaveItemTier implements IItemTier {
+public enum ModItemTier implements IItemTier {
 	
 	//Harvest Level, Durability, Efficiency, Attack Damage, 
 	//Enchantability, Repair Material
@@ -77,7 +77,7 @@ public enum CaveItemTier implements IItemTier {
 	private final int Enchantability;
 	private final Supplier<Ingredient> RepairMaterial;
 	
-	CaveItemTier(int HarvestLevel, int MaxUses, float Efficiency, float AttackDamage, int Enchantability, Supplier<Ingredient> RepairMaterial) {
+	ModItemTier(int HarvestLevel, int MaxUses, float Efficiency, float AttackDamage, int Enchantability, Supplier<Ingredient> RepairMaterial) {
 		
 		this.HarvestLevel = HarvestLevel;
 		this.MaxUses = MaxUses;

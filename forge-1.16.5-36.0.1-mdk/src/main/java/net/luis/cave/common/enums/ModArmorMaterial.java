@@ -12,7 +12,7 @@ import net.minecraft.util.SoundEvent;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public enum CaveArmorMaterial implements IArmorMaterial {
+public enum ModArmorMaterial implements IArmorMaterial {
 	
 	//Name, Durability multiplier, Damage Reduction multiplier, 
 	//Damage Reduction, Enchantability, Toughness, Knockback Resistance, Repair Material
@@ -74,7 +74,7 @@ public enum CaveArmorMaterial implements IArmorMaterial {
 	private final float knockbackResistance;
 	private final Supplier<Ingredient> repairMaterial;
 
-	private CaveArmorMaterial(String nameIn, int durabilityIn, int[] damageReductionAmountArrayIn, int enchantabilityIn, float toughnessIn, float knockbackResistanceIn, Supplier<Ingredient> repairMaterialIn) {
+	private ModArmorMaterial(String nameIn, int durabilityIn, int[] damageReductionAmountArrayIn, int enchantabilityIn, float toughnessIn, float knockbackResistanceIn, Supplier<Ingredient> repairMaterialIn) {
 		this.name = nameIn;
 		this.durability = durabilityIn;
 		this.damageReductionAmountArray = damageReductionAmountArrayIn;

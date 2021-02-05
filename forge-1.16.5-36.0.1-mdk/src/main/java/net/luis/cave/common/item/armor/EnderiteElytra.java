@@ -1,7 +1,7 @@
 package net.luis.cave.common.item.armor;
 
 import net.luis.cave.Cave;
-import net.luis.cave.common.enums.CaveArmorMaterial;
+import net.luis.cave.common.enums.ModArmorMaterial;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -17,7 +17,7 @@ public class EnderiteElytra extends ArmorItem {
 
 	public EnderiteElytra() {
 		
-		super(CaveArmorMaterial.ENDERITE, EquipmentSlotType.CHEST, new Item.Properties().group(Cave.Armor).rarity(Rarity.RARE).isImmuneToFire());
+		super(ModArmorMaterial.ENDERITE, EquipmentSlotType.CHEST, new Item.Properties().group(Cave.Armor).rarity(Rarity.RARE).isImmuneToFire());
 		
 		DispenserBlock.registerDispenseBehavior(this, ArmorItem.DISPENSER_BEHAVIOR);
 

@@ -6,10 +6,10 @@ import com.google.gson.JsonSyntaxException;
 
 import net.luis.cave.init.blocks.ModBlocks;
 import net.luis.cave.init.util.ModRecipeSerializer;
+import net.luis.cave.init.util.ModRecipeType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.AbstractCookingRecipe;
 import net.minecraft.item.crafting.IRecipeSerializer;
-import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.item.crafting.ShapedRecipe;
 import net.minecraft.network.PacketBuffer;
@@ -25,7 +25,7 @@ public class SmeltingRecipe extends AbstractCookingRecipe {
 	@SuppressWarnings("static-access")
 	public SmeltingRecipe(ResourceLocation idIn, String groupIn, Ingredient ingredientIn, ItemStack resultIn, float experienceIn, int cookTimeIn) {
 
-		super(IRecipeType.register("cave_smelting"), idIn, groupIn, ingredientIn, resultIn, experienceIn, cookTimeIn);
+		super(ModRecipeType.SMELTING_RECIPE, idIn, groupIn, ingredientIn, resultIn, experienceIn, cookTimeIn);
 		this.time = cookTimeIn;
 	}
 
