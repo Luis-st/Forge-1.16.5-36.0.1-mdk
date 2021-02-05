@@ -1,6 +1,7 @@
 package net.luis.cave.common.item.armor;
 
 import net.luis.cave.Cave;
+import net.luis.cave.api.item.armor.mod.EnderiteArmor;
 import net.luis.cave.common.enums.ModArmorMaterial;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.entity.monster.EndermanEntity;
@@ -10,7 +11,7 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class EnderiteHelmet extends ArmorItem {
+public class EnderiteHelmet extends EnderiteArmor {
 	
 	public EnderiteHelmet() {
 		

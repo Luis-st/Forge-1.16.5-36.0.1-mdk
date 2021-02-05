@@ -1,7 +1,7 @@
 package net.luis.cave.common.item.armor;
 
 import net.luis.cave.Cave;
-import net.luis.cave.api.item.armor.Night;
+import net.luis.cave.api.item.armor.mod.NightArmor;
 import net.luis.cave.common.enums.ModArmorMaterial;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.entity.monster.EndermanEntity;
@@ -11,7 +11,7 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class NightHelmet extends Night {
+public class NightHelmet extends NightArmor {
 	
 	public NightHelmet() {
 		

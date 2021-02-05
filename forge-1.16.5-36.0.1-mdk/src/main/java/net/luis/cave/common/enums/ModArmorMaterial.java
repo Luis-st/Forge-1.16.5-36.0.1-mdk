@@ -74,7 +74,9 @@ public enum ModArmorMaterial implements IArmorMaterial {
 	private final float knockbackResistance;
 	private final Supplier<Ingredient> repairMaterial;
 
-	private ModArmorMaterial(String nameIn, int durabilityIn, int[] damageReductionAmountArrayIn, int enchantabilityIn, float toughnessIn, float knockbackResistanceIn, Supplier<Ingredient> repairMaterialIn) {
+	private ModArmorMaterial(String nameIn, int durabilityIn, int[] damageReductionAmountArrayIn, int enchantabilityIn, float toughnessIn, 
+			float knockbackResistanceIn, Supplier<Ingredient> repairMaterialIn) {
+		
 		this.name = nameIn;
 		this.durability = durabilityIn;
 		this.damageReductionAmountArray = damageReductionAmountArrayIn;
@@ -82,6 +84,7 @@ public enum ModArmorMaterial implements IArmorMaterial {
 		this.toughness = toughnessIn;
 		this.knockbackResistance = knockbackResistanceIn;
 		this.repairMaterial = repairMaterialIn;
+		
 	}
 	
 	@OnlyIn(Dist.CLIENT)

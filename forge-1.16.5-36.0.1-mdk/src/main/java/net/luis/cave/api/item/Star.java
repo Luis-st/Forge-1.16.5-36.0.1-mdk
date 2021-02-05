@@ -35,6 +35,7 @@ public class Star extends Item {
 	}
 	
 	public void starTick(ItemStack stack, World world, PlayerEntity player) {
+		
 	}
 
 }

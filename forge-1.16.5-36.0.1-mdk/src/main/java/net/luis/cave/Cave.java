@@ -13,6 +13,7 @@ import net.luis.cave.init.blocks.ModVerticalBlocks;
 import net.luis.cave.init.items.ModArmor;
 import net.luis.cave.init.items.ModItems;
 import net.luis.cave.init.items.ModTools;
+import net.luis.cave.init.items.VanillaItems;
 import net.luis.cave.init.util.ModContainer;
 import net.luis.cave.init.util.ModRecipeSerializer;
 import net.luis.cave.init.util.ModTileEntityType;
@@ -47,7 +48,7 @@ public class Cave {
 		ModBlockItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		ModVerticalBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		ModItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		ModItems.VANILLA_ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		VanillaItems.VANILLA_ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		ModTools.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		ModTools.VANILLA_ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		ModArmor.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());

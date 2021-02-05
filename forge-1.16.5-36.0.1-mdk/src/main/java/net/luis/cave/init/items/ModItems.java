@@ -7,9 +7,7 @@ import net.luis.cave.common.item.RubyApple;
 import net.luis.cave.common.item.Spyglass;
 import net.luis.cave.common.item.star.EndStar;
 import net.luis.cave.common.item.star.MiningStar;
-import net.luis.cave.common.item.star.NetherStar;
 import net.luis.cave.common.item.star.WaterStar;
-import net.luis.cave.common.item.vanilla.Sugar;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -18,7 +16,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class ModItems {
 	
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Cave.Mod_Id);
-	public static final DeferredRegister<Item> VANILLA_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Cave.Minecraft_Id);
 	
 	
 	public static final RegistryObject<Item> RUBY = ITEMS.register("ruby", 
@@ -33,8 +30,6 @@ public class ModItems {
 	public static final RegistryObject<Item> FUNGUS_SOUP = ITEMS.register("fungus_soup", FungusSoup::new);
 	
 	public static final RegistryObject<Item> RUBY_APPLE = ITEMS.register("ruby_apple", RubyApple::new);
-	
-	public static final RegistryObject<Item> SUGAR = VANILLA_ITEMS.register("sugar", Sugar::new);
 	
 	public static final RegistryObject<Item> ROSE_QUARTZ = ITEMS.register("rose_quartz", 
 			() -> new Item(new Item.Properties().group(Cave.MISC)));
@@ -88,8 +83,6 @@ public class ModItems {
 	
 	public static final RegistryObject<Item> COPPER_INGOT = ITEMS.register("copper_ingot", 
 			() -> new Item(new Item.Properties().group(Cave.MISC)));
-	
-	public static final RegistryObject<Item> NETHER_STAR = VANILLA_ITEMS.register("nether_star", NetherStar::new);
 	
 	public static final RegistryObject<Item> WATER_STAR = ITEMS.register("water_star", WaterStar::new);
 	

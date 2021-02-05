@@ -1,6 +1,7 @@
 package net.luis.cave.common.item.armor;
 
 import net.luis.cave.Cave;
+import net.luis.cave.api.item.armor.mod.EnderiteArmor;
 import net.luis.cave.common.enums.ModArmorMaterial;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.entity.LivingEntity;
@@ -13,7 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Rarity;
 import net.minecraft.world.World;
 
-public class EnderiteElytra extends ArmorItem {
+public class EnderiteElytra extends EnderiteArmor {
 
 	public EnderiteElytra() {
 		
