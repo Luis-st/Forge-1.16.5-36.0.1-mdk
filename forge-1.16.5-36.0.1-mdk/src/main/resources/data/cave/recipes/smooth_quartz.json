@@ -1,9 +1,9 @@
 {
   "type": "cave:cave_smelting",
   "ingredient": {
-    "item": "minecraft:cobblestone"
+    "item": "minecraft:quartz_block"
   },
-  "result": "minecraft:stone",
+  "result": "smooth_quartz",
   "experience": 1.5,
   "cookingtime": 100
 }
