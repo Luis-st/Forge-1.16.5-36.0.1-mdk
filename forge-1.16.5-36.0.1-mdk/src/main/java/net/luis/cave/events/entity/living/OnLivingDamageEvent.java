@@ -6,7 +6,6 @@ import net.luis.cave.init.ModEnchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -27,8 +26,6 @@ public class OnLivingDamageEvent {
 			PlayerEntity player = (PlayerEntity) entity;
 			int enchEnderSlayer = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.ENDER_SLYAER.get(), player.getHeldItemMainhand());
 			int enchImpaling= EnchantmentHelper.getEnchantmentLevel(ModEnchantment.IMPALING.get(), player.getHeldItemMainhand());
-			
-			player.sendMessage(new StringTextComponent("Damage: " + amount), player.getUniqueID());
 			
 			if (EntityManager.isEnderType(target)) {
 				

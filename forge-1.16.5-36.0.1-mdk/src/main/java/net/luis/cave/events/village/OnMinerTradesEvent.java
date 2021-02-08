@@ -26,7 +26,7 @@ public class OnMinerTradesEvent {
 		VillagerProfession type = event.getType();
 		Random rng = new Random();
 		
-		if (type == ModVillagerProfessions.MINER) {
+		if (type == ModVillagerProfessions.MINER.get()) {
 			
 			List<ITrade> newTrades1 = new ArrayList<>();
 			newTrades1.add(VillagerManager.creatTradeItemForEmerald(ModItems.ANDESITE_ALLOY.get(), 5, 1, true, 1));

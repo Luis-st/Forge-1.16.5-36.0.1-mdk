@@ -25,7 +25,7 @@ public class OnLumberjackTradesEvent {
 		VillagerProfession type = event.getType();
 		Random rng = new Random();
 		
-		if (type == ModVillagerProfessions.LUMBERJACK) {
+		if (type == ModVillagerProfessions.LUMBERJACK.get()) {
 			
 			List<ITrade> newTrades1 = new ArrayList<>();
 			newTrades1.add(VillagerManager.creatTradeItemForEmerald(Items.STICK, 32 - rng.nextInt(16), 1, true, 1));

@@ -25,7 +25,7 @@ public class OnBeekeeperTradesEvent {
 		VillagerProfession type = event.getType();
 		Random rng = new Random();
 		
-		if (type == ModVillagerProfessions.BEEKEEPER) {
+		if (type == ModVillagerProfessions.BEEKEEPER.get()) {
 			
 			List<ITrade> newTrades1 = new ArrayList<>();
 			newTrades1.add(VillagerManager.creatTradeItemForEmerald(Items.PINK_TULIP, 10, 1, true, 1));

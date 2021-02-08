@@ -25,7 +25,7 @@ public class OnNetherTraderTradesEvent {
 		VillagerProfession type = event.getType();
 		Random rng = new Random();
 		
-		if (type == ModVillagerProfessions.NETHER_TRADER) {
+		if (type == ModVillagerProfessions.NETHER_TRADER.get()) {
 			
 			List<ITrade> newTrades1 = new ArrayList<>();
 			newTrades1.add(VillagerManager.creatTradeItemForEmerald(Items.NETHERRACK, 64 - rng.nextInt(32), 1, true, 1));

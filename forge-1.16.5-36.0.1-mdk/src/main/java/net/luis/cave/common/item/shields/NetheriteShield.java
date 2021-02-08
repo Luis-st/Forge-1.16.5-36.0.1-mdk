@@ -1,7 +1,7 @@
 package net.luis.cave.common.item.shields;
 
 import net.luis.cave.Cave;
-import net.luis.cave.client.render.NetheriteShieldRender;
+import net.luis.cave.client.render.item.NetheriteShieldRender;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ArmorItem;

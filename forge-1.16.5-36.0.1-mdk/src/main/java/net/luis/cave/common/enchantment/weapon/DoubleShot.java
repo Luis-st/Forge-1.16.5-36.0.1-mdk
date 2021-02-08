@@ -44,13 +44,6 @@ public class DoubleShot extends Enchantment {
 	}
 	
 	@Override
-	public boolean canGenerateInLoot() {
-		
-		return false;
-		
-	}
-	
-	@Override
 	protected boolean canApplyTogether(Enchantment ench) {
 		return ench != ModEnchantment.THROW_OF_THE_END.get();
 	}

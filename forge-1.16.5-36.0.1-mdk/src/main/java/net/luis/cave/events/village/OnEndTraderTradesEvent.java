@@ -25,18 +25,21 @@ public class OnEndTraderTradesEvent {
 		VillagerProfession type = event.getType();
 		Random rng = new Random();
 		
-		if (type == ModVillagerProfessions.END_TRADER) {
+		if (type == ModVillagerProfessions.END_TRADER.get()) {
 			
 			List<ITrade> newTrades1 = new ArrayList<>();
-			newTrades1.add(VillagerManager.creatTradeItemForEmerald(Items.END_STONE, 8, 1, true, 1));
+			newTrades1.add(VillagerManager.creatTradeItemForEmerald(Items.END_STONE, 12, 1, true, 1));
+			newTrades1.add(VillagerManager.creatTradeItemForEmerald(Items.MAGENTA_STAINED_GLASS, 8, 1, true, 1));
 			newTrades1.add(VillagerManager.creatTradeEmeraldForItem(4, Items.CHORUS_FLOWER, 1, true, 1));
 			
 			List<ITrade> newTrades2 = new ArrayList<>();
 			newTrades2.add(VillagerManager.creatTradeItemForEmerald(Items.END_STONE_BRICKS, 2, 1, true, 2));
 			newTrades2.add(VillagerManager.creatTradeEmeraldForItem(1, Items.PURPUR_BLOCK, 4, true, 2));
+			newTrades2.add(VillagerManager.creatTradeEmeraldForItem(4, Items.FIREWORK_ROCKET, 1, true, 2));
 		
 			List<ITrade> newTrades3 = new ArrayList<>();
 			newTrades3.add(VillagerManager.creatTradeItemForEmerald(Items.CHORUS_FRUIT, 8, 1, true, 3));
+			newTrades3.add(VillagerManager.creatTradeItemForEmerald(Items.DRAGON_BREATH, 1, 4, true, 3));
 			newTrades3.add(VillagerManager.creatTradeEmeraldForItem(1, Items.POPPED_CHORUS_FRUIT, 8, true, 3));
 			
 			List<ITrade> newTrades4 = new ArrayList<>();
@@ -45,7 +48,7 @@ public class OnEndTraderTradesEvent {
 			newTrades4.add(VillagerManager.creatTradeEmeraldForItem(8, Items.OBSIDIAN, 8, true, 4));
 			
 			List<ITrade> newTrades5 = new ArrayList<>();
-			newTrades5.add(VillagerManager.creatTradeEmeraldForItem(48 + rng.nextInt(8), Items.SHULKER_SHELL, 1, true, 5));
+			newTrades5.add(VillagerManager.creatTradeEmeraldForItem(48 + rng.nextInt(8 + rng.nextInt(8)), Items.SHULKER_SHELL, 1, true, 5));
 			
 			trades.put(1, newTrades1);
 			trades.put(2, newTrades2);

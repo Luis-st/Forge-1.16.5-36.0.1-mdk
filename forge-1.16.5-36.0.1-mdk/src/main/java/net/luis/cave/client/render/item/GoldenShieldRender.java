@@ -1,4 +1,4 @@
-package net.luis.cave.client.render;
+package net.luis.cave.client.render.item;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
@@ -11,11 +11,11 @@ import net.minecraft.client.renderer.tileentity.ItemStackTileEntityRenderer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
-public class NetheriteShieldRender extends ItemStackTileEntityRenderer {
+public class GoldenShieldRender extends ItemStackTileEntityRenderer {
 	
     private final ShieldModel shieldModel;
     
-    public NetheriteShieldRender() {
+    public GoldenShieldRender() {
     	
         this.shieldModel = new ShieldModel();
         
@@ -28,7 +28,7 @@ public class NetheriteShieldRender extends ItemStackTileEntityRenderer {
     	p_239207_3_.scale(1.0F, -1.0F, -1.0F);
     	
     	final IVertexBuilder vertexConsumer = ItemRenderer.getBuffer(p_239207_4_, 
-    						this.shieldModel.getRenderType(new ResourceLocation("cave:textures/entity/netherite_shield.png")), false, p_239207_1_.hasEffect());
+    						this.shieldModel.getRenderType(new ResourceLocation("cave:textures/entity/golden_shield.png")), false, p_239207_1_.hasEffect());
     	
     	this.shieldModel.render(p_239207_3_, vertexConsumer, p_239207_5_, p_239207_6_, 1.0f, 1.0f, 1.0f, 1.0f);
     	

@@ -25,7 +25,7 @@ public class OnMobHunterTradesEvent {
 		VillagerProfession type = event.getType();
 		Random rng = new Random();
 		
-		if (type == ModVillagerProfessions.MOB_HUNTER) {
+		if (type == ModVillagerProfessions.MOB_HUNTER.get()) {
 			
 			List<ITrade> newTrades1 = new ArrayList<>();
 			newTrades1.add(VillagerManager.creatTradeItemForEmerald(Items.ROTTEN_FLESH, 16, 1, true, 1));

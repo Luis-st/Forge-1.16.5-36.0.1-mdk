@@ -45,13 +45,6 @@ public class Smelting extends Enchantment {
 	}
 	
 	@Override
-	public boolean canGenerateInLoot() {
-		
-		return false;
-		
-	}
-	
-	@Override
 	protected boolean canApplyTogether(Enchantment ench) {
 		if (ench != Enchantments.SILK_TOUCH)
 			return true;

@@ -1,7 +1,7 @@
 package net.luis.cave.common.item.shields;
 
 import net.luis.cave.Cave;
-import net.luis.cave.client.render.DiamondShieldRender;
+import net.luis.cave.client.render.item.DiamondShieldRender;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ArmorItem;

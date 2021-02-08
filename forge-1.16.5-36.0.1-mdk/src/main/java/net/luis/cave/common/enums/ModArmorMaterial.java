@@ -65,7 +65,7 @@ public enum ModArmorMaterial implements IArmorMaterial {
 		
 	});
 	
-	private static final int[] MAX_DAMAGE_ARRAY = new int[] {13, 15, 16, 11};
+	private final int[] MAX_DAMAGE_ARRAY = new int[] {13, 15, 16, 11};
 	private final String name;
 	private final int durability;
 	private final int[] damageReductionAmountArray;

@@ -1,11 +1,7 @@
 package net.luis.cave.events.fml;
 
 import net.luis.cave.Cave;
-import net.luis.cave.client.render.EnderiteElytraLayer;
-import net.luis.cave.client.render.NightElytraLayer;
 import net.luis.cave.init.items.ModTools;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.entity.PlayerRenderer;
 import net.minecraft.item.CrossbowItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemModelsProperties;
@@ -21,18 +17,6 @@ public class CreatItemProperties {
 	
 	@SubscribeEvent
 	public static void doClientSetup(FMLClientSetupEvent event) {
-		
-		for (PlayerRenderer playerRenderer : Minecraft.getInstance().getRenderManager().getSkinMap().values()) {
-			
-			playerRenderer.addLayer(new EnderiteElytraLayer<>(playerRenderer));
-			
-		}
-		
-		for (PlayerRenderer playerRenderer : Minecraft.getInstance().getRenderManager().getSkinMap().values()) {
-			
-			playerRenderer.addLayer(new NightElytraLayer<>(playerRenderer));
-			
-		}
 		
 		itemPropertieShield(ModTools.IRON_SHIELD.get());
 		itemPropertieShield(ModTools.GOLDEN_SHIELD.get());

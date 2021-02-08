@@ -1,4 +1,4 @@
-package net.luis.cave.client.render;
+package net.luis.cave.client.render.item;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;

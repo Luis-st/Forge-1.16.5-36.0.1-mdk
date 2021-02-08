@@ -23,7 +23,7 @@ public class OnEnchanterTradesEvent {
 		Int2ObjectMap<List<ITrade>> trades = event.getTrades();
 		VillagerProfession type = event.getType();
 		
-		if (type == ModVillagerProfessions.ENCHANTER) {
+		if (type == ModVillagerProfessions.ENCHANTER.get()) {
 			
 			List<ITrade> newTrades1 = new ArrayList<>();
 			newTrades1.add(VillagerManager.creatTradeEmeraldForItem(1, Items.LAPIS_LAZULI, 1, true, 1));

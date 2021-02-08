@@ -18,14 +18,14 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid=Cave.Mod_Id, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class SpyglassOverlay {
 	
-	@SuppressWarnings({ "resource", "static-access", "deprecation" })
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
+	@SuppressWarnings({ "resource", "static-access", "deprecation" })
 	public static void RenderSpyglassOverlay(RenderGameOverlayEvent event) {
 		
 		PlayerEntity player = Minecraft.getInstance().player;
 		GameSettings settings = Minecraft.getInstance().gameSettings;
-		int posX = event.getWindow().getScaledWidth() / 2;
-		int posY = event.getWindow().getScaledHeight() / 2;
+		int posX = event.getWindow().getScaledWidth();
+		int posY = event.getWindow().getScaledHeight();
 		
 		if (player.getActiveItemStack().getItem() == ModItems.SPYGLASS.get()) {
 			
@@ -37,7 +37,7 @@ public class SpyglassOverlay {
 				RenderSystem.disableAlphaTest();
 				RenderSystem.disableBlend();
 				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("cave:textures/misc/spyglass_scope.png"));
-				Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), 0, 0, 0, 0, posX * 2, posY * 2, 480, 270);
+				Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), 0, 0, 0, 0, posX, posY, 480, 270);
 				RenderSystem.depthMask(true);
 				RenderSystem.enableDepthTest();
 				RenderSystem.enableAlphaTest();

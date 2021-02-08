@@ -1,7 +1,7 @@
 package net.luis.cave.common.item.shields;
 
 import net.luis.cave.Cave;
-import net.luis.cave.client.render.EnderiteShieldRender;
+import net.luis.cave.client.render.item.EnderiteShieldRender;
 import net.luis.cave.init.items.ModItems;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.entity.LivingEntity;
