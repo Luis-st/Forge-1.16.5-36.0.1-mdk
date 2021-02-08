@@ -117,6 +117,10 @@
   "item.cave.netherite_crossbow": "Netherite Crossbow",
   "item.cave.netherite_shield": "Netherite Shield",
   
+  "item.cave.jade_arrow": "Jade Arrow",
+  "item.cave.diamond_arrow": "Diamond Arrow",
+  "item.cave.netherite_arrow": "Netherite Arrow",
+  
   "item.cave.powder_snow_bucket": "Powder Snow Bucket",
   "block.cave.powder_snow": "Powder Snow",
   "block.cave.infinite_anvil": "Infinite Anvil",

@@ -5,6 +5,9 @@ import net.luis.cave.common.item.FungusSoup;
 import net.luis.cave.common.item.PowderSnowBucket;
 import net.luis.cave.common.item.RubyApple;
 import net.luis.cave.common.item.Spyglass;
+import net.luis.cave.common.item.entity.DiamondArrowItem;
+import net.luis.cave.common.item.entity.JadeArrowItem;
+import net.luis.cave.common.item.entity.NetheriteArrowItem;
 import net.luis.cave.common.item.star.EndStar;
 import net.luis.cave.common.item.star.MiningStar;
 import net.luis.cave.common.item.star.WaterStar;
@@ -85,6 +88,15 @@ public class ModItems {
 			() -> new Item(new Item.Properties().group(Cave.MISC)));
 	
 	public static final RegistryObject<Item> WATER_STAR = ITEMS.register("water_star", WaterStar::new);
+	
+	public static final RegistryObject<Item> JADE_ARROW_ITEM = ITEMS.register("jade_arrow", 
+			() -> new JadeArrowItem(new Item.Properties().group(Cave.WEAPONS)));
+	
+	public static final RegistryObject<Item> DIAMOND_ARROW_ITEM = ITEMS.register("diamond_arrow", 
+			() -> new DiamondArrowItem(new Item.Properties().group(Cave.WEAPONS)));
+	
+	public static final RegistryObject<Item> NETHERITE_ARROW_ITEM = ITEMS.register("netherite_arrow", 
+			() -> new NetheriteArrowItem(new Item.Properties().group(Cave.WEAPONS)));
 	
 }
 

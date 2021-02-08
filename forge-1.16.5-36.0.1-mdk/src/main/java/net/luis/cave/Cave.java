@@ -3,9 +3,9 @@ package net.luis.cave;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import net.luis.cave.api.villager.VillagerUtil;
 import net.luis.cave.events.generation.OreGeneration;
 import net.luis.cave.init.ModEnchantment;
+import net.luis.cave.init.ModEntityType;
 import net.luis.cave.init.blocks.ModBlockItems;
 import net.luis.cave.init.blocks.ModBlocks;
 import net.luis.cave.init.blocks.ModVerticalBlockItems;
@@ -18,6 +18,7 @@ import net.luis.cave.init.util.ModContainer;
 import net.luis.cave.init.util.ModRecipeSerializer;
 import net.luis.cave.init.util.ModTileEntityType;
 import net.luis.cave.init.villager.ModPointOfInterestTypes;
+import net.luis.cave.init.villager.ModVillagerProfessions;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
@@ -25,6 +26,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -44,34 +46,38 @@ public class Cave {
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 		
-		ModBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		ModBlockItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		ModVerticalBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		ModItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		VanillaItems.VANILLA_ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		ModTools.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		ModArmor.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		ModEnchantment.ENCHANTMENT.register(FMLJavaModLoadingContext.get().getModEventBus());
-		ModEnchantment.VANILLA_ENCHANTMENT.register(FMLJavaModLoadingContext.get().getModEventBus());
-		ModVerticalBlockItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		ModTileEntityType.TILE_ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
-		ModContainer.CONTAINERS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		ModRecipeSerializer.RECIPE_SERIALIZERS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+		
+		ModBlocks.BLOCKS.register(modEventBus);
+		ModBlockItems.ITEMS.register(modEventBus);
+		
+		ModVerticalBlocks.BLOCKS.register(modEventBus);
+		ModVerticalBlockItems.ITEMS.register(modEventBus);
+		
+		ModItems.ITEMS.register(modEventBus);
+		VanillaItems.VANILLA_ITEMS.register(modEventBus);
+		ModTools.ITEMS.register(modEventBus);
+		ModArmor.ITEMS.register(modEventBus);
+		
+		ModEnchantment.ENCHANTMENT.register(modEventBus);
+		ModEnchantment.VANILLA_ENCHANTMENT.register(modEventBus);
+		
+		ModTileEntityType.TILE_ENTITIES.register(modEventBus);
+		ModContainer.CONTAINERS.register(modEventBus);
+		ModRecipeSerializer.RECIPE_SERIALIZERS.register(modEventBus);
+		
+		ModPointOfInterestTypes.POI_TYPE.register(modEventBus);
+		ModVillagerProfessions.PROFESSIONS.register(modEventBus);
+		
+		ModEntityType.ENTITIES.register(modEventBus);
 		
 		MinecraftForge.EVENT_BUS.register(this);
 		
 	}
 	
-	private void setup(final FMLCommonSetupEvent event) {
+	private void setup(FMLCommonSetupEvent event) {
 		
 		OreGeneration.registerOres();
-		
-		VillagerUtil.fixPOITypeBlockStates(ModPointOfInterestTypes.LUMBERJACK);
-		VillagerUtil.fixPOITypeBlockStates(ModPointOfInterestTypes.MOB_HUNTER);
-		VillagerUtil.fixPOITypeBlockStates(ModPointOfInterestTypes.MINER);
-		VillagerUtil.fixPOITypeBlockStates(ModPointOfInterestTypes.ENCHANTER);
-		VillagerUtil.fixPOITypeBlockStates(ModPointOfInterestTypes.BEEKEEPER);
-		VillagerUtil.fixPOITypeBlockStates(ModPointOfInterestTypes.NETHER_TRADER);
 		
 	}
 	
