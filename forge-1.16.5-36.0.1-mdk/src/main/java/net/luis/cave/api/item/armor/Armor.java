@@ -19,17 +19,19 @@ public class Armor extends ArmorItem {
 	@Override
 	public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
 		
-		switch (slot) {
-		case HEAD: onHeadTick(stack, world, player);
-		case CHEST: onChestTick(stack, world, player);
-		case LEGS: onLegsTick(stack, world, player);
-		case FEET: onFeetTick(stack, world, player);
-		default:
-		}
-		
 		if (PlayerManager.hasArmor(player, material)) {
 			
 			onCompleteArmorTick(stack, world, player);
+			
+		} else {
+			
+			switch (slot) {
+			case HEAD: onHeadTick(stack, world, player);
+			case CHEST: onChestTick(stack, world, player);
+			case LEGS: onLegsTick(stack, world, player);
+			case FEET: onFeetTick(stack, world, player);
+			default:
+			}
 			
 		}
 		

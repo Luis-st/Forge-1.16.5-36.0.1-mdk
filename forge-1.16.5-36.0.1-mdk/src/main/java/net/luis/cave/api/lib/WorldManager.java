@@ -1,8 +1,11 @@
 package net.luis.cave.api.lib;
 
+import java.util.List;
 import java.util.Random;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
@@ -28,6 +31,29 @@ public class WorldManager {
 		}
 		
 		return false;
+		
+	}
+	
+	public static List<Entity> getEntitiesIn(Entity entity, int radius) {
+		
+		if (radius < 0) {
+			
+			throw new IllegalArgumentException("the size must be >0 but size is: " + radius);
+			
+		}
+		
+		double entityPosX0 = entity.getPosX() + radius;
+		double entityPosY0 = entity.getPosY() + radius;
+		double entityPosZ0 = entity.getPosZ() + radius;
+		
+		double entityPosX1 = entity.getPosX() - radius;
+		double entityPosY1 = entity.getPosY() - radius;
+		double entityPosZ1 = entity.getPosZ() - radius;
+		
+		AxisAlignedBB axisAligned = new AxisAlignedBB(entityPosX0, entityPosY0, entityPosZ0, entityPosX1, entityPosY1, entityPosZ1);
+		List<Entity> entities = entity.getEntityWorld().getEntitiesWithinAABB(Entity.class, axisAligned);
+		
+		return entities;
 		
 	}
 

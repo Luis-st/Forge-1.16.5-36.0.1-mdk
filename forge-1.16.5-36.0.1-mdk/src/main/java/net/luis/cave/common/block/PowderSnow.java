@@ -9,8 +9,13 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.item.ItemEntity;
+import net.minecraft.entity.monster.SkeletonEntity;
+import net.minecraft.entity.monster.StrayEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -23,8 +28,10 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IServerWorld;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
+import net.minecraftforge.event.ForgeEventFactory;
 
 public class PowderSnow extends BreakableBlock {
 
@@ -108,6 +115,23 @@ public class PowderSnow extends BreakableBlock {
 	
 	@Override
 	public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
+		
+		StrayEntity strayEntity = new StrayEntity(EntityType.STRAY, world);
+		
+		if (entity instanceof SkeletonEntity) {
+			
+			if (!world.isRemote) {
+				
+				strayEntity.setPositionAndRotation(entity.getPosX(), entity.getPosY(), entity.getPosZ(), entity.getPitchYaw().x, entity.getPitchYaw().y);
+				strayEntity.onInitialSpawn((IServerWorld) world, world.getDifficultyForLocation(pos), SpawnReason.MOB_SUMMONED, null, null);
+				entity.remove();
+				world.addEntity(strayEntity);
+				
+				ForgeEventFactory.onLivingConvert((LivingEntity) entity, strayEntity);
+				
+			}
+			
+		}
 		
 		if (entity.getMotion().getY() <= 0) {
 			

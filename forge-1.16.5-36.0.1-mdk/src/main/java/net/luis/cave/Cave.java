@@ -40,8 +40,15 @@ public class Cave {
 	public static final String Minecraft_Id = "minecraft";
 	public static boolean enableCommands = true;
 	public static final boolean pvpServer = false;
+	private final boolean verticalSlabs = false;
 	
 	public Cave() {
+		
+		LOGGER.info("Mod found: " + Mod_Id);
+		LOGGER.info("Initialization has started");
+		LOGGER.info("Override of vanilla elements found");
+		LOGGER.warn("Initialization was stopped");
+		LOGGER.info("The initialization was started again. Overrides of vanilla elements have been considered");
 		
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
@@ -50,26 +57,37 @@ public class Cave {
 		
 		ModBlocks.BLOCKS.register(modEventBus);
 		ModBlockItems.ITEMS.register(modEventBus);
+		LOGGER.info("Blocks were successfully initialized");
 		
-		ModVerticalBlocks.BLOCKS.register(modEventBus);
-		ModVerticalBlockItems.ITEMS.register(modEventBus);
+		if (verticalSlabs) {
+			
+			ModVerticalBlocks.BLOCKS.register(modEventBus);
+			ModVerticalBlockItems.ITEMS.register(modEventBus);
+			LOGGER.info("Vertical slabs were successfully initialized");
+			
+		}
 		
 		ModItems.ITEMS.register(modEventBus);
 		VanillaItems.VANILLA_ITEMS.register(modEventBus);
 		ModTools.ITEMS.register(modEventBus);
 		ModArmor.ITEMS.register(modEventBus);
+		LOGGER.info("Items were successfully initialized");
 		
 		ModEnchantment.ENCHANTMENT.register(modEventBus);
 		ModEnchantment.VANILLA_ENCHANTMENT.register(modEventBus);
+		LOGGER.info("Enchantments were successfully initialized");
 		
 		ModTileEntityType.TILE_ENTITIES.register(modEventBus);
 		ModContainer.CONTAINERS.register(modEventBus);
 		ModRecipeSerializer.RECIPE_SERIALIZERS.register(modEventBus);
+		LOGGER.info("Util were successfully initialized");
 		
 		ModPointOfInterestTypes.POI_TYPE.register(modEventBus);
 		ModVillagerProfessions.PROFESSIONS.register(modEventBus);
+		LOGGER.info("Villager were successfully initialized");
 		
 		ModEntityType.ENTITIES.register(modEventBus);
+		LOGGER.info("Entities were successfully initialized");
 		
 		MinecraftForge.EVENT_BUS.register(this);
 		

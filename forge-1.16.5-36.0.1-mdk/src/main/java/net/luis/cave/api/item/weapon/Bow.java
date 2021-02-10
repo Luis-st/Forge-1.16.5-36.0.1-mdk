@@ -62,7 +62,7 @@ public class Bow extends ShootableItem implements IVanishable {
 
 				float velocityArrow = getArrowVelocity(duration);
 				
-				if (!( velocityArrow < 0.1f)) {
+				if (!(velocityArrow < 0.1f)) {
 					
 					boolean isCreativeOrInfinity = player.abilities.isCreativeMode || (ammo.getItem() instanceof ArrowItem 
 							&& ((ArrowItem) ammo.getItem()).isInfinite(ammo, stack, player)) || enchThrowEnd > 0;
@@ -191,7 +191,7 @@ public class Bow extends ShootableItem implements IVanishable {
 		
 		if (f > 1.5F) {
 			
-			f = 1.0F;
+			f = 1.5F;
 			
 		}
 

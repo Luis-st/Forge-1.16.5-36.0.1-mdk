@@ -121,6 +121,10 @@
   "item.cave.diamond_arrow": "Diamond Arrow",
   "item.cave.netherite_arrow": "Netherite Arrow",
   
+  "entity.cave.jade_arrow": "Jade Arrow",
+  "entity.cave.diamond_arrow": "Diamond Arrow",
+  "entity.cave.netherite_arrow": "Netherite Arrow",
+  
   "item.cave.powder_snow_bucket": "Powder Snow Bucket",
   "block.cave.powder_snow": "Powder Snow",
   "block.cave.infinite_anvil": "Infinite Anvil",
