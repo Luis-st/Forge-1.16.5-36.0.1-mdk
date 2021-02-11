@@ -13,17 +13,86 @@ import net.minecraft.entity.monster.GhastEntity;
 import net.minecraft.entity.monster.GuardianEntity;
 import net.minecraft.entity.monster.MagmaCubeEntity;
 import net.minecraft.entity.monster.ShulkerEntity;
+import net.minecraft.entity.monster.StrayEntity;
 import net.minecraft.entity.passive.DolphinEntity;
+import net.minecraft.entity.passive.PolarBearEntity;
 import net.minecraft.entity.passive.SquidEntity;
 import net.minecraft.entity.passive.StriderEntity;
 import net.minecraft.entity.passive.TurtleEntity;
 import net.minecraft.entity.passive.fish.AbstractFishEntity;
+import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.IArmorMaterial;
 
 public class EntityManager {
 
 	public static boolean hasMaxHealth(LivingEntity enity) {
 		
 		if (enity.getHealth() != enity.getAttribute(Attributes.MAX_HEALTH).getBaseValue()) {
+			
+			return true;
+			
+		}
+		
+		return false;
+		
+	}
+	
+	public static boolean wearArmorPart(LivingEntity player, IArmorMaterial material) {
+		
+		if (player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem() instanceof ArmorItem &&
+			player.getItemStackFromSlot(EquipmentSlotType.CHEST).getItem() instanceof ArmorItem &&	
+			player.getItemStackFromSlot(EquipmentSlotType.LEGS).getItem() instanceof ArmorItem &&	
+			player.getItemStackFromSlot(EquipmentSlotType.FEET).getItem() instanceof ArmorItem) {
+			
+			if (((ArmorItem) player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem()).getArmorMaterial() == material ||
+				((ArmorItem) player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem()).getArmorMaterial() == material ||	
+				((ArmorItem) player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem()).getArmorMaterial() == material ||	
+				((ArmorItem) player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem()).getArmorMaterial() == material) {
+					
+					return true;
+					
+			}
+			
+			return false;
+			
+		}
+			
+		return false;
+		
+	}
+	
+	public static boolean wearArmor(LivingEntity player, IArmorMaterial material) {
+		
+		if (player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem() instanceof ArmorItem &&
+			player.getItemStackFromSlot(EquipmentSlotType.CHEST).getItem() instanceof ArmorItem &&	
+			player.getItemStackFromSlot(EquipmentSlotType.LEGS).getItem() instanceof ArmorItem &&	
+			player.getItemStackFromSlot(EquipmentSlotType.FEET).getItem() instanceof ArmorItem) {
+			
+			if (((ArmorItem) player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem()).getArmorMaterial() == material &&
+				((ArmorItem) player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem()).getArmorMaterial() == material &&	
+				((ArmorItem) player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem()).getArmorMaterial() == material &&	
+				((ArmorItem) player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem()).getArmorMaterial() == material) {
+					
+					return true;
+					
+			}
+			
+			return false;
+			
+		}
+			
+		return false;
+		
+	}
+	
+	public static boolean isFrozenType(Entity entity) {
+		
+		if (entity instanceof PolarBearEntity) {
+			
+			return true;
+			
+		} else if (entity instanceof StrayEntity) {
 			
 			return true;
 			

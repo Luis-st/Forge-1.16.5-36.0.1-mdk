@@ -11,6 +11,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
+import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -19,8 +20,8 @@ import net.minecraftforge.fml.common.Mod;
 public class SpyglassOverlay {
 	
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
-	@SuppressWarnings({ "resource", "static-access", "deprecation" })
-	public static void RenderSpyglassOverlay(RenderGameOverlayEvent event) {
+	@SuppressWarnings({ "resource", "static-access" })
+	public static void RenderSpyglassOverlay(RenderGameOverlayEvent.Pre event) {
 		
 		PlayerEntity player = Minecraft.getInstance().player;
 		GameSettings settings = Minecraft.getInstance().gameSettings;
@@ -31,18 +32,20 @@ public class SpyglassOverlay {
 			
 			if (settings.getPointOfView()== PointOfView.FIRST_PERSON) {
 				
+				if (event.getType() != ElementType.VIGNETTE) {
+					
+					event.setCanceled(true);
+					
+				}
+				
 				RenderSystem.disableDepthTest();
 				RenderSystem.depthMask(false);
-				RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-				RenderSystem.disableAlphaTest();
-				RenderSystem.disableBlend();
+				RenderSystem.enableBlend();
+				RenderSystem.blendFunc(770, 771);
 				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("cave:textures/misc/spyglass_scope.png"));
 				Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), 0, 0, 0, 0, posX, posY, 480, 270);
 				RenderSystem.depthMask(true);
 				RenderSystem.enableDepthTest();
-				RenderSystem.enableAlphaTest();
-				RenderSystem.enableBlend();
-				RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 				
 			}
 			

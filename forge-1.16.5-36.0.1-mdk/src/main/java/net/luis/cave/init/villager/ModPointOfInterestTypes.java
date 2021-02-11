@@ -6,14 +6,9 @@ import net.luis.cave.init.blocks.ModBlocks;
 import net.minecraft.block.Blocks;
 import net.minecraft.village.PointOfInterestType;
 import net.minecraftforge.fml.RegistryObject;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.ObjectHolder;
 
-@EventBusSubscriber(modid = Cave.Mod_Id, bus = Bus.MOD)
-@ObjectHolder(Cave.Mod_Id)
 public class ModPointOfInterestTypes {
 	
 	public static final DeferredRegister<PointOfInterestType> POI_TYPE = DeferredRegister.create(ForgeRegistries.POI_TYPES, Cave.Mod_Id);

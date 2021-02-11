@@ -88,7 +88,6 @@
   "gamerule.disableWaterStarDrop.description": "The elder guardian no longer drops an water star",
   "gamerule.doEnderpearlDamage": "Do enderpearl damage",
   "gamerule.doEnderpearlDamage.description": "Do the damage after a player throw an ender pearl",
-  
   "gamerule.protectionTimeMultiplier": "Protection time multiplier",
   
   "entity.minecraft.villager.cave.lumberjack": "Lumberjack",
@@ -100,6 +99,8 @@
   "entity.minecraft.villager.cave.end_trader": "End Trader",
   
   "death.attack.curse": "%1$s die by his own weapon",
+  "death.attack.freezing": "%1$s is frozen to death",
+  
   "container.smelting_furnace": "Smelting Furnace",
   
   "item.cave.fungus_soup": "Fungus Soup",

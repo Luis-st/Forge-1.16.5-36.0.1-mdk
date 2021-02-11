@@ -51,10 +51,7 @@ public class OnGamemodeCheck {
 						
 						for (PlayerEntity playerSendMessage : playerList.getPlayers()) {
 							
-							playerSendMessage.sendMessage(new StringTextComponent("§e§l[DEBUG]: §fThe player: " + 
-																playerEntity.getName().getString() + 
-															   	" was in a gamemode which is not allowed on this server, the player's game mode was set to survival"), 
-																playerSendMessage.getUniqueID());
+							sendFeedback(playerEntity, playerSendMessage);
 							
 						}
 						
@@ -78,10 +75,7 @@ public class OnGamemodeCheck {
 						
 						for (PlayerEntity playerSendMessage : players) {
 							
-							playerSendMessage.sendMessage(new StringTextComponent("§e§l[DEBUG]: §fThe player: " + 
-																playerEntity.getName().getString() + 
-															   	" was in a gamemode which is not allowed on this server, the player's game mode was set to survival"), 
-																playerSendMessage.getUniqueID());
+							sendFeedback(playerEntity, playerSendMessage);
 							
 						}
 						
@@ -92,6 +86,15 @@ public class OnGamemodeCheck {
 			}
 			
 		}
+		
+	}
+	
+	private static void sendFeedback(PlayerEntity player, PlayerEntity playerSendMessage) {
+		
+		playerSendMessage.sendMessage(new StringTextComponent("§e§l[DEBUG]: §fThe player: " + 
+				player.getName().getString() + 
+			   	" was in a gamemode which is not allowed on this server, the player's game mode was set to survival"), 
+				playerSendMessage.getUniqueID());
 		
 	}
 	

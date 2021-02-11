@@ -1,5 +1,7 @@
 package net.luis.cave.common.block;
 
+import net.luis.cave.api.lib.EntityManager;
+import net.luis.cave.init.ModEnchantment;
 import net.luis.cave.init.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -8,6 +10,8 @@ import net.minecraft.block.BreakableBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -17,10 +21,13 @@ import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.monster.SkeletonEntity;
 import net.minecraft.entity.monster.StrayEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -43,6 +50,13 @@ public class PowderSnow extends BreakableBlock {
 				.harvestLevel(0)
 				.harvestTool(ToolType.SHOVEL)
 				.notSolid());
+		
+	}
+	
+	@Override
+	public boolean isSideInvisible(BlockState state, BlockState adjacentBlockState, Direction side) {
+		
+		return false;
 		
 	}
 	
@@ -85,7 +99,7 @@ public class PowderSnow extends BreakableBlock {
 				
 				PlayerEntity player = (PlayerEntity) entity;
 				
-				if (player.inventory.armorItemInSlot(0).getItem() == Items.LEATHER_BOOTS) {
+				if (player.getItemStackFromSlot(EquipmentSlotType.FEET).getItem() == Items.LEATHER_BOOTS) {
 					
 					return VoxelShapes.fullCube();
 					
@@ -128,6 +142,25 @@ public class PowderSnow extends BreakableBlock {
 				world.addEntity(strayEntity);
 				
 				ForgeEventFactory.onLivingConvert((LivingEntity) entity, strayEntity);
+				
+			}
+			
+		}
+		
+		if (entity instanceof LivingEntity) {
+			
+			LivingEntity livingEntity = (LivingEntity) entity;
+			ItemStack stack = livingEntity.getItemStackFromSlot(EquipmentSlotType.FEET);
+			int enchLavaWalker = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.LAVA_WALKER.get(), stack);
+			int enchFrostWalker = EnchantmentHelper.getEnchantmentLevel(Enchantments.FROST_WALKER, stack);
+			
+			if (!(livingEntity instanceof SkeletonEntity) && !EntityManager.isFrozenType(livingEntity)) {
+				
+				if (enchFrostWalker == 0 && enchLavaWalker == 0) {
+					
+					entity.attackEntityFrom(new DamageSource("freezing"), 1.0f);
+					
+				}
 				
 			}
 			

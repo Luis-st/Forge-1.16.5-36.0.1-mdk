@@ -3,7 +3,11 @@ package net.luis.cave.api.item.weapon;
 import java.util.function.Predicate;
 
 import net.luis.cave.api.lib.ItemManager;
+import net.luis.cave.common.item.entity.DiamondArrowItem;
+import net.luis.cave.common.item.entity.JadeArrowItem;
+import net.luis.cave.common.item.entity.NetheriteArrowItem;
 import net.luis.cave.init.ModEnchantment;
+import net.luis.cave.init.items.ModItems;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.enchantment.IVanishable;
@@ -65,7 +69,7 @@ public class Bow extends ShootableItem implements IVanishable {
 				if (!(velocityArrow < 0.1f)) {
 					
 					boolean isCreativeOrInfinity = player.abilities.isCreativeMode || (ammo.getItem() instanceof ArrowItem 
-							&& ((ArrowItem) ammo.getItem()).isInfinite(ammo, stack, player)) || enchThrowEnd > 0;
+							&& ((ArrowItem) ammo.getItem()).isInfinite(ammo, stack, player));
 					
 					if (!world.isRemote) {
 						
@@ -91,9 +95,11 @@ public class Bow extends ShootableItem implements IVanishable {
 							
 							AbstractArrowEntity arrowEntity = creatArrowEntity(stack, ammo, world, player, velocityArrow);
 							AbstractArrowEntity doubleShotArrow = creatArrowEntity(stack, ammo, world, player, velocityArrow);
+							boolean isSpecial = ammo.getItem() == Items.SPECTRAL_ARROW || 
+									ammo.getItem() == Items.TIPPED_ARROW || 
+									ammo.getItem() == ModItems.NETHERITE_ARROW_ITEM.get();
 							
-							if (isCreativeOrInfinity || player.abilities.isCreativeMode && (ammo.getItem() == Items.SPECTRAL_ARROW || 
-									ammo.getItem() == Items.TIPPED_ARROW)) {
+							if (isCreativeOrInfinity || player.abilities.isCreativeMode && isSpecial) {
 								
 								arrowEntity.pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
 								
@@ -168,7 +174,7 @@ public class Bow extends ShootableItem implements IVanishable {
 		}
 		
 		double enchPower = getArrowDamage(stack);
-		arrowEntity.setDamage(2 + enchPower);
+		arrowEntity.setDamage(getArrowBaseDamage(ammo) + enchPower);
 		
 		int enchPunch = getArrowKnockback(stack);
 		if (enchPunch > 0) {
@@ -181,6 +187,26 @@ public class Bow extends ShootableItem implements IVanishable {
 		arrowEntity.setFire(getArrowFlameTime(stack));
 		
 		return arrowEntity;
+		
+	}
+	
+	public int getArrowBaseDamage(ItemStack ammo) {
+		
+		if (ammo.getItem() instanceof JadeArrowItem) {
+			
+			return 3;
+			
+		} else if (ammo.getItem() instanceof DiamondArrowItem) {
+			
+			return 5;
+			
+		} else if (ammo.getItem() instanceof NetheriteArrowItem) {
+			
+			return 7;
+			
+		}
+		
+		return 2;
 		
 	}
 

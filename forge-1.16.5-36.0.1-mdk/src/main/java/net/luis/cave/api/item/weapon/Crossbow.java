@@ -8,6 +8,9 @@ import javax.annotation.Nullable;
 
 import com.google.common.collect.Lists;
 
+import net.luis.cave.common.item.entity.DiamondArrowItem;
+import net.luis.cave.common.item.entity.JadeArrowItem;
+import net.luis.cave.common.item.entity.NetheriteArrowItem;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -353,7 +356,7 @@ public class Crossbow extends ShootableItem implements IVanishable {
 		arrowEntity.setShotFromCrossbow(true);
 		
 		double enchPower = getArrowDamage(crossbow);
-		arrowEntity.setDamage(2 + enchPower);
+		arrowEntity.setDamage(getArrowBaseDamage(ammo) + enchPower);
 		
 		int enchPiercing = getArrowPierce(crossbow);
 		arrowEntity.setPierceLevel((byte) enchPiercing);
@@ -592,6 +595,26 @@ public class Crossbow extends ShootableItem implements IVanishable {
 	public int func_230305_d_() {
 		
 		return 8;
+		
+	}
+	
+	public int getArrowBaseDamage(ItemStack ammo) {
+		
+		if (ammo.getItem() instanceof JadeArrowItem) {
+			
+			return 3;
+			
+		} else if (ammo.getItem() instanceof DiamondArrowItem) {
+			
+			return 5;
+			
+		} else if (ammo.getItem() instanceof NetheriteArrowItem) {
+			
+			return 7;
+			
+		}
+		
+		return 2;
 		
 	}
 	
