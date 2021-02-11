@@ -67,6 +67,7 @@ public class SmeltingFurnace extends AbstractFurnaceBlock {
 	
 	@OnlyIn(Dist.CLIENT)
 	public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) {
+		
 		if (stateIn.get(LIT)) {
 			
 			double d0 = (double) pos.getX() + 0.5D;

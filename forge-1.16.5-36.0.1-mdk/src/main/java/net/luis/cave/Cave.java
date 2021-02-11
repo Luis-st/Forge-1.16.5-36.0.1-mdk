@@ -10,6 +10,7 @@ import net.luis.cave.init.blocks.ModBlockItems;
 import net.luis.cave.init.blocks.ModBlocks;
 import net.luis.cave.init.blocks.ModVerticalBlockItems;
 import net.luis.cave.init.blocks.ModVerticalBlocks;
+import net.luis.cave.init.blocks.VanillaBlocks;
 import net.luis.cave.init.items.ModArmor;
 import net.luis.cave.init.items.ModItems;
 import net.luis.cave.init.items.ModTools;
@@ -40,7 +41,6 @@ public class Cave {
 	public static final String Minecraft_Id = "minecraft";
 	public static boolean enableCommands = true;
 	public static final boolean pvpServer = false;
-	private final boolean verticalSlabs = false;
 	
 	public Cave() {
 		
@@ -57,15 +57,12 @@ public class Cave {
 		
 		ModBlocks.BLOCKS.register(modEventBus);
 		ModBlockItems.ITEMS.register(modEventBus);
+		VanillaBlocks.VANILLA_BLOCKS.register(modEventBus);
 		LOGGER.info("Blocks were successfully initialized");
 		
-		if (verticalSlabs) {
-			
-			ModVerticalBlocks.BLOCKS.register(modEventBus);
-			ModVerticalBlockItems.ITEMS.register(modEventBus);
-			LOGGER.info("Vertical slabs were successfully initialized");
-			
-		}
+		ModVerticalBlocks.BLOCKS.register(modEventBus);
+		ModVerticalBlockItems.ITEMS.register(modEventBus);
+		LOGGER.info("Vertical slabs were successfully initialized");
 		
 		ModItems.ITEMS.register(modEventBus);
 		VanillaItems.VANILLA_ITEMS.register(modEventBus);

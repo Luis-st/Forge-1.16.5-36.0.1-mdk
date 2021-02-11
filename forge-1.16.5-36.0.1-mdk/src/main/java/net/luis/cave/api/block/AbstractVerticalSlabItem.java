@@ -1,6 +1,5 @@
-package net.luis.cave.api.item;
+package net.luis.cave.api.block;
 
-import net.luis.cave.api.block.AbstractVerticalSlab;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;

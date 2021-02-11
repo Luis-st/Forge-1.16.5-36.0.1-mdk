@@ -2,8 +2,10 @@ package net.luis.cave.init.util;
 
 import net.luis.cave.Cave;
 import net.luis.cave.common.tileentity.LightningRodTileEntity;
+import net.luis.cave.common.tileentity.ModBarrelTileEntity;
 import net.luis.cave.common.tileentity.SmeltingFurnaceTileEntity;
 import net.luis.cave.init.blocks.ModBlocks;
+import net.luis.cave.init.blocks.VanillaBlocks;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -18,5 +20,8 @@ public class ModTileEntityType {
 	
 	public static final RegistryObject<TileEntityType<?>> SMELTING_FURNACE = TILE_ENTITIES.register("smelting_furnace_tileentity", 
 			() -> TileEntityType.Builder.create(SmeltingFurnaceTileEntity::new, ModBlocks.SMELTING_FURNACE.get()).build(null));
+	
+	public static final RegistryObject<TileEntityType<?>> BARREL = TILE_ENTITIES.register("barrel_tileentity", 
+			() -> TileEntityType.Builder.create(ModBarrelTileEntity::new, VanillaBlocks.BARREL.get()).build(null));
 	
 }
