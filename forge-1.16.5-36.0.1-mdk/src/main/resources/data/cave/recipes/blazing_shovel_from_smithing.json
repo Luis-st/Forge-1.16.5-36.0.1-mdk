@@ -1,12 +1,12 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "minecraft:golden_axe"
+    "item": "minecraft:golden_shovel"
   },
   "addition": {
     "item": "cave:blazing_ingot"
   },
   "result": {
-    "item": "cave:blazing_axe"
+    "item": "cave:blazing_shovel"
   }
 }

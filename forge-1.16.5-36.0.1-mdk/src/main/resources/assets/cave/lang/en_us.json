@@ -92,7 +92,7 @@
   "gamerule.maxBonusDamage.description": "The maximum bonus damage that can be stored in the damage star",
   
   "entity.minecraft.villager.cave.lumberjack": "Lumberjack",
-  "entity.minecraft.villager.cave.mob_hunter": "Mod Hunter",
+  "entity.minecraft.villager.cave.mob_hunter": "Mob Hunter",
   "entity.minecraft.villager.cave.miner": "Miner",
   "entity.minecraft.villager.cave.enchanter": "Enchanter",
   "entity.minecraft.villager.cave.beekeeper": "Beekeeper",

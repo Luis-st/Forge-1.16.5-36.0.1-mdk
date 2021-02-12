@@ -38,7 +38,7 @@ public class OnLivingDamageEvent {
 				
 				if (enchEnderSlayer > 0) {
 					
-					newAmount = amount + (enchEnderSlayer * 2.5f) + enchEnderSlayer;
+					newAmount += (enchEnderSlayer * 2.5f) + enchEnderSlayer;
 					
 				}
 				
@@ -48,7 +48,7 @@ public class OnLivingDamageEvent {
 				
 				if (enchImpaling > 0) {
 					
-					newAmount = amount + (enchImpaling * 2.5f) + enchImpaling;
+					newAmount += (enchImpaling * 2.5f) + enchImpaling;
 					
 				}
 				
@@ -76,7 +76,13 @@ public class OnLivingDamageEvent {
 				
 			}
 			
-			if (!(target instanceof PlayerEntity)) {
+			if (target instanceof PlayerEntity) {
+				
+				boolean flag = (newAmount - amount) >= 10;
+				float playerAmount = flag ? amount + 10 : newAmount;
+				event.setAmount(playerAmount);
+				
+			} else {
 				
 				event.setAmount(newAmount);
 				

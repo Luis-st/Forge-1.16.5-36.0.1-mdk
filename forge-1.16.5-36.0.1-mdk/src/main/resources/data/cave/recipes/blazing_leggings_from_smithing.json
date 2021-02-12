@@ -1,12 +1,12 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "minecraft:golden_axe"
+    "item": "minecraft:golden_leggings"
   },
   "addition": {
     "item": "cave:blazing_ingot"
   },
   "result": {
-    "item": "cave:blazing_axe"
+    "item": "cave:blazing_leggings"
   }
 }
