@@ -2,6 +2,7 @@ package net.luis.cave.common.item.star;
 
 import net.luis.cave.Cave;
 import net.luis.cave.api.item.Star;
+import net.luis.cave.common.enums.StarType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -13,7 +14,7 @@ public class WaterStar extends Star {
 
 	public WaterStar() {
 		
-		super(new Item.Properties().group(Cave.MISC));
+		super(new Item.Properties().group(Cave.MISC), StarType.WATER);
 		
 	}
 	

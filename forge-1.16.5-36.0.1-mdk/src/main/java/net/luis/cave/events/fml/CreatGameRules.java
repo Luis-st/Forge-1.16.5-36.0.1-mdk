@@ -60,6 +60,7 @@ public class CreatGameRules {
 			DeferredWorkQueue.runLater(() -> addBooleanGameRule(ModGameRules.DO_ENDERPEARL_DAMAGE));
 			
 			DeferredWorkQueue.runLater(() -> addIntegerGameRule(ModGameRules.PROTECTION_TIME_MULTIPLIER));
+			DeferredWorkQueue.runLater(() -> addIntegerGameRule(ModGameRules.MAX_BONUS_DAMAGE));
 			
 		} catch (Exception e) {
 			

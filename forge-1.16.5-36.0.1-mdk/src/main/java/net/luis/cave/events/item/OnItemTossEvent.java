@@ -22,7 +22,7 @@ public class OnItemTossEvent {
 		
 		if (ItemManager.isEnderite(item)) {
 			
-			if (!world.getGameRules().getBoolean(ModGameRules.DISABLE_ITEM_GRAVITY.getRule())) {
+			if (world.getGameRules().getBoolean(ModGameRules.DISABLE_ITEM_GRAVITY.getRule())) {
 				
 				ItemManager.setNoGravityItem(itemEntity);
 				
@@ -30,7 +30,7 @@ public class OnItemTossEvent {
 			
 		} else if (ItemManager.isNight(item)) {
 			
-			if (!world.getGameRules().getBoolean(ModGameRules.DISABLE_ITEM_GRAVITY.getRule())) {
+			if (world.getGameRules().getBoolean(ModGameRules.DISABLE_ITEM_GRAVITY.getRule())) {
 				
 				ItemManager.setNoGravityItem(itemEntity);
 				

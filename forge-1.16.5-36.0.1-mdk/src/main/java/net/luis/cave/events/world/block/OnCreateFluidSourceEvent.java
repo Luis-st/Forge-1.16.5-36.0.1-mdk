@@ -21,6 +21,12 @@ public class OnCreateFluidSourceEvent {
 		
 		if (state.getBlock() == Blocks.LAVA) {
 			
+			if (world.getDimensionType().isUltrawarm()) {
+				
+				event.setResult(Result.ALLOW);
+				
+			}
+			
 			if (world.getGameRules().getBoolean(ModGameRules.ENABLE_LAVA_FLUID_SOURCE.getRule())) {
 				
 				event.setResult(Result.ALLOW);

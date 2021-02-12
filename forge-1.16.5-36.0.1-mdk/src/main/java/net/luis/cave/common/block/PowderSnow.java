@@ -198,6 +198,7 @@ public class PowderSnow extends BreakableBlock {
 			}
 			
 			world.setBlockState(pos, Blocks.AIR.getDefaultState());
+			ForgeEventFactory.onBucketUse(player, world, item, hit);
 			
 			return ActionResultType.SUCCESS;
 			

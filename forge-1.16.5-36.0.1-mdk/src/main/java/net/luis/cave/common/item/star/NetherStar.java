@@ -1,6 +1,7 @@
 package net.luis.cave.common.item.star;
 
 import net.luis.cave.api.item.Star;
+import net.luis.cave.common.enums.StarType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -13,7 +14,7 @@ public class NetherStar extends Star {
 
 	public NetherStar() {
 		
-		super(new Item.Properties().group(ItemGroup.MISC));
+		super(new Item.Properties().group(ItemGroup.MISC), StarType.NETHER);
 		
 	}
 	

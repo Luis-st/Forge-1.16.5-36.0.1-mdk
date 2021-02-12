@@ -16,6 +16,7 @@ import net.minecraft.item.EnchantedBookItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.world.World;
+import net.minecraftforge.event.AnvilUpdateEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -23,7 +24,7 @@ import net.minecraftforge.fml.common.Mod;
 public class OnAnvilUpdateEvent {
 
 	@SubscribeEvent
-	public static void AnvilUpdate(net.minecraftforge.event.AnvilUpdateEvent event) {
+	public static void AnvilUpdate(AnvilUpdateEvent event) {
 		
 		ItemStack inputLeft = event.getLeft();
 		ItemStack inputRight = event.getRight();
@@ -31,16 +32,16 @@ public class OnAnvilUpdateEvent {
 		
 		if (inputLeft != null && inputRight != null) {
 			
-			if (inputLeft.isEnchanted()) {
+			if (world.getGameRules().getBoolean(ModGameRules.ENABLE_ENCHANTMENT_TRANSFER.getRule())) {
 				
-				Map<Enchantment, Integer> enchantments = EnchantmentHelper.getEnchantments(inputLeft);
-				int mapSize = enchantments.size();
-				
-				if (inputRight.getItem() instanceof BookItem) {
+				if (inputLeft.isEnchanted()) {
 					
-					if (!inputRight.isEnchanted()) {
+					Map<Enchantment, Integer> enchantments = EnchantmentHelper.getEnchantments(inputLeft);
+					int mapSize = enchantments.size();
+					
+					if (inputRight.getItem() instanceof BookItem) {
 						
-						if (world.getGameRules().getBoolean(ModGameRules.ENABLE_ENCHANTMENT_TRANSFER.getRule())) {
+						if (!inputRight.isEnchanted()) {
 							
 							if (inputRight.getCount() == 1) {
 								
@@ -72,6 +73,10 @@ public class OnAnvilUpdateEvent {
 									
 								}
 									
+							} else {
+								
+								event.setCanceled(true);
+								
 							}
 							
 						}

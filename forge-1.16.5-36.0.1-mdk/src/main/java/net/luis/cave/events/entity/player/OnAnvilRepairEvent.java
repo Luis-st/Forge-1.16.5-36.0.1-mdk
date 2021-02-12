@@ -14,6 +14,7 @@ import net.minecraft.item.BookItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.event.entity.player.AnvilRepairEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.items.ItemHandlerHelper;
@@ -22,7 +23,7 @@ import net.minecraftforge.items.ItemHandlerHelper;
 public class OnAnvilRepairEvent {
 
 	@SubscribeEvent
-	public static void AnvilRepair(net.minecraftforge.event.entity.player.AnvilRepairEvent event) {
+	public static void AnvilRepair(AnvilRepairEvent event) {
 		
 		ItemStack inputLeft = event.getItemInput();
 		ItemStack inputBack = inputLeft.copy();

@@ -78,7 +78,7 @@
   "gamerule.disableGhastGriefing": "Disable ghast griefing",
   "gamerule.disableGhastGriefing.description": "Ghast no longer destroy blocks",
   "gamerule.enableLavaFluidSource": "Enable lava fluid source",
-  "gamerule.enableLavaFluidSource.description": "Lava can create sources",
+  "gamerule.enableLavaFluidSource.description": "Lava can create sources in all Dimensions",
   "gamerule.disableHunger": "Disable hunger",
   "gamerule.enableEnchantmentTransfer": "Enable enchantment transfer",
   "gamerule.enableEnchantmentTransfer.description": "Enchantments can be removed in the anvil (enchanted item + book -> enchanted book)",
@@ -88,7 +88,8 @@
   "gamerule.disableWaterStarDrop.description": "The elder guardian no longer drops an water star",
   "gamerule.doEnderpearlDamage": "Do enderpearl damage",
   "gamerule.doEnderpearlDamage.description": "Do the damage after a player throw an ender pearl",
-  "gamerule.protectionTimeMultiplier": "Protection time multiplier",
+  "gamerule.maxBonusDamage": "Max bonus damage",
+  "gamerule.maxBonusDamage.description": "The maximum bonus damage that can be stored in the damage star",
   
   "entity.minecraft.villager.cave.lumberjack": "Lumberjack",
   "entity.minecraft.villager.cave.mob_hunter": "Mod Hunter",
@@ -110,6 +111,7 @@
   "item.cave.spyglass": "Spyglass",
   "item.cave.fertilizer": "Fertilizer",
   "item.cave.water_star": "Water Star",
+  "item.cave.damage_star": "Damage Star",
   
   "item.cave.iron_shield": "Iron Shield",
   "item.cave.golden_shield": "Golden Shield",
