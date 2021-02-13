@@ -5,6 +5,7 @@ import java.util.List;
 import net.luis.cave.Cave;
 import net.luis.cave.api.item.Star;
 import net.luis.cave.common.enums.StarType;
+import net.luis.cave.init.util.ModGameRules;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -27,14 +28,11 @@ public class DamageStar extends Star {
 	@Override
 	public void starTick(ItemStack stack, World world, PlayerEntity player) {
 		
-		if (world.getGameTime() % 600 == 0) {
+		int bonusDamage = world.getGameRules().getInt(ModGameRules.MAX_BONUS_DAMAGE.getRule());
+		
+		if (stack.getOrCreateChildTag(this.getTagName()).getDouble(this.getTagName()) >= bonusDamage) {
 			
-			if (stack.getOrCreateChildTag(this.getTagName()).getDouble(this.getTagName()) > 0) {
-				
-				stack.getOrCreateChildTag(this.getTagName()).putDouble(this.getTagName(), 
-						stack.getOrCreateChildTag(this.getTagName()).getDouble(this.getTagName()) - 1);
-				
-			}
+			stack.getOrCreateChildTag(this.getTagName()).putDouble(this.getTagName(), 0);
 			
 		}
 		
