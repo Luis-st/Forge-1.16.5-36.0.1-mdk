@@ -90,7 +90,7 @@ public class ModEnchantment {
 			() -> new CurseOfBreaking(Rarity.VERY_RARE, EnchantmentType.BREAKABLE, EquipmentSlotType.values()));
 	
 	public static final RegistryObject<Enchantment> CURSE_OF_HARMING = ENCHANTMENT.register("curse_of_harming", 
-			() -> new CurseOfHarming(Rarity.VERY_RARE, EnchantmentType.WEARABLE, EquipmentSlotType.MAINHAND));
+			() -> new CurseOfHarming(Rarity.VERY_RARE, EnchantmentType.BREAKABLE, EquipmentSlotType.MAINHAND));
 	
 	public static final RegistryObject<Enchantment> HARVESTING = ENCHANTMENT.register("harvesting", 
 			() -> new Harvesting(Rarity.COMMON, EnchantmentType.DIGGER, EquipmentSlotType.MAINHAND));

@@ -61,4 +61,15 @@ public class ElytraFalling extends Enchantment {
 		return super.canApply(stack);
 	}
 	
+	@Override
+	public boolean canApplyAtEnchantingTable(ItemStack stack) {
+		if (stack.getItem() instanceof ElytraItem)
+			return true;
+		if (stack.getItem() == ModArmor.ENDREITE_ELYTRA.get())
+			return true;
+		if (stack.getItem() == ModArmor.NIGHT_ELYTRA.get())
+			return true;
+		return super.canApplyAtEnchantingTable(stack);
+	}
+	
 }

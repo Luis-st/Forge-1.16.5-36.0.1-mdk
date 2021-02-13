@@ -37,6 +37,15 @@ public class Power extends Enchantment {
 	}
 	
 	@Override
+	public boolean canApply(ItemStack stack) {
+		if (stack.getItem() instanceof Bow)
+			return true;
+		if (stack.getItem() instanceof Crossbow)
+			return true;
+		return false;
+	}
+	
+	@Override
 	public boolean canApplyAtEnchantingTable(ItemStack stack) {
 		if (stack.getItem() instanceof Bow)
 			return true;

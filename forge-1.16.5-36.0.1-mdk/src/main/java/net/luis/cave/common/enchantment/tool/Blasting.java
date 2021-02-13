@@ -54,4 +54,17 @@ public class Blasting extends Enchantment {
 		return super.canApply(stack);
 	}
 	
+	@Override
+	public boolean canApplyAtEnchantingTable(ItemStack stack) {
+		if (stack.getItem() == ModTools.BLAZING_AXE.get())
+			return false;
+		if (stack.getItem() == ModTools.BLAZING_PICKAXE.get())
+			return false;
+		if (stack.getItem() == ModTools.BLAZING_SHOVEL.get())
+			return false;
+		if (stack.getItem() == ModTools.BLAZING_SWORD.get())
+			return false;
+		return super.canApplyAtEnchantingTable(stack);
+	}
+	
 }

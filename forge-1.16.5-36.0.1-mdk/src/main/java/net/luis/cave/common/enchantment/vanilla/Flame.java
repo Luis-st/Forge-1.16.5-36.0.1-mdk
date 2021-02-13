@@ -55,4 +55,13 @@ public class Flame extends Enchantment {
 		
 	}
 	
+	@Override
+	public boolean canApplyAtEnchantingTable(ItemStack stack) {
+		if (stack.getItem() instanceof Bow)
+			return true;
+		if (stack.getItem() instanceof Crossbow)
+			return true;
+		return false;
+	}
+	
 }

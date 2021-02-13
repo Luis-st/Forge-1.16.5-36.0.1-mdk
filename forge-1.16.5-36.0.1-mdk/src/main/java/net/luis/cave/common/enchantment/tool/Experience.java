@@ -41,6 +41,11 @@ public class Experience extends Enchantment {
 	}
 	
 	@Override
+	protected boolean canApplyTogether(Enchantment ench) {
+		return !(ench == Enchantments.SILK_TOUCH);
+	}
+	
+	@Override
 	public boolean canApply(ItemStack stack) {
 		if (stack.getItem() instanceof PickaxeItem)
 			return true;
@@ -56,8 +61,18 @@ public class Experience extends Enchantment {
 	}
 	
 	@Override
-	protected boolean canApplyTogether(Enchantment ench) {
-		return !(ench == Enchantments.SILK_TOUCH);
+	public boolean canApplyAtEnchantingTable(ItemStack stack) {
+		if (stack.getItem() instanceof PickaxeItem)
+			return true;
+		if (stack.getItem() instanceof AxeItem)
+			return true;
+		if (stack.getItem() instanceof SwordItem)
+			return true;
+		if (stack.getItem() instanceof Bow)
+			return true;
+		if (stack.getItem() instanceof Crossbow)
+			return true;
+		return false;
 	}
-
+	
 }

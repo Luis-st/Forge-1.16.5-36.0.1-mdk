@@ -44,13 +44,18 @@ public class Replenish extends Enchantment {
 	}
 	
 	@Override
+	protected boolean canApplyTogether(Enchantment ench) {
+		return ench != ModEnchantment.BLASTING.get() || ench != ModEnchantment.SMELTING.get();
+	}
+	
+	@Override
 	public boolean canApply(ItemStack stack) {
 		return stack.getItem() instanceof HoeItem;
 	}
 	
 	@Override
-	protected boolean canApplyTogether(Enchantment ench) {
-		return ench != ModEnchantment.BLASTING.get() || ench != ModEnchantment.SMELTING.get();
+	public boolean canApplyAtEnchantingTable(ItemStack stack) {
+		return stack.getItem() instanceof HoeItem;
 	}
-
+	
 }

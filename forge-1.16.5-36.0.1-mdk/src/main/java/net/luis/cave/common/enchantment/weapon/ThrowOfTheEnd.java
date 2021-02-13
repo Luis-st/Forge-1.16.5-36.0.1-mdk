@@ -60,4 +60,9 @@ public class ThrowOfTheEnd extends Enchantment {
 		return stack.getItem() instanceof Bow;
 	}
 	
+	@Override
+	public boolean canApplyAtEnchantingTable(ItemStack stack) {
+		return stack.getItem() instanceof Bow;;
+	}
+	
 }

@@ -7,6 +7,7 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
+import net.minecraft.item.TridentItem;
 
 public class Impaling extends Enchantment {
 
@@ -50,8 +51,20 @@ public class Impaling extends Enchantment {
 			return true;
 		if (stack.getItem() instanceof AxeItem)
 			return true;
+		if (stack.getItem() instanceof TridentItem)
+			return true;
 		return super.canApply(stack);
-		
+	}
+	
+	@Override
+	public boolean canApplyAtEnchantingTable(ItemStack stack) {
+		if (stack.getItem() instanceof SwordItem)
+			return true;
+		if (stack.getItem() instanceof AxeItem)
+			return true;
+		if (stack.getItem() instanceof TridentItem)
+			return true;
+		return super.canApplyAtEnchantingTable(stack);
 	}
 
 }

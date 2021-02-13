@@ -47,4 +47,9 @@ public class Multishot extends Enchantment {
 		return stack.getItem() instanceof Crossbow;
 	}
 	
+	@Override
+	public boolean canApplyAtEnchantingTable(ItemStack stack) {
+		return stack.getItem() instanceof Crossbow;
+	}
+	
 }

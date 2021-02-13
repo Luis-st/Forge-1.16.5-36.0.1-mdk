@@ -66,6 +66,25 @@ public class Telekinesis extends Enchantment {
 			return false;
 		return stack.isDamageable() ? true : super.canApply(stack);
 	}
+	
+	@Override
+	public boolean canApplyAtEnchantingTable(ItemStack stack) {
+		if (stack.getItem() instanceof ArmorItem)
+			return false;
+		if (stack.getItem() instanceof ShieldItem)
+			return false;
+		if (stack.getItem() instanceof ElytraItem)
+			return false;
+		if (stack.getItem() instanceof OnAStickItem)
+			return false;
+		if (stack.getItem() instanceof FishingRodItem)
+			return false;
+		if (stack.getItem() instanceof ShearsItem)
+			return false;
+		if (stack.getItem() instanceof FlintAndSteelItem)
+			return false;
+		return stack.isDamageable() ? true : super.canApplyAtEnchantingTable(stack);
+	}
 
 }
 

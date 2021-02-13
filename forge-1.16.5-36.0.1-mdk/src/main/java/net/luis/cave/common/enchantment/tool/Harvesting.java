@@ -38,11 +38,6 @@ public class Harvesting extends Enchantment {
 	}
 	
 	@Override
-	public boolean canApply(ItemStack stack) {
-		return stack.getItem() instanceof AxeItem;
-	}
-	
-	@Override
 	protected boolean canApplyTogether(Enchantment ench) {
 		if (ench == Enchantments.SILK_TOUCH)
 			return false;
@@ -51,6 +46,16 @@ public class Harvesting extends Enchantment {
 		if (ench == ModEnchantment.SMELTING.get())
 			return false;
 		return true;
+	}
+	
+	@Override
+	public boolean canApply(ItemStack stack) {
+		return stack.getItem() instanceof AxeItem;
+	}
+	
+	@Override
+	public boolean canApplyAtEnchantingTable(ItemStack stack) {
+		return stack.getItem() instanceof AxeItem;
 	}
 
 }

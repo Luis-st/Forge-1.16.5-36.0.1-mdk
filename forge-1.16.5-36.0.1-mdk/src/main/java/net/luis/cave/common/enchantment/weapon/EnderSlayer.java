@@ -46,4 +46,9 @@ public class EnderSlayer extends Enchantment {
 		return stack.getItem() instanceof AxeItem ? true : super.canApply(stack);
 	}
 	
+	@Override
+	public boolean canApplyAtEnchantingTable(ItemStack stack) {
+		return stack.getItem() instanceof AxeItem ? true : super.canApplyAtEnchantingTable(stack);
+	}
+	
 }

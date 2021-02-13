@@ -36,6 +36,11 @@ public class QuickCharge extends Enchantment {
 	}
 	
 	@Override
+	public boolean canApply(ItemStack stack) {
+		return stack.getItem() instanceof Crossbow;
+	}
+	
+	@Override
 	public boolean canApplyAtEnchantingTable(ItemStack stack) {
 		return stack.getItem() instanceof Crossbow;
 	}

@@ -36,7 +36,6 @@ public class LavaWalker extends Enchantment {
 	
 	@Override
 	protected boolean canApplyTogether(Enchantment ench) {
-		
 		return ench != Enchantments.FROST_WALKER && ench != Enchantments.DEPTH_STRIDER;
 	}
 	

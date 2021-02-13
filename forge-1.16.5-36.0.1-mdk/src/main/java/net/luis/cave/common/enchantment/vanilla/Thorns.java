@@ -45,9 +45,33 @@ public class Thorns extends Enchantment {
 		int thorns = getThornsLevel(user);
 		if (thorns > 0) {
 			if (attacker != null) {
-				attacker.attackEntityFrom(DamageSource.causeThornsDamage(user), (thorns / 3) + rng.nextInt(thorns / 2));
+				attacker.attackEntityFrom(DamageSource.causeThornsDamage(user), calcThorns(thorns, rng));
 			}
 		}	
+	}
+	
+	private int calcThorns(int thorns, Random rng) {
+		
+		int rngInt = rng.nextInt(thorns);
+		int ret = 1;
+		
+		if ((thorns / 3) + rngInt > 0) {
+			
+			ret = (thorns / 3) + rngInt;
+			
+		} else if ((thorns / 2) + rngInt > 0) {
+			
+			ret = (thorns / 2) + rngInt;
+			
+		} else if (thorns  + rngInt > 0) {
+			
+			ret = thorns + rngInt;
+			
+		}
+		
+		
+		return ret;
+		
 	}
 
 	private int getThornsLevel(LivingEntity user) {
