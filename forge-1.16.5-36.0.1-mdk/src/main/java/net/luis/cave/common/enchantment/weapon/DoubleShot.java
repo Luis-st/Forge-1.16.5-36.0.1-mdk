@@ -55,7 +55,7 @@ public class DoubleShot extends Enchantment {
 	
 	@Override
 	public boolean canApplyAtEnchantingTable(ItemStack stack) {
-		return stack.getItem() instanceof Bow;;
+		return stack.getItem() instanceof Bow;
 	}
 	
 }

@@ -23,6 +23,8 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = Cave.Mod_Id, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class OreGeneration {
 	
+	// TODO: add copper gen
+	
 	private static final ArrayList<ConfiguredFeature<?, ?>> overworldOres = new ArrayList<ConfiguredFeature<?, ?>>();
 	private static final ArrayList<ConfiguredFeature<?, ?>> netherOres = new ArrayList<ConfiguredFeature<?, ?>>();
 	private static final ArrayList<ConfiguredFeature<?, ?>> endOres = new ArrayList<ConfiguredFeature<?, ?>>();
@@ -52,6 +54,11 @@ public class OreGeneration {
 		overworldOres.add(register("amethyst_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
 				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.AMETHYST_ORE.get().getDefaultState(), 7)) //vein Size
 				.range(32).square() //maximum height
+				.func_242731_b(10))); //count per chunk
+		
+		overworldOres.add(register("copper_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
+				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.COPPER_ORE.get().getDefaultState(), 8)) //vein Size
+				.range(64).square() //maximum height
 				.func_242731_b(10))); //count per chunk
 		
 		overworldOres.add(register("calcite", Feature.ORE.withConfiguration(new OreFeatureConfig(

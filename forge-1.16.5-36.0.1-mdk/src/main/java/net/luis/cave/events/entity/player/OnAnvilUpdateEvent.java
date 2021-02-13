@@ -64,7 +64,7 @@ public class OnAnvilUpdateEvent {
 									
 									EnchantedBookItem.addEnchantment(output, new EnchantmentData(randomEnchantment, randomEnchantmentLevel));
 									
-									event.setCost(1 + (mapSize / 2));
+									event.setCost(1 + (mapSize / 4));
 									event.setOutput(output);
 									
 								} else {

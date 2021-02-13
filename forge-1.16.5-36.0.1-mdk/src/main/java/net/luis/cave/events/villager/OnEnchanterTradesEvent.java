@@ -1,4 +1,4 @@
-package net.luis.cave.events.village;
+package net.luis.cave.events.villager;
 
 import java.util.ArrayList;
 import java.util.List;
