@@ -6,7 +6,7 @@ import java.util.Map;
 
 import net.luis.cave.Cave;
 import net.luis.cave.init.blocks.ModBlocks;
-import net.luis.cave.init.util.ModGameRules;
+import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
@@ -43,7 +43,7 @@ public class OnAnvilRepairEvent {
 			
 		}
 		
-		if (world.getGameRules().getBoolean(ModGameRules.ENABLE_ENCHANTMENT_TRANSFER.getRule())) {
+		if (world.getGameRules().getBoolean(ModGameRule.ENABLE_ENCHANTMENT_TRANSFER.getRule())) {
 			
 			if (inputLeft.isEnchanted()) {
 				

@@ -2,7 +2,7 @@ package net.luis.cave.events.entity.living;
 
 import net.luis.cave.Cave;
 import net.luis.cave.api.lib.EntityManager;
-import net.luis.cave.init.util.ModGameRules;
+import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.EndermanEntity;
 import net.minecraft.entity.monster.ShulkerEntity;
@@ -23,7 +23,7 @@ public class OnEnderTeleportEvent {
 		
 		if (entity instanceof PlayerEntity) {
 			
-			if (!world.getGameRules().getBoolean(ModGameRules.DO_ENDERPEARL_DAMAGE.getRule())) {
+			if (!world.getGameRules().getBoolean(ModGameRule.DO_ENDERPEARL_DAMAGE.getRule())) {
 				
 				event.setAttackDamage(0.0f);
 				
@@ -33,13 +33,13 @@ public class OnEnderTeleportEvent {
 		
 		if (entity instanceof EndermanEntity) {
 			
-			if (world.getGameRules().getBoolean(ModGameRules.DISABLE_ENDERMAN_TELEPORT.getRule())) {
+			if (world.getGameRules().getBoolean(ModGameRule.DISABLE_ENDERMAN_TELEPORT.getRule())) {
 				
 				event.setCanceled(true);
 				
 			}
 
-			if (world.getGameRules().getBoolean(ModGameRules.DISABLE_ENDERMAN_ATTACK_TELEPORT.getRule())) {
+			if (world.getGameRules().getBoolean(ModGameRule.DISABLE_ENDERMAN_ATTACK_TELEPORT.getRule())) {
 				
 				event.setCanceled(EntityManager.hasMaxHealth(entity));
 				
@@ -49,13 +49,13 @@ public class OnEnderTeleportEvent {
 		
 		if (entity instanceof ShulkerEntity) {
 			
-			if (world.getGameRules().getBoolean(ModGameRules.DISABLE_SHULKER_TELEPORT.getRule())) {
+			if (world.getGameRules().getBoolean(ModGameRule.DISABLE_SHULKER_TELEPORT.getRule())) {
 				
 				event.setCanceled(true);
 				
 			}
 
-			if (world.getGameRules().getBoolean(ModGameRules.DISABLE_SHULKER_ATTACK_TELEPORT.getRule())) {
+			if (world.getGameRules().getBoolean(ModGameRule.DISABLE_SHULKER_ATTACK_TELEPORT.getRule())) {
 				
 				event.setCanceled(EntityManager.hasMaxHealth(entity));
 				

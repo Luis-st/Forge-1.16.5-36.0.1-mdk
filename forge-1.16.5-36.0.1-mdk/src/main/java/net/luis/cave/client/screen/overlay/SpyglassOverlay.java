@@ -1,4 +1,4 @@
-package net.luis.cave.client.screen;
+package net.luis.cave.client.screen.overlay;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 

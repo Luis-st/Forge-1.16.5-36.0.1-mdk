@@ -1,6 +1,6 @@
 package net.luis.cave.common.block;
 
-import net.luis.cave.common.container.CaveRepairContainer;
+import net.luis.cave.common.container.ModRepairContainer;
 import net.luis.cave.init.blocks.ModBlockItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -70,7 +70,7 @@ public class InfiniteAnvil extends FallingBlock {
 		
 		return new SimpleNamedContainerProvider((id, inventory, player) -> {
 			
-			return new CaveRepairContainer(id, inventory, IWorldPosCallable.of(world, pos));
+			return new ModRepairContainer(id, inventory, IWorldPosCallable.of(world, pos));
 			
 		}, containerName);
 		

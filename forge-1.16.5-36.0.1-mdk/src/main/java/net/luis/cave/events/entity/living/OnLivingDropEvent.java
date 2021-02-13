@@ -5,7 +5,7 @@ import java.util.List;
 import net.luis.cave.Cave;
 import net.luis.cave.api.lib.ItemManager;
 import net.luis.cave.init.ModEnchantment;
-import net.luis.cave.init.util.ModGameRules;
+import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -48,7 +48,7 @@ public class OnLivingDropEvent {
 					
 				} else {
 					
-					if (!world.getGameRules().getBoolean(ModGameRules.DISABLE_ITEM_GRAVITY.getRule())) {
+					if (!world.getGameRules().getBoolean(ModGameRule.DISABLE_ITEM_GRAVITY.getRule())) {
 						
 						ItemManager.setNoGravityItem(drops);
 						
@@ -58,7 +58,7 @@ public class OnLivingDropEvent {
 				
 			} else {
 				
-				if (!world.getGameRules().getBoolean(ModGameRules.DISABLE_ITEM_GRAVITY.getRule())) {
+				if (!world.getGameRules().getBoolean(ModGameRule.DISABLE_ITEM_GRAVITY.getRule())) {
 					
 					ItemManager.setNoGravityItem(drops);
 					
@@ -68,7 +68,7 @@ public class OnLivingDropEvent {
 			
 		} else {
 			
-			if (!world.getGameRules().getBoolean(ModGameRules.DISABLE_ITEM_GRAVITY.getRule())) {
+			if (!world.getGameRules().getBoolean(ModGameRule.DISABLE_ITEM_GRAVITY.getRule())) {
 				
 				ItemManager.setNoGravityItem(drops);
 				

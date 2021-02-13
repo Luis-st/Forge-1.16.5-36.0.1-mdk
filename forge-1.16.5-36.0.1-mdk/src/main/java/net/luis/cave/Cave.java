@@ -15,7 +15,7 @@ import net.luis.cave.init.items.ModArmor;
 import net.luis.cave.init.items.ModItems;
 import net.luis.cave.init.items.ModTools;
 import net.luis.cave.init.items.VanillaItems;
-import net.luis.cave.init.util.ModContainer;
+import net.luis.cave.init.util.ModContainerType;
 import net.luis.cave.init.util.ModRecipeSerializer;
 import net.luis.cave.init.util.ModTileEntityType;
 import net.luis.cave.init.villager.ModPointOfInterestTypes;
@@ -75,7 +75,7 @@ public class Cave {
 		LOGGER.info("Enchantments were successfully initialized");
 		
 		ModTileEntityType.TILE_ENTITIES.register(modEventBus);
-		ModContainer.CONTAINERS.register(modEventBus);
+		ModContainerType.CONTAINERS.register(modEventBus);
 		ModRecipeSerializer.RECIPE_SERIALIZERS.register(modEventBus);
 		LOGGER.info("Util were successfully initialized");
 		

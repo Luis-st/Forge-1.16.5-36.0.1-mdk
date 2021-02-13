@@ -6,7 +6,7 @@ import net.luis.cave.api.lib.PlayerManager;
 import net.luis.cave.common.item.star.DamageStar;
 import net.luis.cave.init.ModEnchantment;
 import net.luis.cave.init.items.ModItems;
-import net.luis.cave.init.util.ModGameRules;
+import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -61,7 +61,7 @@ public class OnLivingDamageEvent {
 				if (stack.getItem() instanceof DamageStar) {
 					
 					DamageStar star = (DamageStar) stack.getItem();
-					int max = world.getGameRules().getInt(ModGameRules.MAX_BONUS_DAMAGE.getRule());
+					int max = world.getGameRules().getInt(ModGameRule.MAX_BONUS_DAMAGE.getRule());
 					final String tag = star.getTagName();
 					
 					newAmount += stack.getOrCreateChildTag(tag).getDouble(tag);

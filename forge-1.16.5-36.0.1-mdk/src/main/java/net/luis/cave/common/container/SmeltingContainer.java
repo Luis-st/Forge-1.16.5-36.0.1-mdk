@@ -1,6 +1,6 @@
 package net.luis.cave.common.container;
 
-import net.luis.cave.init.util.ModContainer;
+import net.luis.cave.init.util.ModContainerType;
 import net.luis.cave.init.util.ModRecipeType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -14,13 +14,13 @@ public class SmeltingContainer extends AbstractFurnaceContainer {
 	
 	public SmeltingContainer(int id, PlayerInventory playerInventory, IInventory inventory, IIntArray array) {
 		
-		super(ModContainer.SMELTING_CONTAINER.get(), ModRecipeType.SMELTING_RECIPE, RecipeBookCategory.FURNACE, id, playerInventory, inventory, array);
+		super(ModContainerType.SMELTING_CONTAINER.get(), ModRecipeType.SMELTING_RECIPE, RecipeBookCategory.FURNACE, id, playerInventory, inventory, array);
 		
 	}
 	
 	public SmeltingContainer(int id, PlayerInventory playerInventory, PacketBuffer extraData) {
 		
-		super(ModContainer.SMELTING_CONTAINER.get(), ModRecipeType.SMELTING_RECIPE, RecipeBookCategory.FURNACE, id, playerInventory);
+		super(ModContainerType.SMELTING_CONTAINER.get(), ModRecipeType.SMELTING_RECIPE, RecipeBookCategory.FURNACE, id, playerInventory);
 		
 	}
 	

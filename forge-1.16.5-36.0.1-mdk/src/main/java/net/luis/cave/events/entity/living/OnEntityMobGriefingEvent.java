@@ -1,7 +1,7 @@
 package net.luis.cave.events.entity.living;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.util.ModGameRules;
+import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.monster.CreeperEntity;
 import net.minecraft.entity.monster.EndermanEntity;
@@ -25,7 +25,7 @@ public class OnEntityMobGriefingEvent {
 			
 			if (entity instanceof EndermanEntity) {
 				
-				if (world.getGameRules().getBoolean(ModGameRules.DISABLE_ENDERMAN_GRIEFING.getRule())) {
+				if (world.getGameRules().getBoolean(ModGameRule.DISABLE_ENDERMAN_GRIEFING.getRule())) {
 					
 					event.setResult(Result.DENY);
 					
@@ -35,7 +35,7 @@ public class OnEntityMobGriefingEvent {
 			
 			if (entity instanceof CreeperEntity) {
 				
-				if (world.getGameRules().getBoolean(ModGameRules.DISABLE_CREEPER_GRIEFING.getRule())) {
+				if (world.getGameRules().getBoolean(ModGameRule.DISABLE_CREEPER_GRIEFING.getRule())) {
 					
 					event.setResult(Result.DENY);
 					
@@ -45,7 +45,7 @@ public class OnEntityMobGriefingEvent {
 			
 			if (entity instanceof GhastEntity) {
 				
-				if (world.getGameRules().getBoolean(ModGameRules.DISABLE_GHAST_GRIEFING.getRule())) {
+				if (world.getGameRules().getBoolean(ModGameRule.DISABLE_GHAST_GRIEFING.getRule())) {
 					
 					event.setResult(Result.DENY);
 					

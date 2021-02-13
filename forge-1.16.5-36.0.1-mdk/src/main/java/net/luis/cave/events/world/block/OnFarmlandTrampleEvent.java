@@ -1,7 +1,7 @@
 package net.luis.cave.events.world.block;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.util.ModGameRules;
+import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.world.World;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -15,7 +15,7 @@ public class OnFarmlandTrampleEvent {
 		
 		World world = (World) event.getWorld();
 		
-		if (world.getGameRules().getBoolean(ModGameRules.DISABLE_FARMLAND_TRAMPLE.getRule())) {
+		if (world.getGameRules().getBoolean(ModGameRule.DISABLE_FARMLAND_TRAMPLE.getRule())) {
 			
 			event.setCanceled(true);
 			

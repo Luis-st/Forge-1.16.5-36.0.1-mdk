@@ -7,7 +7,7 @@ import java.util.Random;
 
 import net.luis.cave.Cave;
 import net.luis.cave.api.lib.EnchantmentManager;
-import net.luis.cave.init.util.ModGameRules;
+import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentData;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -32,7 +32,7 @@ public class OnAnvilUpdateEvent {
 		
 		if (inputLeft != null && inputRight != null) {
 			
-			if (world.getGameRules().getBoolean(ModGameRules.ENABLE_ENCHANTMENT_TRANSFER.getRule())) {
+			if (world.getGameRules().getBoolean(ModGameRule.ENABLE_ENCHANTMENT_TRANSFER.getRule())) {
 				
 				if (inputLeft.isEnchanted()) {
 					

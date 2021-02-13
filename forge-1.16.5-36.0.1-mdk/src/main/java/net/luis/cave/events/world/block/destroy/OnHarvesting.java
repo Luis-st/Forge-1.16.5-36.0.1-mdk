@@ -3,7 +3,7 @@ package net.luis.cave.events.world.block.destroy;
 import net.luis.cave.Cave;
 import net.luis.cave.api.lib.BlockManager;
 import net.luis.cave.init.ModEnchantment;
-import net.luis.cave.init.util.ModGameRules;
+import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
@@ -34,7 +34,7 @@ public class OnHarvesting {
 		
 		if (player instanceof PlayerEntity) {
 			
-			if (world.getGameRules().getBoolean(ModGameRules.ENABLE_INFINITE_HARVESTING.getRule())) {
+			if (world.getGameRules().getBoolean(ModGameRule.ENABLE_INFINITE_HARVESTING.getRule())) {
 				
 				if (enchHarvesting >= 5) {
 					

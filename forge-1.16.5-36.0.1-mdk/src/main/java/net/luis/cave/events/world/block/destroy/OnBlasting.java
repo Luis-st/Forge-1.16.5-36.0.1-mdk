@@ -2,7 +2,7 @@ package net.luis.cave.events.world.block.destroy;
 
 import net.luis.cave.Cave;
 import net.luis.cave.init.ModEnchantment;
-import net.luis.cave.init.util.ModGameRules;
+import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.DamageSource;
@@ -32,7 +32,7 @@ public class OnBlasting {
 				
 				world.createExplosion(player, x, y, z, 2.0f * (enchBlasting + 1), enchTelekinesis == 0 ? Explosion.Mode.BREAK : Explosion.Mode.NONE);
 				
-				if (world.getGameRules().getBoolean(ModGameRules.ENABLE_BLASTING_DAMAGE.getRule())) {
+				if (world.getGameRules().getBoolean(ModGameRule.ENABLE_BLASTING_DAMAGE.getRule())) {
 					
 					player.attackEntityFrom(DamageSource.causeExplosionDamage(player), enchBlasting + 2);
 				

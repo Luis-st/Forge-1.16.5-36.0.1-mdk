@@ -2,7 +2,7 @@ package net.luis.cave.events.entity.player;
 
 import net.luis.cave.Cave;
 import net.luis.cave.api.lib.WorldManager;
-import net.luis.cave.init.util.ModGameRules;
+import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -27,7 +27,7 @@ public class OnServerChatEvent {
 		ServerPlayerEntity player = event.getPlayer();
 		World world = player.getEntityWorld();
 		
-		if (world.getGameRules().getBoolean(ModGameRules.ENABLE_SLIMECHUNK_INFO.getRule())) {
+		if (world.getGameRules().getBoolean(ModGameRule.ENABLE_SLIMECHUNK_INFO.getRule())) {
 			
 			if (msg.equalsIgnoreCase("?slime")) {
 				
@@ -47,7 +47,7 @@ public class OnServerChatEvent {
 			
 		}
 		
-		if (world.getGameRules().getBoolean(ModGameRules.ENABLE_SEED_INFO.getRule())) {
+		if (world.getGameRules().getBoolean(ModGameRule.ENABLE_SEED_INFO.getRule())) {
 			
 			if (msg.equalsIgnoreCase("?seed")) {
 				

@@ -1,7 +1,7 @@
 package net.luis.cave.events.world.block;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.util.ModGameRules;
+import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.world.World;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.Event.Result;
@@ -16,7 +16,7 @@ public class OnCropGrowEvent {
 		
 		World world = (World) event.getWorld();
 		
-		if (!world.getGameRules().getBoolean(ModGameRules.DO_CROP_GROW.getRule())) {
+		if (!world.getGameRules().getBoolean(ModGameRule.DO_CROP_GROW.getRule())) {
 			
 			event.setResult(Result.DENY);
 			

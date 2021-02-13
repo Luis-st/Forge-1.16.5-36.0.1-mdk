@@ -1,8 +1,11 @@
 package net.luis.cave.events.fml;
 
 import net.luis.cave.Cave;
-import net.luis.cave.client.screen.SmeltingScreen;
-import net.luis.cave.init.util.ModContainer;
+import net.luis.cave.client.screen.container.ModChestScreen9x7;
+import net.luis.cave.client.screen.container.ModChestScreen9x8;
+import net.luis.cave.client.screen.container.ModChestScreen9x9;
+import net.luis.cave.client.screen.container.SmeltingScreen;
+import net.luis.cave.init.util.ModContainerType;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -14,7 +17,10 @@ public class CreatContainerScreen {
 	@SubscribeEvent
 	public static void doCommonSetup(FMLCommonSetupEvent event) {
 		
-		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainer.SMELTING_CONTAINER.get(), SmeltingScreen::new));
+		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.SMELTING_CONTAINER.get(), SmeltingScreen::new));
+		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.GENERIC_9X7.get(), ModChestScreen9x7::new));
+		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.GENERIC_9X8.get(), ModChestScreen9x8::new));
+		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.GENERIC_9X9.get(), ModChestScreen9x9::new));
 		
 	}
 	

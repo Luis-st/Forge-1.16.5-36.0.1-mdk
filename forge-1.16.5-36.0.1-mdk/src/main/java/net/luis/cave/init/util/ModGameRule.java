@@ -3,7 +3,7 @@ package net.luis.cave.init.util;
 import net.luis.cave.api.lib.GameRule;
 import net.minecraft.world.GameRules;
 
-public class ModGameRules {
+public class ModGameRule {
 
 	public static GameRule.BooleanGameRule DISABLE_ENDERMAN_TELEPORT = new GameRule.BooleanGameRule("disableEndermanTeleport", GameRules.Category.MOBS, false);
 	public static GameRule.BooleanGameRule DISABLE_ENDERMAN_ATTACK_TELEPORT = new GameRule.BooleanGameRule("disableEndermanAttackTeleport", GameRules.Category.MOBS, true);

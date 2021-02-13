@@ -1,7 +1,7 @@
 package net.luis.cave.events.entity.player.tick;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.util.ModGameRules;
+import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.FoodStats;
 import net.minecraft.world.World;
@@ -20,7 +20,7 @@ public class OnOther {
 		
 		if (event.side.isServer() && event.phase == TickEvent.Phase.START) {
 			
-			if (world.getGameRules().getBoolean(ModGameRules.DISABLE_HUNGER.getRule())) {
+			if (world.getGameRules().getBoolean(ModGameRule.DISABLE_HUNGER.getRule())) {
 				
 				FoodStats foodStats = player.getFoodStats();
 				foodStats.setFoodLevel(Math.min(foodStats.getFoodLevel() + 1, 20));

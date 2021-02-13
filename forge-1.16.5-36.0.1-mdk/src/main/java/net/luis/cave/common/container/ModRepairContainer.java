@@ -6,9 +6,9 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.RepairContainer;
 import net.minecraft.util.IWorldPosCallable;
 
-public class CaveRepairContainer extends RepairContainer {
+public class ModRepairContainer extends RepairContainer {
 	
-	public CaveRepairContainer(int id, PlayerInventory playerInventory, IWorldPosCallable worldPosCallable) {
+	public ModRepairContainer(int id, PlayerInventory playerInventory, IWorldPosCallable worldPosCallable) {
 		
 		super(id, playerInventory, worldPosCallable);
 		

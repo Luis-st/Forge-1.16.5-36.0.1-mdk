@@ -8,7 +8,7 @@ import java.util.UUID;
 
 import net.luis.cave.Cave;
 import net.luis.cave.init.items.ModItems;
-import net.luis.cave.init.util.ModGameRules;
+import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.merchant.villager.VillagerEntity;
 import net.minecraft.entity.monster.ZombieVillagerEntity;
@@ -49,7 +49,7 @@ public class OnEntityInteractSpecificEvent {
 			
 			if (world.getDayTime() >= 2000 && world.getDayTime() <= 11000) {
 				
-				if (world.getGameRules().getBoolean(ModGameRules.DO_WORKTIME_TRADE_RESETING.getRule())) {
+				if (world.getGameRules().getBoolean(ModGameRule.DO_WORKTIME_TRADE_RESETING.getRule())) {
 					
 					for (MerchantOffer merchantOffer : offers) {
 						
@@ -63,7 +63,7 @@ public class OnEntityInteractSpecificEvent {
 			
 			if (item == ModItems.RUBY_APPLE.get() || item == Items.ENCHANTED_GOLDEN_APPLE) {
 				
-				if (world.getGameRules().getBoolean(ModGameRules.ENABLE_TRADE_REDUCTION.getRule())) {
+				if (world.getGameRules().getBoolean(ModGameRule.ENABLE_TRADE_REDUCTION.getRule())) {
 					
 					if (!player.abilities.isCreativeMode) {
 						
@@ -80,7 +80,7 @@ public class OnEntityInteractSpecificEvent {
 			
 		} else if (target instanceof ZombieVillagerEntity) {
 			
-			if (world.getGameRules().getBoolean(ModGameRules.ENABLE_ZOMBIEVILLAGER_FAST_CONVERT.getRule())) {
+			if (world.getGameRules().getBoolean(ModGameRule.ENABLE_ZOMBIEVILLAGER_FAST_CONVERT.getRule())) {
 				
 				ZombieVillagerEntity zombieVillager = (ZombieVillagerEntity) target;
 				

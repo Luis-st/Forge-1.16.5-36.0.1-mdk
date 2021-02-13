@@ -3,7 +3,7 @@ package net.luis.cave.events.entity;
 import com.mojang.authlib.GameProfile;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.util.ModGameRules;
+import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.management.BanList;
@@ -25,7 +25,7 @@ public class OnEntityLeaveWorld {
 		
 		if (!world.isRemote) {
 			
-			if (world.getGameRules().getBoolean(ModGameRules.DISABLE_BAN.getRule())) {
+			if (world.getGameRules().getBoolean(ModGameRule.DISABLE_BAN.getRule())) {
 				
 				PlayerList playerList = world.getServer().getPlayerList();
 				BanList banList = playerList.getBannedPlayers(); 

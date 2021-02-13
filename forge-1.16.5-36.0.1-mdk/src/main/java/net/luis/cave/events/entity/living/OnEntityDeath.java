@@ -2,7 +2,7 @@ package net.luis.cave.events.entity.living;
 
 import net.luis.cave.Cave;
 import net.luis.cave.init.items.ModItems;
-import net.luis.cave.init.util.ModGameRules;
+import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;
 import net.minecraft.entity.item.ItemEntity;
@@ -24,7 +24,7 @@ public class OnEntityDeath {
 		
 		if (entity instanceof EnderDragonEntity) {
 			
-			if (!world.getGameRules().getBoolean(ModGameRules.DISABLE_END_STAR_DROP.getRule())) {
+			if (!world.getGameRules().getBoolean(ModGameRule.DISABLE_END_STAR_DROP.getRule())) {
 				
 				ItemEntity  item = new ItemEntity(world, entity.getPosX(), entity.getPosY(), entity.getPosZ(), new ItemStack(ModItems.END_STAR.get()));
 				item.setPickupDelay(10);
@@ -36,7 +36,7 @@ public class OnEntityDeath {
 		
 		if (entity instanceof ElderGuardianEntity) {
 			
-			if (!world.getGameRules().getBoolean(ModGameRules.DISABLE_WATER_STAR_DROP.getRule())) {
+			if (!world.getGameRules().getBoolean(ModGameRule.DISABLE_WATER_STAR_DROP.getRule())) {
 				
 				ItemEntity  item = new ItemEntity(world, entity.getPosX(), entity.getPosY(), entity.getPosZ(), new ItemStack(ModItems.WATER_STAR.get()));
 				item.setPickupDelay(10);

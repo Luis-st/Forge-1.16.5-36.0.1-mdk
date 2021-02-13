@@ -1,7 +1,7 @@
 package net.luis.cave.events.entity.living;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.util.ModGameRules;
+import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.passive.BatEntity;
@@ -22,7 +22,7 @@ public class OnLivingSpawnEvent {
 		
 		if (entity instanceof BatEntity) {
 			
-			if (!world.getGameRules().getBoolean(ModGameRules.DO_BAT_SPAWNING.getRule())) {
+			if (!world.getGameRules().getBoolean(ModGameRule.DO_BAT_SPAWNING.getRule())) {
 				
 				event.setResult(Result.DENY);
 				
@@ -40,7 +40,7 @@ public class OnLivingSpawnEvent {
 		
 		if (entity instanceof MonsterEntity) {
 			
-			if (!world.getGameRules().getBoolean(ModGameRules.DO_MONSTER_SPAWNING.getRule())) {
+			if (!world.getGameRules().getBoolean(ModGameRule.DO_MONSTER_SPAWNING.getRule())) {
 				
 				event.setResult(Result.DENY);
 				

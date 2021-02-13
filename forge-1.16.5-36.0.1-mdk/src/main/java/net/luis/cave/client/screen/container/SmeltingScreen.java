@@ -1,4 +1,4 @@
-package net.luis.cave.client.screen;
+package net.luis.cave.client.screen.container;
 
 import net.luis.cave.common.container.SmeltingContainer;
 import net.minecraft.client.gui.recipebook.FurnaceRecipeGui;
