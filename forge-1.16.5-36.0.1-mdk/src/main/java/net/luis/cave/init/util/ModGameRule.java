@@ -37,6 +37,5 @@ public class ModGameRule {
 	public static GameRule.BooleanGameRule DO_ENDERPEARL_DAMAGE = new GameRule.BooleanGameRule("doEnderpearlDamage", GameRules.Category.PLAYER, true);
 	
 	public static GameRule.IntegerGameRule PROTECTION_TIME_MULTIPLIER = new GameRule.IntegerGameRule("protectionTimeMultiplier", GameRules.Category.PLAYER, 10);
-	public static GameRule.IntegerGameRule MAX_BONUS_DAMAGE = new GameRule.IntegerGameRule("maxBonusDamage", GameRules.Category.PLAYER, 25);
 	
 }

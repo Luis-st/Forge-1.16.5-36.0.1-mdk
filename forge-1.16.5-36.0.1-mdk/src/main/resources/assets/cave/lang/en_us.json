@@ -88,8 +88,6 @@
   "gamerule.disableWaterStarDrop.description": "The elder guardian no longer drops an water star",
   "gamerule.doEnderpearlDamage": "Do enderpearl damage",
   "gamerule.doEnderpearlDamage.description": "Do the damage after a player throw an ender pearl",
-  "gamerule.maxBonusDamage": "Max bonus damage",
-  "gamerule.maxBonusDamage.description": "The maximum bonus damage that can be stored in the damage star",
   
   "entity.minecraft.villager.cave.lumberjack": "Lumberjack",
   "entity.minecraft.villager.cave.mob_hunter": "Mob Hunter",

@@ -6,12 +6,10 @@ import net.luis.cave.api.manager.PlayerManager;
 import net.luis.cave.common.item.star.DamageStar;
 import net.luis.cave.init.ModEnchantment;
 import net.luis.cave.init.items.ModItems;
-import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -24,7 +22,6 @@ public class OnLivingDamageEvent {
 		
 		Entity target = event.getEntity();
 		Entity entity = event.getSource().getTrueSource();
-		World world = target.getEntityWorld();
 		float amount = event.getAmount();
 		float newAmount = amount;
 		
@@ -61,12 +58,18 @@ public class OnLivingDamageEvent {
 				if (stack.getItem() instanceof DamageStar) {
 					
 					DamageStar star = (DamageStar) stack.getItem();
-					int max = world.getGameRules().getInt(ModGameRule.MAX_BONUS_DAMAGE.getRule());
 					final String tag = star.getTagName();
+					final String max = star.getMaxTag();
 					
 					newAmount += stack.getOrCreateChildTag(tag).getDouble(tag);
 					
-					if (max > stack.getOrCreateChildTag(tag).getDouble(tag)) {
+					if (stack.getOrCreateChildTag(max).getInt(max) > 0) {
+						
+
+						
+					}
+					
+					if (stack.getOrCreateChildTag(tag).getDouble(tag) < stack.getOrCreateChildTag(max).getInt(max)) {
 						
 						stack.getOrCreateChildTag(tag).putDouble(tag, stack.getOrCreateChildTag(tag).getDouble(tag) + 1);
 						

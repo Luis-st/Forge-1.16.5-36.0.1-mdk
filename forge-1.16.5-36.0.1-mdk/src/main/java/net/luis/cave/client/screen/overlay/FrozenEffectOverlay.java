@@ -45,6 +45,12 @@ public class FrozenEffectOverlay {
 					
 				}
 				
+				if (event.getType() == ElementType.ARMOR) {
+					
+					event.setCanceled(true);
+					
+				}
+				
 				if (event.getType() != ElementType.VIGNETTE) {
 					
 					return;
