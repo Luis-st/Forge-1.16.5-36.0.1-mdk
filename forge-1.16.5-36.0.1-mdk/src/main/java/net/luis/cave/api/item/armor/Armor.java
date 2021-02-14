@@ -1,6 +1,6 @@
 package net.luis.cave.api.item.armor;
 
-import net.luis.cave.api.lib.PlayerManager;
+import net.luis.cave.api.manager.PlayerManager;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;

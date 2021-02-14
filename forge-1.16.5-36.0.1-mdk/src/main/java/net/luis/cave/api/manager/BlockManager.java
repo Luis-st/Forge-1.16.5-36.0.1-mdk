@@ -1,4 +1,4 @@
-package net.luis.cave.api.lib;
+package net.luis.cave.api.manager;
 
 import net.luis.cave.init.blocks.ModBlocks;
 import net.luis.cave.init.items.ModItems;

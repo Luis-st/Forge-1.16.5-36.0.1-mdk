@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
 public class ModChestScreen9x7 extends ContainerScreen<ModChestContainer9x7> implements IHasContainer<ModChestContainer9x7> {
-
+	
 	private static final ResourceLocation CHEST_GUI_TEXTURE = new ResourceLocation("textures/gui/container/generic_54.png");
 	private final int inventoryRows;
 

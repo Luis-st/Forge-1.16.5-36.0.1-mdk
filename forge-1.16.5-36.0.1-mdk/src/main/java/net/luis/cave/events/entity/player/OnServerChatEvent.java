@@ -1,7 +1,7 @@
 package net.luis.cave.events.entity.player;
 
 import net.luis.cave.Cave;
-import net.luis.cave.api.lib.WorldManager;
+import net.luis.cave.api.manager.WorldManager;
 import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.text.ITextComponent;

@@ -3,7 +3,7 @@ package net.luis.cave.events.entity.player.tick;
 import java.util.Map.Entry;
 
 import net.luis.cave.Cave;
-import net.luis.cave.api.lib.EnchantmentManager;
+import net.luis.cave.api.manager.EnchantmentManager;
 import net.luis.cave.init.ModEnchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.ai.attributes.Attributes;

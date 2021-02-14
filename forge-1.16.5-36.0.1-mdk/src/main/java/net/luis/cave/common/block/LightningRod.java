@@ -1,6 +1,6 @@
 package net.luis.cave.common.block;
 
-import net.luis.cave.api.lib.ItemManager;
+import net.luis.cave.api.manager.ItemManager;
 import net.luis.cave.common.tileentity.LightningRodTileEntity;
 import net.luis.cave.init.ModEnchantment;
 import net.luis.cave.init.blocks.ModBlocks;

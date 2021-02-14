@@ -1,7 +1,7 @@
 package net.luis.cave.events.entity.living;
 
 import net.luis.cave.Cave;
-import net.luis.cave.api.lib.PlayerManager;
+import net.luis.cave.api.manager.PlayerManager;
 import net.luis.cave.common.enums.ModArmorMaterial;
 import net.luis.cave.init.ModEnchantment;
 import net.minecraft.enchantment.EnchantmentHelper;

@@ -1,7 +1,7 @@
 package net.luis.cave.events.entity.living;
 
 import net.luis.cave.Cave;
-import net.luis.cave.api.lib.EntityManager;
+import net.luis.cave.api.manager.EntityManager;
 import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.EndermanEntity;

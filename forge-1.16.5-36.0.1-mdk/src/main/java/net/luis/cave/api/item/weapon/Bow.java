@@ -2,7 +2,7 @@ package net.luis.cave.api.item.weapon;
 
 import java.util.function.Predicate;
 
-import net.luis.cave.api.lib.ItemManager;
+import net.luis.cave.api.manager.ItemManager;
 import net.luis.cave.common.item.entity.DiamondArrowItem;
 import net.luis.cave.common.item.entity.JadeArrowItem;
 import net.luis.cave.common.item.entity.NetheriteArrowItem;

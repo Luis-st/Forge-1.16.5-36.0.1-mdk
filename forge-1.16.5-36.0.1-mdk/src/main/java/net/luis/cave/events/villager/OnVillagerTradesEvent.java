@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import net.luis.cave.Cave;
-import net.luis.cave.api.lib.VillagerManager;
+import net.luis.cave.api.manager.VillagerManager;
 import net.luis.cave.init.items.ModArmor;
 import net.luis.cave.init.items.ModTools;
 import net.minecraft.entity.merchant.villager.VillagerProfession;

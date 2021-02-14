@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Random;
 
 import net.luis.cave.Cave;
-import net.luis.cave.api.lib.EnchantmentManager;
+import net.luis.cave.api.manager.EnchantmentManager;
 import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentData;

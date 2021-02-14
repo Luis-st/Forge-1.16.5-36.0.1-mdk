@@ -1,12 +1,12 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "minecraft:golden_axe"
+    "item": "minecraft:netherite_axe"
   },
   "addition": {
-    "item": "cave:blazing_ingot"
+    "item": "cave:enderite_ingot"
   },
   "result": {
-    "item": "cave:blazing_axe"
+    "item": "cave:enderite_axe"
   }
 }

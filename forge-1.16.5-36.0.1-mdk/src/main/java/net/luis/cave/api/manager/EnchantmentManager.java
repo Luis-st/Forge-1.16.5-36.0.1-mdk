@@ -1,4 +1,4 @@
-package net.luis.cave.api.lib;
+package net.luis.cave.api.manager;
 
 import java.util.ArrayList;
 import java.util.HashMap;

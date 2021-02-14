@@ -1,4 +1,4 @@
-package net.luis.cave.api.lib;
+package net.luis.cave.api.manager;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;

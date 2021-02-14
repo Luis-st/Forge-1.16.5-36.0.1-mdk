@@ -10,6 +10,7 @@ import net.luis.cave.init.blocks.ModBlockItems;
 import net.luis.cave.init.blocks.ModBlocks;
 import net.luis.cave.init.blocks.ModVerticalBlockItems;
 import net.luis.cave.init.blocks.ModVerticalBlocks;
+import net.luis.cave.init.blocks.VanillaBlockItems;
 import net.luis.cave.init.blocks.VanillaBlocks;
 import net.luis.cave.init.items.ModArmor;
 import net.luis.cave.init.items.ModItems;
@@ -58,6 +59,7 @@ public class Cave {
 		ModBlocks.BLOCKS.register(modEventBus);
 		ModBlockItems.ITEMS.register(modEventBus);
 		VanillaBlocks.VANILLA_BLOCKS.register(modEventBus);
+		VanillaBlockItems.ITEMS.register(modEventBus);
 		LOGGER.info("Blocks were successfully initialized");
 		
 		ModVerticalBlocks.BLOCKS.register(modEventBus);

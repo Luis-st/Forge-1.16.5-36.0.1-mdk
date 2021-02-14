@@ -1,6 +1,6 @@
 package net.luis.cave.common.block;
 
-import net.luis.cave.api.lib.EntityManager;
+import net.luis.cave.api.manager.EntityManager;
 import net.luis.cave.init.ModEnchantment;
 import net.luis.cave.init.items.ModItems;
 import net.minecraft.block.Block;

@@ -1,5 +1,6 @@
 package net.luis.cave.common.tileentity;
 
+import net.luis.cave.common.container.chest.ModChestContainer9x8;
 import net.luis.cave.init.util.ModTileEntityType;
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.BlockState;
@@ -7,7 +8,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.ItemStackHelper;
-import net.minecraft.inventory.container.ChestContainer;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
@@ -24,7 +24,8 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class ModBarrelTileEntity extends LockableLootTileEntity {
 	
-	private NonNullList<ItemStack> barrelContents = NonNullList.withSize(54, ItemStack.EMPTY);
+	//54
+	private NonNullList<ItemStack> barrelContents = NonNullList.withSize(72, ItemStack.EMPTY);
 	private int numPlayersUsing;
 
 	private ModBarrelTileEntity(TileEntityType<?> barrelType) {
@@ -72,7 +73,8 @@ public class ModBarrelTileEntity extends LockableLootTileEntity {
 	@Override
 	public int getSizeInventory() {
 		
-		return 54;
+		//54
+		return 72;
 		
 	}
 
@@ -100,7 +102,8 @@ public class ModBarrelTileEntity extends LockableLootTileEntity {
 	@Override
 	protected Container createMenu(int id, PlayerInventory player) {
 		
-		return ChestContainer.createGeneric9X6(id, player, this);
+		//ChestContainer.createGeneric9X6(id, player, this)
+		return new ModChestContainer9x8(id, player, this);
 		
 	}
 
