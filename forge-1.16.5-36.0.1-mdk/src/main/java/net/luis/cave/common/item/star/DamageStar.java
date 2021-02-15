@@ -3,7 +3,7 @@ package net.luis.cave.common.item.star;
 import java.util.List;
 
 import net.luis.cave.Cave;
-import net.luis.cave.api.item.Star;
+import net.luis.cave.api.item.api.Star;
 import net.luis.cave.common.enums.StarType;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
@@ -28,7 +28,8 @@ public class DamageStar extends Star {
 	@Override
 	public void starTick(ItemStack stack, World world, PlayerEntity player) {
 		
-		if (stack.getOrCreateChildTag(this.getTagName()).getDouble(this.getTagName()) >= stack.getOrCreateChildTag(this.getMaxTag()).getInt(this.getMaxTag())) {
+		if (stack.getOrCreateChildTag(this.getTagName()).getDouble(this.getTagName()) >= stack.getOrCreateChildTag(this.getMaxTag()).getInt(this.getMaxTag())
+				) {
 			
 			stack.getOrCreateChildTag(this.getTagName()).putDouble(this.getTagName(), 0);
 			stack.getOrCreateChildTag(this.getMaxTag()).putInt(this.getMaxTag(), stack.getOrCreateChildTag(this.getMaxTag()).getInt(this.getMaxTag()) + 1);

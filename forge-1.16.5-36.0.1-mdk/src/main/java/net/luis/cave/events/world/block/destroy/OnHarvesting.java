@@ -1,7 +1,7 @@
 package net.luis.cave.events.world.block.destroy;
 
 import net.luis.cave.Cave;
-import net.luis.cave.api.manager.BlockManager;
+import net.luis.cave.api.world.block.BlockManager;
 import net.luis.cave.init.ModEnchantment;
 import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.block.BlockState;

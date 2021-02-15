@@ -1,6 +1,6 @@
 package net.luis.cave.common.enums;
 
-import net.luis.cave.api.item.IStarType;
+import net.luis.cave.api.item.api.IStarType;
 
 public enum StarType implements IStarType {
 	

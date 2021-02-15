@@ -1,7 +1,7 @@
 package net.luis.cave.init.items;
 
 import net.luis.cave.Cave;
-import net.luis.cave.api.item.tool.Shovel;
+import net.luis.cave.api.item.api.tool.Shovel;
 import net.luis.cave.common.enums.ModItemTier;
 import net.luis.cave.common.item.shields.DiamondShield;
 import net.luis.cave.common.item.shields.EnderiteShield;

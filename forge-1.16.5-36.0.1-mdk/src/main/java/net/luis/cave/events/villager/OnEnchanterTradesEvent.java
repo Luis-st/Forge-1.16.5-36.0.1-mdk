@@ -5,7 +5,7 @@ import java.util.List;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.luis.cave.Cave;
-import net.luis.cave.api.manager.VillagerManager;
+import net.luis.cave.api.entity.villager.VillagerManager;
 import net.luis.cave.init.villager.ModVillagerProfessions;
 import net.minecraft.entity.merchant.villager.VillagerProfession;
 import net.minecraft.entity.merchant.villager.VillagerTrades.ITrade;

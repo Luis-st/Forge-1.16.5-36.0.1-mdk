@@ -1,7 +1,7 @@
 package net.luis.cave.init.blocks;
 
 import net.luis.cave.Cave;
-import net.luis.cave.api.block.AbstractVerticalSlabItem;
+import net.luis.cave.api.world.block.api.AbstractVerticalSlabItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;

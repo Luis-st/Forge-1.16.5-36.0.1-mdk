@@ -1,14 +1,14 @@
 package net.luis.cave.init.items;
 
 import net.luis.cave.Cave;
-import net.luis.cave.api.item.armor.mod.BlazingArmor;
-import net.luis.cave.api.item.armor.mod.EnderiteArmor;
-import net.luis.cave.api.item.armor.mod.JadeArmor;
-import net.luis.cave.api.item.armor.mod.LimoniteArmor;
-import net.luis.cave.api.item.armor.mod.NightArmor;
-import net.luis.cave.api.item.armor.mod.RubyArmor;
-import net.luis.cave.api.item.armor.mod.SaphireArmor;
-import net.luis.cave.api.item.armor.mod.SlimeArmor;
+import net.luis.cave.api.item.api.armor.mod.BlazingArmor;
+import net.luis.cave.api.item.api.armor.mod.EnderiteArmor;
+import net.luis.cave.api.item.api.armor.mod.JadeArmor;
+import net.luis.cave.api.item.api.armor.mod.LimoniteArmor;
+import net.luis.cave.api.item.api.armor.mod.NightArmor;
+import net.luis.cave.api.item.api.armor.mod.RubyArmor;
+import net.luis.cave.api.item.api.armor.mod.SaphireArmor;
+import net.luis.cave.api.item.api.armor.mod.SlimeArmor;
 import net.luis.cave.common.enums.ModArmorMaterial;
 import net.luis.cave.common.item.armor.EnderiteElytra;
 import net.luis.cave.common.item.armor.EnderiteHelmet;

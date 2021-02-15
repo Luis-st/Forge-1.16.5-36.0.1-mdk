@@ -1,7 +1,7 @@
 package net.luis.cave.common.enchantment.curse;
 
-import net.luis.cave.api.item.weapon.Bow;
-import net.luis.cave.api.item.weapon.Crossbow;
+import net.luis.cave.api.item.api.weapon.Bow;
+import net.luis.cave.api.item.api.weapon.Crossbow;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentType;
 import net.minecraft.inventory.EquipmentSlotType;

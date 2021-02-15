@@ -1,6 +1,6 @@
 package net.luis.cave.common.block.slab.stone;
 
-import net.luis.cave.api.block.AbstractVerticalSlab;
+import net.luis.cave.api.world.block.api.AbstractVerticalSlab;
 import net.luis.cave.init.blocks.ModVerticalBlockItems;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;

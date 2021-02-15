@@ -43,4 +43,5 @@ public class ModChestScreen9x8 extends ContainerScreen<ModChestContainer9x8> {
 		this.blit(matrixStack, i, j + 162 + 1, 0, 162, this.xSize, 94);
 		
 	}
+	
 }

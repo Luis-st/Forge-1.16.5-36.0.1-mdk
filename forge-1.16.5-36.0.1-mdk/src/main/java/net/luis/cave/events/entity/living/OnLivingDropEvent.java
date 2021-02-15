@@ -3,7 +3,7 @@ package net.luis.cave.events.entity.living;
 import java.util.List;
 
 import net.luis.cave.Cave;
-import net.luis.cave.api.manager.ItemManager;
+import net.luis.cave.api.item.ItemManager;
 import net.luis.cave.init.ModEnchantment;
 import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.enchantment.EnchantmentHelper;

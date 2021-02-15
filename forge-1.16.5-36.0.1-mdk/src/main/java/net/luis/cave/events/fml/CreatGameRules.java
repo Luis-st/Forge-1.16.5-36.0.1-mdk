@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import net.luis.cave.Cave;
-import net.luis.cave.api.manager.GameRule;
+import net.luis.cave.api.world.api.GameRule;
 import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.world.GameRules;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

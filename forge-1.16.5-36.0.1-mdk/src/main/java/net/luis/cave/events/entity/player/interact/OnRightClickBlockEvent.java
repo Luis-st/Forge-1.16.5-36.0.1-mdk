@@ -1,7 +1,7 @@
 package net.luis.cave.events.entity.player.interact;
 
 import net.luis.cave.Cave;
-import net.luis.cave.api.manager.ItemManager;
+import net.luis.cave.api.item.ItemManager;
 import net.luis.cave.init.ModEnchantment;
 import net.luis.cave.init.items.ModItems;
 import net.minecraft.block.BlockState;

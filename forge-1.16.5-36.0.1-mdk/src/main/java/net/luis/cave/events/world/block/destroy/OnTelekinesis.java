@@ -3,8 +3,8 @@ package net.luis.cave.events.world.block.destroy;
 import java.util.List;
 
 import net.luis.cave.Cave;
-import net.luis.cave.api.manager.BlockManager;
-import net.luis.cave.api.manager.ItemManager;
+import net.luis.cave.api.item.ItemManager;
+import net.luis.cave.api.world.block.BlockManager;
 import net.luis.cave.init.ModEnchantment;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

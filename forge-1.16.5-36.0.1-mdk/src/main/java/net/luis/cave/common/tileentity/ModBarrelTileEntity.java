@@ -24,7 +24,6 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class ModBarrelTileEntity extends LockableLootTileEntity {
 	
-	//54
 	private NonNullList<ItemStack> barrelContents = NonNullList.withSize(72, ItemStack.EMPTY);
 	private int numPlayersUsing;
 
@@ -73,7 +72,6 @@ public class ModBarrelTileEntity extends LockableLootTileEntity {
 	@Override
 	public int getSizeInventory() {
 		
-		//54
 		return 72;
 		
 	}
@@ -102,7 +100,6 @@ public class ModBarrelTileEntity extends LockableLootTileEntity {
 	@Override
 	protected Container createMenu(int id, PlayerInventory player) {
 		
-		//ChestContainer.createGeneric9X6(id, player, this)
 		return new ModChestContainer9x8(id, player, this);
 		
 	}

@@ -1,7 +1,7 @@
 package net.luis.cave.events.item;
 
 import net.luis.cave.Cave;
-import net.luis.cave.api.manager.ItemManager;
+import net.luis.cave.api.item.ItemManager;
 import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.item.ItemStack;

@@ -1,7 +1,7 @@
 package net.luis.cave.common.item.armor;
 
 import net.luis.cave.Cave;
-import net.luis.cave.api.item.armor.mod.NightArmor;
+import net.luis.cave.api.item.api.armor.mod.NightArmor;
 import net.luis.cave.common.enums.ModArmorMaterial;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.entity.LivingEntity;

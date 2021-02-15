@@ -1,6 +1,6 @@
 package net.luis.cave.init.util;
 
-import net.luis.cave.api.manager.GameRule;
+import net.luis.cave.api.world.api.GameRule;
 import net.minecraft.world.GameRules;
 
 public class ModGameRule {

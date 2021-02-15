@@ -1,6 +1,6 @@
 package net.luis.cave.common.enchantment.weapon;
 
-import net.luis.cave.api.item.weapon.Bow;
+import net.luis.cave.api.item.api.weapon.Bow;
 import net.luis.cave.init.ModEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentType;

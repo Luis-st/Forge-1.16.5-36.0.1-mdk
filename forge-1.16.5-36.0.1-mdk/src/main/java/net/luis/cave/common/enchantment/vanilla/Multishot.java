@@ -1,6 +1,6 @@
 package net.luis.cave.common.enchantment.vanilla;
 
-import net.luis.cave.api.item.weapon.Crossbow;
+import net.luis.cave.api.item.api.weapon.Crossbow;
 import net.luis.cave.init.ModEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentType;

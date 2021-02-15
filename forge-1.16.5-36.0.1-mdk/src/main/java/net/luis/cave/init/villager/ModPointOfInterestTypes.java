@@ -1,7 +1,7 @@
 package net.luis.cave.init.villager;
 
 import net.luis.cave.Cave;
-import net.luis.cave.api.villager.VillagerUtil;
+import net.luis.cave.api.entity.villager.VillagerUtil;
 import net.luis.cave.init.blocks.ModBlocks;
 import net.minecraft.block.Blocks;
 import net.minecraft.village.PointOfInterestType;

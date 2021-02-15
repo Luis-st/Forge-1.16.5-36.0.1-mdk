@@ -1,9 +1,9 @@
 package net.luis.cave.init.items;
 
 import net.luis.cave.Cave;
-import net.luis.cave.api.item.tool.Shovel;
-import net.luis.cave.api.item.weapon.Bow;
-import net.luis.cave.api.item.weapon.Crossbow;
+import net.luis.cave.api.item.api.tool.Shovel;
+import net.luis.cave.api.item.api.weapon.Bow;
+import net.luis.cave.api.item.api.weapon.Crossbow;
 import net.luis.cave.common.item.star.NetherStar;
 import net.luis.cave.common.item.vanilla.Sugar;
 import net.minecraft.item.Item;
