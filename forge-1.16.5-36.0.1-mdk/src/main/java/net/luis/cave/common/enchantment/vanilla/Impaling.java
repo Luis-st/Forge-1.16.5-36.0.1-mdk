@@ -1,5 +1,6 @@
 package net.luis.cave.common.enchantment.vanilla;
 
+import net.luis.cave.common.enchantment.weapon.EnderSlayer;
 import net.minecraft.enchantment.DamageEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentType;
@@ -41,7 +42,7 @@ public class Impaling extends Enchantment {
 	@Override
 	protected boolean canApplyTogether(Enchantment ench) {
 		
-		return !(ench instanceof DamageEnchantment);
+		return !(ench instanceof DamageEnchantment) && !(ench instanceof EnderSlayer);
 		
 	}
 	

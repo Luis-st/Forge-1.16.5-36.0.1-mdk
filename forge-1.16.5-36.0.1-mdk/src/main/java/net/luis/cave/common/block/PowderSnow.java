@@ -156,7 +156,19 @@ public class PowderSnow extends BreakableBlock {
 			
 			if (!(livingEntity instanceof SkeletonEntity) && !EntityManager.isFrozenType(livingEntity)) {
 				
-				if (enchFrostWalker == 0 && enchLavaWalker == 0) {
+				if (livingEntity instanceof PlayerEntity) {
+					
+					if (enchFrostWalker == 0 && enchLavaWalker == 0) {
+						
+						entity.attackEntityFrom(new DamageSource("freezing"), 1.0f);
+						
+					}
+					
+				} else if (EntityManager.isLavaType(livingEntity)) {
+					
+					entity.attackEntityFrom(new DamageSource("freezing"), 4.0f);
+					
+				} else {
 					
 					entity.attackEntityFrom(new DamageSource("freezing"), 1.0f);
 					

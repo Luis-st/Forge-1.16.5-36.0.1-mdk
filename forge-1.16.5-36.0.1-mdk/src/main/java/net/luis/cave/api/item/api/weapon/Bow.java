@@ -44,10 +44,11 @@ public class Bow extends ShootableItem implements IVanishable {
 		if (entityLiving instanceof PlayerEntity) {
 			
 			PlayerEntity player = (PlayerEntity) entityLiving;
-			boolean isCreative = player.abilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantments.INFINITY, stack) > 0;
+			int enchInfinity = EnchantmentHelper.getEnchantmentLevel(Enchantments.INFINITY, stack);
+			boolean isCreativeOrInfinity = player.abilities.isCreativeMode || enchInfinity > 0;
 			ItemStack ammo = player.findAmmo(stack);
 			int duration = this.getUseDuration(stack) - timeLeft;
-			duration = ForgeEventFactory.onArrowLoose(stack, world, player, duration, !ammo.isEmpty() || isCreative);
+			duration = ForgeEventFactory.onArrowLoose(stack, world, player, duration, !ammo.isEmpty() || isCreativeOrInfinity);
 			int enchThrowEnd = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.THROW_OF_THE_END.get(), stack);
 			
 			if (duration < 0) {
@@ -56,7 +57,7 @@ public class Bow extends ShootableItem implements IVanishable {
 				
 			}
 			
-			if (!ammo.isEmpty() || isCreative || enchThrowEnd > 0) {
+			if (!ammo.isEmpty() || isCreativeOrInfinity || enchThrowEnd > 0) {
 				
 				if (ammo.isEmpty()) {
 					
@@ -68,7 +69,7 @@ public class Bow extends ShootableItem implements IVanishable {
 				
 				if (!(velocityArrow < 0.1f)) {
 					
-					boolean isCreativeOrInfinity = player.abilities.isCreativeMode || (ammo.getItem() instanceof ArrowItem 
+					boolean isCreativeAndArrow = player.abilities.isCreativeMode || (ammo.getItem() instanceof ArrowItem 
 							&& ((ArrowItem) ammo.getItem()).isInfinite(ammo, stack, player));
 					
 					if (!world.isRemote) {
@@ -99,7 +100,7 @@ public class Bow extends ShootableItem implements IVanishable {
 									ammo.getItem() == Items.TIPPED_ARROW || 
 									ammo.getItem() == ModItems.NETHERITE_ARROW_ITEM.get();
 							
-							if (isCreativeOrInfinity || player.abilities.isCreativeMode && isSpecial) {
+							if ((isCreativeAndArrow || player.abilities.isCreativeMode) && isSpecial) {
 								
 								arrowEntity.pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
 								
@@ -129,7 +130,7 @@ public class Bow extends ShootableItem implements IVanishable {
 						
 					}
 
-					if (!isCreativeOrInfinity && !player.abilities.isCreativeMode) {
+					if (!isCreativeAndArrow && !player.abilities.isCreativeMode) {
 						
 						ammo.shrink(1);
 						

@@ -11,6 +11,7 @@ import com.google.common.collect.Lists;
 import net.luis.cave.common.item.entity.DiamondArrowItem;
 import net.luis.cave.common.item.entity.JadeArrowItem;
 import net.luis.cave.common.item.entity.NetheriteArrowItem;
+import net.luis.cave.init.items.ModItems;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -167,17 +168,20 @@ public class Crossbow extends ShootableItem implements IVanishable {
 			
 			boolean isCreative = creative && arrow.getItem() instanceof ArrowItem;
 			boolean hasInfinity = enchInfinity > 0;
-			ItemStack itemstack;
+			boolean isSpecial = arrow.getItem() == Items.SPECTRAL_ARROW || 
+					arrow.getItem() == Items.TIPPED_ARROW || 
+					arrow.getItem() == ModItems.NETHERITE_ARROW_ITEM.get();
+			ItemStack itemstack = arrow.copy() ;
 			
 			if (!isCreative && !creative && !multishot && !hasInfinity) {
 				
-				itemstack = arrow.split(1);
+				itemstack = arrow.copy();
+				arrow.shrink(1);
 				
-				if (arrow.isEmpty() && shooter instanceof PlayerEntity) {
-					
-					((PlayerEntity) shooter).inventory.deleteStack(arrow);
-					
-				}
+			} else if (isSpecial && hasInfinity) {
+				
+				itemstack = arrow.copy();
+				arrow.shrink(1);
 				
 			} else {
 				
@@ -284,27 +288,39 @@ public class Crossbow extends ShootableItem implements IVanishable {
 	}
 	
 
-	private void fireProjectile(World world, LivingEntity shooter, Hand handIn, ItemStack crossbow,
-			ItemStack projectile, float soundPitch, boolean isCreativeMode, float velocity, float inaccuracy,
-			float projectileAngle) {
+	private void fireProjectile(World world, LivingEntity shooter, Hand handIn, ItemStack crossbow,ItemStack projectile, 
+			float soundPitch, boolean isCreativeMode, float velocity, float inaccuracy, float projectileAngle) {
+		
+		int enchInfinity = EnchantmentHelper.getEnchantmentLevel(Enchantments.INFINITY, crossbow);
 		
 		if (!world.isRemote) {
 			
 			boolean isProjectile = projectile.getItem() == Items.FIREWORK_ROCKET;
+			boolean isSpecial = projectile.getItem() == Items.SPECTRAL_ARROW || 
+					projectile.getItem() == Items.TIPPED_ARROW || 
+					projectile.getItem() == ModItems.NETHERITE_ARROW_ITEM.get();
 			ProjectileEntity projectileEntity;
 			
 			if (isProjectile) {
 				
 				projectileEntity = new FireworkRocketEntity(world, projectile, shooter, shooter.getPosX(),
-						shooter.getPosYEye() - (double) 0.15F, shooter.getPosZ(), true);
+						shooter.getPosYEye() - 0.15F, shooter.getPosZ(), true);
 				
 			} else {
 				
 				projectileEntity = createArrow(world, shooter, crossbow, projectile);
 				
-				if (isCreativeMode || projectileAngle != 0.0F) {
+				if (!isCreativeMode) {
 					
-					((AbstractArrowEntity) projectileEntity).pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
+					if (projectileAngle != 0.0F) {
+						
+						((AbstractArrowEntity) projectileEntity).pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
+						
+					} else if (enchInfinity == 1 && !isSpecial) {
+						
+						((AbstractArrowEntity) projectileEntity).pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
+						
+					}
 					
 				}
 				
@@ -322,19 +338,18 @@ public class Crossbow extends ShootableItem implements IVanishable {
 				Vector3d vector3d = shooter.getLook(1.0F);
 				Vector3f vector3f = new Vector3f(vector3d);
 				vector3f.transform(quaternion);
-				projectileEntity.shoot((double) vector3f.getX(), (double) vector3f.getY(), (double) vector3f.getZ(),
-						velocity, inaccuracy);
+				projectileEntity.shoot(vector3f.getX(), vector3f.getY(), vector3f.getZ(), velocity, inaccuracy);
 				
 			}
 
-			crossbow.damageItem(isProjectile ? 3 : 1, shooter, (p_220017_1_) -> {
+			crossbow.damageItem(isProjectile ? 3 : 1, shooter, e -> {
 				
-				p_220017_1_.sendBreakAnimation(handIn);
+				e.sendBreakAnimation(handIn);
 				
 			});
 			
 			world.addEntity(projectileEntity);
-			world.playSound((PlayerEntity) null, shooter.getPosX(), shooter.getPosY(), shooter.getPosZ(),
+			world.playSound(null, shooter.getPosX(), shooter.getPosY(), shooter.getPosZ(),
 					SoundEvents.ITEM_CROSSBOW_SHOOT, SoundCategory.PLAYERS, 1.0F, soundPitch);
 			
 		}
@@ -504,6 +519,7 @@ public class Crossbow extends ShootableItem implements IVanishable {
 
 	}
 
+	@Override
 	public int getUseDuration(ItemStack stack) {
 		
 		return getChargeTime(stack) + 3;

@@ -79,7 +79,8 @@ public class Thorns extends Enchantment {
 		int chest = EnchantmentHelper.getEnchantmentLevel(this, user.getItemStackFromSlot(EquipmentSlotType.CHEST));
 		int legs = EnchantmentHelper.getEnchantmentLevel(this, user.getItemStackFromSlot(EquipmentSlotType.LEGS));
 		int feet = EnchantmentHelper.getEnchantmentLevel(this, user.getItemStackFromSlot(EquipmentSlotType.FEET));
-		return head + chest + legs+ feet;
+		int thorns = head + chest + legs + feet;
+		return thorns > 8 ? 8 : thorns;
 	}
 	
 }
