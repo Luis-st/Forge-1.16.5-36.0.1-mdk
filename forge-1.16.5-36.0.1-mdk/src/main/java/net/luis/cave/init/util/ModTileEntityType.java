@@ -3,7 +3,6 @@ package net.luis.cave.init.util;
 import net.luis.cave.Cave;
 import net.luis.cave.common.tileentity.LightningRodTileEntity;
 import net.luis.cave.common.tileentity.ModBarrelTileEntity;
-import net.luis.cave.common.tileentity.ModShulkerBoxTileEntity;
 import net.luis.cave.common.tileentity.SmeltingFurnaceTileEntity;
 import net.luis.cave.init.blocks.ModBlocks;
 import net.luis.cave.init.blocks.VanillaBlocks;
@@ -24,8 +23,5 @@ public class ModTileEntityType {
 	
 	public static final RegistryObject<TileEntityType<ModBarrelTileEntity>> BARREL = TILE_ENTITIES.register("barrel", 
 			() -> TileEntityType.Builder.create(ModBarrelTileEntity::new, VanillaBlocks.BARREL.get()).build(null));
-	
-	public static final RegistryObject<TileEntityType<ModShulkerBoxTileEntity>> SHULKER = TILE_ENTITIES.register("shulker_box", 
-			() -> TileEntityType.Builder.create(ModShulkerBoxTileEntity::new, VanillaBlocks.BARREL.get()).build(null));
 	
 }

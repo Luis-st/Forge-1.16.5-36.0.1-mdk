@@ -11,7 +11,6 @@ import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentData;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.item.BookItem;
 import net.minecraft.item.EnchantedBookItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -22,6 +21,8 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid=Cave.Mod_Id, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class OnAnvilUpdateEvent {
+	
+	// TODO: repair Enchbook + Book -> EnchBook + BackBook
 
 	@SubscribeEvent
 	public static void AnvilUpdate(AnvilUpdateEvent event) {
@@ -34,54 +35,13 @@ public class OnAnvilUpdateEvent {
 			
 			if (world.getGameRules().getBoolean(ModGameRule.ENABLE_ENCHANTMENT_TRANSFER.getRule())) {
 				
-				if (inputLeft.isEnchanted()) {
+				if (EnchantmentManager.enchantmentTransferCase1(inputLeft, inputRight)) {
 					
-					Map<Enchantment, Integer> enchantments = EnchantmentHelper.getEnchantments(inputLeft);
-					int mapSize = enchantments.size();
+					handelCase(event, inputLeft, inputRight);
 					
-					if (inputRight.getItem() instanceof BookItem) {
-						
-						if (!inputRight.isEnchanted()) {
-							
-							if (inputRight.getCount() == 1) {
-								
-								ItemStack output = new ItemStack(Items.ENCHANTED_BOOK);
-								Enchantment randomEnchantment = null;
-								int randomEnchantmentLevel = 0;
-								
-								do {
-									
-									List<Enchantment> enchantmenList = new ArrayList<Enchantment>(enchantments.keySet());
-									int random = new Random().nextInt(enchantmenList.size());
-									randomEnchantment = enchantmenList.get(random);
-									
-									List<Integer> levelList = new ArrayList<Integer>(enchantments.values());
-									randomEnchantmentLevel = levelList.get(random);
-									
-								} while (randomEnchantment.isCurse() && mapSize > 1);
-								
-								if (!randomEnchantment.isCurse()) {
-									
-									EnchantedBookItem.addEnchantment(output, new EnchantmentData(randomEnchantment, randomEnchantmentLevel));
-									
-									event.setCost(1 + (mapSize / 4));
-									event.setOutput(output);
-									
-								} else {
-									
-									event.setCanceled(true);
-									
-								}
-									
-							} else {
-								
-								event.setCanceled(true);
-								
-							}
-							
-						}
-						
-					}
+				} else if (EnchantmentManager.enchantmentTransferCase2(inputLeft, inputRight)) {
+					
+					handelCase(event, inputLeft, inputRight);
 					
 				}
 				
@@ -101,6 +61,40 @@ public class OnAnvilUpdateEvent {
 				event.setCost(cost);
 				
 			}
+			
+		}
+		
+	}
+	
+	private static void handelCase(AnvilUpdateEvent event, ItemStack inputLeft, ItemStack inputRight) {
+		
+		Map<Enchantment, Integer> enchantments = EnchantmentHelper.getEnchantments(inputLeft);
+		int mapSize = enchantments.size();
+		ItemStack output = new ItemStack(Items.ENCHANTED_BOOK);
+		Enchantment randomEnchantment = null;
+		int randomEnchantmentLevel = 0;
+		
+		do {
+			
+			List<Enchantment> enchantmenList = new ArrayList<Enchantment>(enchantments.keySet());
+			int random = new Random().nextInt(enchantmenList.size());
+			randomEnchantment = enchantmenList.get(random);
+			
+			List<Integer> levelList = new ArrayList<Integer>(enchantments.values());
+			randomEnchantmentLevel = levelList.get(random);
+			
+		} while (randomEnchantment.isCurse() && mapSize > 1);
+		
+		if (!randomEnchantment.isCurse()) {
+			
+			EnchantedBookItem.addEnchantment(output, new EnchantmentData(randomEnchantment, randomEnchantmentLevel));
+			
+			event.setCost(1 + (mapSize / 4));
+			event.setOutput(output);
+			
+		} else {
+			
+			event.setCanceled(true);
 			
 		}
 		

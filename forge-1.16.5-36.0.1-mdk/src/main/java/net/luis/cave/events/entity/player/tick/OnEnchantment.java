@@ -25,7 +25,7 @@ public class OnEnchantment {
 		PlayerEntity player = event.player;
 		World world = player.getEntityWorld();
 		MinecraftServer server = world.getServer();
-		Entry<EquipmentSlotType, ItemStack> enchCurseBreaking = EnchantmentHelper.getRandomItemWithEnchantment(ModEnchantment.CURSE_OF_BREAKING.get(), player);
+		Entry<EquipmentSlotType, ItemStack> itemsCurseBreaking = EnchantmentHelper.getRandomItemWithEnchantment(ModEnchantment.CURSE_OF_BREAKING.get(), player);
 		EquipmentSlotType[] slot = new EquipmentSlotType[] {EquipmentSlotType.HEAD, EquipmentSlotType.CHEST, EquipmentSlotType.LEGS, EquipmentSlotType.FEET};
 		ItemStack[] item = new ItemStack[] {player.getItemStackFromSlot(slot[0]), player.getItemStackFromSlot(slot[1]), 
 											player.getItemStackFromSlot(slot[2]) , player.getItemStackFromSlot(slot[3])};
@@ -92,13 +92,27 @@ public class OnEnchantment {
 			
 			if (!player.abilities.isCreativeMode) {
 				
-				if (enchCurseBreaking != null) {
+				if (itemsCurseBreaking != null) {
 					
-					ItemStack itemBreaking = enchCurseBreaking.getValue();
-					EquipmentSlotType slotBreaking = enchCurseBreaking.getKey();
+					ItemStack itemCurseBreaking = itemsCurseBreaking.getValue();
+					EquipmentSlotType slotCurseBreaking = itemsCurseBreaking.getKey();
 					
-					double damage = itemBreaking.getMaxDamage() * 0.0025;	
-					itemBreaking.damageItem((int) damage, player, e -> e.sendBreakAnimation(slotBreaking));
+					if (itemCurseBreaking.isDamageable()) {
+						
+						double damage = itemCurseBreaking.getMaxDamage() * 0.0025;	
+						itemCurseBreaking.damageItem((int) damage, player, e -> e.sendBreakAnimation(slotCurseBreaking));
+						
+					} else {
+						
+						int enchCurseBreaking = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.CURSE_OF_BREAKING.get(), itemCurseBreaking);
+						
+						if (enchCurseBreaking > 0 && !itemCurseBreaking.isDamageable()) {
+							
+							itemCurseBreaking.shrink(itemCurseBreaking.getCount());
+							
+						}
+						
+					}
 					
 				}
 				

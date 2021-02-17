@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
+import net.luis.cave.api.item.api.weapon.Bow;
+import net.luis.cave.api.item.api.weapon.Crossbow;
 import net.luis.cave.init.items.ModArmor;
 import net.luis.cave.init.items.ModItems;
 import net.luis.cave.init.items.ModTools;
@@ -12,14 +14,41 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.inventory.Inventory;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.AxeItem;
+import net.minecraft.item.FishingRodItem;
+import net.minecraft.item.FlintAndSteelItem;
+import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.PickaxeItem;
+import net.minecraft.item.ShieldItem;
+import net.minecraft.item.ShovelItem;
+import net.minecraft.item.SwordItem;
+import net.minecraft.item.ToolItem;
+import net.minecraft.item.TridentItem;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class ItemManager {
+	
+	public static boolean sameTool(ItemStack inputLeft, ItemStack inputRight) {
+		
+		Tool toolLeft = getToolType(inputLeft);
+		Tool toolRight = getToolType(inputRight);
+		
+		if (toolLeft == toolRight) {
+			
+			return true;
+			
+		} 
+		
+		return false;
+		
+	}
 	
 	public static boolean isEnderite(ItemStack item) {
 		
@@ -282,6 +311,107 @@ public class ItemManager {
 			itemEntity.setInvulnerable(false);
 			
 		}
+		
+	}
+
+	public static Tool getToolType(ItemStack stack) {
+		
+		Item item = stack.getItem();
+		
+		if (item instanceof ToolItem) {
+			
+			if (item instanceof SwordItem) {
+				
+				return Tool.SWORD;
+				
+			} else if (item instanceof PickaxeItem) {
+				
+				return Tool.PICKAXE;
+				
+			} else if (item instanceof AxeItem) {
+				
+				return Tool.AXE;
+				
+			} else if (item instanceof ShovelItem) {
+				
+				return Tool.SHOVEL;
+				
+			} else if (item instanceof HoeItem) {
+				
+				return Tool.HOE;
+				
+			} else if (item instanceof ShieldItem) {
+				
+				return Tool.SHIELD;
+				
+			} else if (item instanceof Bow) {
+				
+				return Tool.BOW;
+				
+			} else if (item instanceof Crossbow) {
+				
+				return Tool.CROSSBOW;
+				
+			} else if (item instanceof TridentItem) {
+				
+				return Tool.TRIDENT;
+				
+			} else if (item instanceof FishingRodItem) {
+				
+				return Tool.ROD;
+				
+			} else if (item instanceof FlintAndSteelItem) {
+				
+				return Tool.FLINT_AND_STEEL;
+				
+			} else if (item instanceof ArmorItem) {
+				
+				ArmorItem armorItem = (ArmorItem) item;
+				
+				if (armorItem.getEquipmentSlot() == EquipmentSlotType.HEAD) {
+					
+					return Tool.HELMET;
+					
+				} else if (armorItem.getEquipmentSlot() == EquipmentSlotType.CHEST) {
+					
+					return Tool.CHEST;
+					
+				} else if (armorItem.getEquipmentSlot() == EquipmentSlotType.LEGS) {
+					
+					return Tool.LEGS;
+					
+				} else if (armorItem.getEquipmentSlot() == EquipmentSlotType.FEET) {
+					
+					return Tool.FEET;
+					
+				}
+				
+			}
+			
+		}
+		
+		return null;
+		
+	}
+	
+	public enum Tool {
+		
+		SWORD,
+		PICKAXE,
+		AXE,
+		SHOVEL,
+		HOE,
+		SHIELD,
+		BOW,
+		CROSSBOW,
+		TRIDENT,
+		ROD,
+		FLINT_AND_STEEL,
+		HELMET,
+		CHEST,
+		LEGS,
+		FEET,
+		NO;
 		
 	}
 	
