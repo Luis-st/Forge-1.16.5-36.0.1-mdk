@@ -10,6 +10,7 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BookItem;
+import net.minecraft.item.EnchantedBookItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -45,15 +46,11 @@ public class EnchantmentManager extends EnchantmentHelper {
 		
 		if (inputLeft != null && inputRight != null) {
 			
-			if (inputLeft.isEnchanted() && !inputRight.isEnchanted()) {
+			if (inputLeft.getItem() instanceof EnchantedBookItem && inputRight.getItem() instanceof BookItem) {
 				
-				if (inputLeft.getItem() instanceof BookItem && inputRight.getItem() instanceof BookItem) {
+				if (inputRight.getCount() == 1) {
 					
-					if (inputRight.getCount() == 1) {
-						
-						return true;
-						
-					}
+					return true;
 					
 				}
 				

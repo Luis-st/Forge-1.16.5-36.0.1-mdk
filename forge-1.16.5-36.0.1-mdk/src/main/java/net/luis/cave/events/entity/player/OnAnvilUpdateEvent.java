@@ -21,8 +21,6 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid=Cave.Mod_Id, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class OnAnvilUpdateEvent {
-	
-	// TODO: repair Enchbook + Book -> EnchBook + BackBook
 
 	@SubscribeEvent
 	public static void AnvilUpdate(AnvilUpdateEvent event) {

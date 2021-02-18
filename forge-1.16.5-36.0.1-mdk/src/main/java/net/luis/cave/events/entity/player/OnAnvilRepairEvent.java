@@ -21,8 +21,6 @@ import net.minecraftforge.items.ItemHandlerHelper;
 
 @Mod.EventBusSubscriber(modid=Cave.Mod_Id, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class OnAnvilRepairEvent {
-	
-	// TODO: repair Enchbook + Book -> EnchBook + BackBook
 
 	@SubscribeEvent
 	public static void AnvilRepair(AnvilRepairEvent event) {

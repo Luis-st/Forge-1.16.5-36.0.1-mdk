@@ -82,9 +82,6 @@ public class ModItems {
 	public static final RegistryObject<Item> AMETHYST_SHARD = ITEMS.register("amethyst_shard", 
 			() -> new Item(new Item.Properties().group(Cave.MISC)));
 	
-	public static final RegistryObject<Item> FERTILIZER = ITEMS.register("fertilizer", 
-			() -> new Item(new Item.Properties().group(Cave.MISC)));
-	
 	public static final RegistryObject<Item> COPPER_INGOT = ITEMS.register("copper_ingot", 
 			() -> new Item(new Item.Properties().group(Cave.MISC)));
 	

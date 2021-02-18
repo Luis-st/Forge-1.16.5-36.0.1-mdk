@@ -3,7 +3,6 @@ package net.luis.cave.events.entity.player.interact.block;
 import net.luis.cave.Cave;
 import net.luis.cave.api.item.ItemManager;
 import net.luis.cave.init.ModEnchantment;
-import net.luis.cave.init.items.ModItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CropsBlock;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -47,16 +46,6 @@ public class OnReplenish {
 							e.sendBreakAnimation(EquipmentSlotType.MAINHAND);
 							
 						}, false);
-						
-					}
-					
-				} else if (player.getHeldItemMainhand().getItem() == ModItems.FERTILIZER.get()) {
-					
-					world.setBlockState(pos, state.with(cropsBlock.getAgeProperty(), age + 1), 3);
-					
-					if (!player.abilities.isCreativeMode) {
-						
-						player.getHeldItemMainhand().shrink(1);
 						
 					}
 					
