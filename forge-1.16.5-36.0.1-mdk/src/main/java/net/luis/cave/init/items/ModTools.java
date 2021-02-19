@@ -1,14 +1,15 @@
 package net.luis.cave.init.items;
 
 import net.luis.cave.Cave;
+import net.luis.cave.api.item.api.Shield;
 import net.luis.cave.api.item.api.tool.Shovel;
+import net.luis.cave.client.render.item.DiamondShieldRender;
+import net.luis.cave.client.render.item.EnderiteShieldRender;
+import net.luis.cave.client.render.item.GoldenShieldRender;
+import net.luis.cave.client.render.item.IronShieldRender;
+import net.luis.cave.client.render.item.NetheriteShieldRender;
+import net.luis.cave.client.render.item.NightShieldRender;
 import net.luis.cave.common.enums.ModItemTier;
-import net.luis.cave.common.item.shields.DiamondShield;
-import net.luis.cave.common.item.shields.EnderiteShield;
-import net.luis.cave.common.item.shields.GoldenShield;
-import net.luis.cave.common.item.shields.IronShield;
-import net.luis.cave.common.item.shields.NetheriteShield;
-import net.luis.cave.common.item.shields.NightShield;
 import net.luis.cave.common.item.weapons.EnderiteBow;
 import net.luis.cave.common.item.weapons.EnderiteCrossbow;
 import net.luis.cave.common.item.weapons.NetheriteBow;
@@ -18,6 +19,7 @@ import net.luis.cave.common.item.weapons.NightCrossbow;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.SwordItem;
 import net.minecraftforge.fml.RegistryObject;
@@ -200,16 +202,22 @@ public class ModTools {
 	public static final RegistryObject<Item> NIGHT_CROSSBOW = ITEMS.register("night_crossbow", NightCrossbow::new);
 	
 	
-	public static final RegistryObject<Item> IRON_SHIELD = ITEMS.register("iron_shield", IronShield::new);
+	public static final RegistryObject<Item> IRON_SHIELD = ITEMS.register("iron_shield", 
+			() -> new Shield(1524, () -> IronShieldRender::new , Items.IRON_INGOT));
 	
-	public static final RegistryObject<Item> GOLDEN_SHIELD = ITEMS.register("golden_shield", GoldenShield::new);
+	public static final RegistryObject<Item> GOLDEN_SHIELD = ITEMS.register("golden_shield", 
+			() -> new Shield(192, () -> GoldenShieldRender::new, Items.GOLD_INGOT));
 	
-	public static final RegistryObject<Item> DIAMOND_SHIELD = ITEMS.register("diamond_shield", DiamondShield::new);
+	public static final RegistryObject<Item> DIAMOND_SHIELD = ITEMS.register("diamond_shield", 
+			() -> new Shield(4683, () -> DiamondShieldRender::new, Items.DIAMOND));
 	
-	public static final RegistryObject<Item> NETHERITE_SHIELD = ITEMS.register("netherite_shield", NetheriteShield::new);
+	public static final RegistryObject<Item> NETHERITE_SHIELD = ITEMS.register("netherite_shield", 
+			() -> new Shield(6093, () -> NetheriteShieldRender::new, Items.NETHERITE_INGOT));
 	
-	public static final RegistryObject<Item> ENDERITE_SHIELD = ITEMS.register("enderite_shield", EnderiteShield::new);
+	public static final RegistryObject<Item> ENDERITE_SHIELD = ITEMS.register("enderite_shield", 
+			() -> new Shield(11587, () -> EnderiteShieldRender::new, ModItems.ENDERITE_INGOT.get()));
 	
-	public static final RegistryObject<Item> NIGHT_SHIELD = ITEMS.register("night_shield", NightShield::new);
+	public static final RegistryObject<Item> NIGHT_SHIELD = ITEMS.register("night_shield", 
+			() -> new Shield(14387, () -> NightShieldRender::new, ModItems.NIGHT_INGOT.get()));
 	
 }

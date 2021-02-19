@@ -1,4 +1,4 @@
-package net.luis.cave.api.item.api;
+package net.luis.cave.api.item.api.weapon;
 
 import net.luis.cave.common.enums.StarBonusType;
 import net.luis.cave.common.enums.StarType;

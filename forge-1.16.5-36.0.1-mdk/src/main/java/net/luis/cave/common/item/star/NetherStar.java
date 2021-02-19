@@ -1,6 +1,6 @@
 package net.luis.cave.common.item.star;
 
-import net.luis.cave.api.item.api.Star;
+import net.luis.cave.api.item.api.weapon.Star;
 import net.luis.cave.common.enums.StarType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
