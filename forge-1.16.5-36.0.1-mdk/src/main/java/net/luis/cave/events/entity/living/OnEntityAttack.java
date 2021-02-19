@@ -54,7 +54,7 @@ public class OnEntityAttack {
 				
 				if (player.getHeldItemMainhand().getItem() == ModTools.BLAZING_SWORD.get()) {
 					
-					target.setFire(world.rand.nextInt(15));
+					target.setFire(5 + world.rand.nextInt(15));
 					
 				}
 				

@@ -59,11 +59,12 @@ public class OnVillagerTradesEvent {
 			trade3.add(VillagerManager.creatTradeEmeraldForItem(7, ModTools.IRON_SHIELD.get(), 1, false, 3));
 			trade3.add(VillagerManager.creatTradeEmeraldForItem(7, ModTools.DIAMOND_SHIELD.get(), 1, false, 3));
 			
-			trade4.add(VillagerManager.creatTradeEmeraldForItem(36, ModArmor.SAPHIRE_LEGGINS.get(), 1, false, 4));
-			trade4.add(VillagerManager.creatTradeEmeraldForItem(30, ModArmor.SAPHIRE_BOOTS.get(), 1, false, 4));
 			
-			trade5.add(VillagerManager.creatTradeEmeraldForItem(38, ModArmor.SAPHIRE_CHESTPLATE.get(), 1, false, 5));
-			trade5.add(VillagerManager.creatTradeEmeraldForItem(30, ModArmor.SAPHIRE_HELMET.get(), 1, false, 5));
+			trade4.add(VillagerManager.creatTradeEmeraldForEnchantedItem(ModArmor.SAPHIRE_LEGGINS.get(), 10, false, 4));
+			trade4.add(VillagerManager.creatTradeEmeraldForEnchantedItem(ModArmor.SAPHIRE_BOOTS.get(), 10, false, 4));
+			
+			trade5.add(VillagerManager.creatTradeEmeraldForEnchantedItem(ModArmor.SAPHIRE_LEGGINS.get(), 10, false, 5));
+			trade5.add(VillagerManager.creatTradeEmeraldForEnchantedItem(ModArmor.SAPHIRE_LEGGINS.get(), 10, false, 5));
 			
 		} else if (type == VillagerProfession.TOOLSMITH) {
 			
@@ -77,11 +78,11 @@ public class OnVillagerTradesEvent {
 			
 			trade3.add(VillagerManager.creatTradeEmeraldForItem(6, Items.DIAMOND, 1, true, 3));
 			
-			trade4.add(VillagerManager.creatTradeEmeraldForItem(32, ModTools.LIMONITE_AXE.get(), 1, false, 4));
-			trade4.add(VillagerManager.creatTradeEmeraldForItem(30, ModTools.LIMONITE_SHOVEL.get(), 1, false, 4));
-			trade4.add(VillagerManager.creatTradeEmeraldForItem(24, ModTools.LIMONITE_HOE.get(), 1, true, 4));
+			trade4.add(VillagerManager.creatTradeEmeraldForEnchantedItem(ModTools.LIMONITE_AXE.get(), 15, true, 4));
+			trade4.add(VillagerManager.creatTradeEmeraldForEnchantedItem(ModTools.LIMONITE_SHOVEL.get(), 15, true, 4));
+			trade4.add(VillagerManager.creatTradeEmeraldForEnchantedItem(ModTools.LIMONITE_HOE.get(), 15, true, 4));
 			
-			trade5.add(VillagerManager.creatTradeEmeraldForItem(35, ModTools.LIMONITE_PICKAXE.get(), 1, false, 5));
+			trade5.add(VillagerManager.creatTradeEmeraldForEnchantedItem(ModTools.LIMONITE_PICKAXE.get(), 15, true, 5));
 			
 		} else if (type == VillagerProfession.CLERIC) {
 			
@@ -111,8 +112,8 @@ public class OnVillagerTradesEvent {
 			
 			trade2.add(VillagerManager.creatTradeEmeraldForItem(1, Items.IRON_INGOT, 2, true, 2));
 
-			trade5.add(VillagerManager.creatTradeEmeraldForItem(33, ModTools.BLAZING_SWORD.get(), 1, false, 5));
-			trade5.add(VillagerManager.creatTradeEmeraldForItem(23, ModTools.SAPHIRE_SWORD.get(), 1, false, 5));
+			trade5.add(VillagerManager.creatTradeEmeraldForEnchantedItem(ModTools.BLAZING_SWORD.get(), 20, false, 5));
+			trade5.add(VillagerManager.creatTradeEmeraldForEnchantedItem(ModTools.SAPHIRE_SWORD.get(), 20, false, 5));
 			
 		}
 		

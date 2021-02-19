@@ -35,6 +35,12 @@ public class PlayerManager {
 		
 	}
 	
+	public static boolean hasItemInInventory(PlayerEntity player, Item item) {
+		
+		return getItemInInventory(player, item).getItem() == item;
+		
+	}
+	
 	public static ItemStack getItemInInventory(PlayerEntity player, Item item) {
 		
 		IItemHandler itemHandler = player.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).orElseThrow(

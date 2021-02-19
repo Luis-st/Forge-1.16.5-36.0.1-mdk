@@ -67,7 +67,7 @@ public class OnLivingHurtEvent {
 			
 			if ((health - amount) <= 0) {
 				
-				if (PlayerManager.getItemInInventory(player, ModItems.DEATH_STAR.get()).getItem() != ItemStack.EMPTY.getItem()) {
+				if (PlayerManager.hasItemInInventory(player, ModItems.DEATH_STAR.get())) {
 					
 					ItemStack stack = PlayerManager.getItemInInventory(player, ModItems.DEATH_STAR.get());
 					CooldownTracker cooldownTracker = player.getCooldownTracker();

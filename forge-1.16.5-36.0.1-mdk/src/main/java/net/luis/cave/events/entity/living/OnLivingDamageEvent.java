@@ -2,7 +2,9 @@ package net.luis.cave.events.entity.living;
 
 import net.luis.cave.Cave;
 import net.luis.cave.api.entity.EntityManager;
+import net.luis.cave.api.entity.player.PlayerManager;
 import net.luis.cave.init.ModEnchantment;
+import net.luis.cave.init.items.ModItems;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -15,8 +17,6 @@ public class OnLivingDamageEvent {
 	
 	@SubscribeEvent
 	public static void LivingDamage(LivingDamageEvent event) {
-		
-		// TODO: add Damage star multiplier
 		
 		Entity target = event.getEntity();
 		Entity entity = event.getSource().getTrueSource();
@@ -34,7 +34,6 @@ public class OnLivingDamageEvent {
 				if (enchEnderSlayer > 0) {
 					
 					newAmount += (enchEnderSlayer * 2.5f) + enchEnderSlayer;
-					event.setAmount(newAmount);
 					
 				}
 				
@@ -45,11 +44,18 @@ public class OnLivingDamageEvent {
 				if (enchImpaling > 0) {
 					
 					newAmount += (enchImpaling * 2.5f) + enchImpaling;
-					event.setAmount(newAmount);
 					
 				}
 				
 			}
+			
+			if (PlayerManager.hasItemInInventory(player, ModItems.DAMAGE_STAR.get())) {
+				
+				newAmount *= 2;
+				
+			}
+			
+			event.setAmount(newAmount);
 			
 		}
 		
