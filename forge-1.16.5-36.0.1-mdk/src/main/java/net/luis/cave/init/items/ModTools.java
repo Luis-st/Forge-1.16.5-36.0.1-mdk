@@ -180,7 +180,7 @@ public class ModTools {
 			() -> new AxeItem(ModItemTier.NIGHT, 1, -3.0f, new Item.Properties().group(Cave.TOOLS).isImmuneToFire()));
 	
 	public static final RegistryObject<HoeItem> NIGHT_HOE = ITEMS.register("night_hoe", 
-			() -> new HoeItem(ModItemTier.NIGHT, -25, -0f, new Item.Properties().group(Cave.TOOLS).isImmuneToFire()));	
+			() -> new HoeItem(ModItemTier.NIGHT, -30, 0f, new Item.Properties().group(Cave.TOOLS).isImmuneToFire()));	
 	
 	public static final RegistryObject<SwordItem> NIGHT_SWORD = ITEMS.register("night_sword", 
 			() -> new SwordItem(ModItemTier.NIGHT, -1, -2.4f, new Item.Properties().group(Cave.WEAPONS).isImmuneToFire()));

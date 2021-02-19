@@ -64,7 +64,7 @@ public enum ModItemTier implements IItemTier {
 		
 	}),
 	
-	NIGHT(4, 8235, 16.0f, 27.0f, 55, () -> {
+	NIGHT(4, 8432, 18.0f, 30.0f, 55, () -> {
 		
 		return Ingredient.fromItems(ModItems.NIGHT_INGOT.get());
 		

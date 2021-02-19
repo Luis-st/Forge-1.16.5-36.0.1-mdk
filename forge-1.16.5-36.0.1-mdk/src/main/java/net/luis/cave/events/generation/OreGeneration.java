@@ -31,7 +31,7 @@ public class OreGeneration {
 		
 		overworldOres.add(register("jade_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
 				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.JADE_ORE.get().getDefaultState(), 7)) //vein Size
-				.range(64).square() //maximum height
+				.range(96).square() //maximum height
 				.func_242731_b(20))); //count per chunk
 		
 		overworldOres.add(register("limonite_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
@@ -39,7 +39,7 @@ public class OreGeneration {
 				.range(16).square().func_242731_b(7)));
 		
 		overworldOres.add(register("rosite_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
-				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.ROSITE_ORE.get().getDefaultState(), 5))
+				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.ROSITE_ORE.get().getDefaultState(), 4))
 				.range(64).square().func_242731_b(5)));
 		
 		overworldOres.add(register("saphire_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
@@ -47,12 +47,12 @@ public class OreGeneration {
 				.range(64).square().func_242731_b(5)));
 		
 		overworldOres.add(register("amethyst_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
-				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.AMETHYST_ORE.get().getDefaultState(), 7))
+				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.AMETHYST_ORE.get().getDefaultState(), 8))
 				.range(64).square().func_242731_b(10)));
 		
 		overworldOres.add(register("copper_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
 				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.COPPER_ORE.get().getDefaultState(), 9))
-				.range(128).square().func_242731_b(11)));
+				.range(128).square().func_242731_b(12)));
 		
 		overworldOres.add(register("calcite", Feature.ORE.withConfiguration(new OreFeatureConfig(
 				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.CALCITE.get().getDefaultState(), 15))
@@ -65,7 +65,7 @@ public class OreGeneration {
 		
 		endOres.add(register("enderite_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
 				new BlockMatchRuleTest(Blocks.END_STONE), ModBlocks.ENDERITE_ORE.get().getDefaultState(), 3))
-				.range(64).square().func_242731_b(6))); 
+				.range(57).square().func_242731_b(6))); 
 		
 	}
 	

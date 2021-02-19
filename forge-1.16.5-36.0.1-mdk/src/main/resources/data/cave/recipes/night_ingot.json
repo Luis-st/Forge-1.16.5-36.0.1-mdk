@@ -1,9 +1,9 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "###",
+        " # ",
         "#R#",
-        "###"
+        " # "
     ],
     "key": {
         "#": {
@@ -14,7 +14,7 @@
         }
     },
     "result": {
-        "item": "cave:death_star",
+        "item": "cave:night_ingot",
         "count": 1
     }
 }
