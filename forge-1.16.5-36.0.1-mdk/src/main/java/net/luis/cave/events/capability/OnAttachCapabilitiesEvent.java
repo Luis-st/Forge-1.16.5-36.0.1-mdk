@@ -18,7 +18,8 @@ public class OnAttachCapabilitiesEvent {
 		
 		if (event.getObject() instanceof PlayerEntity && !(event.getObject() instanceof FakePlayer)) {
 			
-			event.addCapability(new ResourceLocation("cave:extended_enderchest_gui"), new ModCapability.Provider());
+			PlayerEntity player = (PlayerEntity) event.getObject();
+			event.addCapability(new ResourceLocation("cave:extended_enderchest_gui"), new ModCapability.Provider(player));
 			
 		}
 		
