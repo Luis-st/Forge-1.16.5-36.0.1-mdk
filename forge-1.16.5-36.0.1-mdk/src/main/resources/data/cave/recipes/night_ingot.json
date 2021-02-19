@@ -7,10 +7,10 @@
     ],
     "key": {
         "#": {
-            "item": "minecraft:totem_of_undying"
+            "item": "cave:steel_ingot"
         },
         "R": {
-            "item": "minecraft:nether_star"
+            "item": "minecraft:netherite_block"
         }
     },
     "result": {
