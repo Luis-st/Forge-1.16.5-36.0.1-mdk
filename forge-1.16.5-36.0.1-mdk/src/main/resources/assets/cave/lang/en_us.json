@@ -98,7 +98,11 @@
   "entity.minecraft.villager.cave.end_trader": "End Trader",
   
   "death.attack.curse": "%1$s die by his own weapon",
+  "death.attack.curse.player": "%1$s die by his own weapon whilst fighting %2$s",
   "death.attack.freezing": "%1$s is frozen to death",
+  "death.attack.freezing.player": "%1$s is frozen to death whilst fighting %2$s",
+  "death.attack.death_star": "%1$s died at the star of the devil",
+  "death.attack.death_star.player": "%1$s was killed by %2$s with the star of the devil",
   
   "container.smelting_furnace": "Smelting Furnace",
   
@@ -109,6 +113,7 @@
   "item.cave.spyglass": "Spyglass",
   "item.cave.water_star": "Water Star",
   "item.cave.damage_star": "Damage Star",
+  "item.cave.death_star": "Death Star",
   
   "item.cave.iron_shield": "Iron Shield",
   "item.cave.golden_shield": "Golden Shield",

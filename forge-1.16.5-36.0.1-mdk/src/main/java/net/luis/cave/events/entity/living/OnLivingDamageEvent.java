@@ -16,6 +16,8 @@ public class OnLivingDamageEvent {
 	@SubscribeEvent
 	public static void LivingDamage(LivingDamageEvent event) {
 		
+		// TODO: add Damage star multiplier
+		
 		Entity target = event.getEntity();
 		Entity entity = event.getSource().getTrueSource();
 		float amount = event.getAmount();

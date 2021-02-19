@@ -9,6 +9,7 @@ import net.luis.cave.common.item.entity.DiamondArrowItem;
 import net.luis.cave.common.item.entity.JadeArrowItem;
 import net.luis.cave.common.item.entity.NetheriteArrowItem;
 import net.luis.cave.common.item.star.DamageStar;
+import net.luis.cave.common.item.star.DeathStar;
 import net.luis.cave.common.item.star.EndStar;
 import net.luis.cave.common.item.star.MiningStar;
 import net.luis.cave.common.item.star.WaterStar;
@@ -97,6 +98,8 @@ public class ModItems {
 			() -> new NetheriteArrowItem(new Item.Properties().group(Cave.WEAPONS)));
 	
 	public static final RegistryObject<Item> DAMAGE_STAR = ITEMS.register("damage_star", DamageStar::new);
+	
+	public static final RegistryObject<Item> DEATH_STAR = ITEMS.register("death_star", DeathStar::new);
 	
 }
 

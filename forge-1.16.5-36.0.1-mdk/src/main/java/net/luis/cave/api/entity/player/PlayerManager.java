@@ -1,7 +1,5 @@
 package net.luis.cave.api.entity.player;
 
-import java.util.concurrent.atomic.AtomicReference;
-
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
@@ -37,16 +35,16 @@ public class PlayerManager {
 		
 	}
 	
-	public static ItemStack getItem(PlayerEntity player, Item item) {
+	public static ItemStack getItemInInventory(PlayerEntity player, Item item) {
 		
-		AtomicReference<IItemHandler> itemHandler = new AtomicReference<>();
-		player.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> itemHandler.set(capability));
+		IItemHandler itemHandler = player.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).orElseThrow(
+				() -> new NullPointerException("The mod Capability<IItemHandler> is null"));
 		
-		if (itemHandler.get() != null) {
+		if (itemHandler != null) {
 			
-			for (int i = 0; i < itemHandler.get().getSlots(); i++) {
+			for (int i = 0; i < itemHandler.getSlots(); i++) {
 				
-				ItemStack stack = itemHandler.get().getStackInSlot(i);
+				ItemStack stack = itemHandler.getStackInSlot(i);
 				
 				if (item == stack.getItem()) {
 					

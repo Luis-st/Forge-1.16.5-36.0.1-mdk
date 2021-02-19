@@ -4,6 +4,6 @@ public enum StarBonusType {
 	
 	MOVEMENT,
 	EFFECT,
-	MULTIPLIER;
+	FUNCTION;
 
 }

@@ -8,7 +8,8 @@ public enum StarType implements IStarType {
 	MINING("mining", 1, StarBonusType.EFFECT),
 	NETHER("nether", 2, StarBonusType.EFFECT),
 	WATER("water", 3, StarBonusType.EFFECT),
-	DAMAGE("damage", 4, StarBonusType.MULTIPLIER);
+	DAMAGE("damage", 4, StarBonusType.EFFECT),
+	DEATH("death", 5, StarBonusType.FUNCTION);
 	
 	private final String tag;
 	private final int id;

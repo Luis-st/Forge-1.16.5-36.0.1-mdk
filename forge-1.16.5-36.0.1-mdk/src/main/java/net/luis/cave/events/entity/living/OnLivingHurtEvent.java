@@ -4,11 +4,13 @@ import net.luis.cave.Cave;
 import net.luis.cave.api.entity.player.PlayerManager;
 import net.luis.cave.common.enums.ModArmorMaterial;
 import net.luis.cave.init.ModEnchantment;
+import net.luis.cave.init.items.ModItems;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.CooldownTracker;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -26,12 +28,14 @@ public class OnLivingHurtEvent {
 		if (entity instanceof PlayerEntity) {
 			
 			PlayerEntity player = (PlayerEntity) entity;
+			float health = player.getHealth();
+			float amount = event.getAmount();
 			ItemStack item = player.getItemStackFromSlot(EquipmentSlotType.CHEST);
-			int EnchElytraFalling = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.ELYTRA_FALLING.get(), item);
+			int enchElytraFalling = EnchantmentHelper.getEnchantmentLevel(ModEnchantment.ELYTRA_FALLING.get(), item);
 			
-			if (EnchElytraFalling == 1) {
+			if (source == DamageSource.FLY_INTO_WALL) {
 				
-				if (source == DamageSource.FLY_INTO_WALL) {
+				if (enchElytraFalling > 1) {
 					
 					event.setCanceled(true);
 					
@@ -56,6 +60,24 @@ public class OnLivingHurtEvent {
 				} else if (source == DamageSource.LAVA) {
 					
 					event.setCanceled(true);
+					
+				}
+				
+			}
+			
+			if ((health - amount) <= 0) {
+				
+				if (PlayerManager.getItemInInventory(player, ModItems.DEATH_STAR.get()).getItem() != ItemStack.EMPTY.getItem()) {
+					
+					ItemStack stack = PlayerManager.getItemInInventory(player, ModItems.DEATH_STAR.get());
+					CooldownTracker cooldownTracker = player.getCooldownTracker();
+					
+					if (!cooldownTracker.hasCooldown(stack.getItem())) {
+						
+						event.setCanceled(true);
+						cooldownTracker.setCooldown(stack.getItem(), 24000);
+						
+					}
 					
 				}
 				
