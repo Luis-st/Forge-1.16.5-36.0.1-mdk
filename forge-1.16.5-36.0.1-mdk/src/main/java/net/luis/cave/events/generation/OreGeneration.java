@@ -35,45 +35,37 @@ public class OreGeneration {
 				.func_242731_b(20))); //count per chunk
 		
 		overworldOres.add(register("limonite_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
-				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.LIMONITE_ORE.get().getDefaultState(), 14)) //vein Size
-				.range(16).square() //maximum height
-				.func_242731_b(7))); //count per chunk
+				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.LIMONITE_ORE.get().getDefaultState(), 14))
+				.range(16).square().func_242731_b(7)));
 		
 		overworldOres.add(register("rosite_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
-				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.ROSITE_ORE.get().getDefaultState(), 5)) //vein Size
-				.range(64).square() //Spawn height start
-				.func_242731_b(6))); ///count per chunk
+				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.ROSITE_ORE.get().getDefaultState(), 5))
+				.range(64).square().func_242731_b(5)));
 		
 		overworldOres.add(register("saphire_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
-				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.SAPHIRE_ORE.get().getDefaultState(), 4)) //vein Size
-				.range(64).square() //maximum height
-				.func_242731_b(6))); //count per chunk
+				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.SAPHIRE_ORE.get().getDefaultState(), 4))
+				.range(64).square().func_242731_b(5)));
 		
 		overworldOres.add(register("amethyst_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
-				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.AMETHYST_ORE.get().getDefaultState(), 7)) //vein Size
-				.range(64).square() //maximum height
-				.func_242731_b(10))); //count per chunk
+				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.AMETHYST_ORE.get().getDefaultState(), 7))
+				.range(64).square().func_242731_b(10)));
 		
 		overworldOres.add(register("copper_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
-				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.COPPER_ORE.get().getDefaultState(), 9)) //vein Size
-				.range(128).square() //maximum height
-				.func_242731_b(11))); //count per chunk
+				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.COPPER_ORE.get().getDefaultState(), 9))
+				.range(128).square().func_242731_b(11)));
 		
 		overworldOres.add(register("calcite", Feature.ORE.withConfiguration(new OreFeatureConfig(
-				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.CALCITE.get().getDefaultState(), 15)) //vein Size
-				.range(72).square() //maximum height
-				.func_242731_b(15))); //count per chunk
+				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.CALCITE.get().getDefaultState(), 15))
+				.range(72).square() .func_242731_b(15))); 
 		
 		overworldOres.add(register("tuff", Feature.ORE.withConfiguration(new OreFeatureConfig(
-				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.TUFF.get().getDefaultState(), 20)) //vein Size
-				.range(64).square() //maximum height
-				.func_242731_b(20))); //count per chunk
+				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.TUFF.get().getDefaultState(), 20))
+				.range(64).square().func_242731_b(20))); 
 		
 		
 		endOres.add(register("enderite_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
-				new BlockMatchRuleTest(Blocks.END_STONE), ModBlocks.ENDERITE_ORE.get().getDefaultState(), 3)) //vein Size
-				.range(64).square() //maximum height
-				.func_242731_b(6))); //count per chunk
+				new BlockMatchRuleTest(Blocks.END_STONE), ModBlocks.ENDERITE_ORE.get().getDefaultState(), 3))
+				.range(64).square().func_242731_b(6))); 
 		
 	}
 	
