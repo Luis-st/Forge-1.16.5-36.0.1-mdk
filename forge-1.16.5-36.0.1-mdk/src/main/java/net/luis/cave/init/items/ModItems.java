@@ -101,5 +101,8 @@ public class ModItems {
 	
 	public static final RegistryObject<Item> DEATH_STAR = ITEMS.register("death_star", DeathStar::new);
 	
+	public static final RegistryObject<Item> NIGHT_SHARD = ITEMS.register("night_shard", 
+			() -> new Item(new Item.Properties().group(Cave.MISC)));
+	
 }
 

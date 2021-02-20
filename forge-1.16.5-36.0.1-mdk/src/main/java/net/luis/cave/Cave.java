@@ -3,9 +3,12 @@ package net.luis.cave;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import net.luis.cave.api.capability.IModItemHandler;
 import net.luis.cave.events.generation.OreGeneration;
 import net.luis.cave.init.ModEnchantment;
 import net.luis.cave.init.ModEntityType;
+import net.luis.cave.init.ModCapability.Factory;
+import net.luis.cave.init.ModCapability.Storage;
 import net.luis.cave.init.blocks.ModBlockItems;
 import net.luis.cave.init.blocks.ModBlocks;
 import net.luis.cave.init.blocks.ModVerticalBlockItems;
@@ -28,6 +31,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -95,6 +99,7 @@ public class Cave {
 	private void setup(FMLCommonSetupEvent event) {
 		
 		OreGeneration.registerOres();
+		CapabilityManager.INSTANCE.register(IModItemHandler.class, new Storage(), new Factory());
 		
 	}
 	

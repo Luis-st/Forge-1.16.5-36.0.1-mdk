@@ -23,8 +23,12 @@ public class WaterStar extends Star {
 		
 		if (player.isInWater()) {
 			
-			player.addPotionEffect(new EffectInstance(new EffectInstance(Effects.WATER_BREATHING, 10, 0, true, false)));
-			player.addPotionEffect(new EffectInstance(new EffectInstance(Effects.DOLPHINS_GRACE, 10, 0, true, false)));
+			if (player.getHeldItemMainhand().getItem() == this || player.getHeldItemOffhand().getItem() == this) {
+				
+				player.addPotionEffect(new EffectInstance(new EffectInstance(Effects.WATER_BREATHING, 10, 0, true, false)));
+				player.addPotionEffect(new EffectInstance(new EffectInstance(Effects.DOLPHINS_GRACE, 10, 0, true, false)));
+				
+			}
 			
 		}
 		

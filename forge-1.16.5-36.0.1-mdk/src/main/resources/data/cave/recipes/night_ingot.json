@@ -1,16 +1,16 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        " # ",
-        "#R#",
-        " # "
+        " R ",
+        "R#R",
+        " R "
     ],
     "key": {
         "#": {
             "item": "cave:steel_ingot"
         },
         "R": {
-            "item": "minecraft:netherite_block"
+            "item": "cave:night_shard"
         }
     },
     "result": {

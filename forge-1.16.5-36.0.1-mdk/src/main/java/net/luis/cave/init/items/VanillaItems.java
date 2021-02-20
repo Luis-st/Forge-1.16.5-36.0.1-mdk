@@ -24,10 +24,10 @@ public class VanillaItems {
 	
 	
 	public static final RegistryObject<Crossbow> CROSSBOW = VANILLA_ITEMS.register("crossbow", 
-			() -> new Crossbow(new Item.Properties().group(ItemGroup.COMBAT).maxStackSize(1).maxDamage(326)));
+			() -> new Crossbow(new Item.Properties().maxStackSize(1).maxDamage(326).group(ItemGroup.COMBAT)));
 	
 	public static final RegistryObject<Bow> BOW = VANILLA_ITEMS.register("bow", 
-			() -> new Bow(new Item.Properties().group(ItemGroup.COMBAT).maxStackSize(1).maxDamage(384)));
+			() -> new Bow(new Item.Properties().maxStackSize(1).maxDamage(384).group(ItemGroup.COMBAT)));
 	
 	
 	public static final RegistryObject<Shovel> WOODEN_SHOVEL = VANILLA_ITEMS.register("wooden_shovel", 

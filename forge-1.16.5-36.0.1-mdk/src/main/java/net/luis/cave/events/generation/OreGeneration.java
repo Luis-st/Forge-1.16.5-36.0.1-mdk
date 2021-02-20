@@ -60,7 +60,7 @@ public class OreGeneration {
 		
 		overworldOres.add(register("tuff", Feature.ORE.withConfiguration(new OreFeatureConfig(
 				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.TUFF.get().getDefaultState(), 20))
-				.range(64).square().func_242731_b(20))); 
+				.range(64).square().func_242731_b(20)));  
 		
 		
 		endOres.add(register("enderite_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(

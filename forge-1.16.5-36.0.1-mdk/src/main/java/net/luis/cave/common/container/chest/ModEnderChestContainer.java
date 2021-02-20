@@ -3,7 +3,6 @@ package net.luis.cave.common.container.chest;
 import net.luis.cave.init.util.ModContainerType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
@@ -21,8 +20,10 @@ public class ModEnderChestContainer extends Container {
 
 	public ModEnderChestContainer(int id, PlayerInventory playerInventoryIn, IItemHandlerModifiable itemHandlerModifiable) {
 		
+		// TODO: fix
+		
 		super(ModContainerType.ENDER_CHEST.get(), id);
-		assertInventorySize((IInventory) itemHandlerModifiable, 6 * 9);
+//		assertInventorySize((IInventory) itemHandlerModifiable, 6 * 9);
 		int i = (6 - 4) * 18;
 		
 		for (int j = 0; j < 6; ++j) {

@@ -38,10 +38,7 @@ public class OnEnderchest {
 				event.setCanceled(true);
 				ServerPlayerEntity serverPlayer = (ServerPlayerEntity) player;
 				IItemHandlerModifiable itemHandlerModifiable = serverPlayer.getCapability(ModCapability.CAPABILITY, null).orElseThrow(
-				() -> new NullPointerException("The mod Capability<IModItemHandler> is null"));
-				
-				Cave.LOGGER.debug("getCapability isPresent:  " + serverPlayer.getCapability(ModCapability.CAPABILITY, null).isPresent());
-				// on the console: return false
+						() -> new NullPointerException("The mod Capability<IModItemHandler> is null"));
 				
 				if (itemHandlerModifiable != null) {
 					

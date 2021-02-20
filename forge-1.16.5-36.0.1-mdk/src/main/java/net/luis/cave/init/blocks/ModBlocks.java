@@ -42,7 +42,7 @@ public class ModBlocks {
 			.harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()));
 	
 	public static final RegistryObject<Block> JADE_BLOCK = BLOCKS.register("jade_block", 
-			() -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.EMERALD).hardnessAndResistance(5.0f,6.0f).sound(SoundType.METAL)
+			() -> new Block(Block.Properties.create(Material.IRON, MaterialColor.EMERALD).hardnessAndResistance(5.0f,6.0f).sound(SoundType.METAL)
 			.harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()));
 	
 	public static final RegistryObject<Block> LIMONITE_ORE = BLOCKS.register("limonite_ore", 
@@ -50,7 +50,7 @@ public class ModBlocks {
 			.harvestLevel(3).harvestTool(ToolType.PICKAXE).setRequiresTool()));
 	
 	public static final RegistryObject<Block> LIMONITE_BLOCK = BLOCKS.register("limonite_block", 
-			() -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.GOLD).hardnessAndResistance(5.0f,6.0f).sound(SoundType.METAL)
+			() -> new Block(Block.Properties.create(Material.IRON, MaterialColor.GOLD).hardnessAndResistance(5.0f,6.0f).sound(SoundType.METAL)
 			.harvestLevel(3).harvestTool(ToolType.PICKAXE).setRequiresTool()));
 	
 	public static final RegistryObject<Block> ROSITE_ORE = BLOCKS.register("rosite_ore", 
@@ -58,7 +58,7 @@ public class ModBlocks {
 			.harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()));
 	
 	public static final RegistryObject<Block> ROSITE_BLOCK = BLOCKS.register("rosite_block", 
-			() -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.RED).hardnessAndResistance(5.0f,6.0f).sound(SoundType.METAL)
+			() -> new Block(Block.Properties.create(Material.IRON, MaterialColor.RED).hardnessAndResistance(5.0f,6.0f).sound(SoundType.METAL)
 			.harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()));
 	
 	public static final RegistryObject<Block> SAPHIRE_ORE = BLOCKS.register("saphire_ore", 
@@ -66,7 +66,7 @@ public class ModBlocks {
 			.harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()));
 	
 	public static final RegistryObject<Block> SAPHIRE_BLOCK = BLOCKS.register("saphire_block", 
-			() -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.BLUE).hardnessAndResistance(5.0f,6.0f).sound(SoundType.METAL)
+			() -> new Block(Block.Properties.create(Material.IRON, MaterialColor.BLUE).hardnessAndResistance(5.0f,6.0f).sound(SoundType.METAL)
 			.harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()));
 	
 	public static final RegistryObject<Block> POWDER_SNOW = BLOCKS.register("powder_snow", PowderSnow::new);
