@@ -3,6 +3,8 @@ package net.luis.cave.init.items;
 import net.luis.cave.Cave;
 import net.luis.cave.api.item.api.Shield;
 import net.luis.cave.api.item.api.tool.Shovel;
+import net.luis.cave.api.item.api.weapon.Bow;
+import net.luis.cave.api.item.api.weapon.Crossbow;
 import net.luis.cave.client.render.item.DiamondShieldRender;
 import net.luis.cave.client.render.item.EnderiteShieldRender;
 import net.luis.cave.client.render.item.GoldenShieldRender;
@@ -10,12 +12,6 @@ import net.luis.cave.client.render.item.IronShieldRender;
 import net.luis.cave.client.render.item.NetheriteShieldRender;
 import net.luis.cave.client.render.item.NightShieldRender;
 import net.luis.cave.common.enums.ModItemTier;
-import net.luis.cave.common.item.weapons.EnderiteBow;
-import net.luis.cave.common.item.weapons.EnderiteCrossbow;
-import net.luis.cave.common.item.weapons.NetheriteBow;
-import net.luis.cave.common.item.weapons.NetheriteCrossbow;
-import net.luis.cave.common.item.weapons.NightBow;
-import net.luis.cave.common.item.weapons.NightCrossbow;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
@@ -188,36 +184,42 @@ public class ModTools {
 			() -> new SwordItem(ModItemTier.NIGHT, -1, -2.4f, new Item.Properties().group(Cave.WEAPONS).isImmuneToFire()));
 	
 	
-	public static final RegistryObject<Item> NETHERITE_BOW = ITEMS.register("netherite_bow", NetheriteBow::new);
+	public static final RegistryObject<Bow> NETHERITE_BOW = ITEMS.register("netherite_bow", 
+			() -> new Bow(1927, 1.5, 1.0));
 	
-	public static final RegistryObject<Item> ENDERITE_BOW = ITEMS.register("enderite_bow", EnderiteBow::new);
+	public static final RegistryObject<Bow> ENDERITE_BOW = ITEMS.register("enderite_bow", 
+			() -> new Bow(2943, 1.75, 1.25));
 	
-	public static final RegistryObject<Item> NIGHT_BOW = ITEMS.register("night_bow", NightBow::new);
-	
-	
-	public static final RegistryObject<Item> NETHERITE_CROSSBOW = ITEMS.register("netherite_crossbow", NetheriteCrossbow::new);
-	
-	public static final RegistryObject<Item> ENDERITE_CROSSBOW = ITEMS.register("enderite_crossbow", EnderiteCrossbow::new);
-	
-	public static final RegistryObject<Item> NIGHT_CROSSBOW = ITEMS.register("night_crossbow", NightCrossbow::new);
+	public static final RegistryObject<Bow> NIGHT_BOW = ITEMS.register("night_bow", 
+			() -> new Bow(4235, 2, 1.5));
 	
 	
-	public static final RegistryObject<Item> IRON_SHIELD = ITEMS.register("iron_shield", 
+	public static final RegistryObject<Crossbow> NETHERITE_CROSSBOW = ITEMS.register("netherite_crossbow", 
+			() -> new Crossbow(1634, 1.5, 1));
+	
+	public static final RegistryObject<Crossbow> ENDERITE_CROSSBOW = ITEMS.register("enderite_crossbow", 
+			() -> new Crossbow(2831, 1.75, 2));
+	
+	public static final RegistryObject<Crossbow> NIGHT_CROSSBOW = ITEMS.register("night_crossbow", 
+			() -> new Crossbow(3864, 2, 3));
+	
+	
+	public static final RegistryObject<Shield> IRON_SHIELD = ITEMS.register("iron_shield", 
 			() -> new Shield(1524, () -> IronShieldRender::new , Items.IRON_INGOT));
 	
-	public static final RegistryObject<Item> GOLDEN_SHIELD = ITEMS.register("golden_shield", 
+	public static final RegistryObject<Shield> GOLDEN_SHIELD = ITEMS.register("golden_shield", 
 			() -> new Shield(192, () -> GoldenShieldRender::new, Items.GOLD_INGOT));
 	
-	public static final RegistryObject<Item> DIAMOND_SHIELD = ITEMS.register("diamond_shield", 
+	public static final RegistryObject<Shield> DIAMOND_SHIELD = ITEMS.register("diamond_shield", 
 			() -> new Shield(4683, () -> DiamondShieldRender::new, Items.DIAMOND));
 	
-	public static final RegistryObject<Item> NETHERITE_SHIELD = ITEMS.register("netherite_shield", 
+	public static final RegistryObject<Shield> NETHERITE_SHIELD = ITEMS.register("netherite_shield", 
 			() -> new Shield(6093, () -> NetheriteShieldRender::new, Items.NETHERITE_INGOT));
 	
-	public static final RegistryObject<Item> ENDERITE_SHIELD = ITEMS.register("enderite_shield", 
+	public static final RegistryObject<Shield> ENDERITE_SHIELD = ITEMS.register("enderite_shield", 
 			() -> new Shield(11587, () -> EnderiteShieldRender::new, ModItems.ENDERITE_INGOT.get()));
 	
-	public static final RegistryObject<Item> NIGHT_SHIELD = ITEMS.register("night_shield", 
+	public static final RegistryObject<Shield> NIGHT_SHIELD = ITEMS.register("night_shield", 
 			() -> new Shield(14387, () -> NightShieldRender::new, ModItems.NIGHT_INGOT.get()));
 	
 }

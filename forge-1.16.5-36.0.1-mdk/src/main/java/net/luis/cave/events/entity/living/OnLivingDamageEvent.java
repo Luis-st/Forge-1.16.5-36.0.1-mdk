@@ -51,7 +51,7 @@ public class OnLivingDamageEvent {
 			
 			if (PlayerManager.hasItemInInventory(player, ModItems.DAMAGE_STAR.get())) {
 				
-				newAmount *= 2;
+				newAmount *= 1.5;
 				
 			}
 			
@@ -60,5 +60,5 @@ public class OnLivingDamageEvent {
 		}
 		
 	}
-
+	
 }
