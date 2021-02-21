@@ -1,7 +1,6 @@
 package net.luis.cave.init.blocks;
 
 import net.luis.cave.Cave;
-import net.luis.cave.common.block.BeeTable;
 import net.luis.cave.common.block.CrackedLava;
 import net.luis.cave.common.block.InfiniteAnvil;
 import net.luis.cave.common.block.LightningRod;
@@ -74,8 +73,6 @@ public class ModBlocks {
 	public static final RegistryObject<Block> INFINITE_ANVIL = BLOCKS.register("infinite_anvil", InfiniteAnvil::new);
 	
 	public static final RegistryObject<Block> SMELTING_FURNACE = BLOCKS.register("smelting_furnace", SmeltingFurnace::new);
-	
-	public static final RegistryObject<Block> BEE_TABLE = BLOCKS.register("bee_table", BeeTable::new);
 	
 	public static final RegistryObject<Block> TINTED_GLASS = BLOCKS.register("tinted_glass", TintedGlass::new);
 	

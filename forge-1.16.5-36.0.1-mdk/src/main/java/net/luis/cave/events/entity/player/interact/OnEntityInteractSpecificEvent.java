@@ -15,8 +15,6 @@ import net.minecraft.entity.monster.ZombieVillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
-import net.minecraft.item.MerchantOffer;
-import net.minecraft.item.MerchantOffers;
 import net.minecraft.village.GossipManager;
 import net.minecraft.village.GossipType;
 import net.minecraft.world.World;
@@ -40,7 +38,6 @@ public class OnEntityInteractSpecificEvent {
 		if (target instanceof VillagerEntity) {
 			
 			VillagerEntity villager = (VillagerEntity) target;
-			MerchantOffers offers = villager.getOffers();
 			GossipManager gossipManager = villager.getGossip();
 			String uuid = villager.getUniqueID().toString().replace("-", "");
 			int uniqueInteger = Integer.parseInt(uniqueHex(uuid, 2), 16) / 10;
@@ -51,11 +48,7 @@ public class OnEntityInteractSpecificEvent {
 				
 				if (world.getGameRules().getBoolean(ModGameRule.DO_WORKTIME_TRADE_RESETING.getRule())) {
 					
-					for (MerchantOffer merchantOffer : offers) {
-						
-						merchantOffer.resetUses();
-						
-					}
+					villager.restock();
 					
 				}
 				

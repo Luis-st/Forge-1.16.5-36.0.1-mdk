@@ -54,9 +54,6 @@ public class ModBlockItems {
 	public static final RegistryObject<Item> SMELTING_FURNACE_ITEM = ITEMS.register("smelting_furnace", 
 			() -> new BlockItem(ModBlocks.SMELTING_FURNACE.get(), new Item.Properties().group(Cave.DECORATIONS)));
 	
-	public static final RegistryObject<Item> BEE_TABLE_ITEM = ITEMS.register("bee_table", 
-			() -> new BlockItem(ModBlocks.BEE_TABLE.get(), new Item.Properties().group(Cave.DECORATIONS)));
-	
 	public static final RegistryObject<Item> TINTED_GLASS_ITEM = ITEMS.register("tinted_glass", 
 			() -> new BlockItem(ModBlocks.TINTED_GLASS.get(), new Item.Properties().group(Cave.BUILDING_BLOCKS)));
 	

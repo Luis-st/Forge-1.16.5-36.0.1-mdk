@@ -86,6 +86,7 @@ public class Cave {
 		LOGGER.info("Util were successfully initialized");
 		
 		ModPointOfInterestTypes.POI_TYPE.register(modEventBus);
+		ModPointOfInterestTypes.VANILLA_POI_TYPE.register(modEventBus);
 		ModVillagerProfessions.PROFESSIONS.register(modEventBus);
 		LOGGER.info("Villager were successfully initialized");
 		

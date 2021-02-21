@@ -52,7 +52,7 @@ public enum ModItemTier implements IItemTier {
 		
 	}),
 	
-	STEEL(4, 18473, 15.0f, 6.0f, 35, () -> {
+	STEEL(4, 18473, 20.0f, 6.0f, 35, () -> {
 		
 		return Ingredient.fromItems(ModItems.STEEL_INGOT.get());
 		

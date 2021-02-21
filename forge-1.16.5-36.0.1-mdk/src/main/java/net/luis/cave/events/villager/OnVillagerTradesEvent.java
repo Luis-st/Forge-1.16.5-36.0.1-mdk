@@ -102,8 +102,14 @@ public class OnVillagerTradesEvent {
 			trade1.add(VillagerManager.creatTradeItemForEmerald(Items.STICK, 32 - rng.nextInt(16), 1, true, 1));
 			trade1.add(VillagerManager.creatTradeItemForEmerald(Items.ARROW, 8 + rng.nextInt(8), 1, true, 1));
 			
+			trade2.add(VillagerManager.creatTradeEmeraldAndArrowForTippedArrow(6, 5, 2));
+			
+			trade3.add(VillagerManager.creatTradeEmeraldAndArrowForTippedArrow(6, 5, 3));
+			
+			trade4.add(VillagerManager.creatTradeEmeraldAndArrowForTippedArrow(4, 5, 4));
 			trade4.add(VillagerManager.creatTradeEmeraldAndArrowForTippedArrow(4, 5, 4));
 			
+			trade5.add(VillagerManager.creatTradeEmeraldAndArrowForTippedArrow(2, 5, 5));
 			trade5.add(VillagerManager.creatTradeEmeraldAndArrowForTippedArrow(2, 5, 5));
 			
 		} else if (type == VillagerProfession.WEAPONSMITH) {

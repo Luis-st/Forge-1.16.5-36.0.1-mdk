@@ -59,7 +59,7 @@ public enum ModArmorMaterial implements IArmorMaterial {
 		
 	}),
 	
-	NIGHT(Cave.Mod_Id + ":night", 112, new int[] {18, 19, 24, 18}, 50, 9.0f, 0.8f, () -> {
+	NIGHT(Cave.Mod_Id + ":night", 112, new int[] {17, 18, 23, 17}, 50, 9.0f, 0.8f, () -> {
 		
 		return Ingredient.fromItems(ModItems.NIGHT_INGOT.get());
 		

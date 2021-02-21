@@ -12,6 +12,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class ModPointOfInterestTypes {
 	
 	public static final DeferredRegister<PointOfInterestType> POI_TYPE = DeferredRegister.create(ForgeRegistries.POI_TYPES, Cave.Mod_Id);
+	public static final DeferredRegister<PointOfInterestType> VANILLA_POI_TYPE = DeferredRegister.create(ForgeRegistries.POI_TYPES, Cave.Minecraft_Id);
 	
 	
 	public static final RegistryObject<PointOfInterestType> LUMBERJACK = POI_TYPE.register("lumberjack", 
@@ -26,8 +27,11 @@ public class ModPointOfInterestTypes {
 	public static final RegistryObject<PointOfInterestType> ENCHANTER = POI_TYPE.register("enchanter", 
 			() -> new PointOfInterestType("enchanter", VillagerUtil.getAllStates(Blocks.ENCHANTING_TABLE), 1, 1));
 	
-	public static final RegistryObject<PointOfInterestType> BEEKEEPER = POI_TYPE.register("beekeeper", 
-			() -> new PointOfInterestType("beekeeper", VillagerUtil.getAllStates(ModBlocks.BEE_TABLE.get()), 1, 1));
+//	public static final RegistryObject<PointOfInterestType> BEEKEEPER = POI_TYPE.register("beekeeper", 
+//			() -> new PointOfInterestType("beekeeper", VillagerUtil.getAllStates(ModBlocks.BEE_TABLE.get()), 1, 1));
+	
+	public static final RegistryObject<PointOfInterestType> BEEKEEPER = VANILLA_POI_TYPE.register("beehive", 
+	() -> new PointOfInterestType("beehive", VillagerUtil.getAllStates(Blocks.BEEHIVE), 1, 1));
 	
 	public static final RegistryObject<PointOfInterestType> NETHER_TRADER = POI_TYPE.register("nether_trader", 
 			() -> new PointOfInterestType("nether_trader", VillagerUtil.getAllStates(Blocks.RESPAWN_ANCHOR), 1, 1));
