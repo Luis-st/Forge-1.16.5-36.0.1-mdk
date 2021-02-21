@@ -1,5 +1,6 @@
 package net.luis.cave.common.container.chest;
 
+import net.luis.cave.init.ModCapability;
 import net.luis.cave.init.util.ModContainerType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -12,25 +13,19 @@ import net.minecraftforge.items.SlotItemHandler;
 
 public class ModEnderChestContainer extends Container {
 	
-	public ModEnderChestContainer(int id, PlayerInventory playerInventoryIn, PacketBuffer extraData) {
+	public ModEnderChestContainer(int id, PlayerInventory playerInventory, PacketBuffer extraData) {
 		
 		super(ModContainerType.ENDER_CHEST.get(), id);
-		
-	}
-
-	public ModEnderChestContainer(int id, PlayerInventory playerInventoryIn, IItemHandlerModifiable itemHandlerModifiable) {
-		
-		// TODO: fix
-		
-		super(ModContainerType.ENDER_CHEST.get(), id);
-//		assertInventorySize((IInventory) itemHandlerModifiable, 6 * 9);
+		PlayerEntity player = playerInventory.player;
+		IItemHandlerModifiable itemHandlerModifiable = player.getCapability(ModCapability.CAPABILITY, null)
+				.orElseThrow(() -> new NullPointerException("The mod Capability<IModItemHandler> is null"));
 		int i = (6 - 4) * 18;
 		
 		for (int j = 0; j < 6; ++j) {
 
 			for (int k = 0; k < 9; ++k) {
 
-				this.addSlot(new SlotItemHandler(itemHandlerModifiable, k + j * 9, 8 + k * 18, 18 + j * 18));
+				this.addSlot(new SlotItemHandler(itemHandlerModifiable, k + j * 9, 8 + k * 18, (j * 18) - 9));
 
 			}
 
@@ -40,7 +35,7 @@ public class ModEnderChestContainer extends Container {
 			
 			for (int j1 = 0; j1 < 9; ++j1) {
 				
-				this.addSlot(new Slot(playerInventoryIn, j1 + l * 9 + 9, 8 + j1 * 18, 103 + l * 18 + i));
+				this.addSlot(new Slot(playerInventory, j1 + l * 9 + 9, 8 + j1 * 18, (103 + l * 18 + i) - 27));
 				
 			}
 			
@@ -48,7 +43,42 @@ public class ModEnderChestContainer extends Container {
 
 		for (int i1 = 0; i1 < 9; ++i1) {
 			
-			this.addSlot(new Slot(playerInventoryIn, i1, 8 + i1 * 18, 161 + i));
+			this.addSlot(new Slot(playerInventory, i1, 8 + i1 * 18, 134 + i));
+			
+		}
+		
+	}
+
+	public ModEnderChestContainer(int id, PlayerInventory playerInventory, IItemHandlerModifiable itemHandlerModifiable) {
+		
+		// TODO: fix
+		
+		super(ModContainerType.ENDER_CHEST.get(), id);
+		int i = (6 - 4) * 18;
+		
+		for (int j = 0; j < 6; ++j) {
+
+			for (int k = 0; k < 9; ++k) {
+
+				this.addSlot(new SlotItemHandler(itemHandlerModifiable, k + j * 9, 8 + k * 18, (j * 18) - 9));
+
+			}
+
+		}
+
+		for (int l = 0; l < 3; ++l) {
+			
+			for (int j1 = 0; j1 < 9; ++j1) {
+				
+				this.addSlot(new Slot(playerInventory, j1 + l * 9 + 9, 8 + j1 * 18, (103 + l * 18 + i) - 27));
+				
+			}
+			
+		}
+
+		for (int i1 = 0; i1 < 9; ++i1) {
+			
+			this.addSlot(new Slot(playerInventory, i1, 8 + i1 * 18, 134 + i));
 			
 		}
 

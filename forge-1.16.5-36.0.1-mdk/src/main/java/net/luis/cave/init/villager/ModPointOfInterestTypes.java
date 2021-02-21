@@ -27,9 +27,6 @@ public class ModPointOfInterestTypes {
 	public static final RegistryObject<PointOfInterestType> ENCHANTER = POI_TYPE.register("enchanter", 
 			() -> new PointOfInterestType("enchanter", VillagerUtil.getAllStates(Blocks.ENCHANTING_TABLE), 1, 1));
 	
-//	public static final RegistryObject<PointOfInterestType> BEEKEEPER = POI_TYPE.register("beekeeper", 
-//			() -> new PointOfInterestType("beekeeper", VillagerUtil.getAllStates(ModBlocks.BEE_TABLE.get()), 1, 1));
-	
 	public static final RegistryObject<PointOfInterestType> BEEKEEPER = VANILLA_POI_TYPE.register("beehive", 
 	() -> new PointOfInterestType("beehive", VillagerUtil.getAllStates(Blocks.BEEHIVE), 1, 1));
 	
