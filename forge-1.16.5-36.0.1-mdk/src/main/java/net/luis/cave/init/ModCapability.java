@@ -41,7 +41,7 @@ public class ModCapability {
 	
 	public static class Provider implements ICapabilitySerializable<CompoundNBT> {
 		
-		private ModItemStackHandler inventory = new ModItemStackHandler();
+		private ModItemStackHandler inventory = new ModItemStackHandler(27);
 		private PlayerEntity player;
 		private LazyOptional<CombinedInvWrapper> optional = LazyOptional.of(() -> {
 			
