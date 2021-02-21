@@ -8,7 +8,6 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
-import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.SlotItemHandler;
 
@@ -51,8 +50,6 @@ public class ModEnderChestContainer extends Container {
 	}
 
 	public ModEnderChestContainer(int id, PlayerInventory playerInventory, IItemHandlerModifiable itemHandlerModifiable) {
-		
-		// TODO: fix
 		
 		super(ModContainerType.ENDER_CHEST.get(), id);
 		int i = (6 - 4) * 18;
