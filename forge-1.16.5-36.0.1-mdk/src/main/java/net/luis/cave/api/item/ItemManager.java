@@ -23,6 +23,7 @@ import net.minecraft.item.FlintAndSteelItem;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.ShieldItem;
 import net.minecraft.item.ShovelItem;
@@ -128,6 +129,49 @@ public class ItemManager {
 		nightItems.add(ModArmor.NIGHT_HELMET.get());
 		
 		return nightItems;
+		
+	}
+	
+	public static boolean isShulkerBox(ItemStack item) {
+		
+		List<Item> shulkerBoxItems = getShulkerBoxItems();
+		
+		for (int i = 0; i < shulkerBoxItems.size(); i++) {
+			
+			if (shulkerBoxItems.get(i) == item.getItem()) {
+				
+				return true;
+				
+			}
+			
+		}
+		
+		return false;
+		
+	}
+	
+	private static List<Item> getShulkerBoxItems() {
+		
+		List<Item> shulkerBoxItems = new ArrayList<>();
+		shulkerBoxItems.add(Items.SHULKER_BOX);
+		shulkerBoxItems.add(Items.BLACK_SHULKER_BOX);
+		shulkerBoxItems.add(Items.BLUE_SHULKER_BOX);
+		shulkerBoxItems.add(Items.BROWN_SHULKER_BOX);
+		shulkerBoxItems.add(Items.CYAN_SHULKER_BOX);
+		shulkerBoxItems.add(Items.GRAY_SHULKER_BOX);
+		shulkerBoxItems.add(Items.GREEN_SHULKER_BOX);
+		shulkerBoxItems.add(Items.LIGHT_BLUE_SHULKER_BOX);
+		shulkerBoxItems.add(Items.LIGHT_GRAY_SHULKER_BOX);
+		shulkerBoxItems.add(Items.LIME_SHULKER_BOX);
+		shulkerBoxItems.add(Items.MAGENTA_SHULKER_BOX);
+		shulkerBoxItems.add(Items.ORANGE_SHULKER_BOX);
+		shulkerBoxItems.add(Items.PINK_SHULKER_BOX);
+		shulkerBoxItems.add(Items.PURPLE_SHULKER_BOX);
+		shulkerBoxItems.add(Items.RED_SHULKER_BOX);
+		shulkerBoxItems.add(Items.WHITE_SHULKER_BOX);
+		shulkerBoxItems.add(Items.YELLOW_SHULKER_BOX);
+		
+		return shulkerBoxItems;
 		
 	}
 	

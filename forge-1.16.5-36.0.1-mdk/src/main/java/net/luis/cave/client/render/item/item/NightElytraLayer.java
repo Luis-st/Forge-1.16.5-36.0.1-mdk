@@ -1,4 +1,4 @@
-package net.luis.cave.client.render.item;
+package net.luis.cave.client.render.item.item;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
@@ -19,12 +19,12 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
-public class EnderiteElytraLayer<T extends LivingEntity, M extends EntityModel<T>> extends LayerRenderer<T, M> {
+public class NightElytraLayer<T extends LivingEntity, M extends EntityModel<T>> extends LayerRenderer<T, M> {
 	
-	private static final ResourceLocation TEXTURE_ELYTRA = new ResourceLocation("cave:textures/entity/enderite_elytra.png");
+	private static final ResourceLocation TEXTURE_ELYTRA = new ResourceLocation("cave:textures/entity/night_elytra.png");
 	private final ElytraModel<T> modelElytra = new ElytraModel<>();
 
-	public EnderiteElytraLayer(IEntityRenderer<T, M> entityRendererIn) {
+	public NightElytraLayer(IEntityRenderer<T, M> entityRendererIn) {
 		
 		super(entityRendererIn);
 		
@@ -78,7 +78,7 @@ public class EnderiteElytraLayer<T extends LivingEntity, M extends EntityModel<T
 	
 	public boolean shouldRender(ItemStack stack, T entity) {
 		
-		return stack.getItem() == ModArmor.ENDREITE_ELYTRA.get();
+		return stack.getItem() == ModArmor.NIGHT_ELYTRA.get();
 		
 	}
 	
