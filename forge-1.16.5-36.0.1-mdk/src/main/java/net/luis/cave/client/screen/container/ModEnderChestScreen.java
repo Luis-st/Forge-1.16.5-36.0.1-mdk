@@ -17,9 +17,9 @@ public class ModEnderChestScreen extends ContainerScreen<ModEnderChestContainer>
 	public ModEnderChestScreen(ModEnderChestContainer container, PlayerInventory playerInventory, ITextComponent title) {
 		
 		super(container, playerInventory, title);
-		this.playerInventoryTitleY = this.ySize - 65;
-		this.titleY = this.ySize - 187; 
-		
+		this.ySize = 114 + this.inventoryRows * 18;
+		this.playerInventoryTitleY = this.ySize - 94; 
+		 
 	}
 
 	@Override
@@ -38,7 +38,7 @@ public class ModEnderChestScreen extends ContainerScreen<ModEnderChestContainer>
 		RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 		this.minecraft.getTextureManager().bindTexture(CHEST_GUI_TEXTURE);
 		int i = (this.width - this.xSize) / 2;
-		int j = (this.height - this.ySize) / 5;
+		int j = (this.height - this.ySize) / 2;
 		this.blit(matrixStack, i, j, 0, 0, this.xSize, this.inventoryRows * 18 + 17);
 		this.blit(matrixStack, i, j + this.inventoryRows * 18 + 17, 0, 126, this.xSize, 96);
 		

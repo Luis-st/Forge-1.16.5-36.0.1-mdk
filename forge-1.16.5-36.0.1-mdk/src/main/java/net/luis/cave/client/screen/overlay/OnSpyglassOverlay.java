@@ -6,6 +6,7 @@ import net.luis.cave.Cave;
 import net.luis.cave.init.items.ModItems;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.IngameGui;
 import net.minecraft.client.settings.PointOfView;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ResourceLocation;
@@ -20,7 +21,7 @@ import net.minecraftforge.fml.common.Mod;
 public class OnSpyglassOverlay {
 	
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
-	@SuppressWarnings({ "resource", "static-access" })
+	@SuppressWarnings({ "resource" })
 	public static void RenderSpyglassOverlay(RenderGameOverlayEvent.Pre event) {
 		
 		PlayerEntity player = Minecraft.getInstance().player;
@@ -43,7 +44,7 @@ public class OnSpyglassOverlay {
 				RenderSystem.enableBlend();
 				RenderSystem.blendFunc(770, 771);
 				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("cave:textures/misc/spyglass_scope.png"));
-				Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), 0, 0, 0, 0, posX, posY, 480, 270);
+				IngameGui.blit(event.getMatrixStack(), 0, 0, 0, 0, posX, posY, 480, 270);
 				RenderSystem.depthMask(true);
 				RenderSystem.enableDepthTest();
 				
