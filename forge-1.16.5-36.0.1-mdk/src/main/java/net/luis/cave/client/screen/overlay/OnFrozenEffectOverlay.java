@@ -6,6 +6,7 @@ import net.luis.cave.Cave;
 import net.luis.cave.init.blocks.ModBlocks;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.IngameGui;
 import net.minecraft.client.settings.PointOfView;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ResourceLocation;
@@ -19,10 +20,9 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid=Cave.Mod_Id, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
-public class FrozenEffectOverlay {
+public class OnFrozenEffectOverlay {
 	
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
-	@SuppressWarnings({ "static-access" })
 	public static void RenderSpyglassOverlay(RenderGameOverlayEvent event) {
 				
 		Minecraft mc = Minecraft.getInstance();
@@ -64,7 +64,7 @@ public class FrozenEffectOverlay {
 					RenderSystem.enableBlend();
 					RenderSystem.blendFunc(770, 771);
 					mc.getTextureManager().bindTexture(new ResourceLocation("cave:textures/misc/frozen_effect.png"));
-					mc.ingameGUI.blit(event.getMatrixStack(), 0, 0, 0, 0, posX, posY, 480, 270);
+					IngameGui.blit(event.getMatrixStack(), 0, 0, 0, 0, posX, posY, 480, 270);
 					RenderSystem.depthMask(true);
 					RenderSystem.enableDepthTest();
 					
@@ -75,7 +75,7 @@ public class FrozenEffectOverlay {
 					RenderSystem.enableBlend();
 					RenderSystem.blendFunc(770, 771);
 					mc.getTextureManager().bindTexture(new ResourceLocation("cave:textures/misc/frozen_effect_creative.png"));
-					mc.ingameGUI.blit(event.getMatrixStack(), 0, 0, 0, 0, posX, posY, 480, 270);
+					IngameGui.blit(event.getMatrixStack(), 0, 0, 0, 0, posX, posY, 480, 270);
 					RenderSystem.depthMask(true);
 					RenderSystem.enableDepthTest();
 					

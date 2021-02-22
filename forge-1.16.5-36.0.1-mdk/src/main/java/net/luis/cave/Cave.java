@@ -5,10 +5,10 @@ import org.apache.logging.log4j.Logger;
 
 import net.luis.cave.api.capability.IModItemHandler;
 import net.luis.cave.events.generation.OreGeneration;
-import net.luis.cave.init.ModEnchantment;
-import net.luis.cave.init.ModEntityType;
 import net.luis.cave.init.ModCapability.Factory;
 import net.luis.cave.init.ModCapability.Storage;
+import net.luis.cave.init.ModEnchantment;
+import net.luis.cave.init.ModEntityType;
 import net.luis.cave.init.blocks.ModBlockItems;
 import net.luis.cave.init.blocks.ModBlocks;
 import net.luis.cave.init.blocks.ModVerticalBlockItems;
@@ -20,6 +20,7 @@ import net.luis.cave.init.items.ModItems;
 import net.luis.cave.init.items.ModTools;
 import net.luis.cave.init.items.VanillaItems;
 import net.luis.cave.init.util.ModContainerType;
+import net.luis.cave.init.util.ModPaintingType;
 import net.luis.cave.init.util.ModRecipeSerializer;
 import net.luis.cave.init.util.ModTileEntityType;
 import net.luis.cave.init.villager.ModPointOfInterestTypes;
@@ -92,6 +93,9 @@ public class Cave {
 		
 		ModEntityType.ENTITIES.register(modEventBus);
 		LOGGER.info("Entities were successfully initialized");
+		
+		ModPaintingType.PAINTING_TYPES.register(modEventBus);
+		LOGGER.info("Paintings were successfully initialized");
 		
 		MinecraftForge.EVENT_BUS.register(this);
 		

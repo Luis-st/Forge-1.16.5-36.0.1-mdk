@@ -13,6 +13,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.eventbus.api.Event.Result;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.network.NetworkHooks;
@@ -35,7 +36,7 @@ public class OnEnderchest {
 			
 			if (player instanceof ServerPlayerEntity) {
 				
-				event.setCanceled(true);
+				event.setUseBlock(Result.DENY);
 				ServerPlayerEntity serverPlayer = (ServerPlayerEntity) player;
 				IItemHandlerModifiable itemHandlerModifiable = serverPlayer.getCapability(ModCapability.CAPABILITY, null)
 						.orElseThrow(() -> new NullPointerException("The mod Capability<IModItemHandler> is null"));

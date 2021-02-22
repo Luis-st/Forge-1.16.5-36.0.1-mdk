@@ -62,7 +62,7 @@ public class OnServerChatEvent {
 							(new StringTextComponent(String.valueOf(seed))).modifyStyle((p_211752_2_) -> {
 								return p_211752_2_.setFormatting(TextFormatting.GREEN)
 										.setClickEvent(new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, String.valueOf(seed)))
-										.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,new TranslationTextComponent("chat.copy.click")))
+										.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new TranslationTextComponent("chat.copy.click")))
 										.setInsertion(String.valueOf(seed));
 								}));
 					
@@ -71,6 +71,23 @@ public class OnServerChatEvent {
 				}
 				
 			}
+			
+		}
+		
+		if (msg.equalsIgnoreCase("?uuid")) {
+			
+			event.setCanceled(true);
+			String uuid = player.getUniqueID().toString().replace("-", "");
+			
+			ITextComponent iTextComponent = TextComponentUtils.wrapWithSquareBrackets(
+					(new StringTextComponent(String.valueOf(uuid))).modifyStyle((p_211752_2_) -> {
+						return p_211752_2_.setFormatting(TextFormatting.GREEN)
+								.setClickEvent(new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, String.valueOf(uuid)))
+								.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new TranslationTextComponent("chat.copy.click")))
+								.setInsertion(String.valueOf(uuid));
+						}));
+			
+			player.sendMessage(iTextComponent, player.getUniqueID());
 			
 		}
 		

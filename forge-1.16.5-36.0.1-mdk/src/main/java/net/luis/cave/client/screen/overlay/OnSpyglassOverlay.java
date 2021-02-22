@@ -17,7 +17,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid=Cave.Mod_Id, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
-public class SpyglassOverlay {
+public class OnSpyglassOverlay {
 	
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	@SuppressWarnings({ "resource", "static-access" })

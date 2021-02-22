@@ -6,7 +6,6 @@ import net.luis.cave.init.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.BreakableBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -17,7 +16,6 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.SpawnReason;
-import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.monster.SkeletonEntity;
 import net.minecraft.entity.monster.StrayEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -31,6 +29,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
@@ -40,7 +39,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.ForgeEventFactory;
 
-public class PowderSnow extends BreakableBlock {
+public class PowderSnow extends Block {
 
 	public PowderSnow() {
 		
@@ -54,9 +53,10 @@ public class PowderSnow extends BreakableBlock {
 	}
 	
 	@Override
+	@SuppressWarnings("deprecation")
 	public boolean isSideInvisible(BlockState state, BlockState adjacentBlockState, Direction side) {
 		
-		return false;
+		return adjacentBlockState.isIn(this) ? true : super.isSideInvisible(state, adjacentBlockState, side);
 		
 	}
 	
@@ -108,10 +108,6 @@ public class PowderSnow extends BreakableBlock {
 					return VoxelShapes.empty();
 					
 				}
-				
-			} else if (entity instanceof ItemEntity) {
-				
-				return VoxelShapes.empty();
 				
 			} else {
 				
@@ -218,6 +214,13 @@ public class PowderSnow extends BreakableBlock {
 		
 		
 		return ActionResultType.PASS;
+		
+	}
+	
+	@Override
+	public ItemStack getPickBlock(BlockState state, RayTraceResult target, IBlockReader world, BlockPos pos, PlayerEntity player) {
+		
+		return new ItemStack(ModItems.POWDER_SNOW_BUCKET.get());
 		
 	}
 
