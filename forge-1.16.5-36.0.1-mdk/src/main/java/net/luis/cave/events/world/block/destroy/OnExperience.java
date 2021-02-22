@@ -10,10 +10,10 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid=Cave.Mod_Id, bus = Mod.EventBusSubscriber.Bus.FORGE)
-public class OnXpDrop {
+public class OnExperience {
 	
 	@SubscribeEvent
-	public static void XpDrop(BlockEvent.BreakEvent event) {
+	public static void Experience(BlockEvent.BreakEvent event) {
 		
 		PlayerEntity player = event.getPlayer();
 

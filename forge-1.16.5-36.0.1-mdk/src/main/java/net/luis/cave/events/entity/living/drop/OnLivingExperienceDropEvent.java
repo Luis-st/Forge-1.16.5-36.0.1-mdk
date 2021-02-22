@@ -1,4 +1,4 @@
-package net.luis.cave.events.entity.living;
+package net.luis.cave.events.entity.living.drop;
 
 import net.luis.cave.Cave;
 import net.luis.cave.init.ModEnchantment;

@@ -1,4 +1,4 @@
-package net.luis.cave.events.entity.player;
+package net.luis.cave.events.entity.player.anvil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +11,7 @@ import net.luis.cave.init.util.ModGameRule;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentData;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.EnchantedBookItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -27,7 +28,10 @@ public class OnAnvilUpdateEvent {
 		
 		ItemStack inputLeft = event.getLeft();
 		ItemStack inputRight = event.getRight();
-		World world = event.getPlayer().getEntityWorld();
+		PlayerEntity player = event.getPlayer();
+		World world = player.getEntityWorld();
+		
+		Cave.LOGGER.debug("run");
 		
 		if (inputLeft != null && inputRight != null) {
 			

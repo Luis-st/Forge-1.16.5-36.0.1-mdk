@@ -1,4 +1,4 @@
-package net.luis.cave.events.entity.player;
+package net.luis.cave.events.entity.player.chat;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package net.luis.cave.events.entity.player;
+package net.luis.cave.events.entity.player.chat;
 
 import net.luis.cave.Cave;
 import net.luis.cave.api.world.WorldManager;
