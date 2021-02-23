@@ -1,6 +1,7 @@
 package net.luis.cave.common.tileentity;
 
-import net.luis.cave.common.container.chest.ModChestContainer9x8;
+import net.luis.cave.common.container.container.ModChestContainer25x8;
+import net.luis.cave.init.util.ModContainerType;
 import net.luis.cave.init.util.ModTileEntityType;
 import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.BlockState;
@@ -24,7 +25,9 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class ModBarrelTileEntity extends LockableLootTileEntity {
 	
-	private NonNullList<ItemStack> barrelContents = NonNullList.withSize(72, ItemStack.EMPTY);
+	private int rows = 8;
+	private int size = 25;
+	private NonNullList<ItemStack> barrelContents = NonNullList.withSize(rows * size, ItemStack.EMPTY);
 	private int numPlayersUsing;
 
 	private ModBarrelTileEntity(TileEntityType<?> barrelType) {
@@ -72,7 +75,7 @@ public class ModBarrelTileEntity extends LockableLootTileEntity {
 	@Override
 	public int getSizeInventory() {
 		
-		return 72;
+		return rows * size;
 		
 	}
 
@@ -100,7 +103,7 @@ public class ModBarrelTileEntity extends LockableLootTileEntity {
 	@Override
 	protected Container createMenu(int id, PlayerInventory player) {
 		
-		return new ModChestContainer9x8(id, player, this);
+		return new ModChestContainer25x8(ModContainerType.GENERIC_25X8.get(), id, player, this);
 		
 	}
 

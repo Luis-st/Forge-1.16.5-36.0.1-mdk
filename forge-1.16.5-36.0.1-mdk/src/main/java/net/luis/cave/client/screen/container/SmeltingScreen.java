@@ -1,6 +1,6 @@
 package net.luis.cave.client.screen.container;
 
-import net.luis.cave.common.container.SmeltingContainer;
+import net.luis.cave.common.container.container.SmeltingContainer;
 import net.minecraft.client.gui.recipebook.FurnaceRecipeGui;
 import net.minecraft.client.gui.screen.inventory.AbstractFurnaceScreen;
 import net.minecraft.entity.player.PlayerInventory;

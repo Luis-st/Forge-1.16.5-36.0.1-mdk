@@ -1,4 +1,4 @@
-package net.luis.cave.common.container.chest;
+package net.luis.cave.common.container.container;
 
 import net.luis.cave.init.ModCapability;
 import net.luis.cave.init.util.ModContainerType;

@@ -3,7 +3,7 @@ package net.luis.cave.client.screen.container;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
-import net.luis.cave.common.container.chest.ModChestContainer9x8;
+import net.luis.cave.common.container.container.ModChestContainer9x8;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;

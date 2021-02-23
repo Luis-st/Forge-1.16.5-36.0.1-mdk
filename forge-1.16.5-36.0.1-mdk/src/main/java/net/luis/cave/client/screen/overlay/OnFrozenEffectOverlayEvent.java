@@ -20,7 +20,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid=Cave.Mod_Id, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
-public class OnFrozenEffectOverlay {
+public class OnFrozenEffectOverlayEvent {
 	
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public static void RenderSpyglassOverlay(RenderGameOverlayEvent event) {

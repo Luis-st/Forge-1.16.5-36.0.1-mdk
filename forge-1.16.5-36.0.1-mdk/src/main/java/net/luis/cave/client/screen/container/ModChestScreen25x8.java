@@ -3,25 +3,25 @@ package net.luis.cave.client.screen.container;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
-import net.luis.cave.common.container.chest.ModChestContainer9x7;
+import net.luis.cave.common.container.container.ModChestContainer25x8;
+import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.IHasContainer;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
-public class ModChestScreen9x7 extends ContainerScreen<ModChestContainer9x7> implements IHasContainer<ModChestContainer9x7> {
-	
-	private static final ResourceLocation CHEST_GUI_TEXTURE = new ResourceLocation("textures/gui/container/generic_54.png");
-	private final int inventoryRows;
+public class ModChestScreen25x8 extends ContainerScreen<ModChestContainer25x8> implements IHasContainer<ModChestContainer25x8> {
 
-	public ModChestScreen9x7(ModChestContainer9x7 container, PlayerInventory playerInventory, ITextComponent title) {
+	private static final ResourceLocation CHEST_GUI_TEXTURE = new ResourceLocation("cave:textures/gui/container/generic_200.png");
+
+	public ModChestScreen25x8(ModChestContainer25x8 container, PlayerInventory playerInventory, ITextComponent title) {
 		
 		super(container, playerInventory, title);
 		this.passEvents = false;
-		this.inventoryRows = container.getNumRows();
-		this.ySize = 114 + this.inventoryRows * 18;
-		this.playerInventoryTitleY = this.ySize - 94;
+		this.ySize = 114 + 8 * 18;
+		this.titleX = this.xSize - 311;
+		this.playerInventoryTitleY = this.ySize - 93;
 		
 	}
 
@@ -40,10 +40,9 @@ public class ModChestScreen9x7 extends ContainerScreen<ModChestContainer9x7> imp
 		
 		RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 		this.minecraft.getTextureManager().bindTexture(CHEST_GUI_TEXTURE);
-		int i = (this.width - this.xSize) / 2;
+		int i = (this.width - (this.xSize + 288)) / 2;
 		int j = (this.height - this.ySize) / 2;
-		this.blit(matrixStack, i, j, 0, 0, this.xSize, this.inventoryRows * 18 + 17);
-		this.blit(matrixStack, i, j + this.inventoryRows * 18 + 17, 0, 126, this.xSize, 96);
+		AbstractGui.blit(matrixStack, i, j, 0, 0, 464, 256, 512, 512);
 		
 	}
 }

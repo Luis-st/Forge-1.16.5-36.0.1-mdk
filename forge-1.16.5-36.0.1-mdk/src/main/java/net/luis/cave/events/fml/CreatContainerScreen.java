@@ -1,7 +1,7 @@
 package net.luis.cave.events.fml;
 
 import net.luis.cave.Cave;
-import net.luis.cave.client.screen.container.ModChestScreen9x7;
+import net.luis.cave.client.screen.container.ModChestScreen25x8;
 import net.luis.cave.client.screen.container.ModChestScreen9x8;
 import net.luis.cave.client.screen.container.ModEnderChestScreen;
 import net.luis.cave.client.screen.container.SmeltingScreen;
@@ -19,9 +19,9 @@ public class CreatContainerScreen {
 	public static void doCommonSetup(FMLCommonSetupEvent event) {
 		
 		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.SMELTING_CONTAINER.get(), SmeltingScreen::new));
-		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.GENERIC_9X7.get(), ModChestScreen9x7::new));
 		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.GENERIC_9X8.get(), ModChestScreen9x8::new));
 		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.ENDER_CHEST.get(), ModEnderChestScreen::new));
+		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.GENERIC_25X8.get(), ModChestScreen25x8::new));
 		
 	}
 	

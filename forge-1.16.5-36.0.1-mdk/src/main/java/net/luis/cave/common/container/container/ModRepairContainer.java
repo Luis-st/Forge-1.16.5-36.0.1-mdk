@@ -1,4 +1,4 @@
-package net.luis.cave.common.container;
+package net.luis.cave.common.container.container;
 
 import net.luis.cave.init.blocks.ModBlocks;
 import net.minecraft.block.BlockState;
