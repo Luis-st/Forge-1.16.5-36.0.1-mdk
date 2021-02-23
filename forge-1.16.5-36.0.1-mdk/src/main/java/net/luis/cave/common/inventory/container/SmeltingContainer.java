@@ -1,4 +1,4 @@
-package net.luis.cave.common.container.container;
+package net.luis.cave.common.inventory.container;
 
 import net.luis.cave.init.util.ModContainerType;
 import net.luis.cave.init.util.ModRecipeType;

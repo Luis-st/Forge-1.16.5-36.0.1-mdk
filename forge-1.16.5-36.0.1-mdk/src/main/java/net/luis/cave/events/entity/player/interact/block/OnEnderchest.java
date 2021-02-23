@@ -1,7 +1,7 @@
 package net.luis.cave.events.entity.player.interact.block;
 
 import net.luis.cave.Cave;
-import net.luis.cave.common.container.container.ModEnderChestContainer;
+import net.luis.cave.common.inventory.container.ModEnderChestContainer;
 import net.luis.cave.init.ModCapability;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;

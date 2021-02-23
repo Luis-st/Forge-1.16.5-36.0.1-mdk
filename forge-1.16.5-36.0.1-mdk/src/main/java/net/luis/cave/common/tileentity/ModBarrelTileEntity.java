@@ -1,6 +1,6 @@
 package net.luis.cave.common.tileentity;
 
-import net.luis.cave.common.container.container.ModChestContainer25x8;
+import net.luis.cave.common.inventory.container.ModChestContainer25x8;
 import net.luis.cave.init.util.ModContainerType;
 import net.luis.cave.init.util.ModTileEntityType;
 import net.minecraft.block.BarrelBlock;

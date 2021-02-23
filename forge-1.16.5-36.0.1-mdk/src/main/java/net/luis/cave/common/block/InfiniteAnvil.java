@@ -1,6 +1,6 @@
 package net.luis.cave.common.block;
 
-import net.luis.cave.common.container.container.ModRepairContainer;
+import net.luis.cave.common.inventory.container.ModRepairContainer;
 import net.luis.cave.init.blocks.ModBlockItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

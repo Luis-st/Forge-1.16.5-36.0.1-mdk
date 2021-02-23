@@ -37,7 +37,7 @@ public class ModItems {
 	public static final RegistryObject<Item> RUBY_APPLE = ITEMS.register("ruby_apple", RubyApple::new);
 	
 	public static final RegistryObject<Item> ROSE_QUARTZ = ITEMS.register("rose_quartz", 
-			() -> new Item(new Item.Properties().group(Cave.MISC)));
+			() -> new Item(new Item.Properties().group(Cave.MISC).maxStackSize(256)));
 	
 	public static final RegistryObject<Item> POLISHED_ROSE_QUARTZ = ITEMS.register("polished_rose_quartz", 
 			() -> new Item(new Item.Properties().group(Cave.MISC)));

@@ -1,10 +1,10 @@
 package net.luis.cave.init.util;
 
 import net.luis.cave.Cave;
-import net.luis.cave.common.container.container.ModChestContainer25x8;
-import net.luis.cave.common.container.container.ModChestContainer9x8;
-import net.luis.cave.common.container.container.ModEnderChestContainer;
-import net.luis.cave.common.container.container.SmeltingContainer;
+import net.luis.cave.common.inventory.container.ModChestContainer25x8;
+import net.luis.cave.common.inventory.container.ModChestContainer9x8;
+import net.luis.cave.common.inventory.container.ModEnderChestContainer;
+import net.luis.cave.common.inventory.container.SmeltingContainer;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.fml.RegistryObject;
