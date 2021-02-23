@@ -25,8 +25,8 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class ModBarrelTileEntity extends LockableLootTileEntity {
 	
-	private int rows = 8;
-	private int size = 25;
+	private final int rows = 8;
+	private final int size = 25;
 	private NonNullList<ItemStack> barrelContents = NonNullList.withSize(rows * size, ItemStack.EMPTY);
 	private int numPlayersUsing;
 

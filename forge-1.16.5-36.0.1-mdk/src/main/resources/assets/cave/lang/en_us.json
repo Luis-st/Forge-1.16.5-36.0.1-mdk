@@ -105,6 +105,7 @@
   "death.attack.death_star.player": "%1$s was killed by %2$s with the star of the devil",
   
   "container.smelting_furnace": "Smelting Furnace",
+  "container.crafting_station": "Crafting Station",
   
   "item.cave.fungus_soup": "Fungus Soup",
   "item.cave.end_star": "End Star",
@@ -138,6 +139,7 @@
   "block.cave.calcite": "Calcite",
   "block.cave.tuff": "Tuff",
   "block.cave.cracked_lava": "Cracked Lava",
+  "block.cave.crafting_station": "Crafting Station",
   
   "item.cave.copper_ingot": "Copper Ingot",
   "block.cave.copper_ore": "Copper Ore",

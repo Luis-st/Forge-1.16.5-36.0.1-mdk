@@ -84,4 +84,7 @@ public class ModBlockItems {
 	public static final RegistryObject<Item> LIGHTNING_ROD_ITEM = ITEMS.register("lightning_rod", 
 			() -> new BlockItem(ModBlocks.LIGHTNING_ROD.get(), new Item.Properties().group(Cave.DECORATIONS)));
 	
+	public static final RegistryObject<Item> CRAFTING_STATION_ITEM = ITEMS.register("crafting_station", 
+			() -> new BlockItem(ModBlocks.CRAFTING_STATION.get(), new Item.Properties().group(Cave.DECORATIONS)));
+	
 }

@@ -2,6 +2,7 @@ package net.luis.cave.init.blocks;
 
 import net.luis.cave.Cave;
 import net.luis.cave.common.block.CrackedLava;
+import net.luis.cave.common.block.CraftingStation;
 import net.luis.cave.common.block.InfiniteAnvil;
 import net.luis.cave.common.block.LightningRod;
 import net.luis.cave.common.block.PowderSnow;
@@ -109,5 +110,7 @@ public class ModBlocks {
 	public static final RegistryObject<Block> LIGHTNING_ROD = BLOCKS.register("lightning_rod", LightningRod::new);
 	
 	public static final RegistryObject<Block> CRACKED_LAVA = BLOCKS.register("cracked_lava", CrackedLava::new);
+	
+	public static final RegistryObject<Block> CRAFTING_STATION = BLOCKS.register("crafting_station", CraftingStation::new);
 
 }

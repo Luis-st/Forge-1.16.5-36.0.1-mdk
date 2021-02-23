@@ -13,43 +13,12 @@ import net.minecraft.network.PacketBuffer;
 
 public class ModChestContainer25x8 extends Container {
 	
-	private int rows = 8;
-	private int size = 25;
+	private static int rows = 8;
+	private static int size = 25;
 
 	public ModChestContainer25x8(int id, PlayerInventory playerInventoryIn, PacketBuffer extraData) {
 		
-		super(ModContainerType.GENERIC_25X8.get(), id);
-		IInventory inventory = new Inventory(size * rows); 
-		assertInventorySize(inventory, rows * size);
-		inventory.openInventory(playerInventoryIn.player);
-		int i = (rows - 4) * 18;
-		int k1 = (-(((size - 9) / 2) * 18)) + 8;
-		
-		for (int j = 0; j < rows; ++j) {
-			
-			for (int k = 0; k < size; ++k) {
-				
-				this.addSlot(new Slot(inventory, k + j * size, (k * 18) + k1, 18 + j * 18));
-				
-			}
-			
-		}
-		
-		for (int l = 0; l < 3; ++l) {
-			
-			for (int j1 = 0; j1 < 9; ++j1) {
-				
-				this.addSlot(new Slot(playerInventoryIn, j1 + l * 9 + 9, 8 + j1 * 18, 103 + l * 18 + i));
-				
-			}
-			
-		}
-		
-		for (int i1 = 0; i1 < 9; ++i1) {
-			
-			this.addSlot(new Slot(playerInventoryIn, i1, 8 + i1 * 18, 161 + i));
-			
-		}
+		this(ModContainerType.GENERIC_25X8.get(), id, playerInventoryIn, new Inventory(size * rows));
 		
 	}
 	
