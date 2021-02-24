@@ -57,27 +57,57 @@ public class OnFrozenEffectOverlayEvent {
 					
 				}
 				
-				if (!player.abilities.isCreativeMode) {
+				if (!player.isCreative() && !player.isSpectator()) {
 					
-					RenderSystem.disableDepthTest();
-					RenderSystem.depthMask(false);
-					RenderSystem.enableBlend();
-					RenderSystem.blendFunc(770, 771);
-					mc.getTextureManager().bindTexture(new ResourceLocation("cave:textures/misc/frozen_effect.png"));
-					IngameGui.blit(event.getMatrixStack(), 0, 0, 0, 0, posX, posY, 480, 270);
-					RenderSystem.depthMask(true);
-					RenderSystem.enableDepthTest();
+					if (world.getBlockState(playerEyePos).getBlock() == ModBlocks.POWDER_SNOW.get()) {
+						
+						RenderSystem.disableDepthTest();
+						RenderSystem.depthMask(false);
+						RenderSystem.enableBlend();
+						RenderSystem.blendFunc(770, 771);
+						mc.getTextureManager().bindTexture(new ResourceLocation("cave:textures/misc/frozen_effect_fog.png"));
+						IngameGui.blit(event.getMatrixStack(), 0, 0, 0, 0, posX, posY, 480, 270);
+						RenderSystem.depthMask(true);
+						RenderSystem.enableDepthTest();
+						
+					} else if (world.getBlockState(playerPos).getBlock() == ModBlocks.POWDER_SNOW.get()) {
+						
+						RenderSystem.disableDepthTest();
+						RenderSystem.depthMask(false);
+						RenderSystem.enableBlend();
+						RenderSystem.blendFunc(770, 771);
+						mc.getTextureManager().bindTexture(new ResourceLocation("cave:textures/misc/frozen_effect.png"));
+						IngameGui.blit(event.getMatrixStack(), 0, 0, 0, 0, posX, posY, 480, 270);
+						RenderSystem.depthMask(true);
+						RenderSystem.enableDepthTest();
+						
+					}
 					
-				} else {
+				} else if (player.isCreative()) {
 					
-					RenderSystem.disableDepthTest();
-					RenderSystem.depthMask(false);
-					RenderSystem.enableBlend();
-					RenderSystem.blendFunc(770, 771);
-					mc.getTextureManager().bindTexture(new ResourceLocation("cave:textures/misc/frozen_effect_creative.png"));
-					IngameGui.blit(event.getMatrixStack(), 0, 0, 0, 0, posX, posY, 480, 270);
-					RenderSystem.depthMask(true);
-					RenderSystem.enableDepthTest();
+					if (world.getBlockState(playerEyePos).getBlock() == ModBlocks.POWDER_SNOW.get()) {
+						
+						RenderSystem.disableDepthTest();
+						RenderSystem.depthMask(false);
+						RenderSystem.enableBlend();
+						RenderSystem.blendFunc(770, 771);
+						mc.getTextureManager().bindTexture(new ResourceLocation("cave:textures/misc/frozen_effect_fog_creative.png"));
+						IngameGui.blit(event.getMatrixStack(), 0, 0, 0, 0, posX, posY, 480, 270);
+						RenderSystem.depthMask(true);
+						RenderSystem.enableDepthTest();
+						
+					} else if (world.getBlockState(playerPos).getBlock() == ModBlocks.POWDER_SNOW.get()) {
+						
+						RenderSystem.disableDepthTest();
+						RenderSystem.depthMask(false);
+						RenderSystem.enableBlend();
+						RenderSystem.blendFunc(770, 771);
+						mc.getTextureManager().bindTexture(new ResourceLocation("cave:textures/misc/frozen_effect_creative.png"));
+						IngameGui.blit(event.getMatrixStack(), 0, 0, 0, 0, posX, posY, 480, 270);
+						RenderSystem.depthMask(true);
+						RenderSystem.enableDepthTest();
+						
+					}
 					
 				}
 				

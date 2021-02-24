@@ -43,21 +43,21 @@ public class CraftingStationContainer extends RecipeBookContainer<CraftingInvent
 		
 		this.addSlot(new CraftingResultSlot(playerInventory.player, this.craftMatrix, this.craftResult, 0, 116, 112));
 		
-		for (int i = 0; i < 3; ++i) {
-			
-			for (int j = 0; j < 3; ++j) {
-				
-				this.addSlot(new Slot(this.craftMatrix, j + i * 3, (j * 18) + 98, (i * 18) + 18));
-				
-			}
-			
-		}
-		
 		for (int i = 0; i < 7; ++i) {
 			
 			for (int j = 0; j < 4; j++) {
 				
 				this.addSlot(new Slot(inventory, j + i * 4, 8 + j * 18, 18 + i * 18));
+				
+			}
+			
+		}
+		
+		for (int i = 0; i < 3; ++i) {
+			
+			for (int j = 0; j < 3; ++j) {
+				
+				this.addSlot(new Slot(this.craftMatrix, j + i * 3, (j * 18) + 98, (i * 18) + 18));
 				
 			}
 			
@@ -114,48 +114,69 @@ public class CraftingStationContainer extends RecipeBookContainer<CraftingInvent
 
 	@Override
 	public void fillStackedContents(RecipeItemHelper itemHelperIn) {
-		
+			
 		this.craftMatrix.fillStackedContents(itemHelperIn);
 		
 	}
 	
+	@Override
 	public ItemStack transferStackInSlot(PlayerEntity playerIn, int index) {
-		
+
 		ItemStack itemstack = ItemStack.EMPTY;
 		Slot slot = this.inventorySlots.get(index);
-		
+
 		if (slot != null && slot.getHasStack()) {
-			
+
 			ItemStack itemstack1 = slot.getStack();
 			itemstack = itemstack1.copy();
-			
-			if (index < (4 * 7 + 10)) {
+
+			if (index == 0) {
 				
-				if (!this.mergeItemStack(itemstack1, 4 * 7 + 10, this.inventorySlots.size(), true)) {
-					
+				itemstack1.getItem().onCreated(itemstack1, player.getEntityWorld(), playerIn);
+				if (!this.mergeItemStack(itemstack1, 10, 46, true)) {
+
 					return ItemStack.EMPTY;
-					
+
 				}
-				
+
+				slot.onSlotChange(itemstack1, itemstack);
+
+			} else if (index < (4 * 7 + 10)) {
+
+				if (!this.mergeItemStack(itemstack1, 4 * 7 + 10, this.inventorySlots.size(), true)) {
+
+					return ItemStack.EMPTY;
+
+				}
+
 			} else if (!this.mergeItemStack(itemstack1, 0, 4 * 7 + 10, false)) {
-				
+
 				return ItemStack.EMPTY;
-				
+
 			}
 
 			if (itemstack1.isEmpty()) {
-				
+
 				slot.putStack(ItemStack.EMPTY);
-				
+
 			} else {
-				
+
 				slot.onSlotChanged();
-				
+
 			}
 			
+			ItemStack itemstack2 = slot.onTake(playerIn, itemstack1);
+			
+			if (index == 0) {
+				
+				playerIn.dropItem(itemstack2, false);
+				
+			}
+
 		}
 
 		return itemstack;
+		
 	}
 
 	@Override

@@ -36,8 +36,6 @@ import net.minecraft.util.math.shapes.IBooleanFunction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
@@ -46,8 +44,6 @@ import net.minecraftforge.fml.network.NetworkHooks;
 public class CraftingStation extends ContainerBlock implements IWaterLoggable {
 	
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-	@SuppressWarnings("unused")
-	private static final ITextComponent CONTAINER_NAME = new TranslationTextComponent("container.crafting_station");
 	private static final VoxelShape SHAPE = Stream.of(Block.makeCuboidShape(0, 12, 0, 16, 16, 16),
 			Block.makeCuboidShape(0, 0, 12, 4, 12, 16), Block.makeCuboidShape(12, 0, 12, 16, 12, 16),
 			Block.makeCuboidShape(12, 0, 0, 16, 12, 4), Block.makeCuboidShape(0, 0, 0, 4, 12, 4)).reduce((v1, v2) -> {
