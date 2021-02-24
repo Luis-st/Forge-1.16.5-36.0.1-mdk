@@ -14,7 +14,7 @@ public class SmeltingFurnaceTileEntity extends AbstractFurnaceTileEntity {
 
 	public SmeltingFurnaceTileEntity() {
 		
-		super(ModTileEntityType.SMELTING_FURNACE.get(), ModRecipeType.SMELTING_RECIPE);
+		super(ModTileEntityType.SMELTING_FURNACE.get(), ModRecipeType.SMELTING);
 		
 	}
 

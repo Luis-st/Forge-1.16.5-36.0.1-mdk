@@ -14,13 +14,13 @@ public class SmeltingContainer extends AbstractFurnaceContainer {
 	
 	public SmeltingContainer(int id, PlayerInventory playerInventory, IInventory inventory, IIntArray array) {
 		
-		super(ModContainerType.SMELTING_CONTAINER.get(), ModRecipeType.SMELTING_RECIPE, RecipeBookCategory.FURNACE, id, playerInventory, inventory, array);
+		super(ModContainerType.SMELTING.get(), ModRecipeType.SMELTING, RecipeBookCategory.FURNACE, id, playerInventory, inventory, array);
 		
 	}
 	
 	public SmeltingContainer(int id, PlayerInventory playerInventory, PacketBuffer extraData) {
 		
-		super(ModContainerType.SMELTING_CONTAINER.get(), ModRecipeType.SMELTING_RECIPE, RecipeBookCategory.FURNACE, id, playerInventory);
+		super(ModContainerType.SMELTING.get(), ModRecipeType.SMELTING, RecipeBookCategory.FURNACE, id, playerInventory);
 		
 	}
 	

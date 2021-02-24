@@ -25,7 +25,7 @@ public class SmeltingRecipe extends AbstractCookingRecipe {
 	@SuppressWarnings("static-access")
 	public SmeltingRecipe(ResourceLocation idIn, String groupIn, Ingredient ingredientIn, ItemStack resultIn, float experienceIn, int cookTimeIn) {
 
-		super(ModRecipeType.SMELTING_RECIPE, idIn, groupIn, ingredientIn, resultIn, experienceIn, cookTimeIn);
+		super(ModRecipeType.SMELTING, idIn, groupIn, ingredientIn, resultIn, experienceIn, cookTimeIn);
 		this.time = cookTimeIn;
 	}
 
@@ -39,7 +39,7 @@ public class SmeltingRecipe extends AbstractCookingRecipe {
 	@Override
 	public IRecipeSerializer<?> getSerializer() {
 
-		return ModRecipeSerializer.SMELTING_RECIPE.get();
+		return ModRecipeSerializer.SMELTING.get();
 
 	}
 

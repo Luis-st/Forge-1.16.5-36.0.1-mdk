@@ -5,6 +5,6 @@ import net.minecraft.item.crafting.IRecipeType;
 
 public class ModRecipeType {
 	
-	public static final IRecipeType<SmeltingRecipe> SMELTING_RECIPE = IRecipeType.register("cave_smelting");
+	public static final IRecipeType<SmeltingRecipe> SMELTING = IRecipeType.register("cave_smelting");
 
 }

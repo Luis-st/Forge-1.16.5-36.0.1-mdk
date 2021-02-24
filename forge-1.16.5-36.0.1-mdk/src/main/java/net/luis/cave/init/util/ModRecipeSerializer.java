@@ -12,7 +12,7 @@ public class ModRecipeSerializer {
 	public static final DeferredRegister<IRecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, Cave.Mod_Id);
 	
 	
-	public static final RegistryObject<IRecipeSerializer<?>> SMELTING_RECIPE = RECIPE_SERIALIZERS.register("cave_smelting", 
+	public static final RegistryObject<IRecipeSerializer<?>> SMELTING = RECIPE_SERIALIZERS.register("cave_smelting", 
 			() -> new SmeltingRecipe.Serializer());
 	
 }

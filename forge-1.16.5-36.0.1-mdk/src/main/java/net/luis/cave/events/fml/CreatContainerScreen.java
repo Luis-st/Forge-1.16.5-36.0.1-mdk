@@ -19,7 +19,7 @@ public class CreatContainerScreen {
 	@SubscribeEvent
 	public static void doCommonSetup(FMLCommonSetupEvent event) {
 		
-		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.SMELTING_CONTAINER.get(), SmeltingScreen::new));
+		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.SMELTING.get(), SmeltingScreen::new));
 		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.GENERIC_9X8.get(), ModChestScreen9x8::new));
 		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.ENDER_CHEST.get(), ModEnderChestScreen::new));
 		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.GENERIC_25X8.get(), ModChestScreen25x8::new));
