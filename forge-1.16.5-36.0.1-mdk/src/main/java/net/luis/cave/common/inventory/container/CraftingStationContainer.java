@@ -10,6 +10,7 @@ import net.minecraft.inventory.CraftResultInventory;
 import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Inventory;
+import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.inventory.container.CraftingResultSlot;
 import net.minecraft.inventory.container.RecipeBookContainer;
 import net.minecraft.inventory.container.Slot;
@@ -157,6 +158,14 @@ public class CraftingStationContainer extends RecipeBookContainer<CraftingInvent
 		return itemstack;
 	}
 
+	@Override
+	public void onContainerClosed(PlayerEntity playerIn) {
+		
+		super.onContainerClosed(playerIn);
+		InventoryHelper.dropInventoryItems(player.world, player, craftMatrix);
+		
+	}
+	
 	@Override
 	public void clear() {
 		
