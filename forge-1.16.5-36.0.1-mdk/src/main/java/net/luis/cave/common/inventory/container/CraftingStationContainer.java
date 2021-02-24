@@ -56,7 +56,7 @@ public class CraftingStationContainer extends RecipeBookContainer<CraftingInvent
 			
 			for (int j = 0; j < 4; j++) {
 				
-				this.addSlot(new Slot(inventory, j + i * 9, 8 + j * 18, 18 + i * 18));
+				this.addSlot(new Slot(inventory, j + i * 4, 8 + j * 18, 18 + i * 18));
 				
 			}
 			
@@ -128,15 +128,15 @@ public class CraftingStationContainer extends RecipeBookContainer<CraftingInvent
 			ItemStack itemstack1 = slot.getStack();
 			itemstack = itemstack1.copy();
 			
-			if (index < 74) {
+			if (index < (4 * 7 + 10)) {
 				
-				if (!this.mergeItemStack(itemstack1, 74, this.inventorySlots.size(), true)) {
+				if (!this.mergeItemStack(itemstack1, 4 * 7 + 10, this.inventorySlots.size(), true)) {
 					
 					return ItemStack.EMPTY;
 					
 				}
 				
-			} else if (!this.mergeItemStack(itemstack1, 0, 74, false)) {
+			} else if (!this.mergeItemStack(itemstack1, 0, 4 * 7 + 10, false)) {
 				
 				return ItemStack.EMPTY;
 				

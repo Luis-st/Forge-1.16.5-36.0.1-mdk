@@ -18,7 +18,7 @@ public class CraftingStationTileEntity extends LockableLootTileEntity {
 	
 	private final int rows = 7;
 	private final int size = 4;
-	private final int invSize = (size * rows) + 50;
+	private final int invSize = size * rows + 10;
 	private NonNullList<ItemStack> inventory = NonNullList.withSize(invSize, ItemStack.EMPTY);
 	private int numPlayersUsing;
 
