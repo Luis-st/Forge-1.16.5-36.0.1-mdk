@@ -14,8 +14,8 @@ import net.minecraft.util.text.ITextComponent;
 public class ModBarrelScreen extends ContainerScreen<ModBarrelContainer> implements IHasContainer<ModBarrelContainer> {
 
 	private static final ResourceLocation GUI_TEXTURE = new ResourceLocation("cave:textures/gui/container/generic_x.png");
-	private float sliderProgress;
 	private boolean clickedOnSroll;
+	public float sliderProgress;
 
 	public ModBarrelScreen(ModBarrelContainer container, PlayerInventory playerInventory, ITextComponent title) {
 		
@@ -44,7 +44,7 @@ public class ModBarrelScreen extends ContainerScreen<ModBarrelContainer> impleme
 		int i = (this.width - this.xSize) / 2;
 		int j = (this.height - this.ySize) / 2;
 		this.blit(matrixStack, i, j, 0, 0, 176, 240);
-		int k = (int) sliderProgress;
+		int k = (int) this.sliderProgress;
 		this.blit(matrixStack, i + 155, (j + 18) + k, 176, 0, 12, 15);
 		
 	}
