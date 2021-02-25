@@ -2,6 +2,7 @@ package net.luis.cave.init.util;
 
 import net.luis.cave.Cave;
 import net.luis.cave.common.inventory.container.CraftingStationContainer;
+import net.luis.cave.common.inventory.container.ModBarrelContainer;
 import net.luis.cave.common.inventory.container.ModChestContainer25x8;
 import net.luis.cave.common.inventory.container.ModChestContainer9x8;
 import net.luis.cave.common.inventory.container.ModEnderChestContainer;
@@ -31,5 +32,8 @@ public class ModContainerType {
 	
 	public static final RegistryObject<ContainerType<CraftingStationContainer>> CRAFTING_STATION = CONTAINERS.register("crafting_station", 
 			() -> IForgeContainerType.create(CraftingStationContainer::new));
+	
+	public static final RegistryObject<ContainerType<ModBarrelContainer>> BARREL = CONTAINERS.register("barrel", 
+			() -> IForgeContainerType.create(ModBarrelContainer::new));
 	
 }

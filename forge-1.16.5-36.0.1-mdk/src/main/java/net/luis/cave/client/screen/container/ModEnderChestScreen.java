@@ -11,7 +11,7 @@ import net.minecraft.util.text.ITextComponent;
 
 public class ModEnderChestScreen extends ContainerScreen<ModEnderChestContainer> {
 	
-	private static final ResourceLocation ENDER_CHEST_GUI_TEXTURE = new ResourceLocation("textures/gui/container/generic_54.png");
+	private static final ResourceLocation GUI_TEXTURE = new ResourceLocation("textures/gui/container/generic_54.png");
 	private final int inventoryRows = 6;
 
 	public ModEnderChestScreen(ModEnderChestContainer container, PlayerInventory playerInventory, ITextComponent title) {
@@ -36,7 +36,7 @@ public class ModEnderChestScreen extends ContainerScreen<ModEnderChestContainer>
 	protected void drawGuiContainerBackgroundLayer(MatrixStack matrixStack, float partialTicks, int x, int y) {
 		
 		RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-		this.minecraft.getTextureManager().bindTexture(ENDER_CHEST_GUI_TEXTURE);
+		this.minecraft.getTextureManager().bindTexture(GUI_TEXTURE);
 		int i = (this.width - this.xSize) / 2;
 		int j = (this.height - this.ySize) / 2;
 		this.blit(matrixStack, i, j, 0, 0, this.xSize, this.inventoryRows * 18 + 17);

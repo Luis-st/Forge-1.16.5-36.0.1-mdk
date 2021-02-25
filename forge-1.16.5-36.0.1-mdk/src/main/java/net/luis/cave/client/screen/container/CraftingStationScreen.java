@@ -11,7 +11,7 @@ import net.minecraft.util.text.ITextComponent;
 
 public class CraftingStationScreen extends ContainerScreen<CraftingStationContainer> {
 	
-	private static final ResourceLocation CRAFTING_STATION_GUI_TEXTURE = new ResourceLocation("cave:textures/gui/container/crafting_station.png");
+	private static final ResourceLocation GUI_TEXTURE = new ResourceLocation("cave:textures/gui/container/crafting_station.png");
 
 	public CraftingStationScreen(CraftingStationContainer container, PlayerInventory playerInventory, ITextComponent title) {
 		
@@ -36,7 +36,7 @@ public class CraftingStationScreen extends ContainerScreen<CraftingStationContai
 	protected void drawGuiContainerBackgroundLayer(MatrixStack matrixStack, float partialTicks, int x, int y) {
 		
 		RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-		this.minecraft.getTextureManager().bindTexture(CRAFTING_STATION_GUI_TEXTURE);
+		this.minecraft.getTextureManager().bindTexture(GUI_TEXTURE);
 		int i = (this.width - this.xSize) / 2;
 		int j = (this.height - this.ySize) / 2;
 		this.blit(matrixStack, i, j, 0, 0, this.xSize, 144);

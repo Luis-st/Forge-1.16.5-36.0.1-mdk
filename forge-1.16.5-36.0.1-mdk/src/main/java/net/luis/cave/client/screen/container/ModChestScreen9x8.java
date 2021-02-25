@@ -11,7 +11,7 @@ import net.minecraft.util.text.ITextComponent;
 
 public class ModChestScreen9x8 extends ContainerScreen<ModChestContainer9x8> {
 	
-	private static final ResourceLocation CHEST_GUI_TEXTURE = new ResourceLocation("cave:textures/gui/container/generic_72.png");
+	private static final ResourceLocation GUI_TEXTURE = new ResourceLocation("cave:textures/gui/container/generic_72.png");
 
 	public ModChestScreen9x8(ModChestContainer9x8 container, PlayerInventory playerInventory, ITextComponent title) {
 		
@@ -36,7 +36,7 @@ public class ModChestScreen9x8 extends ContainerScreen<ModChestContainer9x8> {
 	protected void drawGuiContainerBackgroundLayer(MatrixStack matrixStack, float partialTicks, int x, int y) {
 		
 		RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-		this.minecraft.getTextureManager().bindTexture(CHEST_GUI_TEXTURE);
+		this.minecraft.getTextureManager().bindTexture(GUI_TEXTURE);
 		int i = (this.width - this.xSize) / 2;
 		int j = (this.height - this.ySize) / 2;
 		this.blit(matrixStack, i, j, 0, 0, this.xSize, 163);

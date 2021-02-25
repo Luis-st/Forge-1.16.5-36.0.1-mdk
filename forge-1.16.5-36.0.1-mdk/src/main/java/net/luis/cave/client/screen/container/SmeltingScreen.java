@@ -9,11 +9,11 @@ import net.minecraft.util.text.ITextComponent;
 
 public class SmeltingScreen extends AbstractFurnaceScreen<SmeltingContainer> {
 	
-	private static final ResourceLocation FURNACE_GUI_TEXTURES = new ResourceLocation("textures/gui/container/furnace.png");
+	private static final ResourceLocation GUI_TEXTURES = new ResourceLocation("textures/gui/container/furnace.png");
 
 	public SmeltingScreen(SmeltingContainer screenContainer, PlayerInventory inv, ITextComponent titleIn) {
 		
-		super(screenContainer, new FurnaceRecipeGui(), inv, titleIn, FURNACE_GUI_TEXTURES);
+		super(screenContainer, new FurnaceRecipeGui(), inv, titleIn, GUI_TEXTURES);
 		
 	}
 
