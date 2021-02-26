@@ -28,6 +28,8 @@ public class ModBarrelContainer extends Container {
 		super(ModContainerType.BARREL.get(), id);
 		int i = 54;
 		
+		// TODO: edit index calc
+		
 		for (int j = 0; j < 7; ++j) {
 			
 			for (int k = 0; k < 8; ++k) {
@@ -42,7 +44,7 @@ public class ModBarrelContainer extends Container {
 			
 			for (int k = 0; k < 8; ++k) {
 				
-				this.addSlot(new Slot(inventory, k + j * 8, 8 + k * 18, (18 + j * 18) - 1000));
+				this.addSlot(new Slot(inventory, 56 + (k + j * 8), 8 + k * 18, -1000 - (18 + j * 18)));
 				
 			}
 			
@@ -73,79 +75,20 @@ public class ModBarrelContainer extends Container {
 		
 	}
 
-	public void moveSlots(ModBarrelContainer.Direction direction) {
+	public void moveSlots() {
 		
 		List<Slot> slots = this.inventorySlots;
 		
-		if (direction == ModBarrelContainer.Direction.ABOVE) {
+		
+		for (Slot slot : slots) {
 			
-			for (int i = 0; i < slots.size(); i++) {
-				
-				Slot slot = slots.get(i);
-				
-				if (this.isTopSlot(slot)) {
-					
-					this.setSlotPosY(slot, slot.yPos + 1000);
-					
-				} else {
-					
-					this.setSlotPosY(slot, slot.yPos + 18);
-					
-				}
-				
-			}
-			
-		} else if (direction == ModBarrelContainer.Direction.BELOW) {
-			
-			for (int i = 0; i < slots.size(); i++) {
-				
-				Slot slot = slots.get(i);
-				
-				if (this.isBottomSlot(slot)) {
-					
-					this.setSlotPosY(slot, slot.yPos - 1000);
-					
-				} else {
-					
-					this.setSlotPosY(slot, slot.yPos - 18);
-					
-				}
-				
-			}
-			
-		} else {
-			
-			return;
+			slot.getStack();
 			
 		}
 		
 	}
 	
-	private boolean isTopSlot(Slot slot) {
-		
-		if (slot.yPos == 18 || slot.yPos == -874) {
-			
-			return true;
-			
-		}
-		
-		return false;
-		
-	}
-	
-	private boolean isBottomSlot(Slot slot) {
-		
-		
-		if (slot.yPos == 126 || slot.xPos == 1018) {
-			
-			return true;
-			
-		}
-		
-		return false;
-		
-	}
-	
+	@SuppressWarnings("unused")
 	private void setSlotPosY(Slot slot, int newPosY) {
 		
 		try {
@@ -157,13 +100,6 @@ public class ModBarrelContainer extends Container {
 			e.printStackTrace();
 			
 		}
-		
-	}
-	
-	public enum Direction {
-		
-		ABOVE,
-		BELOW;
 		
 	}
 	

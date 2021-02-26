@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import net.luis.cave.api.capability.IModItemHandler;
+import net.luis.cave.core.ModPacketHandler;
 import net.luis.cave.events.generation.OreGeneration;
 import net.luis.cave.init.ModCapability.Factory;
 import net.luis.cave.init.ModCapability.Storage;
@@ -103,6 +104,7 @@ public class Cave {
 	
 	private void setup(FMLCommonSetupEvent event) {
 		
+		ModPacketHandler.init();
 		OreGeneration.registerOres();
 		CapabilityManager.INSTANCE.register(IModItemHandler.class, new Storage(), new Factory());
 		

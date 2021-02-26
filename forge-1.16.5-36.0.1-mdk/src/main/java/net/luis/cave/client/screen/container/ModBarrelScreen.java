@@ -52,8 +52,11 @@ public class ModBarrelScreen extends ContainerScreen<ModBarrelContainer> impleme
 	@Override
 	public boolean mouseScrolled(double mouseX, double mouseY, double delta) {
 		
+		float oldPos = this.sliderProgress;
         this.sliderProgress = (float) (this.sliderProgress - delta * 5);
         this.sliderProgress = MathHelper.clamp(this.sliderProgress, 0.0F, 109.0F);
+        float newPos = this.sliderProgress;
+        this.onMouseMove(oldPos, newPos);
         
 		return super.mouseScrolled(mouseX, mouseY, delta);
 		
@@ -83,8 +86,12 @@ public class ModBarrelScreen extends ContainerScreen<ModBarrelContainer> impleme
 		if (this.clickedOnSroll) {
 			
 			int i = this.guiTop + 18;
+			float oldPos = this.sliderProgress;
 			this.sliderProgress = (float) (mouseY - i - 7.5f);
 			this.sliderProgress = MathHelper.clamp(this.sliderProgress, 0.0F, 109.0F);
+			float newPos = this.sliderProgress;
+			this.onMouseMove(oldPos, newPos);
+			
 			return true;
 			
 		} else {
@@ -92,6 +99,12 @@ public class ModBarrelScreen extends ContainerScreen<ModBarrelContainer> impleme
 			return super.mouseDragged(mouseX, mouseY, button, dragX, dragY);
 			
 		}
+		
+	}
+	
+	public void onMouseMove(float oldPos, float newPos) {
+		
+		
 		
 	}
 	
