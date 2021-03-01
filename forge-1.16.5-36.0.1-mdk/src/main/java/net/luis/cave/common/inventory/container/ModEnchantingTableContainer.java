@@ -192,6 +192,7 @@ public class ModEnchantingTableContainer extends Container {
 						if (this.enchantLevels[j1] > 0) {
 							
 							List<EnchantmentData> list = this.getEnchantmentList(player, itemstack, j1, this.enchantLevels[j1]);
+							@SuppressWarnings("unused")
 							List<EnchantmentData> modifyList = ModEventFactory.onEnchantmentSet(player, pos, itemstack, list, this.enchantLevels[j1]);
 							
 							if (list != null && !list.isEmpty()) {
@@ -334,8 +335,7 @@ public class ModEnchantingTableContainer extends Container {
 			
 		}
 		
-		List<EnchantmentData> modifyList = ModEventFactory.onEnchantmentSet(player, pos, stack, list, level);
-		return modifyList;
+		return list;
 		
 	}
 

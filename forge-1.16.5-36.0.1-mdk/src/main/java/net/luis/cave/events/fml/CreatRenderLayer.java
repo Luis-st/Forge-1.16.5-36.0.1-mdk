@@ -6,6 +6,7 @@ import net.luis.cave.client.render.entity.JadeArrowRender;
 import net.luis.cave.client.render.entity.NetheriteArrowRender;
 import net.luis.cave.client.render.item.item.EnderiteElytraLayer;
 import net.luis.cave.client.render.item.item.NightElytraLayer;
+import net.luis.cave.client.render.tileentity.ModBeaconTileEntityRender;
 import net.luis.cave.client.render.tileentity.ModEnchantingTableTileEntityRender;
 import net.luis.cave.init.ModEntityType;
 import net.luis.cave.init.util.ModTileEntityType;
@@ -36,6 +37,7 @@ public class CreatRenderLayer {
 		RenderingRegistry.registerEntityRenderingHandler(ModEntityType.NETHERITE_ARROW.get(), NetheriteArrowRender::new);
 		
 		ClientRegistry.bindTileEntityRenderer(ModTileEntityType.ENCHANTING_TABLE.get(), ModEnchantingTableTileEntityRender::new);
+		ClientRegistry.bindTileEntityRenderer(ModTileEntityType.BEACON.get(), ModBeaconTileEntityRender::new);
 		
 	}
 

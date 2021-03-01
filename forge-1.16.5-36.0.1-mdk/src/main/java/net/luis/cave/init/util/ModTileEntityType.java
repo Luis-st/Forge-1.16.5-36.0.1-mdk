@@ -4,6 +4,7 @@ import net.luis.cave.Cave;
 import net.luis.cave.common.tileentity.CraftingStationTileEntity;
 import net.luis.cave.common.tileentity.LightningRodTileEntity;
 import net.luis.cave.common.tileentity.ModBarrelTileEntity;
+import net.luis.cave.common.tileentity.ModBeaconTileEntity;
 import net.luis.cave.common.tileentity.ModEnchantingTableTileEntity;
 import net.luis.cave.common.tileentity.SmeltingFurnaceTileEntity;
 import net.luis.cave.init.blocks.ModBlocks;
@@ -31,5 +32,8 @@ public class ModTileEntityType {
 	
 	public static final RegistryObject<TileEntityType<ModEnchantingTableTileEntity>> ENCHANTING_TABLE = TILE_ENTITIES.register("enchanting_table", 
 			() -> TileEntityType.Builder.create(ModEnchantingTableTileEntity::new, VanillaBlocks.ENCHANTING_TABLE.get()).build(null));
+	
+	public static final RegistryObject<TileEntityType<ModBeaconTileEntity>> BEACON = TILE_ENTITIES.register("beacon", 
+			() -> TileEntityType.Builder.create(ModBeaconTileEntity::new, VanillaBlocks.BEACON.get()).build(null));
 	
 }

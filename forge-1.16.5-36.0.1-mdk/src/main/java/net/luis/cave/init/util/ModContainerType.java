@@ -2,6 +2,7 @@ package net.luis.cave.init.util;
 
 import net.luis.cave.Cave;
 import net.luis.cave.common.inventory.container.CraftingStationContainer;
+import net.luis.cave.common.inventory.container.ModBeaconContainer;
 import net.luis.cave.common.inventory.container.ModChestContainer17x8;
 import net.luis.cave.common.inventory.container.ModChestContainer9x8;
 import net.luis.cave.common.inventory.container.ModEnchantingTableContainer;
@@ -35,5 +36,8 @@ public class ModContainerType {
 	
 	public static final RegistryObject<ContainerType<ModEnchantingTableContainer>> ENCHANTING_TABLE = CONTAINERS.register("enchanting_table", 
 			() -> IForgeContainerType.create(ModEnchantingTableContainer::new));
+	
+	public static final RegistryObject<ContainerType<ModBeaconContainer>> BEACON = CONTAINERS.register("beacon", 
+			() -> IForgeContainerType.create(ModBeaconContainer::new));
 	
 }

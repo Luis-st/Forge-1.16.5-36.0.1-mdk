@@ -18,5 +18,8 @@ public class VanillaBlockItems {
 	
 	public static final RegistryObject<Item> ENCHANTING_TABLE_ITEM = ITEMS.register("enchanting_table", 
 			() -> new BlockItem(VanillaBlocks.ENCHANTING_TABLE.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+	
+	public static final RegistryObject<Item> BEACON_ITEM = ITEMS.register("beacon", 
+			() -> new BlockItem(VanillaBlocks.BEACON.get(), new Item.Properties().group(ItemGroup.MISC)));
 
 }
