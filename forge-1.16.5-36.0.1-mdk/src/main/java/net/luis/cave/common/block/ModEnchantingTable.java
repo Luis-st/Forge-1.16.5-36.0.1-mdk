@@ -19,7 +19,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.INameable;
-import net.minecraft.util.IWorldPosCallable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -102,7 +101,7 @@ public class ModEnchantingTable extends ContainerBlock {
 			
 			return new SimpleNamedContainerProvider((id, inventory, player) -> {
 				
-				return new ModEnchantingTableContainer(id, inventory, IWorldPosCallable.of(worldIn, pos));
+				return new ModEnchantingTableContainer(id, inventory, worldIn, pos);
 				
 			}, itextcomponent);
 			

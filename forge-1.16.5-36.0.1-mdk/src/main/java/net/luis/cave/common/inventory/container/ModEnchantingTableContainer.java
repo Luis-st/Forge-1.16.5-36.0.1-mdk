@@ -3,6 +3,9 @@ package net.luis.cave.common.inventory.container;
 import java.util.List;
 import java.util.Random;
 
+import javax.annotation.Nullable;
+
+import net.luis.cave.api.event.ModEventFactory;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentData;
@@ -48,20 +51,24 @@ public class ModEnchantingTableContainer extends Container {
 	private final IWorldPosCallable worldPosCallable;
 	private final Random rand = new Random();
 	private final IntReferenceHolder xpSeed = IntReferenceHolder.single();
+	private final PlayerEntity player;
+	private final BlockPos pos;
 	public final int[] enchantLevels = new int[3];
 	public final int[] enchantClue = new int[] { -1, -1, -1 };
 	public final int[] worldClue = new int[] { -1, -1, -1 };
 
 	public ModEnchantingTableContainer(int id, PlayerInventory playerInventory, PacketBuffer extraData) {
 		
-		this(id, playerInventory, IWorldPosCallable.DUMMY);
+		this(id, playerInventory, null, null);
 		
 	}
 
-	public ModEnchantingTableContainer(int id, PlayerInventory playerInventory, IWorldPosCallable worldPosCallable) {
+	public ModEnchantingTableContainer(int id, PlayerInventory playerInventory, @Nullable World world, @Nullable BlockPos pos) {
 		
 		super(ContainerType.ENCHANTMENT, id);
-		this.worldPosCallable = worldPosCallable;
+		this.worldPosCallable = world == null || pos == null ? IWorldPosCallable.DUMMY : IWorldPosCallable.of(world, pos);
+		this.player = playerInventory.player;
+		this.pos = pos;
 		this.addSlot(new Slot(this.tableInventory, 0, 15, 47) {
 			
 			@Override
@@ -163,7 +170,7 @@ public class ModEnchantingTableContainer extends Container {
 						
 					}
 
-					this.rand.setSeed((long) this.xpSeed.get());
+					this.rand.setSeed(this.xpSeed.get());
 
 					for (int i1 = 0; i1 < 3; ++i1) {
 						
@@ -184,7 +191,8 @@ public class ModEnchantingTableContainer extends Container {
 						
 						if (this.enchantLevels[j1] > 0) {
 							
-							List<EnchantmentData> list = this.getEnchantmentList(itemstack, j1, this.enchantLevels[j1]);
+							List<EnchantmentData> list = this.getEnchantmentList(player, itemstack, j1, this.enchantLevels[j1]);
+							List<EnchantmentData> modifyList = ModEventFactory.onEnchantmentSet(player, pos, itemstack, list, this.enchantLevels[j1]);
 							
 							if (list != null && !list.isEmpty()) {
 								
@@ -241,7 +249,7 @@ public class ModEnchantingTableContainer extends Container {
 			this.worldPosCallable.consume((world, pos) -> {
 				
 				ItemStack itemstack2 = itemstack;
-				List<EnchantmentData> list = this.getEnchantmentList(itemstack, id, this.enchantLevels[id]);
+				List<EnchantmentData> list = this.getEnchantmentList(playerIn, itemstack, id, this.enchantLevels[id]);
 				
 				if (!list.isEmpty()) {
 					
@@ -315,9 +323,9 @@ public class ModEnchantingTableContainer extends Container {
 		
 	}
 
-	private List<EnchantmentData> getEnchantmentList(ItemStack stack, int enchantSlot, int level) {
+	private List<EnchantmentData> getEnchantmentList(PlayerEntity player, ItemStack stack, int enchantSlot, int level) {
 		
-		this.rand.setSeed((long) (this.xpSeed.get() + enchantSlot));
+		this.rand.setSeed(this.xpSeed.get() + enchantSlot);
 		List<EnchantmentData> list = EnchantmentHelper.buildEnchantmentList(this.rand, stack, level, false);
 		
 		if (stack.getItem() == Items.BOOK && list.size() > 1) {
@@ -325,8 +333,9 @@ public class ModEnchantingTableContainer extends Container {
 			list.remove(this.rand.nextInt(list.size()));
 			
 		}
-
-		return list;
+		
+		List<EnchantmentData> modifyList = ModEventFactory.onEnchantmentSet(player, pos, stack, list, level);
+		return modifyList;
 		
 	}
 
