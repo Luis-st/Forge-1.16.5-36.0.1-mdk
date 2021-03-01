@@ -4,6 +4,7 @@ import net.luis.cave.Cave;
 import net.luis.cave.client.screen.container.CraftingStationScreen;
 import net.luis.cave.client.screen.container.ModChestScreen17x8;
 import net.luis.cave.client.screen.container.ModChestScreen9x8;
+import net.luis.cave.client.screen.container.ModEnchantingTableScreen;
 import net.luis.cave.client.screen.container.ModEnderChestScreen;
 import net.luis.cave.client.screen.container.SmeltingScreen;
 import net.luis.cave.init.util.ModContainerType;
@@ -24,6 +25,7 @@ public class CreatContainerScreen {
 		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.ENDER_CHEST.get(), ModEnderChestScreen::new));
 		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.GENERIC_17X8.get(), ModChestScreen17x8::new));
 		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.CRAFTING_STATION.get(), CraftingStationScreen::new));
+		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.ENCHANTING_TABLE.get(), ModEnchantingTableScreen::new));
 		
 	}
 	

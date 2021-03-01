@@ -20,7 +20,7 @@ import net.minecraftforge.items.wrapper.InvWrapper;
 public class ModCapability {
 	
 	@CapabilityInject(IModItemHandler.class)
-	public static Capability<IModItemHandler> CAPABILITY = null;
+	public static Capability<IModItemHandler> ENDERCHEST = null;
 	
 	public static class Storage implements IStorage<IModItemHandler> {
 		@Override
@@ -63,7 +63,7 @@ public class ModCapability {
 		@SuppressWarnings({ "unchecked" })
 		public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
 			
-			return cap == CAPABILITY && cap != null ? (LazyOptional<T>) optional : LazyOptional.empty();
+			return cap == ENDERCHEST && cap != null ? (LazyOptional<T>) optional : LazyOptional.empty();
 			
 		}
 

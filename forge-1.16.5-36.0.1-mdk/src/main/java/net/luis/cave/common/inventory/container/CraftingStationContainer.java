@@ -84,9 +84,9 @@ public class CraftingStationContainer extends RecipeBookContainer<CraftingInvent
 	@Override
 	public void onCraftMatrixChanged(IInventory inventoryIn) {
 		
-		super.onCraftMatrixChanged(inventoryIn);
-		
+		super.onCraftMatrixChanged(inventoryIn);		
 		World world = player.getEntityWorld();
+		
 		if (!world.isRemote) {
 			
 			ServerPlayerEntity serverplayerentity = (ServerPlayerEntity) player;

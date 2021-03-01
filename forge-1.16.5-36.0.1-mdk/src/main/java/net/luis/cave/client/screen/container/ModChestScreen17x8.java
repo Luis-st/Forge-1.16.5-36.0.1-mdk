@@ -20,7 +20,7 @@ public class ModChestScreen17x8 extends ContainerScreen<ModChestContainer17x8> i
 		super(container, playerInventory, title);
 		this.passEvents = false;
 		this.ySize = 114 + 8 * 18;
-		this.titleX = this.xSize - 311;
+		this.titleX = this.xSize - 240;
 		this.playerInventoryTitleY = this.ySize - 93;
 		
 	}

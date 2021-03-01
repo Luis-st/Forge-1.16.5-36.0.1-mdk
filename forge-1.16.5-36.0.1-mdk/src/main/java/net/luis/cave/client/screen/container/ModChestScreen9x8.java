@@ -30,7 +30,7 @@ public class ModChestScreen9x8 extends ContainerScreen<ModChestContainer9x8> {
 		this.renderHoveredTooltip(matrixStack, mouseX, mouseY);
 		
 	}
-
+	
 	@Override
 	@SuppressWarnings("deprecation")
 	protected void drawGuiContainerBackgroundLayer(MatrixStack matrixStack, float partialTicks, int x, int y) {

@@ -4,6 +4,7 @@ import net.luis.cave.Cave;
 import net.luis.cave.common.inventory.container.CraftingStationContainer;
 import net.luis.cave.common.inventory.container.ModChestContainer17x8;
 import net.luis.cave.common.inventory.container.ModChestContainer9x8;
+import net.luis.cave.common.inventory.container.ModEnchantingTableContainer;
 import net.luis.cave.common.inventory.container.ModEnderChestContainer;
 import net.luis.cave.common.inventory.container.SmeltingContainer;
 import net.minecraft.inventory.container.ContainerType;
@@ -31,5 +32,8 @@ public class ModContainerType {
 	
 	public static final RegistryObject<ContainerType<CraftingStationContainer>> CRAFTING_STATION = CONTAINERS.register("crafting_station", 
 			() -> IForgeContainerType.create(CraftingStationContainer::new));
+	
+	public static final RegistryObject<ContainerType<ModEnchantingTableContainer>> ENCHANTING_TABLE = CONTAINERS.register("enchanting_table", 
+			() -> IForgeContainerType.create(ModEnchantingTableContainer::new));
 	
 }

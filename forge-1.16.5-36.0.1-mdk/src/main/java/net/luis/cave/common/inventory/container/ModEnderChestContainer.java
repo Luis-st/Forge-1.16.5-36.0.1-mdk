@@ -17,7 +17,7 @@ public class ModEnderChestContainer extends Container {
 		
 		super(ModContainerType.ENDER_CHEST.get(), id);
 		PlayerEntity player = playerInventory.player;
-		IItemHandlerModifiable itemHandlerModifiable = player.getCapability(ModCapability.CAPABILITY, null)
+		IItemHandlerModifiable itemHandlerModifiable = player.getCapability(ModCapability.ENDERCHEST, null)
 				.orElseThrow(() -> new NullPointerException("The mod Capability<IModItemHandler> is null"));
 		int i = (6 - 4) * 18;
 		

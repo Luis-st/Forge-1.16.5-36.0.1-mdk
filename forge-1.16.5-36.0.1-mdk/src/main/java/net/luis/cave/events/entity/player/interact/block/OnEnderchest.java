@@ -48,7 +48,7 @@ public class OnEnderchest {
 					}
 					
 					ServerPlayerEntity serverPlayer = (ServerPlayerEntity) player;
-					IItemHandlerModifiable itemHandlerModifiable = serverPlayer.getCapability(ModCapability.CAPABILITY, null)
+					IItemHandlerModifiable itemHandlerModifiable = serverPlayer.getCapability(ModCapability.ENDERCHEST, null)
 							.orElseThrow(() -> new NullPointerException("The mod Capability<IModItemHandler> is null"));
 					
 					if (itemHandlerModifiable != null) {
