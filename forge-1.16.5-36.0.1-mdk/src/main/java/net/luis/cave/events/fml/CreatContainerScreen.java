@@ -2,8 +2,7 @@ package net.luis.cave.events.fml;
 
 import net.luis.cave.Cave;
 import net.luis.cave.client.screen.container.CraftingStationScreen;
-import net.luis.cave.client.screen.container.ModBarrelScreen;
-import net.luis.cave.client.screen.container.ModChestScreen25x8;
+import net.luis.cave.client.screen.container.ModChestScreen17x8;
 import net.luis.cave.client.screen.container.ModChestScreen9x8;
 import net.luis.cave.client.screen.container.ModEnderChestScreen;
 import net.luis.cave.client.screen.container.SmeltingScreen;
@@ -23,9 +22,8 @@ public class CreatContainerScreen {
 		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.SMELTING.get(), SmeltingScreen::new));
 		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.GENERIC_9X8.get(), ModChestScreen9x8::new));
 		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.ENDER_CHEST.get(), ModEnderChestScreen::new));
-		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.GENERIC_25X8.get(), ModChestScreen25x8::new));
+		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.GENERIC_17X8.get(), ModChestScreen17x8::new));
 		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.CRAFTING_STATION.get(), CraftingStationScreen::new));
-		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.BARREL.get(), ModBarrelScreen::new));
 		
 	}
 	

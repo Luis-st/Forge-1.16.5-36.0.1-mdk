@@ -11,18 +11,18 @@ import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 
-public class ModChestContainer25x8 extends Container {
+public class ModChestContainer17x8 extends Container {
 	
 	private static int rows = 8;
-	private static int size = 25;
+	private static int size = 17;
 
-	public ModChestContainer25x8(int id, PlayerInventory playerInventoryIn, PacketBuffer extraData) {
+	public ModChestContainer17x8(int id, PlayerInventory playerInventoryIn, PacketBuffer extraData) {
 		
-		this(ModContainerType.GENERIC_25X8.get(), id, playerInventoryIn, new Inventory(size * rows));
+		this(ModContainerType.GENERIC_17X8.get(), id, playerInventoryIn, new Inventory(size * rows));
 		
 	}
 	
-	public ModChestContainer25x8(ContainerType<?> type, int id, PlayerInventory playerInventoryIn, IInventory inventory) {
+	public ModChestContainer17x8(ContainerType<?> type, int id, PlayerInventory playerInventoryIn, IInventory inventory) {
 		
 		super(type, id);
 		assertInventorySize(inventory, rows * size);

@@ -27,6 +27,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
 
@@ -64,7 +65,7 @@ class ModBow extends ShootableItem implements IVanishable {
 					ammo = new ItemStack(Items.ARROW);
 					
 				}
-
+				
 				float velocityArrow = getArrowVelocity(duration);
 				
 				if (!(velocityArrow < 0.1f)) {
@@ -96,11 +97,14 @@ class ModBow extends ShootableItem implements IVanishable {
 							
 							AbstractArrowEntity arrowEntity = creatArrowEntity(stack, ammo, world, player, velocityArrow);
 							AbstractArrowEntity doubleShotArrow = creatArrowEntity(stack, ammo, world, player, velocityArrow);
-							boolean isSpecial = ammo.getItem() == Items.SPECTRAL_ARROW || 
-									ammo.getItem() == Items.TIPPED_ARROW || 
-									ammo.getItem() == ModItems.NETHERITE_ARROW_ITEM.get();
+							boolean isSpecial = this.isSpecial(ammo.getItem());
 							
-							if ((isCreativeAndArrow || player.abilities.isCreativeMode) && isSpecial) {
+							player.sendMessage(new StringTextComponent("isCreativeAndArrow: " + isCreativeAndArrow), player.getUniqueID());
+							player.sendMessage(new StringTextComponent("isSpecial: " + isSpecial), player.getUniqueID());
+							player.sendMessage(new StringTextComponent("isCreativeAndArrow || (isSpecial && player.abilities.isCreativeMode): " + 
+									(isCreativeAndArrow || (isSpecial && player.abilities.isCreativeMode))), player.getUniqueID());
+							
+							if (isCreativeAndArrow || (isSpecial && player.abilities.isCreativeMode)) {
 								
 								arrowEntity.pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
 								
@@ -290,6 +294,28 @@ class ModBow extends ShootableItem implements IVanishable {
 	public UseAction getUseAction(ItemStack stack) {
 		
 		return UseAction.BOW;
+		
+	}
+	
+	public boolean isSpecial(Item ammo) {
+		
+		boolean isSpecial = false;
+		
+		if (ammo == Items.SPECTRAL_ARROW) {
+			
+			isSpecial = true;
+			
+		} else if (ammo == Items.TIPPED_ARROW) {
+			
+			isSpecial = true;
+			
+		} else if (ammo == ModItems.NETHERITE_ARROW_ITEM.get()) {
+			
+			isSpecial = true;
+			
+		}
+		
+		return isSpecial;
 		
 	}
 	

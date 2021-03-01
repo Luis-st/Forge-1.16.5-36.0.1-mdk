@@ -1,6 +1,7 @@
 package net.luis.cave.init.blocks;
 
 import net.luis.cave.Cave;
+import net.luis.cave.common.block.AmethystOre;
 import net.luis.cave.common.block.CrackedLava;
 import net.luis.cave.common.block.CraftingStation;
 import net.luis.cave.common.block.InfiniteAnvil;
@@ -77,9 +78,7 @@ public class ModBlocks {
 	
 	public static final RegistryObject<Block> TINTED_GLASS = BLOCKS.register("tinted_glass", TintedGlass::new);
 	
-	public static final RegistryObject<Block> AMETHYST_ORE = BLOCKS.register("amethyst_ore", 
-			() -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(2.5f,4.0f).sound(SoundType.STONE)
-			.harvestLevel(1).harvestTool(ToolType.PICKAXE).setRequiresTool()));
+	public static final RegistryObject<AmethystOre> AMETHYST_ORE = BLOCKS.register("amethyst_ore", AmethystOre::new);
 	
 	public static final RegistryObject<Block> CALCITE = BLOCKS.register("calcite", 
 			() -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(7.0f,7.0f).sound(SoundType.STONE)
@@ -100,11 +99,11 @@ public class ModBlocks {
 	public static final RegistryObject<Block> CUT_COPPER = BLOCKS.register("cut_copper", 
 			() -> new Block(AbstractBlock.Properties.from(ModBlocks.COPPER_BLOCK.get())));
 	
-	public static final RegistryObject<Block> CUT_COPPER_SLAB = BLOCKS.register("cut_copper_slab", 
+	public static final RegistryObject<SlabBlock> CUT_COPPER_SLAB = BLOCKS.register("cut_copper_slab", 
 			() -> new SlabBlock(AbstractBlock.Properties.from(ModBlocks.COPPER_BLOCK.get())));
 	
 	@SuppressWarnings("deprecation")
-	public static final RegistryObject<Block> CUT_COPPER_STAIRS = BLOCKS.register("cut_copper_stairs", 
+	public static final RegistryObject<StairsBlock> CUT_COPPER_STAIRS = BLOCKS.register("cut_copper_stairs", 
 			() -> new StairsBlock(ModBlocks.CUT_COPPER.get().getDefaultState(), AbstractBlock.Properties.from(ModBlocks.COPPER_BLOCK.get())));
 	
 	public static final RegistryObject<Block> LIGHTNING_ROD = BLOCKS.register("lightning_rod", LightningRod::new);

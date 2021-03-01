@@ -3,7 +3,7 @@ package net.luis.cave.client.screen.container;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
-import net.luis.cave.common.inventory.container.ModChestContainer25x8;
+import net.luis.cave.common.inventory.container.ModChestContainer17x8;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.IHasContainer;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
@@ -11,11 +11,11 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
-public class ModChestScreen25x8 extends ContainerScreen<ModChestContainer25x8> implements IHasContainer<ModChestContainer25x8> {
+public class ModChestScreen17x8 extends ContainerScreen<ModChestContainer17x8> implements IHasContainer<ModChestContainer17x8> {
 
 	private static final ResourceLocation GUI_TEXTURE = new ResourceLocation("cave:textures/gui/container/generic_200.png");
 
-	public ModChestScreen25x8(ModChestContainer25x8 container, PlayerInventory playerInventory, ITextComponent title) {
+	public ModChestScreen17x8(ModChestContainer17x8 container, PlayerInventory playerInventory, ITextComponent title) {
 		
 		super(container, playerInventory, title);
 		this.passEvents = false;

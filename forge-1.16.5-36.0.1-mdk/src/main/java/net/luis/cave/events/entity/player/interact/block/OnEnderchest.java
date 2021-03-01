@@ -8,6 +8,8 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.container.SimpleNamedContainerProvider;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -33,19 +35,40 @@ public class OnEnderchest {
 		BlockState state = world.getBlockState(pos);
 		
 		if (state.getBlock() == Blocks.ENDER_CHEST) {
-			
+
 			if (player instanceof ServerPlayerEntity) {
 				
-				event.setUseBlock(Result.DENY);
-				ServerPlayerEntity serverPlayer = (ServerPlayerEntity) player;
-				IItemHandlerModifiable itemHandlerModifiable = serverPlayer.getCapability(ModCapability.CAPABILITY, null)
-						.orElseThrow(() -> new NullPointerException("The mod Capability<IModItemHandler> is null"));
-				
-				if (itemHandlerModifiable != null) {
+				if (!player.isSneaking()) {
 					
-					NetworkHooks.openGui(serverPlayer, new SimpleNamedContainerProvider((id, inventory, playerIn) -> {
-						return new ModEnderChestContainer(id, inventory, itemHandlerModifiable);
-					}, CONTAINER_NAME), pos);
+					event.setUseBlock(Result.DENY);
+					if (!player.getHeldItemMainhand().isEmpty()) {
+						
+						event.setUseItem(Result.DENY);
+						
+					}
+					
+					ServerPlayerEntity serverPlayer = (ServerPlayerEntity) player;
+					IItemHandlerModifiable itemHandlerModifiable = serverPlayer.getCapability(ModCapability.CAPABILITY, null)
+							.orElseThrow(() -> new NullPointerException("The mod Capability<IModItemHandler> is null"));
+					
+					if (itemHandlerModifiable != null) {
+						
+						NetworkHooks.openGui(serverPlayer, new SimpleNamedContainerProvider((id, inventory, playerIn) -> {
+							return new ModEnderChestContainer(id, inventory, itemHandlerModifiable);
+						}, CONTAINER_NAME), pos);
+						
+						double d0 = (double) pos.getX() + 0.5D;
+						double d1 = (double) pos.getZ() + 0.5D;
+						
+						world.playSound(null, d0, pos.getY() + 0.5D, d1,
+								SoundEvents.BLOCK_ENDER_CHEST_OPEN, SoundCategory.BLOCKS, 0.5F, 
+								world.rand.nextFloat() * 0.1F + 0.9F);
+						
+					}
+					
+				} else {
+					
+					event.setCanceled(true);
 					
 				}
 				
