@@ -15,16 +15,18 @@ public class EnchantmentSetEvent extends Event {
 	private final PlayerEntity player;
 	private final BlockPos pos;
 	private final ItemStack stack;
+	private final int enchantRow;
 	private final int level;
 	private final List<EnchantmentData> originalDataList;
 	private List<EnchantmentData> dataList;
 	
-	public EnchantmentSetEvent(World world, PlayerEntity player, BlockPos pos, ItemStack stack, List<EnchantmentData> datalist, int level) {
+	public EnchantmentSetEvent(World world, PlayerEntity player, BlockPos pos, ItemStack stack, List<EnchantmentData> datalist, int enchantRow, int level) {
 		
 		this.world = world;
 		this.player = player;
 		this.pos = pos;
 		this.stack = stack;
+		this.enchantRow = enchantRow;
 		this.level = level;
 		this.originalDataList = datalist;
 		this.dataList = originalDataList;
@@ -52,6 +54,12 @@ public class EnchantmentSetEvent extends Event {
 	public ItemStack getStack() {
 		
 		return stack;
+		
+	}
+	
+	public int getEnchantRow() {
+		
+		return enchantRow;
 		
 	}
 

@@ -70,8 +70,7 @@ public class ModBeaconScreen extends ContainerScreen<ModBeaconContainer> {
 	protected void init() {
 		
 		super.init();
-		this.beaconConfirmButton = this
-				.addButton(new ModBeaconScreen.ConfirmButton(this.guiLeft + 164, this.guiTop + 107));
+		this.beaconConfirmButton = this.addButton(new ModBeaconScreen.ConfirmButton(this.guiLeft + 164, this.guiTop + 107));
 		this.addButton(new ModBeaconScreen.CancelButton(this.guiLeft + 190, this.guiTop + 107));
 		this.buttonsNotDrawn = true;
 		this.beaconConfirmButton.active = false;

@@ -192,12 +192,11 @@ public class ModEnchantingTableContainer extends Container {
 						if (this.enchantLevels[j1] > 0) {
 							
 							List<EnchantmentData> list = this.getEnchantmentList(player, itemstack, j1, this.enchantLevels[j1]);
-							@SuppressWarnings("unused")
-							List<EnchantmentData> modifyList = ModEventFactory.onEnchantmentSet(player, pos, itemstack, list, this.enchantLevels[j1]);
+							List<EnchantmentData> modifyList = ModEventFactory.onEnchantmentSet(player, pos, itemstack, list, j1, this.enchantLevels[j1]);
 							
-							if (list != null && !list.isEmpty()) {
+							if (modifyList != null && !modifyList.isEmpty()) {
 								
-								EnchantmentData enchantmentdata = list.get(this.rand.nextInt(list.size()));
+								EnchantmentData enchantmentdata = modifyList.get(this.rand.nextInt(modifyList.size()));
 								
 								this.enchantClue[j1] = Registry.ENCHANTMENT.getId(enchantmentdata.enchantment);
 								this.worldClue[j1] = enchantmentdata.enchantmentLevel;
@@ -444,6 +443,12 @@ public class ModEnchantingTableContainer extends Container {
 		}
 
 		return itemstack;
+		
+	}
+
+	public BlockPos getPos() {
+		
+		return pos;
 		
 	}
 	
