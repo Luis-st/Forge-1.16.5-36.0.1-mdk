@@ -1,9 +1,9 @@
-package net.luis.cave.init;
+package net.luis.cave.init.capability;
 
 import java.util.concurrent.Callable;
 
-import net.luis.cave.api.capability.IModItemHandler;
-import net.luis.cave.api.capability.ModItemStackHandler;
+import net.luis.cave.api.capability.IEnderChestItemHandler;
+import net.luis.cave.api.capability.EnderChestItemStackHandler;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EnderChestInventory;
 import net.minecraft.nbt.CompoundNBT;
@@ -17,31 +17,31 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.wrapper.CombinedInvWrapper;
 import net.minecraftforge.items.wrapper.InvWrapper;
 
-public class ModCapability {
+public class EnderChestCapability {
 	
-	@CapabilityInject(IModItemHandler.class)
-	public static Capability<IModItemHandler> ENDERCHEST = null;
+	@CapabilityInject(IEnderChestItemHandler.class)
+	public static Capability<IEnderChestItemHandler> ENDERCHEST = null;
 	
-	public static class Storage implements IStorage<IModItemHandler> {
+	public static class EnderChestStorage implements IStorage<IEnderChestItemHandler> {
 		@Override
-		public INBT writeNBT(Capability<IModItemHandler> capability, IModItemHandler instance, Direction side) {
+		public INBT writeNBT(Capability<IEnderChestItemHandler> capability, IEnderChestItemHandler instance, Direction side) {
 			return null;
 		}
 		@Override
-		public void readNBT(Capability<IModItemHandler> capability, IModItemHandler instance, Direction side, INBT nbt) {
+		public void readNBT(Capability<IEnderChestItemHandler> capability, IEnderChestItemHandler instance, Direction side, INBT nbt) {
 		}
 	}
 	
-	public static class Factory implements Callable<IModItemHandler> {
+	public static class EnderChestFactory implements Callable<IEnderChestItemHandler> {
 		@Override
-		public IModItemHandler call() throws Exception {
+		public IEnderChestItemHandler call() throws Exception {
 			return null;
 		}
 	}
 	
-	public static class Provider implements ICapabilitySerializable<CompoundNBT> {
+	public static class EnderChestProvider implements ICapabilitySerializable<CompoundNBT> {
 		
-		private ModItemStackHandler inventory = new ModItemStackHandler(27);
+		private EnderChestItemStackHandler inventory = new EnderChestItemStackHandler(27);
 		private PlayerEntity player;
 		private LazyOptional<CombinedInvWrapper> optional = LazyOptional.of(() -> {
 			
@@ -53,7 +53,7 @@ public class ModCapability {
 			
 		});
 		
-		public Provider(PlayerEntity playerIn) {
+		public EnderChestProvider(PlayerEntity playerIn) {
 			
 			this.player = playerIn;
 			

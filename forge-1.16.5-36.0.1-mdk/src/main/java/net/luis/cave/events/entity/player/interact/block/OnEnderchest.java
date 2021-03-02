@@ -2,7 +2,7 @@ package net.luis.cave.events.entity.player.interact.block;
 
 import net.luis.cave.Cave;
 import net.luis.cave.common.inventory.container.ModEnderChestContainer;
-import net.luis.cave.init.ModCapability;
+import net.luis.cave.init.capability.EnderChestCapability;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
@@ -48,7 +48,7 @@ public class OnEnderchest {
 					}
 					
 					ServerPlayerEntity serverPlayer = (ServerPlayerEntity) player;
-					IItemHandlerModifiable itemHandlerModifiable = serverPlayer.getCapability(ModCapability.ENDERCHEST, null)
+					IItemHandlerModifiable itemHandlerModifiable = serverPlayer.getCapability(EnderChestCapability.ENDERCHEST, null)
 							.orElseThrow(() -> new NullPointerException("The mod Capability<IModItemHandler> is null"));
 					
 					if (itemHandlerModifiable != null) {

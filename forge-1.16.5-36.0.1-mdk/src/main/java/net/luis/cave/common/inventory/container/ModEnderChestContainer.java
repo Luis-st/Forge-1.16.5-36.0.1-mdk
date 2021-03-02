@@ -1,6 +1,6 @@
 package net.luis.cave.common.inventory.container;
 
-import net.luis.cave.init.ModCapability;
+import net.luis.cave.init.capability.EnderChestCapability;
 import net.luis.cave.init.util.ModContainerType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -17,7 +17,7 @@ public class ModEnderChestContainer extends Container {
 		
 		super(ModContainerType.ENDER_CHEST.get(), id);
 		PlayerEntity player = playerInventory.player;
-		IItemHandlerModifiable itemHandlerModifiable = player.getCapability(ModCapability.ENDERCHEST, null)
+		IItemHandlerModifiable itemHandlerModifiable = player.getCapability(EnderChestCapability.ENDERCHEST, null)
 				.orElseThrow(() -> new NullPointerException("The mod Capability<IModItemHandler> is null"));
 		int i = (6 - 4) * 18;
 		

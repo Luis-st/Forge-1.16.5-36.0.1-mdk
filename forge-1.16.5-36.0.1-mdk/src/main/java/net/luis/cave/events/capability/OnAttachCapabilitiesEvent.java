@@ -1,7 +1,7 @@
 package net.luis.cave.events.capability;
 
 import net.luis.cave.Cave;
-import net.luis.cave.init.ModCapability;
+import net.luis.cave.init.capability.EnderChestCapability;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ResourceLocation;
@@ -19,7 +19,7 @@ public class OnAttachCapabilitiesEvent {
 		if (event.getObject() instanceof PlayerEntity && !(event.getObject() instanceof FakePlayer)) {
 			
 			PlayerEntity player = (PlayerEntity) event.getObject();
-			event.addCapability(new ResourceLocation("cave:extended_enderchest_gui"), new ModCapability.Provider(player));
+			event.addCapability(new ResourceLocation("cave:extended_enderchest_gui"), new EnderChestCapability.EnderChestProvider(player));
 			
 		}
 		

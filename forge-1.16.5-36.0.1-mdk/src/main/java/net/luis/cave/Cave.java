@@ -3,10 +3,8 @@ package net.luis.cave;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import net.luis.cave.api.capability.IModItemHandler;
+import net.luis.cave.api.capability.IEnderChestItemHandler;
 import net.luis.cave.events.generation.OreGeneration;
-import net.luis.cave.init.ModCapability.Factory;
-import net.luis.cave.init.ModCapability.Storage;
 import net.luis.cave.init.ModEnchantment;
 import net.luis.cave.init.ModEntityType;
 import net.luis.cave.init.blocks.ModBlockItems;
@@ -15,6 +13,7 @@ import net.luis.cave.init.blocks.ModVerticalBlockItems;
 import net.luis.cave.init.blocks.ModVerticalBlocks;
 import net.luis.cave.init.blocks.VanillaBlockItems;
 import net.luis.cave.init.blocks.VanillaBlocks;
+import net.luis.cave.init.capability.EnderChestCapability;
 import net.luis.cave.init.items.ModArmor;
 import net.luis.cave.init.items.ModItems;
 import net.luis.cave.init.items.ModTools;
@@ -104,7 +103,7 @@ public class Cave {
 	private void setup(FMLCommonSetupEvent event) {
 		
 		OreGeneration.registerOres();
-		CapabilityManager.INSTANCE.register(IModItemHandler.class, new Storage(), new Factory());
+		CapabilityManager.INSTANCE.register(IEnderChestItemHandler.class, new EnderChestCapability.EnderChestStorage(), new EnderChestCapability.EnderChestFactory());
 		
 	}
 	

@@ -38,7 +38,7 @@ public class OnTickSpeed {
 			
 			if (randomTickSpeed >= 300) {
 				
-				if (server != null) { 
+				if (server != null) {
 					
 					sendFeedbackServerTick(server, "randomTickSpeed is too high");
 					
