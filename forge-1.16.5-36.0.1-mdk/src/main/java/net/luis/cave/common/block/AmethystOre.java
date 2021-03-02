@@ -26,7 +26,7 @@ public class AmethystOre extends OreBlock {
 	@Override
 	protected int getExperience(Random rand) {
 		
-		return MathHelper.nextInt(rand, 3, 7);
+		return MathHelper.nextInt(rand, 3, 6);
 		
 	}
 
