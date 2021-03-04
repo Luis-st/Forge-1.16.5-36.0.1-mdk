@@ -106,6 +106,9 @@
   
   "container.smelting_furnace": "Smelting Furnace",
   "container.crafting_station": "Crafting Station",
+  "container.backpack": "Backpack",
+  
+  "key.backpack": "Toggle Backpack";
   
   "item.cave.fungus_soup": "Fungus Soup",
   "item.cave.end_star": "End Star",

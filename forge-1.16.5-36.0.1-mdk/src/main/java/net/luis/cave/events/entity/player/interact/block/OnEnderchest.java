@@ -2,7 +2,6 @@ package net.luis.cave.events.entity.player.interact.block;
 
 import net.luis.cave.Cave;
 import net.luis.cave.common.inventory.container.ModEnderChestContainer;
-import net.luis.cave.init.capability.EnderChestCapability;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
@@ -19,7 +18,6 @@ import net.minecraftforge.eventbus.api.Event.Result;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.network.NetworkHooks;
-import net.minecraftforge.items.IItemHandlerModifiable;
 
 @Mod.EventBusSubscriber(modid=Cave.Mod_Id, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class OnEnderchest {
@@ -38,7 +36,9 @@ public class OnEnderchest {
 
 			if (player instanceof ServerPlayerEntity) {
 				
-				if (!player.isSneaking()) {
+				ServerPlayerEntity serverPlayer = (ServerPlayerEntity) player;
+				
+				if (!serverPlayer.isSneaking()) {
 					
 					event.setUseBlock(Result.DENY);
 					if (!player.getHeldItemMainhand().isEmpty()) {
@@ -47,24 +47,16 @@ public class OnEnderchest {
 						
 					}
 					
-					ServerPlayerEntity serverPlayer = (ServerPlayerEntity) player;
-					IItemHandlerModifiable itemHandlerModifiable = serverPlayer.getCapability(EnderChestCapability.ENDERCHEST, null)
-							.orElseThrow(() -> new NullPointerException("The mod Capability<IModItemHandler> is null"));
+					NetworkHooks.openGui(serverPlayer, new SimpleNamedContainerProvider((id, inventory, playerIn) -> {
+						return new ModEnderChestContainer(id, inventory);
+					}, CONTAINER_NAME), pos);
 					
-					if (itemHandlerModifiable != null) {
-						
-						NetworkHooks.openGui(serverPlayer, new SimpleNamedContainerProvider((id, inventory, playerIn) -> {
-							return new ModEnderChestContainer(id, inventory, itemHandlerModifiable);
-						}, CONTAINER_NAME), pos);
-						
-						double d0 = (double) pos.getX() + 0.5D;
-						double d1 = (double) pos.getZ() + 0.5D;
-						
-						world.playSound(null, d0, pos.getY() + 0.5D, d1,
-								SoundEvents.BLOCK_ENDER_CHEST_OPEN, SoundCategory.BLOCKS, 0.5F, 
-								world.rand.nextFloat() * 0.1F + 0.9F);
-						
-					}
+					double d0 = (double) pos.getX() + 0.5D;
+					double d1 = (double) pos.getZ() + 0.5D;
+					
+					world.playSound(null, d0, pos.getY() + 0.5D, d1,
+							SoundEvents.BLOCK_ENDER_CHEST_OPEN, SoundCategory.BLOCKS, 0.5F, 
+							world.rand.nextFloat() * 0.1F + 0.9F);
 					
 				} else {
 					

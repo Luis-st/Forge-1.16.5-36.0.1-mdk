@@ -1,4 +1,4 @@
-package net.luis.cave.init.util;
+package net.luis.cave.init.recipe;
 
 import net.luis.cave.Cave;
 import net.luis.cave.common.recipe.SmeltingRecipe;

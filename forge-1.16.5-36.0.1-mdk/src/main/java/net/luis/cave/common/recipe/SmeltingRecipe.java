@@ -5,8 +5,8 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 
 import net.luis.cave.init.blocks.ModBlocks;
-import net.luis.cave.init.util.ModRecipeSerializer;
-import net.luis.cave.init.util.ModRecipeType;
+import net.luis.cave.init.recipe.ModRecipeSerializer;
+import net.luis.cave.init.recipe.ModRecipeType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.AbstractCookingRecipe;
 import net.minecraft.item.crafting.IRecipeSerializer;

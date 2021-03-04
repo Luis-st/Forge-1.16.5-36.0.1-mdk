@@ -1,7 +1,7 @@
 package net.luis.cave.common.tileentity;
 
 import net.luis.cave.common.inventory.container.SmeltingContainer;
-import net.luis.cave.init.util.ModRecipeType;
+import net.luis.cave.init.recipe.ModRecipeType;
 import net.luis.cave.init.util.ModTileEntityType;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;

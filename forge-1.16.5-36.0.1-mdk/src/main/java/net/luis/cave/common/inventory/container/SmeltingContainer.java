@@ -1,7 +1,7 @@
 package net.luis.cave.common.inventory.container;
 
+import net.luis.cave.init.recipe.ModRecipeType;
 import net.luis.cave.init.util.ModContainerType;
-import net.luis.cave.init.util.ModRecipeType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.IInventory;
