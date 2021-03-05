@@ -11,7 +11,7 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid=Cave.Mod_Id, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.DEDICATED_SERVER)
+@Mod.EventBusSubscriber(modid=Cave.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.DEDICATED_SERVER)
 public class OnSleepJump {
 
 	@SubscribeEvent
@@ -20,7 +20,7 @@ public class OnSleepJump {
 		World world = event.world;
 		List<? extends PlayerEntity> players = world.getPlayers();
 		
-		if (!world.isRemote && !Cave.pvpServer) {
+		if (!world.isRemote) {
 			
 			int sleepPlayers = 0;
 			int playerCount = world.getPlayers().size();

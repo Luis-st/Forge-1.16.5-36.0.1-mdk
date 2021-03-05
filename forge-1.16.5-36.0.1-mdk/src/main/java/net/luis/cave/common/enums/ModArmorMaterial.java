@@ -16,50 +16,50 @@ public enum ModArmorMaterial implements IArmorMaterial {
 	
 	//Name, Durability multiplier, Damage Reduction multiplier, 
 	//Damage Reduction, Enchantability, Toughness, Knockback Resistance, Repair Material
-	SLIME(Cave.Mod_Id + ":slime", 16, new int[] {1, 3, 4, 1}, 5, 0.0f, 1.0f, () -> {
+	SLIME(Cave.MOD_ID + ":slime", 16, new int[] {1, 3, 4, 1}, 5, 0.0f, 1.0f, () -> {
 		
 		return Ingredient.fromItems(Items.SLIME_BALL);
 		
 	}),
 	
-	LIMONITE(Cave.Mod_Id + ":limonite", 37, new int[] {2, 4, 6, 2}, 19, 1.0f, 0.0f, () -> {
+	LIMONITE(Cave.MOD_ID + ":limonite", 37, new int[] {2, 4, 6, 2}, 19, 1.0f, 0.0f, () -> {
 		
 		return Ingredient.fromItems(ModItems.LIMONITE_INGOT.get());
 		
 	}),
 	
-	JADE(Cave.Mod_Id + ":jade", 25, new int[] {3, 6, 8, 3}, 53, 2.0f, 0.0f, () -> {
+	JADE(Cave.MOD_ID + ":jade", 25, new int[] {3, 6, 8, 3}, 53, 2.0f, 0.0f, () -> {
 		
 		return Ingredient.fromItems(ModItems.JADE_INGOT.get());
 		
 	}), 
 	
 	
-	BLAZING(Cave.Mod_Id + ":blazing", 20, new int[] {4, 7, 9, 4}, 13, 2.0f, 0.1f, () -> {
+	BLAZING(Cave.MOD_ID + ":blazing", 20, new int[] {4, 7, 9, 4}, 13, 2.0f, 0.1f, () -> {
 		
 		return Ingredient.fromItems(ModItems.BLAZING_INGOT.get());
 		
 	}),
 	
-	SAPHIRE(Cave.Mod_Id + ":saphire", 27, new int[] {5, 8, 11, 5}, 24, 4.0f, 0.3f, () -> {
+	SAPHIRE(Cave.MOD_ID + ":saphire", 27, new int[] {5, 8, 11, 5}, 24, 4.0f, 0.3f, () -> {
 		
 		return Ingredient.fromItems(ModItems.SAPHIRE_INGOT.get());
 		
 	}),
 	
-	RUBY(Cave.Mod_Id + ":ruby", 37, new int[] {6, 9, 12, 6}, 16, 3.0f, 0.2f, () -> {
+	RUBY(Cave.MOD_ID + ":ruby", 37, new int[] {6, 9, 12, 6}, 16, 3.0f, 0.2f, () -> {
 		
 		return Ingredient.fromItems(ModItems.RUBY.get());
 		
 	}),
 	
-	ENDERITE(Cave.Mod_Id + ":enderite", 73, new int[] {10, 13, 16, 10}, 34, 5.0f, 0.4f, () -> {
+	ENDERITE(Cave.MOD_ID + ":enderite", 73, new int[] {10, 13, 16, 10}, 34, 5.0f, 0.4f, () -> {
 		
 		return Ingredient.fromItems(ModItems.ENDERITE_INGOT.get());
 		
 	}),
 	
-	NIGHT(Cave.Mod_Id + ":night", 112, new int[] {17, 18, 23, 17}, 50, 9.0f, 0.8f, () -> {
+	NIGHT(Cave.MOD_ID + ":night", 112, new int[] {17, 18, 23, 17}, 50, 9.0f, 0.8f, () -> {
 		
 		return Ingredient.fromItems(ModItems.NIGHT_INGOT.get());
 		

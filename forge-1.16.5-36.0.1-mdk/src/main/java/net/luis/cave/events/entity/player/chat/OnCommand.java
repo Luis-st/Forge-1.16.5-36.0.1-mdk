@@ -13,7 +13,7 @@ import net.minecraftforge.event.CommandEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid=Cave.Mod_Id, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid=Cave.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class OnCommand {
 
 	@SubscribeEvent
@@ -21,48 +21,37 @@ public class OnCommand {
 		
 		String command = event.getParseResults().getReader().getRead();
 		
-		if (Cave.pvpServer) {
+		if (event.getParseResults().getContext().getSource().getEntity() != null) {
 			
-			event.setCanceled(true); 
-			Cave.enableCommands = true;
+			Entity entity = event.getParseResults().getContext().getSource().getEntity();
 			
-		}
-		
-		if (!Cave.enableCommands) {
-			
-			if (event.getParseResults().getContext().getSource().getEntity() != null) {
+			if (entity instanceof PlayerEntity) {
 				
-				Entity entity = event.getParseResults().getContext().getSource().getEntity();
+				PlayerEntity player = (PlayerEntity) entity;
+				World world = player.getEntityWorld();
+				MinecraftServer server = world.getServer();
 				
-				if (entity instanceof PlayerEntity) {
+				if (!world.isRemote) {
 					
-					PlayerEntity player = (PlayerEntity) entity;
-					World world = player.getEntityWorld();
-					MinecraftServer server = world.getServer();
+					event.setCanceled(commandBlackList(command));
 					
-					if (!world.isRemote) {
+					if (server != null) {
 						
-						event.setCanceled(commandBlackList(command));
+						sendFeedbackServer(event, server, player, command);
 						
-						if (server != null) {
-							
-							sendFeedbackServer(event, server, player, command);
-							
-						} else {
-							
-							sendFeedbackClient(event, world, player, command);
-							
-						}
+					} else {
+						
+						sendFeedbackClient(event, world, player, command);
 						
 					}
 					
 				}
 				
-			} else {
-				
-				sendFeedbackConsol(event, command);
-				
 			}
+			
+		} else {
+			
+			sendFeedbackConsol(event, command);
 			
 		}
 		

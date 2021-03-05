@@ -20,7 +20,7 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
  
-@Mod.EventBusSubscriber(modid = Cave.Mod_Id, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = Cave.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class OreGeneration {
 	
 	private static final ArrayList<ConfiguredFeature<?, ?>> overworldOres = new ArrayList<ConfiguredFeature<?, ?>>();
@@ -116,7 +116,7 @@ public class OreGeneration {
 
 	private static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(String name, ConfiguredFeature<FC, ?> configuredFeature) {
 		
-		return Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, Cave.Mod_Id + ":" + name, configuredFeature);
+		return Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, Cave.MOD_ID + ":" + name, configuredFeature);
 		
 	}
 

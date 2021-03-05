@@ -9,7 +9,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModVerticalBlockItems {
 
-	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Cave.Mod_Id);
+	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Cave.MOD_ID);
 	
 	
 	public static final RegistryObject<Item> VERTICAL_OAK_SLAB_ITEM = ITEMS.register("vertical_oak_slab", 

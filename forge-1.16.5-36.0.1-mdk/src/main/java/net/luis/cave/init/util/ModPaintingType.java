@@ -8,7 +8,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModPaintingType {
 
-	public static final DeferredRegister<PaintingType> PAINTING_TYPES = DeferredRegister.create(ForgeRegistries.PAINTING_TYPES, Cave.Mod_Id);
+	public static final DeferredRegister<PaintingType> PAINTING_TYPES = DeferredRegister.create(ForgeRegistries.PAINTING_TYPES, Cave.MOD_ID);
 	
 	
 	public static final RegistryObject<PaintingType> SCREEN_1X1 = PAINTING_TYPES.register("screen1x1", 

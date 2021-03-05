@@ -13,7 +13,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class VanillaBlocks {
 	
-	public static final DeferredRegister<Block> VANILLA_BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Cave.Minecraft_Id);
+	public static final DeferredRegister<Block> VANILLA_BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Cave.MINECRAFT_ID);
 	
 	
 	public static final RegistryObject<Block> BARREL = VANILLA_BLOCKS.register("barrel", 

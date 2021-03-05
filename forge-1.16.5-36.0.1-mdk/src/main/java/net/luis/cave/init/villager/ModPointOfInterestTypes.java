@@ -11,8 +11,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModPointOfInterestTypes {
 	
-	public static final DeferredRegister<PointOfInterestType> POI_TYPE = DeferredRegister.create(ForgeRegistries.POI_TYPES, Cave.Mod_Id);
-	public static final DeferredRegister<PointOfInterestType> VANILLA_POI_TYPE = DeferredRegister.create(ForgeRegistries.POI_TYPES, Cave.Minecraft_Id);
+	public static final DeferredRegister<PointOfInterestType> POI_TYPE = DeferredRegister.create(ForgeRegistries.POI_TYPES, Cave.MOD_ID);
+	public static final DeferredRegister<PointOfInterestType> VANILLA_POI_TYPE = DeferredRegister.create(ForgeRegistries.POI_TYPES, Cave.MINECRAFT_ID);
 	
 	
 	public static final RegistryObject<PointOfInterestType> LUMBERJACK = POI_TYPE.register("lumberjack", 

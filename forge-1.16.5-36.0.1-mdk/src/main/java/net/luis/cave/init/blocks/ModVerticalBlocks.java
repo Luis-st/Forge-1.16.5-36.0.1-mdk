@@ -48,7 +48,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModVerticalBlocks {
 	
-	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Cave.Mod_Id);
+	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Cave.MOD_ID);
 	
 	
 	public static final RegistryObject<Block> VERTICAL_BLACKSTONE_SLAB = BLOCKS.register("vertical_blackstone_slab", VerticalBlackstoneSlab::new);

@@ -14,7 +14,7 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid=Cave.Mod_Id, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.DEDICATED_SERVER)
+@Mod.EventBusSubscriber(modid=Cave.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.DEDICATED_SERVER)
 public class OnGamemodeCheck {
 
 	@SubscribeEvent
@@ -25,11 +25,7 @@ public class OnGamemodeCheck {
 		
 		if (!world.isRemote) {
 			
-			if (!Cave.pvpServer) {
-				
-				checkGamemode(server, world);
-				
-			}
+			checkGamemode(server, world);
 			
 		}
 		
@@ -43,17 +39,13 @@ public class OnGamemodeCheck {
 			
 			for (PlayerEntity playerEntity : playerList.getPlayers()) {
 				
-				if (!Cave.enableCommands) {
+				if (playerEntity.isCreative() || playerEntity.isSpectator()) {
 					
-					if (playerEntity.isCreative() || playerEntity.isSpectator()) {
+					playerEntity.setGameType(GameType.SURVIVAL);
+					
+					for (PlayerEntity playerSendMessage : playerList.getPlayers()) {
 						
-						playerEntity.setGameType(GameType.SURVIVAL);
-						
-						for (PlayerEntity playerSendMessage : playerList.getPlayers()) {
-							
-							sendFeedback(playerEntity, playerSendMessage);
-							
-						}
+						sendFeedback(playerEntity, playerSendMessage);
 						
 					}
 					
@@ -67,17 +59,13 @@ public class OnGamemodeCheck {
 			
 			for (PlayerEntity playerEntity : players) {
 				
-				if (!Cave.enableCommands) {
+				if (playerEntity.isCreative() || playerEntity.isSpectator()) {
 					
-					if (playerEntity.isCreative() || playerEntity.isSpectator()) {
+					playerEntity.setGameType(GameType.SURVIVAL);
+					
+					for (PlayerEntity playerSendMessage : players) {
 						
-						playerEntity.setGameType(GameType.SURVIVAL);
-						
-						for (PlayerEntity playerSendMessage : players) {
-							
-							sendFeedback(playerEntity, playerSendMessage);
-							
-						}
+						sendFeedback(playerEntity, playerSendMessage);
 						
 					}
 					

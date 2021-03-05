@@ -13,7 +13,7 @@ import net.minecraft.util.text.ITextComponent;
 
 public class ModChestScreen17x8 extends ContainerScreen<ModChestContainer17x8> implements IHasContainer<ModChestContainer17x8> {
 
-	private static final ResourceLocation GUI_TEXTURE = new ResourceLocation("cave:textures/gui/container/generic_200.png");
+	private static final ResourceLocation GUI_TEXTURE = new ResourceLocation("cave:textures/gui/container/generic_136.png");
 
 	public ModChestScreen17x8(ModChestContainer17x8 container, PlayerInventory playerInventory, ITextComponent title) {
 		
@@ -40,9 +40,11 @@ public class ModChestScreen17x8 extends ContainerScreen<ModChestContainer17x8> i
 		
 		RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 		this.minecraft.getTextureManager().bindTexture(GUI_TEXTURE);
-		int i = (this.width - (this.xSize + 288)) / 2;
+		int i = (this.width - (this.xSize + 144)) / 2;
 		int j = (this.height - this.ySize) / 2;
-		AbstractGui.blit(matrixStack, i, j, 0, 0, 464, 256, 512, 512);
+		AbstractGui.blit(matrixStack, i, j, 0, 0, 320, 168, 512, 512);
+		AbstractGui.blit(matrixStack, i, j + 168, 0, 168, 320, 89, 512, 512);
 		
 	}
+	
 }

@@ -13,7 +13,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModEntityType {
 	
-	public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES, Cave.Mod_Id);
+	public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES, Cave.MOD_ID);
 	
 	
 	public static final RegistryObject<EntityType<JadeArrow>> JADE_ARROW = ENTITIES.register("jade_arrow", 

@@ -40,8 +40,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModEnchantment {
 	
-	public static final DeferredRegister<Enchantment> ENCHANTMENT = DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, Cave.Mod_Id);
-	public static final DeferredRegister<Enchantment> VANILLA_ENCHANTMENT = DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, Cave.Minecraft_Id);
+	public static final DeferredRegister<Enchantment> ENCHANTMENT = DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, Cave.MOD_ID);
+	public static final DeferredRegister<Enchantment> VANILLA_ENCHANTMENT = DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, Cave.MINECRAFT_ID);
 	private static final EquipmentSlotType[] ARMOR_SLOTS = new EquipmentSlotType[]{EquipmentSlotType.HEAD, EquipmentSlotType.CHEST, EquipmentSlotType.LEGS, EquipmentSlotType.FEET};
 	
 	public static final RegistryObject<Enchantment> DOUBLE_DROPS = ENCHANTMENT.register("double_drops", 

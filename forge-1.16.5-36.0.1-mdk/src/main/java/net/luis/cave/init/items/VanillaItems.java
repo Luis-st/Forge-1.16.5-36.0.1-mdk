@@ -15,7 +15,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class VanillaItems {
 	
-	public static final DeferredRegister<Item> VANILLA_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Cave.Minecraft_Id);
+	public static final DeferredRegister<Item> VANILLA_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Cave.MINECRAFT_ID);
 	
 	
 	public static final RegistryObject<Sugar> SUGAR = VANILLA_ITEMS.register("sugar", Sugar::new);

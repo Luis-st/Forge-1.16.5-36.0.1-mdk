@@ -24,7 +24,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModTools {
 
-	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Cave.Mod_Id);
+	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Cave.MOD_ID);
 	
 	
 	public static final RegistryObject<Shovel> JADE_SHOVEL = ITEMS.register("jade_shovel", 

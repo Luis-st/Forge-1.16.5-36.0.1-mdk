@@ -1,6 +1,7 @@
 package net.luis.cave.events.fml;
 
 import net.luis.cave.Cave;
+import net.luis.cave.client.screen.container.BackpackScreen;
 import net.luis.cave.client.screen.container.CraftingStationScreen;
 import net.luis.cave.client.screen.container.ModBeaconScreen;
 import net.luis.cave.client.screen.container.ModChestScreen17x8;
@@ -15,7 +16,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
-@Mod.EventBusSubscriber(modid=Cave.Mod_Id, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid=Cave.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class CreatContainerScreen {
 	
 	@SubscribeEvent
@@ -28,6 +29,7 @@ public class CreatContainerScreen {
 		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.CRAFTING_STATION.get(), CraftingStationScreen::new));
 		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.ENCHANTING_TABLE.get(), ModEnchantingTableScreen::new));
 		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.BEACON.get(), ModBeaconScreen::new));
+		event.enqueueWork(() -> ScreenManager.registerFactory(ModContainerType.BACKPACK.get(), BackpackScreen::new));
 		
 	}
 	

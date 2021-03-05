@@ -40,18 +40,16 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-@Mod(Cave.Mod_Id)
+@Mod(Cave.MOD_ID)
 public class Cave {
 
 	public static final Logger LOGGER = LogManager.getLogger();
-	public static final String Mod_Id = "cave";
-	public static final String Minecraft_Id = "minecraft";
-	public static boolean enableCommands = true;
-	public static final boolean pvpServer = false;
+	public static final String MOD_ID = "cave";
+	public static final String MINECRAFT_ID = "minecraft";
 	
 	public Cave() {
 		
-		LOGGER.info("Mod found: " + Mod_Id);
+		LOGGER.info("Mod found: " + MOD_ID);
 		LOGGER.info("Initialization has started");
 		LOGGER.info("Override of vanilla elements found");
 		LOGGER.warn("Initialization was stopped");

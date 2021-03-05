@@ -16,7 +16,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModTileEntityType {
 	
-	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITIES = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, Cave.Mod_Id);
+	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITIES = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, Cave.MOD_ID);
 	
 	public static final RegistryObject<TileEntityType<LightningRodTileEntity>> LIGHTNING_ROD = TILE_ENTITIES.register("lightminig_rod_tileentity", 
 			() -> TileEntityType.Builder.create(LightningRodTileEntity::new, ModBlocks.LIGHTNING_ROD.get()).build(null));
