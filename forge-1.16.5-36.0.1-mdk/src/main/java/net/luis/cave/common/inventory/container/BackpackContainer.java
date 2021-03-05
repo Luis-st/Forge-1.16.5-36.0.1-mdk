@@ -122,7 +122,7 @@ public class BackpackContainer extends Container {
 	
 	public static class ToolSlot extends SlotItemHandler {
 		
-		public static final ResourceLocation EMPTY_TOOL_SLOT = new ResourceLocation("cave:items/empty_tool_slot.png");
+		public static final ResourceLocation EMPTY_TOOL_SLOT = new ResourceLocation("cave:items/empty_tool_slot");
 
 		public ToolSlot(IItemHandler itemHandler, int index, int xPosition, int yPosition) {
 			

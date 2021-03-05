@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import net.luis.cave.api.capability.IBackpackItemHandler;
 import net.luis.cave.api.capability.IEnderChestItemHandler;
+import net.luis.cave.core.ModPacketHandler;
 import net.luis.cave.events.generation.OreGeneration;
 import net.luis.cave.init.ModEnchantment;
 import net.luis.cave.init.ModEntityType;
@@ -116,6 +117,7 @@ public class Cave {
 	private void doClientStuff(FMLClientSetupEvent event) {
 	
 		RenderTypeLookup.setRenderLayer(ModBlocks.TINTED_GLASS.get(), RenderType.getTranslucent());
+		ModPacketHandler.init();
 		
 	}
 	
