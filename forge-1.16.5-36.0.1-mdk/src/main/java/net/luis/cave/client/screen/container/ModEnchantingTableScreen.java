@@ -32,8 +32,8 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class ModEnchantingTableScreen extends ContainerScreen<ModEnchantingTableContainer> {
 	
-	private static final ResourceLocation ENCHANTMENT_TABLE_GUI_TEXTURE = new ResourceLocation("textures/gui/container/enchanting_table.png");
-	private static final ResourceLocation ENCHANTMENT_TABLE_BOOK_TEXTURE = new ResourceLocation("textures/entity/enchanting_table_book.png");
+	private static final ResourceLocation ENCHANTMENT_TABLE_GUI_TEXTURE = new ResourceLocation("textures/gui/container/enchanting_table");
+	private static final ResourceLocation ENCHANTMENT_TABLE_BOOK_TEXTURE = new ResourceLocation("textures/entity/enchanting_table_book");
 	private static final BookModel MODEL_BOOK = new BookModel();
 	private final Random random = new Random();
 	public int ticks;

@@ -21,37 +21,41 @@ public class OnCommand {
 		
 		String command = event.getParseResults().getReader().getRead();
 		
-		if (event.getParseResults().getContext().getSource().getEntity() != null) {
+		if (!Cave.DEV_AREA) {
 			
-			Entity entity = event.getParseResults().getContext().getSource().getEntity();
-			
-			if (entity instanceof PlayerEntity) {
+			if (event.getParseResults().getContext().getSource().getEntity() != null) {
 				
-				PlayerEntity player = (PlayerEntity) entity;
-				World world = player.getEntityWorld();
-				MinecraftServer server = world.getServer();
+				Entity entity = event.getParseResults().getContext().getSource().getEntity();
 				
-				if (!world.isRemote) {
+				if (entity instanceof PlayerEntity) {
 					
-					event.setCanceled(commandBlackList(command));
+					PlayerEntity player = (PlayerEntity) entity;
+					World world = player.getEntityWorld();
+					MinecraftServer server = world.getServer();
 					
-					if (server != null) {
+					if (!world.isRemote) {
 						
-						sendFeedbackServer(event, server, player, command);
+						event.setCanceled(commandBlackList(command));
 						
-					} else {
-						
-						sendFeedbackClient(event, world, player, command);
+						if (server != null) {
+							
+							sendFeedbackServer(event, server, player, command);
+							
+						} else {
+							
+							sendFeedbackClient(event, world, player, command);
+							
+						}
 						
 					}
 					
 				}
 				
+			} else {
+				
+				sendFeedbackConsol(event, command);
+				
 			}
-			
-		} else {
-			
-			sendFeedbackConsol(event, command);
 			
 		}
 		

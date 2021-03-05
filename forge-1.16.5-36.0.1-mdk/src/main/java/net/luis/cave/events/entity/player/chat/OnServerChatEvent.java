@@ -77,11 +77,11 @@ public class OnServerChatEvent {
 		if (msg.equalsIgnoreCase("?uuid")) {
 			
 			event.setCanceled(true);
-			String uuid = player.getUniqueID().toString().replace("-", "");
+			String uuid = player.getUniqueID().toString();
 			
 			ITextComponent iTextComponent = TextComponentUtils.wrapWithSquareBrackets(
-					(new StringTextComponent(String.valueOf(uuid))).modifyStyle((p_211752_2_) -> {
-						return p_211752_2_.setFormatting(TextFormatting.GREEN)
+					(new StringTextComponent(String.valueOf(uuid))).modifyStyle((style) -> {
+						return style.setFormatting(TextFormatting.GREEN)
 								.setClickEvent(new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, String.valueOf(uuid)))
 								.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new TranslationTextComponent("chat.copy.click")))
 								.setInsertion(String.valueOf(uuid));

@@ -276,7 +276,7 @@ public class ModBeaconTileEntity extends TileEntity implements INamedContainerPr
 		
 		if (!this.world.isRemote && this.primaryEffect != null) {
 			
-			double d0 = (double) (this.levels * 10 + 10);
+			double d0 = (double) (this.levels * (10 * this.levels) + 10);
 			int i = 0;
 			
 			if (this.levels >= 4 && this.primaryEffect == this.secondaryEffect) {
