@@ -30,11 +30,13 @@ public class BackpackOpenMessage implements IMessage<BackpackOpenMessage> {
 	@Override
 	public void handle(BackpackOpenMessage message, Supplier<Context> networkContext) {
 		
-		ServerPlayerEntity playerEntity = networkContext.get().getSender();
+		ServerPlayerEntity player = networkContext.get().getSender();
 		networkContext.get().enqueueWork(() -> {
-			NetworkHooks.openGui(playerEntity, new SimpleNamedContainerProvider((id, inventory, playerIn) -> {
+			
+			NetworkHooks.openGui(player, new SimpleNamedContainerProvider((id, inventory, playerIn) -> {
 							return new BackpackContainer(id, inventory);
 						}, CONTAINER_NAME));
+			
 		});
 		networkContext.get().setPacketHandled(true);
 		

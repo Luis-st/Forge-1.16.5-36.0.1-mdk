@@ -434,7 +434,13 @@ public class ItemManager {
 			
 		}
 		
-		return null;
+		return Tool.ITEM;
+		
+	}
+	
+	public static boolean isToolItem(ItemStack stack) {
+		
+		return getToolType(stack) != Tool.ITEM;
 		
 	}
 	
@@ -455,7 +461,7 @@ public class ItemManager {
 		CHEST,
 		LEGS,
 		FEET,
-		NO;
+		ITEM;
 		
 	}
 	

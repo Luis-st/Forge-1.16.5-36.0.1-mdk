@@ -16,8 +16,8 @@ public class CreatKeyBinding {
 		
 		ClientRegistry.registerKeyBinding(ModKeyBinding.BACKPACK_OPEN);
 		ClientRegistry.registerKeyBinding(ModKeyBinding.BACKPACK_NEXT);
-		ClientRegistry.registerKeyBinding(ModKeyBinding.BACKPACK_SLOT_0);
-		ClientRegistry.registerKeyBinding(ModKeyBinding.BACKPACK_SLOT_1);
+		ClientRegistry.registerKeyBinding(ModKeyBinding.BACKPACK_SLOT_TOP);
+		ClientRegistry.registerKeyBinding(ModKeyBinding.BACKPACK_SLOT_DOWN);
 		
 	}
 

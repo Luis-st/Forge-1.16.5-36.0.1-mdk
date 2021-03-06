@@ -111,8 +111,8 @@
   "key.categories.backpack": "Backpack",
   "key.backpack_open": "Open Backpack";
   "key.backpack_next": "Next Tool";
-  "key.backpack_slot_0": "Toolslot 1";
-  "key.backpack_slot_1": "Toolslot 2";
+  "key.backpack_slot_top": "Toolslot Top";
+  "key.backpack_slot_down": "Toolslot Down";
   
   "item.cave.fungus_soup": "Fungus Soup",
   "item.cave.end_star": "End Star",
