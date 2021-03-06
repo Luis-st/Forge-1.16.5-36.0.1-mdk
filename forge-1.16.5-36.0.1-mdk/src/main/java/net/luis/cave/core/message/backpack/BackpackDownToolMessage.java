@@ -2,7 +2,6 @@ package net.luis.cave.core.message.backpack;
 
 import java.util.function.Supplier;
 
-import net.luis.cave.core.message.IMessage;
 import net.luis.cave.init.capability.BackpackCapability;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -12,22 +11,22 @@ import net.minecraft.util.Hand;
 import net.minecraftforge.fml.network.NetworkEvent.Context;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
-public class BackpackDownToolMessage implements IMessage<BackpackDownToolMessage> {
+public class BackpackDownToolMessage {
 
-	@Override
-	public void decode(BackpackDownToolMessage message, PacketBuffer buffer) {
+	
+	public static void encode(BackpackDownToolMessage message, PacketBuffer buffer) {
 		
 	}
 
-	@Override
-	public BackpackDownToolMessage encode(PacketBuffer buffer) {
+	
+	public static BackpackDownToolMessage decode(PacketBuffer buffer) {
 		
 		return new BackpackDownToolMessage();
 		
 	}
 
-	@Override
-	public void handle(BackpackDownToolMessage message, Supplier<Context> networkContext) {
+	
+	public static void handle(BackpackDownToolMessage message, Supplier<Context> networkContext) {
 		
 		ServerPlayerEntity player = networkContext.get().getSender();
 		networkContext.get().enqueueWork(() -> {

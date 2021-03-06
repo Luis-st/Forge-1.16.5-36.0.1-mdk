@@ -3,7 +3,6 @@ package net.luis.cave.core.message.backpack;
 import java.util.function.Supplier;
 
 import net.luis.cave.common.inventory.container.BackpackContainer;
-import net.luis.cave.core.message.IMessage;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.container.SimpleNamedContainerProvider;
 import net.minecraft.network.PacketBuffer;
@@ -12,23 +11,24 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.fml.network.NetworkEvent.Context;
 import net.minecraftforge.fml.network.NetworkHooks;
 
-public class BackpackOpenMessage implements IMessage<BackpackOpenMessage> {
+public class BackpackOpenMessage {
 	
 	private static final ITextComponent CONTAINER_NAME = new TranslationTextComponent("container.backpack");
 	
-	@Override
-	public void decode(BackpackOpenMessage message, PacketBuffer buffer) {
+	
+	public static void encode(BackpackOpenMessage message, PacketBuffer buffer) {
+		
 	}
 
-	@Override
-	public BackpackOpenMessage encode(PacketBuffer buffer) {
+	
+	public static BackpackOpenMessage decode(PacketBuffer buffer) {
 		
 		return new BackpackOpenMessage();
 		
 	}
 
-	@Override
-	public void handle(BackpackOpenMessage message, Supplier<Context> networkContext) {
+	
+	public static void handle(BackpackOpenMessage message, Supplier<Context> networkContext) {
 		
 		ServerPlayerEntity player = networkContext.get().getSender();
 		networkContext.get().enqueueWork(() -> {

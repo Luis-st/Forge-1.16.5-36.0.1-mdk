@@ -2,7 +2,6 @@ package net.luis.cave.core;
 
 import java.util.Optional;
 
-import net.luis.cave.core.message.IMessage;
 import net.luis.cave.core.message.backpack.BackpackDownToolMessage;
 import net.luis.cave.core.message.backpack.BackpackNextToolMessage;
 import net.luis.cave.core.message.backpack.BackpackOpenMessage;
@@ -21,16 +20,15 @@ public class ModPacketHandler {
 	public static void init() {
 		
 		simpleChannel = NetworkRegistry.newSimpleChannel(new ResourceLocation("cave:simple_chnanel"), () -> version,  version::equals, version::equals);
-		register(BackpackOpenMessage.class, new BackpackOpenMessage(), NetworkDirection.PLAY_TO_SERVER);
-		register(BackpackNextToolMessage.class, new BackpackNextToolMessage(), NetworkDirection.PLAY_TO_SERVER);
-		register(BackpackTopToolMessage.class, new BackpackTopToolMessage(), NetworkDirection.PLAY_TO_SERVER);
-		register(BackpackDownToolMessage.class, new BackpackDownToolMessage(), NetworkDirection.PLAY_TO_SERVER);
-		
-	}
 	
-	private static <T> void register(Class<T> clazz, IMessage<T> message, NetworkDirection networkDirection) {
-		
-		simpleChannel.registerMessage(id++, clazz, message::decode, message::encode, message::handle, Optional.of(networkDirection));
+		simpleChannel.registerMessage(id++, BackpackOpenMessage.class, BackpackOpenMessage::encode,
+				BackpackOpenMessage::decode, BackpackOpenMessage::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
+		simpleChannel.registerMessage(id++, BackpackNextToolMessage.class, BackpackNextToolMessage::encode,
+				BackpackNextToolMessage::decode, BackpackNextToolMessage::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
+		simpleChannel.registerMessage(id++, BackpackTopToolMessage.class, BackpackTopToolMessage::encode,
+				BackpackTopToolMessage::decode, BackpackTopToolMessage::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
+		simpleChannel.registerMessage(id++, BackpackDownToolMessage.class, BackpackDownToolMessage::encode,
+				BackpackDownToolMessage::decode, BackpackDownToolMessage::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
 		
 	}
 	
