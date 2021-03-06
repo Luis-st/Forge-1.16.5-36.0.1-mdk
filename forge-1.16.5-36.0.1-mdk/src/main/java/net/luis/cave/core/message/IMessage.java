@@ -1,4 +1,4 @@
-package net.luis.cave.core;
+package net.luis.cave.core.message;
 
 import java.util.function.Supplier;
 

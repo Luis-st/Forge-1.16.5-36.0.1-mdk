@@ -2,6 +2,8 @@ package net.luis.cave.core;
 
 import java.util.Optional;
 
+import net.luis.cave.core.message.IMessage;
+import net.luis.cave.core.message.backpack.BackpackOpenMessage;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.network.NetworkDirection;
 import net.minecraftforge.fml.network.NetworkRegistry;
@@ -16,7 +18,7 @@ public class ModPacketHandler {
 	public static void init() {
 		
 		simpleChannel = NetworkRegistry.newSimpleChannel(new ResourceLocation("cave:simple_chnanel"), () -> version,  version::equals, version::equals);
-		register(BackpackMessage.class, new BackpackMessage(), NetworkDirection.PLAY_TO_SERVER);
+		register(BackpackOpenMessage.class, new BackpackOpenMessage(), NetworkDirection.PLAY_TO_SERVER);
 		
 	}
 	

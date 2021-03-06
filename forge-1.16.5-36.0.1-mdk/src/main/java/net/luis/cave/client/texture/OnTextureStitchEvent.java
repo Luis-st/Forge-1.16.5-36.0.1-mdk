@@ -1,4 +1,4 @@
-package net.luis.cave.events.other;
+package net.luis.cave.client.texture;
 
 import net.luis.cave.Cave;
 import net.minecraft.util.ResourceLocation;

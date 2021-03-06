@@ -11,6 +11,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
 import net.luis.cave.common.inventory.container.ModBeaconContainer;
+import net.luis.cave.init.blocks.ModBlocks;
 import net.luis.cave.init.util.ModTileEntityType;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -124,7 +125,7 @@ public class ModBeaconTileEntity extends TileEntity implements INamedContainerPr
 			
 		}
 
-		ModBeaconTileEntity.BeamSegment beacontileentity$beamsegment = this.beamColorSegments.isEmpty() ? null 
+		ModBeaconTileEntity.BeamSegment beamSegment = this.beamColorSegments.isEmpty() ? null 
 				: this.beamColorSegments.get(this.beamColorSegments.size() - 1);
 		int l = this.world.getHeight(Heightmap.Type.WORLD_SURFACE, i, k);
 
@@ -138,22 +139,22 @@ public class ModBeaconTileEntity extends TileEntity implements INamedContainerPr
 				
 				if (this.beamColorSegments.size() <= 1) {
 					
-					beacontileentity$beamsegment = new ModBeaconTileEntity.BeamSegment(afloat);
-					this.beamColorSegments.add(beacontileentity$beamsegment);
+					beamSegment = new ModBeaconTileEntity.BeamSegment(afloat);
+					this.beamColorSegments.add(beamSegment);
 					
-				} else if (beacontileentity$beamsegment != null) {
+				} else if (beamSegment != null) {
 					
-					if (Arrays.equals(afloat, beacontileentity$beamsegment.colors)) {
+					if (Arrays.equals(afloat, beamSegment.colors)) {
 						
-						beacontileentity$beamsegment.incrementHeight();
+						beamSegment.incrementHeight();
 						
 					} else {
 						
-						beacontileentity$beamsegment = new ModBeaconTileEntity.BeamSegment(
-								new float[] { (beacontileentity$beamsegment.colors[0] + afloat[0]) / 2.0F,
-										(beacontileentity$beamsegment.colors[1] + afloat[1]) / 2.0F,
-										(beacontileentity$beamsegment.colors[2] + afloat[2]) / 2.0F });
-						this.beamColorSegments.add(beacontileentity$beamsegment);
+						beamSegment = new ModBeaconTileEntity.BeamSegment(
+								new float[] { (beamSegment.colors[0] + afloat[0]) / 2.0F,
+										(beamSegment.colors[1] + afloat[1]) / 2.0F,
+										(beamSegment.colors[2] + afloat[2]) / 2.0F });
+						this.beamColorSegments.add(beamSegment);
 						
 					}
 					
@@ -161,7 +162,7 @@ public class ModBeaconTileEntity extends TileEntity implements INamedContainerPr
 				
 			} else {
 				
-				if (beacontileentity$beamsegment == null || blockstate.getOpacity(this.world, blockpos) >= 15 && block != Blocks.BEDROCK) {
+				if (beamSegment == null || blockstate.getOpacity(this.world, blockpos) >= 15 && (block != Blocks.BEDROCK && block == ModBlocks.TINTED_GLASS.get())) {
 					
 					this.beamColorSegments.clear();
 					this.beaconSize = l;
@@ -169,10 +170,10 @@ public class ModBeaconTileEntity extends TileEntity implements INamedContainerPr
 					
 				}
 
-				beacontileentity$beamsegment.incrementHeight();
+				beamSegment.incrementHeight();
 				
 			}
-
+			
 			blockpos = blockpos.up();
 			++this.beaconSize;
 			

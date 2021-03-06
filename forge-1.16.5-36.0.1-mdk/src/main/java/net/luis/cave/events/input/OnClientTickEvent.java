@@ -1,8 +1,8 @@
-package net.luis.cave.events.other;
+package net.luis.cave.events.input;
 
 import net.luis.cave.Cave;
-import net.luis.cave.core.BackpackMessage;
 import net.luis.cave.core.ModPacketHandler;
+import net.luis.cave.core.message.backpack.BackpackOpenMessage;
 import net.luis.cave.init.util.ModKeyBinding;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;
@@ -17,7 +17,7 @@ public class OnClientTickEvent {
 
 		if (ModKeyBinding.BACKPACK_OPEN.isKeyDown()) {
 			
-			ModPacketHandler.simpleChannel.sendToServer(new BackpackMessage());
+			ModPacketHandler.simpleChannel.sendToServer(new BackpackOpenMessage());
 			
 		}
 		
