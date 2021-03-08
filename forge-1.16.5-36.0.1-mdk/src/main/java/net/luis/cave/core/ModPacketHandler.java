@@ -3,7 +3,9 @@ package net.luis.cave.core;
 import java.util.Optional;
 
 import net.luis.cave.core.message.backpack.BackpackDownToolMessage;
+import net.luis.cave.core.message.backpack.BackpackNextDownToolMessage;
 import net.luis.cave.core.message.backpack.BackpackNextToolMessage;
+import net.luis.cave.core.message.backpack.BackpackNextTopToolMessage;
 import net.luis.cave.core.message.backpack.BackpackOpenMessage;
 import net.luis.cave.core.message.backpack.BackpackTopToolMessage;
 import net.minecraft.util.ResourceLocation;
@@ -29,6 +31,10 @@ public class ModPacketHandler {
 				BackpackTopToolMessage::decode, BackpackTopToolMessage::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
 		simpleChannel.registerMessage(id++, BackpackDownToolMessage.class, BackpackDownToolMessage::encode,
 				BackpackDownToolMessage::decode, BackpackDownToolMessage::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
+		simpleChannel.registerMessage(id++, BackpackNextDownToolMessage.class, BackpackNextDownToolMessage::encode,
+				BackpackNextDownToolMessage::decode, BackpackNextDownToolMessage::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
+		simpleChannel.registerMessage(id++, BackpackNextTopToolMessage.class, BackpackNextTopToolMessage::encode,
+				BackpackNextTopToolMessage::decode, BackpackNextTopToolMessage::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
 		
 	}
 	

@@ -36,10 +36,10 @@ import net.minecraft.world.World;
 
 public class ItemManager {
 	
-	public static boolean sameTool(ItemStack inputLeft, ItemStack inputRight) {
+	public static boolean sameItemType(ItemStack inputLeft, ItemStack inputRight) {
 		
-		Tool toolLeft = getToolType(inputLeft);
-		Tool toolRight = getToolType(inputRight);
+		Tool toolLeft = getItemType(inputLeft);
+		Tool toolRight = getItemType(inputRight);
 		
 		if (toolLeft == toolRight) {
 			
@@ -358,7 +358,7 @@ public class ItemManager {
 		
 	}
 
-	public static Tool getToolType(ItemStack stack) {
+	public static Tool getItemType(ItemStack stack) {
 		
 		Item item = stack.getItem();
 		
@@ -438,9 +438,44 @@ public class ItemManager {
 		
 	}
 	
-	public static boolean isToolItem(ItemStack stack) {
+	public static boolean isBreakableItemType(ItemStack stack) {
 		
-		return getToolType(stack) != Tool.ITEM;
+		return getItemType(stack) != Tool.ITEM;
+		
+	}
+	
+	public static boolean isArmorItemType(ItemStack stack) {
+		
+		Tool tool = getItemType(stack);
+		
+		switch (tool) {
+		case HELMET: {
+			return true;
+		} case CHEST: {
+			return true;
+		} case LEGS: {
+			return true;
+		} case FEET: {
+			return true;
+		} default:
+			return false;
+		}
+		
+	}
+	
+	public static boolean isToolItemType(ItemStack stack) {
+		
+		if (getItemType(stack) != Tool.ITEM) {
+			
+			if (!isArmorItemType(stack)) {
+				
+				return true;
+				
+			}
+			
+		}
+		
+		return false;
 		
 	}
 	

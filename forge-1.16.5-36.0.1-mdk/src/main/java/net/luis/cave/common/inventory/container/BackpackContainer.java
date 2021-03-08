@@ -83,15 +83,15 @@ public class BackpackContainer extends Container {
 			ItemStack itemstack1 = slot.getStack();
 			itemstack = itemstack1.copy();
 			
-			if (index < 36) {
+			if (index < 37) {
 				
-				if (!this.mergeItemStack(itemstack1, 36, this.inventorySlots.size(), true)) {
+				if (!this.mergeItemStack(itemstack1, 37, this.inventorySlots.size(), true)) {
 					
 					return ItemStack.EMPTY;
 					
 				}
 				
-			} else if (!this.mergeItemStack(itemstack1, 0, 36, false)) {
+			} else if (!this.mergeItemStack(itemstack1, 0, 37, false)) {
 				
 				return ItemStack.EMPTY;
 				
