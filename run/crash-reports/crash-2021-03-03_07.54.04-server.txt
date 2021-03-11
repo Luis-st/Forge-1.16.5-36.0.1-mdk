@@ -1,0 +1,113 @@
+---- Minecraft Crash Report ----
+// You're mean.
+
+Time: 03.03.21, 07:54
+Description: Ticking player
+
+java.lang.RuntimeException: Slot 38 not in valid range - [0,38)
+	at net.minecraftforge.items.ItemStackHandler.validateSlotIndex(ItemStackHandler.java:221) ~[forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.items.ItemStackHandler.getStackInSlot(ItemStackHandler.java:73) ~[forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.items.SlotItemHandler.getStack(SlotItemHandler.java:54) ~[forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading}
+	at net.minecraft.inventory.container.Container.getInventory(Container.java:121) ~[forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading}
+	at net.minecraft.inventory.container.Container.addListener(Container.java:101) ~[forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.fml.network.NetworkHooks.openGui(NetworkHooks.java:228) ~[forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.fml.network.NetworkHooks.openGui(NetworkHooks.java:188) ~[forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading}
+	at net.luis.cave.events.entity.player.tick.OnBackpack.PlayerTick(OnBackpack.java:38) ~[main/:?] {re:classloading}
+	at net.minecraftforge.eventbus.ASMEventHandler_41_OnBackpack_PlayerTick_PlayerTickEvent.invoke(.dynamic) ~[?:?] {}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:85) ~[eventbus-4.0.0.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:302) ~[eventbus-4.0.0.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:283) ~[eventbus-4.0.0.jar:?] {}
+	at net.minecraftforge.fml.hooks.BasicEventHooks.onPlayerPreTick(BasicEventHooks.java:85) ~[forge:?] {re:classloading}
+	at net.minecraft.entity.player.PlayerEntity.tick(PlayerEntity.java:200) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.entity.player.ServerPlayerEntity.playerTick(ServerPlayerEntity.java:422) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.network.play.ServerPlayNetHandler.tick(ServerPlayNetHandler.java:212) ~[forge:?] {re:classloading}
+	at net.minecraft.network.NetworkManager.tick(NetworkManager.java:248) ~[forge:?] {re:classloading}
+	at net.minecraft.network.NetworkSystem.tick(NetworkSystem.java:151) ~[forge:?] {re:classloading}
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:898) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:820) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:84) ~[forge:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.func_240802_v_(MinecraftServer.java:663) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$startServer$0(MinecraftServer.java:233) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:832) [?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at net.minecraftforge.items.ItemStackHandler.validateSlotIndex(ItemStackHandler.java:221) ~[forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.items.ItemStackHandler.getStackInSlot(ItemStackHandler.java:73) ~[forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.items.SlotItemHandler.getStack(SlotItemHandler.java:54) ~[forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading}
+	at net.minecraft.inventory.container.Container.getInventory(Container.java:121) ~[forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading}
+	at net.minecraft.inventory.container.Container.addListener(Container.java:101) ~[forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.fml.network.NetworkHooks.openGui(NetworkHooks.java:228) ~[forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading}
+	at net.minecraftforge.fml.network.NetworkHooks.openGui(NetworkHooks.java:188) ~[forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-recomp.jar:?] {re:classloading}
+	at net.luis.cave.events.entity.player.tick.OnBackpack.PlayerTick(OnBackpack.java:38) ~[main/:?] {re:classloading}
+	at net.minecraftforge.eventbus.ASMEventHandler_41_OnBackpack_PlayerTick_PlayerTickEvent.invoke(.dynamic) ~[?:?] {}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:85) ~[eventbus-4.0.0.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:302) ~[eventbus-4.0.0.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:283) ~[eventbus-4.0.0.jar:?] {}
+	at net.minecraftforge.fml.hooks.BasicEventHooks.onPlayerPreTick(BasicEventHooks.java:85) ~[forge:?] {re:classloading}
+	at net.minecraft.entity.player.PlayerEntity.tick(PlayerEntity.java:200) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+-- Player being ticked --
+Details:
+	Entity Type: minecraft:player (net.minecraft.entity.player.ServerPlayerEntity)
+	Entity ID: 223
+	Entity Name: Dev
+	Entity's Exact location: -220.87, 74.00, -135.27
+	Entity's Block location: World: (-221,74,-136), Chunk: (at 3,4,8 in -14,-9; contains blocks -224,0,-144 to -209,255,-129), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+	Entity's Momentum: 0.00, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: Cannot invoke "net.minecraft.entity.Entity.toString()" because the return value of "net.minecraft.entity.Entity.getRidingEntity()" is null
+Stacktrace:
+	at net.minecraft.entity.player.ServerPlayerEntity.playerTick(ServerPlayerEntity.java:422) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.network.play.ServerPlayNetHandler.tick(ServerPlayNetHandler.java:212) ~[forge:?] {re:classloading}
+	at net.minecraft.network.NetworkManager.tick(NetworkManager.java:248) ~[forge:?] {re:classloading}
+	at net.minecraft.network.NetworkSystem.tick(NetworkSystem.java:151) ~[forge:?] {re:classloading}
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:898) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:820) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:84) ~[forge:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.func_240802_v_(MinecraftServer.java:663) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$startServer$0(MinecraftServer.java:233) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:832) [?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.5
+	Minecraft Version ID: 1.16.5
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 15.0.1, Oracle Corporation
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 1002268160 bytes (955 MB) / 1497366528 bytes (1428 MB) up to 4278190080 bytes (4080 MB)
+	CPUs: 6
+	JVM Flags: 1 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump
+	ModLauncher: 8.0.9+86+master.3cf110c
+	ModLauncher launch target: fmluserdevclient
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		/mixin-0.8.2.jar mixin PLUGINSERVICE 
+		/eventbus-4.0.0.jar eventbus PLUGINSERVICE 
+		/forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-launcher.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-launcher.jar runtime_enum_extender PLUGINSERVICE 
+		/forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-launcher.jar capability_inject_definalize PLUGINSERVICE 
+		/accesstransformers-3.0.1.jar accesstransformer PLUGINSERVICE 
+		/forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-launcher.jar runtimedistcleaner PLUGINSERVICE 
+		/mixin-0.8.2.jar mixin TRANSFORMATIONSERVICE 
+		/forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-launcher.jar fml TRANSFORMATIONSERVICE 
+	FML: 36.0
+	Forge: net.minecraftforge:36.0.1
+	FML Language Providers: 
+		javafml@36.0
+		minecraft@1
+	Mod List: 
+		client-extra.jar                                  |Minecraft                     |minecraft                     |1.16.5              |DONE      |a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		main                                              |Example Mod                   |cave                          |NONE                |DONE      |NOSIGNATURE
+		forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.|Forge                         |forge                         |36.0.1              |DONE      |NOSIGNATURE
+	Crash Report UUID: 515ef35e-9464-43dd-a807-62dd40010b0b
+	Player Count: 1 / 8; [ServerPlayerEntity['Dev'/223, l='ServerLevel[New World]', x=-220.87, y=74.00, z=-135.27]]
+	Data Packs: vanilla, mod:cave, mod:forge
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'forge'

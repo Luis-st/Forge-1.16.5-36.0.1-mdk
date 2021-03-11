@@ -1,0 +1,79 @@
+---- Minecraft Crash Report ----
+// Surprise! Haha. Well, this is awkward.
+
+Time: 04.02.21, 16:22
+Description: Exception in server tick loop
+
+java.lang.NoClassDefFoundError: Could not initialize class net.luis.cave.init.CaveRecipe
+	at net.luis.cave.blocks.tileentity.SmeltingFurnaceTileEntity.<init>(SmeltingFurnaceTileEntity.java:17) ~[?:?] {re:classloading}
+	at net.luis.cave.blocks.SmeltingFurnace.createNewTileEntity(SmeltingFurnace.java:49) ~[?:?] {re:classloading}
+	at net.minecraftforge.common.extensions.IForgeBlock.createTileEntity(IForgeBlock.java:157) ~[forge:?] {re:classloading}
+	at net.minecraftforge.common.extensions.IForgeBlockState.createTileEntity(IForgeBlockState.java:120) ~[forge:?] {re:classloading}
+	at net.minecraft.world.chunk.Chunk.setBlockState(Chunk.java:291) ~[forge:?] {re:classloading}
+	at net.minecraft.world.World.setBlockState(World.java:228) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.World.setBlockState(World.java:205) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.item.BlockItem.placeBlock(BlockItem.java:152) ~[forge:?] {re:classloading}
+	at net.minecraft.item.BlockItem.tryPlace(BlockItem.java:57) ~[forge:?] {re:classloading}
+	at net.minecraft.item.BlockItem.onItemUse(BlockItem.java:42) ~[forge:?] {re:classloading}
+	at net.minecraftforge.common.ForgeHooks.onPlaceItemIntoWorld(ForgeHooks.java:613) ~[forge:?] {re:classloading}
+	at net.minecraft.item.ItemStack.onItemUse(ItemStack.java:191) ~[forge:?] {re:classloading}
+	at net.minecraft.server.management.PlayerInteractionManager.func_219441_a(PlayerInteractionManager.java:359) ~[forge:?] {re:classloading}
+	at net.minecraft.network.play.ServerPlayNetHandler.processTryUseItemOnBlock(ServerPlayNetHandler.java:986) ~[forge:?] {re:classloading}
+	at net.minecraft.network.play.client.CPlayerTryUseItemOnBlockPacket.processPacket(CPlayerTryUseItemOnBlockPacket.java:45) ~[forge:?] {re:classloading}
+	at net.minecraft.network.play.client.CPlayerTryUseItemOnBlockPacket.processPacket(CPlayerTryUseItemOnBlockPacket.java:12) ~[forge:?] {re:classloading}
+	at net.minecraft.network.PacketThreadUtil.lambda$checkThreadAndEnqueue$0(PacketThreadUtil.java:19) ~[forge:?] {re:classloading}
+	at net.minecraft.util.concurrent.TickDelayedTask.run(TickDelayedTask.java:20) ~[forge:?] {re:classloading}
+	at net.minecraft.util.concurrent.ThreadTaskExecutor.run(ThreadTaskExecutor.java:139) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.util.concurrent.RecursiveEventLoop.run(RecursiveEventLoop.java:22) ~[forge:?] {re:classloading}
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:758) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:159) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.util.concurrent.ThreadTaskExecutor.driveOne(ThreadTaskExecutor.java:109) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.driveOneInternal(MinecraftServer.java:741) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.driveOne(MinecraftServer.java:735) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.util.concurrent.ThreadTaskExecutor.drainTasks(ThreadTaskExecutor.java:97) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.runScheduledTasks(MinecraftServer.java:720) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.func_240802_v_(MinecraftServer.java:667) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$startServer$0(MinecraftServer.java:233) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:832) [?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.5
+	Minecraft Version ID: 1.16.5
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 15.0.1, Oracle Corporation
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 1220263936 bytes (1163 MB) / 1782579200 bytes (1700 MB) up to 4278190080 bytes (4080 MB)
+	CPUs: 6
+	JVM Flags: 1 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump
+	ModLauncher: 8.0.9+86+master.3cf110c
+	ModLauncher launch target: fmluserdevclient
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		/mixin-0.8.2.jar mixin PLUGINSERVICE 
+		/eventbus-4.0.0.jar eventbus PLUGINSERVICE 
+		/forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-launcher.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-launcher.jar runtime_enum_extender PLUGINSERVICE 
+		/forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-launcher.jar capability_inject_definalize PLUGINSERVICE 
+		/accesstransformers-3.0.1.jar accesstransformer PLUGINSERVICE 
+		/forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-launcher.jar runtimedistcleaner PLUGINSERVICE 
+		/mixin-0.8.2.jar mixin TRANSFORMATIONSERVICE 
+		/forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-launcher.jar fml TRANSFORMATIONSERVICE 
+	FML: 36.0
+	Forge: net.minecraftforge:36.0.1
+	FML Language Providers: 
+		javafml@36.0
+		minecraft@1
+	Mod List: 
+		client-extra.jar                                  |Minecraft                     |minecraft                     |1.16.5              |DONE      |a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		main                                              |Example Mod                   |cave                          |NONE                |DONE      |NOSIGNATURE
+		forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.|Forge                         |forge                         |36.0.1              |DONE      |NOSIGNATURE
+	Crash Report UUID: b899d72b-ee2e-40b0-a219-970857907d54
+	Player Count: 1 / 8; [ServerPlayerEntity['Dev'/292, l='ServerLevel[New World]', x=-179.69, y=68.00, z=128.72]]
+	Data Packs: vanilla, mod:cave, mod:forge
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'forge'

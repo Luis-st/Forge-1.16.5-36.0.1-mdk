@@ -1,0 +1,75 @@
+---- Minecraft Crash Report ----
+// Uh... Did I do that?
+
+Time: 14.02.21, 20:43
+Description: Ticking memory connection
+
+java.lang.NullPointerException: Ticking memory connection
+	at java.util.Objects.requireNonNull(Objects.java:208) ~[?:?] {}
+	at net.luis.cave.init.ModCapability$Provider.<init>(ModCapability.java:59) ~[main/:?] {re:classloading}
+	at net.luis.cave.events.capability.OnAttachCapabilitiesEvent.AttachCapabilities(OnAttachCapabilitiesEvent.java:21) ~[main/:?] {re:classloading}
+	at net.minecraftforge.eventbus.ASMEventHandler_16_OnAttachCapabilitiesEvent_AttachCapabilities_AttachCapabilitiesEvent.invoke(.dynamic) ~[?:?] {}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:85) ~[eventbus-4.0.0.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:302) ~[eventbus-4.0.0.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:283) ~[eventbus-4.0.0.jar:?] {}
+	at net.minecraftforge.event.ForgeEventFactory.gatherCapabilities(ForgeEventFactory.java:579) ~[forge:?] {re:classloading}
+	at net.minecraftforge.event.ForgeEventFactory.gatherCapabilities(ForgeEventFactory.java:573) ~[forge:?] {re:classloading}
+	at net.minecraftforge.common.capabilities.CapabilityProvider.gatherCapabilities(CapabilityProvider.java:48) ~[forge:?] {re:classloading}
+	at net.minecraftforge.common.capabilities.CapabilityProvider.gatherCapabilities(CapabilityProvider.java:44) ~[forge:?] {re:classloading}
+	at net.minecraft.entity.Entity.<init>(Entity.java:221) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.entity.LivingEntity.<init>(LivingEntity.java:207) ~[forge:?] {re:classloading}
+	at net.minecraft.entity.player.PlayerEntity.<init>(PlayerEntity.java:160) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.entity.player.ServerPlayerEntity.<init>(ServerPlayerEntity.java:182) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.management.PlayerList.createPlayerForUser(PlayerList.java:419) ~[forge:?] {re:classloading}
+	at net.minecraft.network.login.ServerLoginNetHandler.tryAcceptPlayer(ServerLoginNetHandler.java:122) ~[forge:?] {re:classloading}
+	at net.minecraft.network.login.ServerLoginNetHandler.tick(ServerLoginNetHandler.java:66) ~[forge:?] {re:classloading}
+	at net.minecraft.network.NetworkManager.tick(NetworkManager.java:244) ~[forge:?] {re:classloading}
+	at net.minecraft.network.NetworkSystem.tick(NetworkSystem.java:151) ~[forge:?] {re:classloading}
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:898) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:820) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:84) ~[forge:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.func_240802_v_(MinecraftServer.java:663) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$startServer$0(MinecraftServer.java:233) ~[forge:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:832) [?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.5
+	Minecraft Version ID: 1.16.5
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 15.0.1, Oracle Corporation
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 835522744 bytes (796 MB) / 1329594368 bytes (1268 MB) up to 4278190080 bytes (4080 MB)
+	CPUs: 6
+	JVM Flags: 1 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump
+	ModLauncher: 8.0.9+86+master.3cf110c
+	ModLauncher launch target: fmluserdevclient
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		/mixin-0.8.2.jar mixin PLUGINSERVICE 
+		/eventbus-4.0.0.jar eventbus PLUGINSERVICE 
+		/forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-launcher.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-launcher.jar runtime_enum_extender PLUGINSERVICE 
+		/forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-launcher.jar capability_inject_definalize PLUGINSERVICE 
+		/accesstransformers-3.0.1.jar accesstransformer PLUGINSERVICE 
+		/forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-launcher.jar runtimedistcleaner PLUGINSERVICE 
+		/mixin-0.8.2.jar mixin TRANSFORMATIONSERVICE 
+		/forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.3-launcher.jar fml TRANSFORMATIONSERVICE 
+	FML: 36.0
+	Forge: net.minecraftforge:36.0.1
+	FML Language Providers: 
+		javafml@36.0
+		minecraft@1
+	Mod List: 
+		client-extra.jar                                  |Minecraft                     |minecraft                     |1.16.5              |DONE      |a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		main                                              |Example Mod                   |cave                          |NONE                |DONE      |NOSIGNATURE
+		forge-1.16.5-36.0.1_mapped_snapshot_20201028-1.16.|Forge                         |forge                         |36.0.1              |DONE      |NOSIGNATURE
+	Crash Report UUID: f5d73354-b842-4fcd-9462-dc45b4274118
+	Player Count: 0 / 8; []
+	Data Packs: vanilla, mod:cave, mod:forge
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'forge'
