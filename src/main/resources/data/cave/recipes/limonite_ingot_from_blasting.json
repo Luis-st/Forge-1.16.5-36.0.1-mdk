@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:blasting",
-  "ingredient": {
-    "item": "cave:limonite_ore"
-  },
-  "result": "cave:limonite_ingot",
-  "experience": 1.5,
-  "cookingtime": 100
-}

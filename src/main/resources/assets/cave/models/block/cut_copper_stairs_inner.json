@@ -1,8 +1,0 @@
-{
-  "parent": "block/inner_stairs",
-  "textures": {
-    "bottom": "cave:blocks/cut_copper",
-    "top": "cave:blocks/cut_copper",
-    "side": "cave:blocks/cut_copper"
-  }
-}

@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "cave:blocks/tinted_glass",
-    "particle": "cave:blocks/tinted_glass"
-  }
-}

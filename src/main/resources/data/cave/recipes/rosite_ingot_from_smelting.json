@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "cave:rosite_ore"
-  },
-  "result": "cave:rosite_ingot",
-  "experience": 1.5,
-  "cookingtime": 200
-}

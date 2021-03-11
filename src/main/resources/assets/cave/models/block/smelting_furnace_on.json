@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/orientable",
-  "textures": {
-    "top": "cave:blocks/smelting_furnace_top",
-    "front": "cave:blocks/smelting_furnace_front_on",
-    "side": "cave:blocks/smelting_furnace_side"
-  }
-}

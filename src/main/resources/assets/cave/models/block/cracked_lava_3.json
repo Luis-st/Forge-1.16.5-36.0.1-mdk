@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "cave:blocks/cracked_lava_3"
-  }
-}

@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "cave:blocks/enderite_block",
-    "particle": "cave:blocks/enderite_block"
-  }
-}
