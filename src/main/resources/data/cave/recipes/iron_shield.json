@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ooo",
+    "ooo",
+    " o "
+  ],
+  "key": {
+    "o": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "cave:iron_shield"
+  }
+}

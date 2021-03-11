@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#",
+        "#",
+        "#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:stone_bricks"
+        }
+    },
+    "result": {
+        "item": "cave:vertical_stone_brick_slab",
+        "count": 6
+    }
+}
+        

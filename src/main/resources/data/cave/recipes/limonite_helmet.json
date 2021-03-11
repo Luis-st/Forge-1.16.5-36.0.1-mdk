@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "X X"
+  ],
+  "key": {
+    "X": {
+      "item": "cave:limonite_ingot"
+    }
+  },
+  "result": {
+    "item": "cave:limonite_helmet"
+  }
+}

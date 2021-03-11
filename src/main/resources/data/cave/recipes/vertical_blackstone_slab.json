@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#",
+        "#",
+        "#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:blackstone"
+        }
+    },
+    "result": {
+        "item": "cave:vertical_blackstone_slab",
+        "count": 6
+    }
+}
+    
+    

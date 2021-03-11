@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "cave:enderite_hoe"
+  },
+  "addition": {
+    "item": "cave:night_ingot"
+  },
+  "result": {
+    "item": "cave:night_hoe"
+  }
+}

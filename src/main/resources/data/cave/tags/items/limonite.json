@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "cave:limonite_ingot",
+    "cave:limonite_axe",
+    "cave:limonite_pickaxe",
+    "cave:limonite_shovel",
+    "cave:limonite_hoe",
+    "cave:limonite_sword"
+  ]
+}

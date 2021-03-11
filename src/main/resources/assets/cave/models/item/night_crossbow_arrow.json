@@ -1,0 +1,6 @@
+{
+    "parent": "cave:item/night_crossbow",
+    "textures": {
+        "layer0": "cave:items/night_crossbow_arrow"
+    }
+}

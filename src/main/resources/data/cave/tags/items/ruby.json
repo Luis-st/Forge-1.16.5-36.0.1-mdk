@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "cave:ruby",
+    "cave:ruby_block",
+    "cave:ruby_sword",
+    "cave:ruby_pickaxe",
+    "cave:ruby_axe",
+    "cave:ruby_shovel",
+    "cave:ruby_hoe",
+    "cave:ruby_helmet",
+    "cave:ruby_chestplate",
+    "cave:ruby_leggings",
+    "cave:ruby_boots"
+  ]
+}

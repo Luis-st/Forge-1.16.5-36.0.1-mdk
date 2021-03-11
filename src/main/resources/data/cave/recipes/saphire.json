@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cave:saphire_block"
+    }
+  ],
+  "result": {
+    "item": "cave:saphire_ingot",
+    "count": 9
+  }
+}

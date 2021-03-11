@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#",
+        "#",
+        "#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:purpur_block"
+        }
+    },
+    "result": {
+        "item": "cave:vertical_purpur_slab",
+        "count": 6
+    }
+}
+        

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "cave:jade_ore"
+  },
+  "result": "cave:jade_ingot",
+  "experience": 1.5,
+  "cookingtime": 100
+}

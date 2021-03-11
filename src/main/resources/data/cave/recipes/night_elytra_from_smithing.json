@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "cave:enderite_elytra"
+  },
+  "addition": {
+    "item": "cave:night_ingot"
+  },
+  "result": {
+    "item": "cave:night_elytra"
+  }
+}

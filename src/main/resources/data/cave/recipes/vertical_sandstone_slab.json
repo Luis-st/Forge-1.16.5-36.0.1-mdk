@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#",
+        "#",
+        "#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:sandstone"
+        }
+    },
+    "result": {
+        "item": "cave:vertical_sandstone_slab",
+        "count": 6
+    }
+}
+        

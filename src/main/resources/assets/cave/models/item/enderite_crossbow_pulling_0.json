@@ -1,0 +1,6 @@
+{
+    "parent": "cave:item/enderite_crossbow",
+    "textures": {
+        "layer0": "cave:items/enderite_crossbow_pulling_0"
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "cave:saphire_ingot",
+    "cave:saphire_axe",
+    "cave:saphire_pickaxe",
+    "cave:saphire_shovel",
+    "cave:saphire_hoe",
+    "cave:saphire_sword"
+  ]
+}

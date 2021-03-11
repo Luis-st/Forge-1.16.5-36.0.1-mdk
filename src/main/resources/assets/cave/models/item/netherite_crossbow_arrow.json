@@ -1,0 +1,6 @@
+{
+    "parent": "cave:item/netherite_crossbow",
+    "textures": {
+        "layer0": "cave:items/netherite_crossbow_arrow"
+    }
+}

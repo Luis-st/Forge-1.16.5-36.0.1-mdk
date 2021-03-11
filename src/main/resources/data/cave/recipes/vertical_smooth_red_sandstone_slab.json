@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#",
+        "#",
+        "#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:smooth_red_sandstone"
+        }
+    },
+    "result": {
+        "item": "cave:vertical_smooth_red_sandstone_slab",
+        "count": 6
+    }
+}
+        

@@ -1,0 +1,24 @@
+
+    {
+	"textures": {
+		"particle": "block/cut_red_sandstone",
+		"texture": "block/cut_red_sandstone",
+		"end": "block/red_sandstone_top"
+	},
+	"elements": [
+		{
+			"__comment": "Cube1",
+			"from": [ 8, 0, 0 ],
+			"to": [ 16, 16, 8 ],
+			"faces": {
+				"down": { "uv": [ 8, 8, 16, 16 ], "texture": "#end" },
+				"up": { "uv": [ 8, 0, 16, 8 ], "texture": "#end" },
+				"north": { "uv": [ 0, 0, 8, 16 ], "texture": "#texture" },
+				"south": { "uv": [ 8, 0, 16, 16 ], "texture": "#texture" },
+				"west": { "uv": [ 0, 0, 8, 16 ], "texture": "#texture" },
+				"east": { "uv": [ 8, 0, 16, 16 ], "texture": "#texture" }
+			}
+		}
+	]
+    }
+    

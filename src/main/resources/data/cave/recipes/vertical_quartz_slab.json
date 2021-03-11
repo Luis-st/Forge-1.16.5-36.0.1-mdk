@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#",
+        "#",
+        "#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:quartz_block"
+        }
+    },
+    "result": {
+        "item": "cave:vertical_quartz_slab",
+        "count": 6
+    }
+}
+        

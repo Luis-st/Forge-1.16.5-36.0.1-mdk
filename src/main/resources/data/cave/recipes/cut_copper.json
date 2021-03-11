@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "cave:copper_block"
+    }
+  },
+  "result": {
+    "item": "cave:cut_copper",
+    "count": 4
+  }
+}

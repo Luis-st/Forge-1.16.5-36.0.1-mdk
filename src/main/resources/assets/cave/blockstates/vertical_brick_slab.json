@@ -1,0 +1,30 @@
+
+    {
+      "variants": {
+        "facing=north,full=false,shape=0": { "model": "cave:block/vertical_brick_slab", "uvlock": true },
+        "facing=north,full=false,shape=1": { "model": "cave:block/vertical_brick_slab_inner", "y": 270, "uvlock": true },
+        "facing=north,full=false,shape=2": { "model": "cave:block/vertical_brick_slab_inner", "uvlock": true },
+        "facing=north,full=false,shape=3": { "model": "cave:block/vertical_brick_slab_outer", "y": 270, "uvlock": true },
+        "facing=north,full=false,shape=4": { "model": "cave:block/vertical_brick_slab_outer", "uvlock": true },
+
+        "facing=south,full=false,shape=0": { "model": "cave:block/vertical_brick_slab", "y":  180, "uvlock": true },
+        "facing=south,full=false,shape=1": { "model": "cave:block/vertical_brick_slab_inner", "y": 180, "uvlock": true },
+        "facing=south,full=false,shape=2": { "model": "cave:block/vertical_brick_slab_inner", "y":  90, "uvlock": true },
+        "facing=south,full=false,shape=3": { "model": "cave:block/vertical_brick_slab_outer", "y": 180, "uvlock": true },
+        "facing=south,full=false,shape=4": { "model": "cave:block/vertical_brick_slab_outer", "y":  90, "uvlock": true },
+
+        "facing=west,full=false,shape=0": { "model": "cave:block/vertical_brick_slab", "y":  270, "uvlock": true },
+        "facing=west,full=false,shape=1": { "model": "cave:block/vertical_brick_slab_inner", "y":  270, "uvlock": true },
+        "facing=west,full=false,shape=2": { "model": "cave:block/vertical_brick_slab_inner", "y":  180, "uvlock": true },
+        "facing=west,full=false,shape=3": { "model": "cave:block/vertical_brick_slab_outer", "y":  270, "uvlock": true },
+        "facing=west,full=false,shape=4": { "model": "cave:block/vertical_brick_slab_outer", "y":  180, "uvlock": true },
+
+        "facing=east,full=false,shape=0": { "model": "cave:block/vertical_brick_slab", "y":  90, "uvlock": true },
+        "facing=east,full=false,shape=1": { "model": "cave:block/vertical_brick_slab_inner", "y": 0, "uvlock": true },
+        "facing=east,full=false,shape=2": { "model": "cave:block/vertical_brick_slab_inner", "y":  90, "uvlock": true },
+        "facing=east,full=false,shape=3": { "model": "cave:block/vertical_brick_slab_outer", "y": 0, "uvlock": true },
+        "facing=east,full=false,shape=4": { "model": "cave:block/vertical_brick_slab_outer", "y":  90, "uvlock": true },
+        "full=true": { "model": "block/bricks", "uvlock": true }
+      }
+    }
+    

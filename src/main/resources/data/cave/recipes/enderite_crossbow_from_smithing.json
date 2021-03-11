@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "cave:netherite_crossbow"
+  },
+  "addition": {
+    "item": "cave:enderite_ingot"
+  },
+  "result": {
+    "item": "cave:enderite_crossbow"
+  }
+}
