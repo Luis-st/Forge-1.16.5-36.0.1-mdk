@@ -16,15 +16,12 @@ public class LightningRodTileEntity extends TileEntity implements ITickableTileE
 		
 	}
 	
-	
-
 	@Override
-	@SuppressWarnings("resource")
 	public void tick() {
 		
-		if (world != null) {
+		if (this.world != null) {
 			
-			Random rng = this.getWorld().rand;
+			Random rng = this.world.rand;
 			
 			LightningBoltEntity lightning = new LightningBoltEntity(EntityType.LIGHTNING_BOLT, this.getWorld());
 			lightning.setLocationAndAngles(this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), rng.nextFloat() * 360, 0);
