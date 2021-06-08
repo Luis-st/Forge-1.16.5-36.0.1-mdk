@@ -31,7 +31,7 @@ public class ModBeaconTileEntityRender extends TileEntityRenderer<ModBeaconTileE
 	}
 	
 	@Override
-	public void render(ModBeaconTileEntity tileEntityIn, float partialTicks, MatrixStack matrixStackIn, 
+	public void render(ModBeaconTileEntity tileEntityIn, float partialTicks, MatrixStack matrixStackIn,  
 			IRenderTypeBuffer bufferIn, int combinedLightIn, int combinedOverlayIn) {
 		
 		long i = tileEntityIn.getWorld().getGameTime();

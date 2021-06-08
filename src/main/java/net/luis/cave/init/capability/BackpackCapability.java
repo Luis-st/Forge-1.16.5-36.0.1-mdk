@@ -49,7 +49,7 @@ public class BackpackCapability {
 		@SuppressWarnings({ "unchecked" })
 		public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
 			
-			return cap == BACKPACK && cap != null ? (LazyOptional<T>) optional : LazyOptional.empty();
+			return cap == BACKPACK ? (LazyOptional<T>) optional : LazyOptional.empty();
 			
 		}
 

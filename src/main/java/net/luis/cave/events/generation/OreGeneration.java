@@ -31,8 +31,7 @@ public class OreGeneration {
 		
 		overworldOres.add(register("jade_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
 				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.JADE_ORE.get().getDefaultState(), 7)) //vein Size
-				.range(96).square() //maximum height
-				.func_242731_b(20))); //count per chunk
+				.range(96).square()/*maximum height*/.func_242731_b(20))); //count per chunk
 		
 		overworldOres.add(register("limonite_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
 				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.LIMONITE_ORE.get().getDefaultState(), 14))
@@ -56,7 +55,7 @@ public class OreGeneration {
 		
 		overworldOres.add(register("calcite", Feature.ORE.withConfiguration(new OreFeatureConfig(
 				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.CALCITE.get().getDefaultState(), 15))
-				.range(72).square() .func_242731_b(15))); 
+				.range(72).square().func_242731_b(15))); 
 		
 		overworldOres.add(register("tuff", Feature.ORE.withConfiguration(new OreFeatureConfig(
 				OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.TUFF.get().getDefaultState(), 20))

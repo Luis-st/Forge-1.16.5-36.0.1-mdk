@@ -14,7 +14,6 @@ import net.minecraft.world.World;
 
 public class FungusSoup extends Item {
 
-	@SuppressWarnings("deprecation")
 	public FungusSoup() {
 		
 		super(new Item.Properties()
@@ -23,8 +22,8 @@ public class FungusSoup extends Item {
 					.food(new Food.Builder()
 							.hunger(10)
 							.saturation(8.2f)
-							.effect(new EffectInstance(Effects.RESISTANCE, 600, 4), 1)
-							.effect(new EffectInstance(Effects.MINING_FATIGUE, 600, 0), 0.25f)
+							.effect(() -> new EffectInstance(Effects.RESISTANCE, 600, 4), 1)
+							.effect(() -> new EffectInstance(Effects.MINING_FATIGUE, 600, 0), 0.25f)
 							.setAlwaysEdible()
 							.build()));
 		
@@ -39,10 +38,8 @@ public class FungusSoup extends Item {
 	
 	@Override
 	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, LivingEntity entityLiving) {
-		
 		ItemStack itemstack = super.onItemUseFinish(stack, worldIn, entityLiving);
 		return entityLiving instanceof PlayerEntity && ((PlayerEntity)entityLiving).abilities.isCreativeMode ? itemstack : new ItemStack(Items.BOWL);
-
 	}
 	
 }
